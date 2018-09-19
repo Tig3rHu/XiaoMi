@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.CommentMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.Comment">
+    <id column="comment_id" jdbcType="INTEGER" property="commentId" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="add_time" jdbcType="INTEGER" property="addTime" />
+    <result column="ip_address" jdbcType="VARCHAR" property="ipAddress" />
+    <result column="is_show" jdbcType="BIT" property="isShow" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="deliver_rank" jdbcType="BIT" property="deliverRank" />
+    <result column="goods_rank" jdbcType="BIT" property="goodsRank" />
+    <result column="service_rank" jdbcType="BIT" property="serviceRank" />
+    <result column="zan_num" jdbcType="INTEGER" property="zanNum" />
+    <result column="zan_userid" jdbcType="VARCHAR" property="zanUserid" />
+    <result column="is_anonymous" jdbcType="BIT" property="isAnonymous" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.CommentWithBLOBs">
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="img" jdbcType="LONGVARCHAR" property="img" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    comment_id, goods_id, email, username, add_time, ip_address, is_show, parent_id, 
+    user_id, order_id, deliver_rank, goods_rank, service_rank, zan_num, zan_userid, is_anonymous
+  </sql>
+  <sql id="Blob_Column_List">
+    content, img
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.wuyou.entity.CommentExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from comment
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.wuyou.entity.CommentExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from comment
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from comment
+    where comment_id = #{commentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from comment
+    where comment_id = #{commentId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.CommentExample">
+    delete from comment
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.CommentWithBLOBs">
+    insert into comment (comment_id, goods_id, email, 
+      username, add_time, ip_address, 
+      is_show, parent_id, user_id, 
+      order_id, deliver_rank, goods_rank, 
+      service_rank, zan_num, zan_userid, 
+      is_anonymous, content, img
+      )
+    values (#{commentId,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{email,jdbcType=VARCHAR}, 
+      #{username,jdbcType=VARCHAR}, #{addTime,jdbcType=INTEGER}, #{ipAddress,jdbcType=VARCHAR}, 
+      #{isShow,jdbcType=BIT}, #{parentId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{orderId,jdbcType=INTEGER}, #{deliverRank,jdbcType=BIT}, #{goodsRank,jdbcType=BIT}, 
+      #{serviceRank,jdbcType=BIT}, #{zanNum,jdbcType=INTEGER}, #{zanUserid,jdbcType=VARCHAR}, 
+      #{isAnonymous,jdbcType=BIT}, #{content,jdbcType=LONGVARCHAR}, #{img,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.CommentWithBLOBs">
+    insert into comment
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="commentId != null">
+        comment_id,
+      </if>
+      <if test="goodsId != null">
+        goods_id,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="addTime != null">
+        add_time,
+      </if>
+      <if test="ipAddress != null">
+        ip_address,
+      </if>
+      <if test="isShow != null">
+        is_show,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="deliverRank != null">
+        deliver_rank,
+      </if>
+      <if test="goodsRank != null">
+        goods_rank,
+      </if>
+      <if test="serviceRank != null">
+        service_rank,
+      </if>
+      <if test="zanNum != null">
+        zan_num,
+      </if>
+      <if test="zanUserid != null">
+        zan_userid,
+      </if>
+      <if test="isAnonymous != null">
+        is_anonymous,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="img != null">
+        img,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="commentId != null">
+        #{commentId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsId != null">
+        #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="addTime != null">
+        #{addTime,jdbcType=INTEGER},
+      </if>
+      <if test="ipAddress != null">
+        #{ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="isShow != null">
+        #{isShow,jdbcType=BIT},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="deliverRank != null">
+        #{deliverRank,jdbcType=BIT},
+      </if>
+      <if test="goodsRank != null">
+        #{goodsRank,jdbcType=BIT},
+      </if>
+      <if test="serviceRank != null">
+        #{serviceRank,jdbcType=BIT},
+      </if>
+      <if test="zanNum != null">
+        #{zanNum,jdbcType=INTEGER},
+      </if>
+      <if test="zanUserid != null">
+        #{zanUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="isAnonymous != null">
+        #{isAnonymous,jdbcType=BIT},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="img != null">
+        #{img,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.CommentExample" resultType="java.lang.Integer">
+    select count(*) from comment
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update comment
+    <set>
+      <if test="record.commentId != null">
+        comment_id = #{record.commentId,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsId != null">
+        goods_id = #{record.goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.email != null">
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.username != null">
+        username = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.addTime != null">
+        add_time = #{record.addTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.ipAddress != null">
+        ip_address = #{record.ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isShow != null">
+        is_show = #{record.isShow,jdbcType=BIT},
+      </if>
+      <if test="record.parentId != null">
+        parent_id = #{record.parentId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.deliverRank != null">
+        deliver_rank = #{record.deliverRank,jdbcType=BIT},
+      </if>
+      <if test="record.goodsRank != null">
+        goods_rank = #{record.goodsRank,jdbcType=BIT},
+      </if>
+      <if test="record.serviceRank != null">
+        service_rank = #{record.serviceRank,jdbcType=BIT},
+      </if>
+      <if test="record.zanNum != null">
+        zan_num = #{record.zanNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.zanUserid != null">
+        zan_userid = #{record.zanUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isAnonymous != null">
+        is_anonymous = #{record.isAnonymous,jdbcType=BIT},
+      </if>
+      <if test="record.content != null">
+        content = #{record.content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.img != null">
+        img = #{record.img,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update comment
+    set comment_id = #{record.commentId,jdbcType=INTEGER},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
+      email = #{record.email,jdbcType=VARCHAR},
+      username = #{record.username,jdbcType=VARCHAR},
+      add_time = #{record.addTime,jdbcType=INTEGER},
+      ip_address = #{record.ipAddress,jdbcType=VARCHAR},
+      is_show = #{record.isShow,jdbcType=BIT},
+      parent_id = #{record.parentId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      deliver_rank = #{record.deliverRank,jdbcType=BIT},
+      goods_rank = #{record.goodsRank,jdbcType=BIT},
+      service_rank = #{record.serviceRank,jdbcType=BIT},
+      zan_num = #{record.zanNum,jdbcType=INTEGER},
+      zan_userid = #{record.zanUserid,jdbcType=VARCHAR},
+      is_anonymous = #{record.isAnonymous,jdbcType=BIT},
+      content = #{record.content,jdbcType=LONGVARCHAR},
+      img = #{record.img,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update comment
+    set comment_id = #{record.commentId,jdbcType=INTEGER},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
+      email = #{record.email,jdbcType=VARCHAR},
+      username = #{record.username,jdbcType=VARCHAR},
+      add_time = #{record.addTime,jdbcType=INTEGER},
+      ip_address = #{record.ipAddress,jdbcType=VARCHAR},
+      is_show = #{record.isShow,jdbcType=BIT},
+      parent_id = #{record.parentId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      deliver_rank = #{record.deliverRank,jdbcType=BIT},
+      goods_rank = #{record.goodsRank,jdbcType=BIT},
+      service_rank = #{record.serviceRank,jdbcType=BIT},
+      zan_num = #{record.zanNum,jdbcType=INTEGER},
+      zan_userid = #{record.zanUserid,jdbcType=VARCHAR},
+      is_anonymous = #{record.isAnonymous,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.CommentWithBLOBs">
+    update comment
+    <set>
+      <if test="goodsId != null">
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="addTime != null">
+        add_time = #{addTime,jdbcType=INTEGER},
+      </if>
+      <if test="ipAddress != null">
+        ip_address = #{ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="isShow != null">
+        is_show = #{isShow,jdbcType=BIT},
+      </if>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="deliverRank != null">
+        deliver_rank = #{deliverRank,jdbcType=BIT},
+      </if>
+      <if test="goodsRank != null">
+        goods_rank = #{goodsRank,jdbcType=BIT},
+      </if>
+      <if test="serviceRank != null">
+        service_rank = #{serviceRank,jdbcType=BIT},
+      </if>
+      <if test="zanNum != null">
+        zan_num = #{zanNum,jdbcType=INTEGER},
+      </if>
+      <if test="zanUserid != null">
+        zan_userid = #{zanUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="isAnonymous != null">
+        is_anonymous = #{isAnonymous,jdbcType=BIT},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="img != null">
+        img = #{img,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where comment_id = #{commentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuyou.entity.CommentWithBLOBs">
+    update comment
+    set goods_id = #{goodsId,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      add_time = #{addTime,jdbcType=INTEGER},
+      ip_address = #{ipAddress,jdbcType=VARCHAR},
+      is_show = #{isShow,jdbcType=BIT},
+      parent_id = #{parentId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      order_id = #{orderId,jdbcType=INTEGER},
+      deliver_rank = #{deliverRank,jdbcType=BIT},
+      goods_rank = #{goodsRank,jdbcType=BIT},
+      service_rank = #{serviceRank,jdbcType=BIT},
+      zan_num = #{zanNum,jdbcType=INTEGER},
+      zan_userid = #{zanUserid,jdbcType=VARCHAR},
+      is_anonymous = #{isAnonymous,jdbcType=BIT},
+      content = #{content,jdbcType=LONGVARCHAR},
+      img = #{img,jdbcType=LONGVARCHAR}
+    where comment_id = #{commentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.Comment">
+    update comment
+    set goods_id = #{goodsId,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      add_time = #{addTime,jdbcType=INTEGER},
+      ip_address = #{ipAddress,jdbcType=VARCHAR},
+      is_show = #{isShow,jdbcType=BIT},
+      parent_id = #{parentId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      order_id = #{orderId,jdbcType=INTEGER},
+      deliver_rank = #{deliverRank,jdbcType=BIT},
+      goods_rank = #{goodsRank,jdbcType=BIT},
+      service_rank = #{serviceRank,jdbcType=BIT},
+      zan_num = #{zanNum,jdbcType=INTEGER},
+      zan_userid = #{zanUserid,jdbcType=VARCHAR},
+      is_anonymous = #{isAnonymous,jdbcType=BIT}
+    where comment_id = #{commentId,jdbcType=INTEGER}
+  </update>
+</mapper>

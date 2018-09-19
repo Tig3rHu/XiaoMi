@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.GoodsAttrMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.GoodsAttr">
+    <id column="goods_attr_id" jdbcType="INTEGER" property="goodsAttrId" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="attr_id" jdbcType="SMALLINT" property="attrId" />
+    <result column="attr_price" jdbcType="VARCHAR" property="attrPrice" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.GoodsAttr">
+    <result column="attr_value" jdbcType="LONGVARCHAR" property="attrValue" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    goods_attr_id, goods_id, attr_id, attr_price
+  </sql>
+  <sql id="Blob_Column_List">
+    attr_value
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.wuyou.entity.GoodsAttrExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from goods_attr
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.wuyou.entity.GoodsAttrExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from goods_attr
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from goods_attr
+    where goods_attr_id = #{goodsAttrId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from goods_attr
+    where goods_attr_id = #{goodsAttrId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.GoodsAttrExample">
+    delete from goods_attr
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.GoodsAttr">
+    insert into goods_attr (goods_attr_id, goods_id, attr_id, 
+      attr_price, attr_value)
+    values (#{goodsAttrId,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{attrId,jdbcType=SMALLINT}, 
+      #{attrPrice,jdbcType=VARCHAR}, #{attrValue,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.GoodsAttr">
+    insert into goods_attr
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="goodsAttrId != null">
+        goods_attr_id,
+      </if>
+      <if test="goodsId != null">
+        goods_id,
+      </if>
+      <if test="attrId != null">
+        attr_id,
+      </if>
+      <if test="attrPrice != null">
+        attr_price,
+      </if>
+      <if test="attrValue != null">
+        attr_value,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="goodsAttrId != null">
+        #{goodsAttrId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsId != null">
+        #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="attrId != null">
+        #{attrId,jdbcType=SMALLINT},
+      </if>
+      <if test="attrPrice != null">
+        #{attrPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="attrValue != null">
+        #{attrValue,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.GoodsAttrExample" resultType="java.lang.Integer">
+    select count(*) from goods_attr
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update goods_attr
+    <set>
+      <if test="record.goodsAttrId != null">
+        goods_attr_id = #{record.goodsAttrId,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsId != null">
+        goods_id = #{record.goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.attrId != null">
+        attr_id = #{record.attrId,jdbcType=SMALLINT},
+      </if>
+      <if test="record.attrPrice != null">
+        attr_price = #{record.attrPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="record.attrValue != null">
+        attr_value = #{record.attrValue,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update goods_attr
+    set goods_attr_id = #{record.goodsAttrId,jdbcType=INTEGER},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
+      attr_id = #{record.attrId,jdbcType=SMALLINT},
+      attr_price = #{record.attrPrice,jdbcType=VARCHAR},
+      attr_value = #{record.attrValue,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update goods_attr
+    set goods_attr_id = #{record.goodsAttrId,jdbcType=INTEGER},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
+      attr_id = #{record.attrId,jdbcType=SMALLINT},
+      attr_price = #{record.attrPrice,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.GoodsAttr">
+    update goods_attr
+    <set>
+      <if test="goodsId != null">
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="attrId != null">
+        attr_id = #{attrId,jdbcType=SMALLINT},
+      </if>
+      <if test="attrPrice != null">
+        attr_price = #{attrPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="attrValue != null">
+        attr_value = #{attrValue,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where goods_attr_id = #{goodsAttrId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuyou.entity.GoodsAttr">
+    update goods_attr
+    set goods_id = #{goodsId,jdbcType=INTEGER},
+      attr_id = #{attrId,jdbcType=SMALLINT},
+      attr_price = #{attrPrice,jdbcType=VARCHAR},
+      attr_value = #{attrValue,jdbcType=LONGVARCHAR}
+    where goods_attr_id = #{goodsAttrId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.GoodsAttr">
+    update goods_attr
+    set goods_id = #{goodsId,jdbcType=INTEGER},
+      attr_id = #{attrId,jdbcType=SMALLINT},
+      attr_price = #{attrPrice,jdbcType=VARCHAR}
+    where goods_attr_id = #{goodsAttrId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.ShippingAreaMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.ShippingArea">
+    <id column="shipping_area_id" jdbcType="SMALLINT" property="shippingAreaId" />
+    <result column="shipping_area_name" jdbcType="VARCHAR" property="shippingAreaName" />
+    <result column="shipping_code" jdbcType="VARCHAR" property="shippingCode" />
+    <result column="update_time" jdbcType="INTEGER" property="updateTime" />
+    <result column="is_default" jdbcType="BIT" property="isDefault" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.ShippingArea">
+    <result column="config" jdbcType="LONGVARCHAR" property="config" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    shipping_area_id, shipping_area_name, shipping_code, update_time, is_default
+  </sql>
+  <sql id="Blob_Column_List">
+    config
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.wuyou.entity.ShippingAreaExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from shipping_area
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.wuyou.entity.ShippingAreaExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from shipping_area
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from shipping_area
+    where shipping_area_id = #{shippingAreaId,jdbcType=SMALLINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from shipping_area
+    where shipping_area_id = #{shippingAreaId,jdbcType=SMALLINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.ShippingAreaExample">
+    delete from shipping_area
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.ShippingArea">
+    insert into shipping_area (shipping_area_id, shipping_area_name, 
+      shipping_code, update_time, is_default, 
+      config)
+    values (#{shippingAreaId,jdbcType=SMALLINT}, #{shippingAreaName,jdbcType=VARCHAR}, 
+      #{shippingCode,jdbcType=VARCHAR}, #{updateTime,jdbcType=INTEGER}, #{isDefault,jdbcType=BIT}, 
+      #{config,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.ShippingArea">
+    insert into shipping_area
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="shippingAreaId != null">
+        shipping_area_id,
+      </if>
+      <if test="shippingAreaName != null">
+        shipping_area_name,
+      </if>
+      <if test="shippingCode != null">
+        shipping_code,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="isDefault != null">
+        is_default,
+      </if>
+      <if test="config != null">
+        config,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="shippingAreaId != null">
+        #{shippingAreaId,jdbcType=SMALLINT},
+      </if>
+      <if test="shippingAreaName != null">
+        #{shippingAreaName,jdbcType=VARCHAR},
+      </if>
+      <if test="shippingCode != null">
+        #{shippingCode,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="isDefault != null">
+        #{isDefault,jdbcType=BIT},
+      </if>
+      <if test="config != null">
+        #{config,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.ShippingAreaExample" resultType="java.lang.Integer">
+    select count(*) from shipping_area
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update shipping_area
+    <set>
+      <if test="record.shippingAreaId != null">
+        shipping_area_id = #{record.shippingAreaId,jdbcType=SMALLINT},
+      </if>
+      <if test="record.shippingAreaName != null">
+        shipping_area_name = #{record.shippingAreaName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shippingCode != null">
+        shipping_code = #{record.shippingCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.isDefault != null">
+        is_default = #{record.isDefault,jdbcType=BIT},
+      </if>
+      <if test="record.config != null">
+        config = #{record.config,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update shipping_area
+    set shipping_area_id = #{record.shippingAreaId,jdbcType=SMALLINT},
+      shipping_area_name = #{record.shippingAreaName,jdbcType=VARCHAR},
+      shipping_code = #{record.shippingCode,jdbcType=VARCHAR},
+      update_time = #{record.updateTime,jdbcType=INTEGER},
+      is_default = #{record.isDefault,jdbcType=BIT},
+      config = #{record.config,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update shipping_area
+    set shipping_area_id = #{record.shippingAreaId,jdbcType=SMALLINT},
+      shipping_area_name = #{record.shippingAreaName,jdbcType=VARCHAR},
+      shipping_code = #{record.shippingCode,jdbcType=VARCHAR},
+      update_time = #{record.updateTime,jdbcType=INTEGER},
+      is_default = #{record.isDefault,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.ShippingArea">
+    update shipping_area
+    <set>
+      <if test="shippingAreaName != null">
+        shipping_area_name = #{shippingAreaName,jdbcType=VARCHAR},
+      </if>
+      <if test="shippingCode != null">
+        shipping_code = #{shippingCode,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="isDefault != null">
+        is_default = #{isDefault,jdbcType=BIT},
+      </if>
+      <if test="config != null">
+        config = #{config,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where shipping_area_id = #{shippingAreaId,jdbcType=SMALLINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuyou.entity.ShippingArea">
+    update shipping_area
+    set shipping_area_name = #{shippingAreaName,jdbcType=VARCHAR},
+      shipping_code = #{shippingCode,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=INTEGER},
+      is_default = #{isDefault,jdbcType=BIT},
+      config = #{config,jdbcType=LONGVARCHAR}
+    where shipping_area_id = #{shippingAreaId,jdbcType=SMALLINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.ShippingArea">
+    update shipping_area
+    set shipping_area_name = #{shippingAreaName,jdbcType=VARCHAR},
+      shipping_code = #{shippingCode,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=INTEGER},
+      is_default = #{isDefault,jdbcType=BIT}
+    where shipping_area_id = #{shippingAreaId,jdbcType=SMALLINT}
+  </update>
+</mapper>

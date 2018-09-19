@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.CouponMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.Coupon">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="BIT" property="type" />
+    <result column="money" jdbcType="DECIMAL" property="money" />
+    <result column="condition" jdbcType="DECIMAL" property="condition" />
+    <result column="createnum" jdbcType="INTEGER" property="createnum" />
+    <result column="send_num" jdbcType="INTEGER" property="sendNum" />
+    <result column="use_num" jdbcType="INTEGER" property="useNum" />
+    <result column="send_start_time" jdbcType="INTEGER" property="sendStartTime" />
+    <result column="send_end_time" jdbcType="INTEGER" property="sendEndTime" />
+    <result column="use_start_time" jdbcType="INTEGER" property="useStartTime" />
+    <result column="use_end_time" jdbcType="INTEGER" property="useEndTime" />
+    <result column="add_time" jdbcType="INTEGER" property="addTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="use_type" jdbcType="BIT" property="useType" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, type, money, condition, createnum, send_num, use_num, send_start_time, 
+    send_end_time, use_start_time, use_end_time, add_time, status, use_type
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.CouponExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from coupon
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from coupon
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from coupon
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.CouponExample">
+    delete from coupon
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.Coupon">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into coupon (name, type, money, 
+      condition, createnum, send_num, 
+      use_num, send_start_time, send_end_time, 
+      use_start_time, use_end_time, add_time, 
+      status, use_type)
+    values (#{name,jdbcType=VARCHAR}, #{type,jdbcType=BIT}, #{money,jdbcType=DECIMAL}, 
+      #{condition,jdbcType=DECIMAL}, #{createnum,jdbcType=INTEGER}, #{sendNum,jdbcType=INTEGER}, 
+      #{useNum,jdbcType=INTEGER}, #{sendStartTime,jdbcType=INTEGER}, #{sendEndTime,jdbcType=INTEGER}, 
+      #{useStartTime,jdbcType=INTEGER}, #{useEndTime,jdbcType=INTEGER}, #{addTime,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{useType,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.Coupon">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into coupon
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="condition != null">
+        condition,
+      </if>
+      <if test="createnum != null">
+        createnum,
+      </if>
+      <if test="sendNum != null">
+        send_num,
+      </if>
+      <if test="useNum != null">
+        use_num,
+      </if>
+      <if test="sendStartTime != null">
+        send_start_time,
+      </if>
+      <if test="sendEndTime != null">
+        send_end_time,
+      </if>
+      <if test="useStartTime != null">
+        use_start_time,
+      </if>
+      <if test="useEndTime != null">
+        use_end_time,
+      </if>
+      <if test="addTime != null">
+        add_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="useType != null">
+        use_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=BIT},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="condition != null">
+        #{condition,jdbcType=DECIMAL},
+      </if>
+      <if test="createnum != null">
+        #{createnum,jdbcType=INTEGER},
+      </if>
+      <if test="sendNum != null">
+        #{sendNum,jdbcType=INTEGER},
+      </if>
+      <if test="useNum != null">
+        #{useNum,jdbcType=INTEGER},
+      </if>
+      <if test="sendStartTime != null">
+        #{sendStartTime,jdbcType=INTEGER},
+      </if>
+      <if test="sendEndTime != null">
+        #{sendEndTime,jdbcType=INTEGER},
+      </if>
+      <if test="useStartTime != null">
+        #{useStartTime,jdbcType=INTEGER},
+      </if>
+      <if test="useEndTime != null">
+        #{useEndTime,jdbcType=INTEGER},
+      </if>
+      <if test="addTime != null">
+        #{addTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="useType != null">
+        #{useType,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.CouponExample" resultType="java.lang.Integer">
+    select count(*) from coupon
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update coupon
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=BIT},
+      </if>
+      <if test="record.money != null">
+        money = #{record.money,jdbcType=DECIMAL},
+      </if>
+      <if test="record.condition != null">
+        condition = #{record.condition,jdbcType=DECIMAL},
+      </if>
+      <if test="record.createnum != null">
+        createnum = #{record.createnum,jdbcType=INTEGER},
+      </if>
+      <if test="record.sendNum != null">
+        send_num = #{record.sendNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.useNum != null">
+        use_num = #{record.useNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.sendStartTime != null">
+        send_start_time = #{record.sendStartTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.sendEndTime != null">
+        send_end_time = #{record.sendEndTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.useStartTime != null">
+        use_start_time = #{record.useStartTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.useEndTime != null">
+        use_end_time = #{record.useEndTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.addTime != null">
+        add_time = #{record.addTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.useType != null">
+        use_type = #{record.useType,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update coupon
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=BIT},
+      money = #{record.money,jdbcType=DECIMAL},
+      condition = #{record.condition,jdbcType=DECIMAL},
+      createnum = #{record.createnum,jdbcType=INTEGER},
+      send_num = #{record.sendNum,jdbcType=INTEGER},
+      use_num = #{record.useNum,jdbcType=INTEGER},
+      send_start_time = #{record.sendStartTime,jdbcType=INTEGER},
+      send_end_time = #{record.sendEndTime,jdbcType=INTEGER},
+      use_start_time = #{record.useStartTime,jdbcType=INTEGER},
+      use_end_time = #{record.useEndTime,jdbcType=INTEGER},
+      add_time = #{record.addTime,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=INTEGER},
+      use_type = #{record.useType,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.Coupon">
+    update coupon
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=BIT},
+      </if>
+      <if test="money != null">
+        money = #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="condition != null">
+        condition = #{condition,jdbcType=DECIMAL},
+      </if>
+      <if test="createnum != null">
+        createnum = #{createnum,jdbcType=INTEGER},
+      </if>
+      <if test="sendNum != null">
+        send_num = #{sendNum,jdbcType=INTEGER},
+      </if>
+      <if test="useNum != null">
+        use_num = #{useNum,jdbcType=INTEGER},
+      </if>
+      <if test="sendStartTime != null">
+        send_start_time = #{sendStartTime,jdbcType=INTEGER},
+      </if>
+      <if test="sendEndTime != null">
+        send_end_time = #{sendEndTime,jdbcType=INTEGER},
+      </if>
+      <if test="useStartTime != null">
+        use_start_time = #{useStartTime,jdbcType=INTEGER},
+      </if>
+      <if test="useEndTime != null">
+        use_end_time = #{useEndTime,jdbcType=INTEGER},
+      </if>
+      <if test="addTime != null">
+        add_time = #{addTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="useType != null">
+        use_type = #{useType,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.Coupon">
+    update coupon
+    set name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=BIT},
+      money = #{money,jdbcType=DECIMAL},
+      condition = #{condition,jdbcType=DECIMAL},
+      createnum = #{createnum,jdbcType=INTEGER},
+      send_num = #{sendNum,jdbcType=INTEGER},
+      use_num = #{useNum,jdbcType=INTEGER},
+      send_start_time = #{sendStartTime,jdbcType=INTEGER},
+      send_end_time = #{sendEndTime,jdbcType=INTEGER},
+      use_start_time = #{useStartTime,jdbcType=INTEGER},
+      use_end_time = #{useEndTime,jdbcType=INTEGER},
+      add_time = #{addTime,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      use_type = #{useType,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

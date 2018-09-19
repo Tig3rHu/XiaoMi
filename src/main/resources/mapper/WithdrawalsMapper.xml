@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.WithdrawalsMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.Withdrawals">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="money" jdbcType="DECIMAL" property="money" />
+    <result column="create_time" jdbcType="INTEGER" property="createTime" />
+    <result column="check_time" jdbcType="INTEGER" property="checkTime" />
+    <result column="pay_time" jdbcType="INTEGER" property="payTime" />
+    <result column="refuse_time" jdbcType="INTEGER" property="refuseTime" />
+    <result column="bank_name" jdbcType="VARCHAR" property="bankName" />
+    <result column="bank_card" jdbcType="VARCHAR" property="bankCard" />
+    <result column="realname" jdbcType="VARCHAR" property="realname" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="taxfee" jdbcType="DECIMAL" property="taxfee" />
+    <result column="status" jdbcType="BIT" property="status" />
+    <result column="pay_code" jdbcType="VARCHAR" property="payCode" />
+    <result column="error_code" jdbcType="VARCHAR" property="errorCode" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, user_id, money, create_time, check_time, pay_time, refuse_time, bank_name, bank_card, 
+    realname, remark, taxfee, status, pay_code, error_code
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.WithdrawalsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from withdrawals
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from withdrawals
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from withdrawals
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.WithdrawalsExample">
+    delete from withdrawals
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.Withdrawals">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into withdrawals (user_id, money, create_time, 
+      check_time, pay_time, refuse_time, 
+      bank_name, bank_card, realname, 
+      remark, taxfee, status, 
+      pay_code, error_code)
+    values (#{userId,jdbcType=INTEGER}, #{money,jdbcType=DECIMAL}, #{createTime,jdbcType=INTEGER}, 
+      #{checkTime,jdbcType=INTEGER}, #{payTime,jdbcType=INTEGER}, #{refuseTime,jdbcType=INTEGER}, 
+      #{bankName,jdbcType=VARCHAR}, #{bankCard,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{taxfee,jdbcType=DECIMAL}, #{status,jdbcType=BIT}, 
+      #{payCode,jdbcType=VARCHAR}, #{errorCode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.Withdrawals">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into withdrawals
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="checkTime != null">
+        check_time,
+      </if>
+      <if test="payTime != null">
+        pay_time,
+      </if>
+      <if test="refuseTime != null">
+        refuse_time,
+      </if>
+      <if test="bankName != null">
+        bank_name,
+      </if>
+      <if test="bankCard != null">
+        bank_card,
+      </if>
+      <if test="realname != null">
+        realname,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="taxfee != null">
+        taxfee,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="payCode != null">
+        pay_code,
+      </if>
+      <if test="errorCode != null">
+        error_code,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="checkTime != null">
+        #{checkTime,jdbcType=INTEGER},
+      </if>
+      <if test="payTime != null">
+        #{payTime,jdbcType=INTEGER},
+      </if>
+      <if test="refuseTime != null">
+        #{refuseTime,jdbcType=INTEGER},
+      </if>
+      <if test="bankName != null">
+        #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCard != null">
+        #{bankCard,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null">
+        #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="taxfee != null">
+        #{taxfee,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=BIT},
+      </if>
+      <if test="payCode != null">
+        #{payCode,jdbcType=VARCHAR},
+      </if>
+      <if test="errorCode != null">
+        #{errorCode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.WithdrawalsExample" resultType="java.lang.Integer">
+    select count(*) from withdrawals
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update withdrawals
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.money != null">
+        money = #{record.money,jdbcType=DECIMAL},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.checkTime != null">
+        check_time = #{record.checkTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.payTime != null">
+        pay_time = #{record.payTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.refuseTime != null">
+        refuse_time = #{record.refuseTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.bankName != null">
+        bank_name = #{record.bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankCard != null">
+        bank_card = #{record.bankCard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.realname != null">
+        realname = #{record.realname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null">
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taxfee != null">
+        taxfee = #{record.taxfee,jdbcType=DECIMAL},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=BIT},
+      </if>
+      <if test="record.payCode != null">
+        pay_code = #{record.payCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.errorCode != null">
+        error_code = #{record.errorCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update withdrawals
+    set id = #{record.id,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      money = #{record.money,jdbcType=DECIMAL},
+      create_time = #{record.createTime,jdbcType=INTEGER},
+      check_time = #{record.checkTime,jdbcType=INTEGER},
+      pay_time = #{record.payTime,jdbcType=INTEGER},
+      refuse_time = #{record.refuseTime,jdbcType=INTEGER},
+      bank_name = #{record.bankName,jdbcType=VARCHAR},
+      bank_card = #{record.bankCard,jdbcType=VARCHAR},
+      realname = #{record.realname,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      taxfee = #{record.taxfee,jdbcType=DECIMAL},
+      status = #{record.status,jdbcType=BIT},
+      pay_code = #{record.payCode,jdbcType=VARCHAR},
+      error_code = #{record.errorCode,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.Withdrawals">
+    update withdrawals
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="money != null">
+        money = #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="checkTime != null">
+        check_time = #{checkTime,jdbcType=INTEGER},
+      </if>
+      <if test="payTime != null">
+        pay_time = #{payTime,jdbcType=INTEGER},
+      </if>
+      <if test="refuseTime != null">
+        refuse_time = #{refuseTime,jdbcType=INTEGER},
+      </if>
+      <if test="bankName != null">
+        bank_name = #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCard != null">
+        bank_card = #{bankCard,jdbcType=VARCHAR},
+      </if>
+      <if test="realname != null">
+        realname = #{realname,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="taxfee != null">
+        taxfee = #{taxfee,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=BIT},
+      </if>
+      <if test="payCode != null">
+        pay_code = #{payCode,jdbcType=VARCHAR},
+      </if>
+      <if test="errorCode != null">
+        error_code = #{errorCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.Withdrawals">
+    update withdrawals
+    set user_id = #{userId,jdbcType=INTEGER},
+      money = #{money,jdbcType=DECIMAL},
+      create_time = #{createTime,jdbcType=INTEGER},
+      check_time = #{checkTime,jdbcType=INTEGER},
+      pay_time = #{payTime,jdbcType=INTEGER},
+      refuse_time = #{refuseTime,jdbcType=INTEGER},
+      bank_name = #{bankName,jdbcType=VARCHAR},
+      bank_card = #{bankCard,jdbcType=VARCHAR},
+      realname = #{realname,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      taxfee = #{taxfee,jdbcType=DECIMAL},
+      status = #{status,jdbcType=BIT},
+      pay_code = #{payCode,jdbcType=VARCHAR},
+      error_code = #{errorCode,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

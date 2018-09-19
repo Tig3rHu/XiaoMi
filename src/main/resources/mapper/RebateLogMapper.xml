@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.RebateLogMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.RebateLog">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="buy_user_id" jdbcType="INTEGER" property="buyUserId" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="order_sn" jdbcType="VARCHAR" property="orderSn" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="goods_price" jdbcType="DECIMAL" property="goodsPrice" />
+    <result column="money" jdbcType="DECIMAL" property="money" />
+    <result column="level" jdbcType="BIT" property="level" />
+    <result column="create_time" jdbcType="INTEGER" property="createTime" />
+    <result column="confirm" jdbcType="INTEGER" property="confirm" />
+    <result column="status" jdbcType="BIT" property="status" />
+    <result column="confirm_time" jdbcType="INTEGER" property="confirmTime" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, user_id, buy_user_id, nickname, order_sn, order_id, goods_price, money, level, 
+    create_time, confirm, status, confirm_time, remark
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.RebateLogExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from rebate_log
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from rebate_log
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from rebate_log
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.RebateLogExample">
+    delete from rebate_log
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.RebateLog">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into rebate_log (user_id, buy_user_id, nickname, 
+      order_sn, order_id, goods_price, 
+      money, level, create_time, 
+      confirm, status, confirm_time, 
+      remark)
+    values (#{userId,jdbcType=INTEGER}, #{buyUserId,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, 
+      #{orderSn,jdbcType=VARCHAR}, #{orderId,jdbcType=INTEGER}, #{goodsPrice,jdbcType=DECIMAL}, 
+      #{money,jdbcType=DECIMAL}, #{level,jdbcType=BIT}, #{createTime,jdbcType=INTEGER}, 
+      #{confirm,jdbcType=INTEGER}, #{status,jdbcType=BIT}, #{confirmTime,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.RebateLog">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into rebate_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="buyUserId != null">
+        buy_user_id,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="orderSn != null">
+        order_sn,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="goodsPrice != null">
+        goods_price,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="confirm != null">
+        confirm,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="confirmTime != null">
+        confirm_time,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="buyUserId != null">
+        #{buyUserId,jdbcType=INTEGER},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="orderSn != null">
+        #{orderSn,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsPrice != null">
+        #{goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="confirm != null">
+        #{confirm,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=BIT},
+      </if>
+      <if test="confirmTime != null">
+        #{confirmTime,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.RebateLogExample" resultType="java.lang.Integer">
+    select count(*) from rebate_log
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update rebate_log
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.buyUserId != null">
+        buy_user_id = #{record.buyUserId,jdbcType=INTEGER},
+      </if>
+      <if test="record.nickname != null">
+        nickname = #{record.nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderSn != null">
+        order_sn = #{record.orderSn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsPrice != null">
+        goods_price = #{record.goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.money != null">
+        money = #{record.money,jdbcType=DECIMAL},
+      </if>
+      <if test="record.level != null">
+        level = #{record.level,jdbcType=BIT},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.confirm != null">
+        confirm = #{record.confirm,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=BIT},
+      </if>
+      <if test="record.confirmTime != null">
+        confirm_time = #{record.confirmTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.remark != null">
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update rebate_log
+    set id = #{record.id,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      buy_user_id = #{record.buyUserId,jdbcType=INTEGER},
+      nickname = #{record.nickname,jdbcType=VARCHAR},
+      order_sn = #{record.orderSn,jdbcType=VARCHAR},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      goods_price = #{record.goodsPrice,jdbcType=DECIMAL},
+      money = #{record.money,jdbcType=DECIMAL},
+      level = #{record.level,jdbcType=BIT},
+      create_time = #{record.createTime,jdbcType=INTEGER},
+      confirm = #{record.confirm,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=BIT},
+      confirm_time = #{record.confirmTime,jdbcType=INTEGER},
+      remark = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.RebateLog">
+    update rebate_log
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="buyUserId != null">
+        buy_user_id = #{buyUserId,jdbcType=INTEGER},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="orderSn != null">
+        order_sn = #{orderSn,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsPrice != null">
+        goods_price = #{goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="money != null">
+        money = #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="level != null">
+        level = #{level,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="confirm != null">
+        confirm = #{confirm,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=BIT},
+      </if>
+      <if test="confirmTime != null">
+        confirm_time = #{confirmTime,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.RebateLog">
+    update rebate_log
+    set user_id = #{userId,jdbcType=INTEGER},
+      buy_user_id = #{buyUserId,jdbcType=INTEGER},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      order_sn = #{orderSn,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=INTEGER},
+      goods_price = #{goodsPrice,jdbcType=DECIMAL},
+      money = #{money,jdbcType=DECIMAL},
+      level = #{level,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=INTEGER},
+      confirm = #{confirm,jdbcType=INTEGER},
+      status = #{status,jdbcType=BIT},
+      confirm_time = #{confirmTime,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

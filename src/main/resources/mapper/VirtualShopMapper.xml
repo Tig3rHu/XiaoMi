@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.VirtualShopMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.VirtualShop">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="shop_name" jdbcType="VARCHAR" property="shopName" />
+    <result column="shop_level" jdbcType="BIT" property="shopLevel" />
+    <result column="shop_logo" jdbcType="VARCHAR" property="shopLogo" />
+    <result column="shop_phone" jdbcType="VARCHAR" property="shopPhone" />
+    <result column="shop_qq" jdbcType="VARCHAR" property="shopQq" />
+    <result column="shop_theme" jdbcType="BIT" property="shopTheme" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.VirtualShop">
+    <result column="shop_intro" jdbcType="LONGVARCHAR" property="shopIntro" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, user_id, shop_name, shop_level, shop_logo, shop_phone, shop_qq, shop_theme
+  </sql>
+  <sql id="Blob_Column_List">
+    shop_intro
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.wuyou.entity.VirtualShopExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from virtual_shop
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.wuyou.entity.VirtualShopExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from virtual_shop
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from virtual_shop
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from virtual_shop
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.VirtualShopExample">
+    delete from virtual_shop
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.VirtualShop">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into virtual_shop (user_id, shop_name, shop_level, 
+      shop_logo, shop_phone, shop_qq, 
+      shop_theme, shop_intro)
+    values (#{userId,jdbcType=INTEGER}, #{shopName,jdbcType=VARCHAR}, #{shopLevel,jdbcType=BIT}, 
+      #{shopLogo,jdbcType=VARCHAR}, #{shopPhone,jdbcType=VARCHAR}, #{shopQq,jdbcType=VARCHAR}, 
+      #{shopTheme,jdbcType=BIT}, #{shopIntro,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.VirtualShop">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into virtual_shop
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="shopName != null">
+        shop_name,
+      </if>
+      <if test="shopLevel != null">
+        shop_level,
+      </if>
+      <if test="shopLogo != null">
+        shop_logo,
+      </if>
+      <if test="shopPhone != null">
+        shop_phone,
+      </if>
+      <if test="shopQq != null">
+        shop_qq,
+      </if>
+      <if test="shopTheme != null">
+        shop_theme,
+      </if>
+      <if test="shopIntro != null">
+        shop_intro,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="shopName != null">
+        #{shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="shopLevel != null">
+        #{shopLevel,jdbcType=BIT},
+      </if>
+      <if test="shopLogo != null">
+        #{shopLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="shopPhone != null">
+        #{shopPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="shopQq != null">
+        #{shopQq,jdbcType=VARCHAR},
+      </if>
+      <if test="shopTheme != null">
+        #{shopTheme,jdbcType=BIT},
+      </if>
+      <if test="shopIntro != null">
+        #{shopIntro,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.VirtualShopExample" resultType="java.lang.Integer">
+    select count(*) from virtual_shop
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update virtual_shop
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.shopName != null">
+        shop_name = #{record.shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shopLevel != null">
+        shop_level = #{record.shopLevel,jdbcType=BIT},
+      </if>
+      <if test="record.shopLogo != null">
+        shop_logo = #{record.shopLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shopPhone != null">
+        shop_phone = #{record.shopPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shopQq != null">
+        shop_qq = #{record.shopQq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shopTheme != null">
+        shop_theme = #{record.shopTheme,jdbcType=BIT},
+      </if>
+      <if test="record.shopIntro != null">
+        shop_intro = #{record.shopIntro,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update virtual_shop
+    set id = #{record.id,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      shop_name = #{record.shopName,jdbcType=VARCHAR},
+      shop_level = #{record.shopLevel,jdbcType=BIT},
+      shop_logo = #{record.shopLogo,jdbcType=VARCHAR},
+      shop_phone = #{record.shopPhone,jdbcType=VARCHAR},
+      shop_qq = #{record.shopQq,jdbcType=VARCHAR},
+      shop_theme = #{record.shopTheme,jdbcType=BIT},
+      shop_intro = #{record.shopIntro,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update virtual_shop
+    set id = #{record.id,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      shop_name = #{record.shopName,jdbcType=VARCHAR},
+      shop_level = #{record.shopLevel,jdbcType=BIT},
+      shop_logo = #{record.shopLogo,jdbcType=VARCHAR},
+      shop_phone = #{record.shopPhone,jdbcType=VARCHAR},
+      shop_qq = #{record.shopQq,jdbcType=VARCHAR},
+      shop_theme = #{record.shopTheme,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.VirtualShop">
+    update virtual_shop
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="shopName != null">
+        shop_name = #{shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="shopLevel != null">
+        shop_level = #{shopLevel,jdbcType=BIT},
+      </if>
+      <if test="shopLogo != null">
+        shop_logo = #{shopLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="shopPhone != null">
+        shop_phone = #{shopPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="shopQq != null">
+        shop_qq = #{shopQq,jdbcType=VARCHAR},
+      </if>
+      <if test="shopTheme != null">
+        shop_theme = #{shopTheme,jdbcType=BIT},
+      </if>
+      <if test="shopIntro != null">
+        shop_intro = #{shopIntro,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuyou.entity.VirtualShop">
+    update virtual_shop
+    set user_id = #{userId,jdbcType=INTEGER},
+      shop_name = #{shopName,jdbcType=VARCHAR},
+      shop_level = #{shopLevel,jdbcType=BIT},
+      shop_logo = #{shopLogo,jdbcType=VARCHAR},
+      shop_phone = #{shopPhone,jdbcType=VARCHAR},
+      shop_qq = #{shopQq,jdbcType=VARCHAR},
+      shop_theme = #{shopTheme,jdbcType=BIT},
+      shop_intro = #{shopIntro,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.VirtualShop">
+    update virtual_shop
+    set user_id = #{userId,jdbcType=INTEGER},
+      shop_name = #{shopName,jdbcType=VARCHAR},
+      shop_level = #{shopLevel,jdbcType=BIT},
+      shop_logo = #{shopLogo,jdbcType=VARCHAR},
+      shop_phone = #{shopPhone,jdbcType=VARCHAR},
+      shop_qq = #{shopQq,jdbcType=VARCHAR},
+      shop_theme = #{shopTheme,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

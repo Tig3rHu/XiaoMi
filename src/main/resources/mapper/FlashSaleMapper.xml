@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.FlashSaleMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.FlashSale">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="item_id" jdbcType="BIGINT" property="itemId" />
+    <result column="price" jdbcType="REAL" property="price" />
+    <result column="goods_num" jdbcType="INTEGER" property="goodsNum" />
+    <result column="buy_limit" jdbcType="INTEGER" property="buyLimit" />
+    <result column="buy_num" jdbcType="INTEGER" property="buyNum" />
+    <result column="order_num" jdbcType="INTEGER" property="orderNum" />
+    <result column="start_time" jdbcType="INTEGER" property="startTime" />
+    <result column="end_time" jdbcType="INTEGER" property="endTime" />
+    <result column="is_end" jdbcType="BIT" property="isEnd" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.FlashSale">
+    <result column="description" jdbcType="LONGVARCHAR" property="description" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, title, goods_id, item_id, price, goods_num, buy_limit, buy_num, order_num, start_time, 
+    end_time, is_end, goods_name
+  </sql>
+  <sql id="Blob_Column_List">
+    description
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.wuyou.entity.FlashSaleExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from flash_sale
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.wuyou.entity.FlashSaleExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from flash_sale
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from flash_sale
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from flash_sale
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.FlashSaleExample">
+    delete from flash_sale
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.FlashSale">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into flash_sale (title, goods_id, item_id, 
+      price, goods_num, buy_limit, 
+      buy_num, order_num, start_time, 
+      end_time, is_end, goods_name, 
+      description)
+    values (#{title,jdbcType=VARCHAR}, #{goodsId,jdbcType=INTEGER}, #{itemId,jdbcType=BIGINT}, 
+      #{price,jdbcType=REAL}, #{goodsNum,jdbcType=INTEGER}, #{buyLimit,jdbcType=INTEGER}, 
+      #{buyNum,jdbcType=INTEGER}, #{orderNum,jdbcType=INTEGER}, #{startTime,jdbcType=INTEGER}, 
+      #{endTime,jdbcType=INTEGER}, #{isEnd,jdbcType=BIT}, #{goodsName,jdbcType=VARCHAR}, 
+      #{description,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.FlashSale">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into flash_sale
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="title != null">
+        title,
+      </if>
+      <if test="goodsId != null">
+        goods_id,
+      </if>
+      <if test="itemId != null">
+        item_id,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="goodsNum != null">
+        goods_num,
+      </if>
+      <if test="buyLimit != null">
+        buy_limit,
+      </if>
+      <if test="buyNum != null">
+        buy_num,
+      </if>
+      <if test="orderNum != null">
+        order_num,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+      <if test="isEnd != null">
+        is_end,
+      </if>
+      <if test="goodsName != null">
+        goods_name,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null">
+        #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="itemId != null">
+        #{itemId,jdbcType=BIGINT},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=REAL},
+      </if>
+      <if test="goodsNum != null">
+        #{goodsNum,jdbcType=INTEGER},
+      </if>
+      <if test="buyLimit != null">
+        #{buyLimit,jdbcType=INTEGER},
+      </if>
+      <if test="buyNum != null">
+        #{buyNum,jdbcType=INTEGER},
+      </if>
+      <if test="orderNum != null">
+        #{orderNum,jdbcType=INTEGER},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=INTEGER},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=INTEGER},
+      </if>
+      <if test="isEnd != null">
+        #{isEnd,jdbcType=BIT},
+      </if>
+      <if test="goodsName != null">
+        #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.FlashSaleExample" resultType="java.lang.Integer">
+    select count(*) from flash_sale
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update flash_sale
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.title != null">
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsId != null">
+        goods_id = #{record.goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.itemId != null">
+        item_id = #{record.itemId,jdbcType=BIGINT},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=REAL},
+      </if>
+      <if test="record.goodsNum != null">
+        goods_num = #{record.goodsNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.buyLimit != null">
+        buy_limit = #{record.buyLimit,jdbcType=INTEGER},
+      </if>
+      <if test="record.buyNum != null">
+        buy_num = #{record.buyNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderNum != null">
+        order_num = #{record.orderNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.startTime != null">
+        start_time = #{record.startTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.endTime != null">
+        end_time = #{record.endTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.isEnd != null">
+        is_end = #{record.isEnd,jdbcType=BIT},
+      </if>
+      <if test="record.goodsName != null">
+        goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update flash_sale
+    set id = #{record.id,jdbcType=BIGINT},
+      title = #{record.title,jdbcType=VARCHAR},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
+      item_id = #{record.itemId,jdbcType=BIGINT},
+      price = #{record.price,jdbcType=REAL},
+      goods_num = #{record.goodsNum,jdbcType=INTEGER},
+      buy_limit = #{record.buyLimit,jdbcType=INTEGER},
+      buy_num = #{record.buyNum,jdbcType=INTEGER},
+      order_num = #{record.orderNum,jdbcType=INTEGER},
+      start_time = #{record.startTime,jdbcType=INTEGER},
+      end_time = #{record.endTime,jdbcType=INTEGER},
+      is_end = #{record.isEnd,jdbcType=BIT},
+      goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update flash_sale
+    set id = #{record.id,jdbcType=BIGINT},
+      title = #{record.title,jdbcType=VARCHAR},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
+      item_id = #{record.itemId,jdbcType=BIGINT},
+      price = #{record.price,jdbcType=REAL},
+      goods_num = #{record.goodsNum,jdbcType=INTEGER},
+      buy_limit = #{record.buyLimit,jdbcType=INTEGER},
+      buy_num = #{record.buyNum,jdbcType=INTEGER},
+      order_num = #{record.orderNum,jdbcType=INTEGER},
+      start_time = #{record.startTime,jdbcType=INTEGER},
+      end_time = #{record.endTime,jdbcType=INTEGER},
+      is_end = #{record.isEnd,jdbcType=BIT},
+      goods_name = #{record.goodsName,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.FlashSale">
+    update flash_sale
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null">
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="itemId != null">
+        item_id = #{itemId,jdbcType=BIGINT},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=REAL},
+      </if>
+      <if test="goodsNum != null">
+        goods_num = #{goodsNum,jdbcType=INTEGER},
+      </if>
+      <if test="buyLimit != null">
+        buy_limit = #{buyLimit,jdbcType=INTEGER},
+      </if>
+      <if test="buyNum != null">
+        buy_num = #{buyNum,jdbcType=INTEGER},
+      </if>
+      <if test="orderNum != null">
+        order_num = #{orderNum,jdbcType=INTEGER},
+      </if>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=INTEGER},
+      </if>
+      <if test="endTime != null">
+        end_time = #{endTime,jdbcType=INTEGER},
+      </if>
+      <if test="isEnd != null">
+        is_end = #{isEnd,jdbcType=BIT},
+      </if>
+      <if test="goodsName != null">
+        goods_name = #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuyou.entity.FlashSale">
+    update flash_sale
+    set title = #{title,jdbcType=VARCHAR},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      item_id = #{itemId,jdbcType=BIGINT},
+      price = #{price,jdbcType=REAL},
+      goods_num = #{goodsNum,jdbcType=INTEGER},
+      buy_limit = #{buyLimit,jdbcType=INTEGER},
+      buy_num = #{buyNum,jdbcType=INTEGER},
+      order_num = #{orderNum,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=INTEGER},
+      end_time = #{endTime,jdbcType=INTEGER},
+      is_end = #{isEnd,jdbcType=BIT},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      description = #{description,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.FlashSale">
+    update flash_sale
+    set title = #{title,jdbcType=VARCHAR},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      item_id = #{itemId,jdbcType=BIGINT},
+      price = #{price,jdbcType=REAL},
+      goods_num = #{goodsNum,jdbcType=INTEGER},
+      buy_limit = #{buyLimit,jdbcType=INTEGER},
+      buy_num = #{buyNum,jdbcType=INTEGER},
+      order_num = #{orderNum,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=INTEGER},
+      end_time = #{endTime,jdbcType=INTEGER},
+      is_end = #{isEnd,jdbcType=BIT},
+      goods_name = #{goodsName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

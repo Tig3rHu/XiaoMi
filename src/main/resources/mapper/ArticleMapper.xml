@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.ArticleMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.Article">
+    <id column="article_id" jdbcType="INTEGER" property="articleId" />
+    <result column="cat_id" jdbcType="SMALLINT" property="catId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="author_email" jdbcType="VARCHAR" property="authorEmail" />
+    <result column="keywords" jdbcType="VARCHAR" property="keywords" />
+    <result column="article_type" jdbcType="BIT" property="articleType" />
+    <result column="is_open" jdbcType="BIT" property="isOpen" />
+    <result column="add_time" jdbcType="INTEGER" property="addTime" />
+    <result column="file_url" jdbcType="VARCHAR" property="fileUrl" />
+    <result column="open_type" jdbcType="BIT" property="openType" />
+    <result column="link" jdbcType="VARCHAR" property="link" />
+    <result column="click" jdbcType="INTEGER" property="click" />
+    <result column="publish_time" jdbcType="INTEGER" property="publishTime" />
+    <result column="thumb" jdbcType="VARCHAR" property="thumb" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.ArticleWithBLOBs">
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="description" jdbcType="LONGVARCHAR" property="description" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    article_id, cat_id, title, author, author_email, keywords, article_type, is_open, 
+    add_time, file_url, open_type, link, click, publish_time, thumb
+  </sql>
+  <sql id="Blob_Column_List">
+    content, description
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.wuyou.entity.ArticleExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from article
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.wuyou.entity.ArticleExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from article
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from article
+    where article_id = #{articleId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from article
+    where article_id = #{articleId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.ArticleExample">
+    delete from article
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.ArticleWithBLOBs">
+    insert into article (article_id, cat_id, title, 
+      author, author_email, keywords, 
+      article_type, is_open, add_time, 
+      file_url, open_type, link, 
+      click, publish_time, thumb, 
+      content, description)
+    values (#{articleId,jdbcType=INTEGER}, #{catId,jdbcType=SMALLINT}, #{title,jdbcType=VARCHAR}, 
+      #{author,jdbcType=VARCHAR}, #{authorEmail,jdbcType=VARCHAR}, #{keywords,jdbcType=VARCHAR}, 
+      #{articleType,jdbcType=BIT}, #{isOpen,jdbcType=BIT}, #{addTime,jdbcType=INTEGER}, 
+      #{fileUrl,jdbcType=VARCHAR}, #{openType,jdbcType=BIT}, #{link,jdbcType=VARCHAR}, 
+      #{click,jdbcType=INTEGER}, #{publishTime,jdbcType=INTEGER}, #{thumb,jdbcType=VARCHAR}, 
+      #{content,jdbcType=LONGVARCHAR}, #{description,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.ArticleWithBLOBs">
+    insert into article
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="articleId != null">
+        article_id,
+      </if>
+      <if test="catId != null">
+        cat_id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="author != null">
+        author,
+      </if>
+      <if test="authorEmail != null">
+        author_email,
+      </if>
+      <if test="keywords != null">
+        keywords,
+      </if>
+      <if test="articleType != null">
+        article_type,
+      </if>
+      <if test="isOpen != null">
+        is_open,
+      </if>
+      <if test="addTime != null">
+        add_time,
+      </if>
+      <if test="fileUrl != null">
+        file_url,
+      </if>
+      <if test="openType != null">
+        open_type,
+      </if>
+      <if test="link != null">
+        link,
+      </if>
+      <if test="click != null">
+        click,
+      </if>
+      <if test="publishTime != null">
+        publish_time,
+      </if>
+      <if test="thumb != null">
+        thumb,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="articleId != null">
+        #{articleId,jdbcType=INTEGER},
+      </if>
+      <if test="catId != null">
+        #{catId,jdbcType=SMALLINT},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorEmail != null">
+        #{authorEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="keywords != null">
+        #{keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="articleType != null">
+        #{articleType,jdbcType=BIT},
+      </if>
+      <if test="isOpen != null">
+        #{isOpen,jdbcType=BIT},
+      </if>
+      <if test="addTime != null">
+        #{addTime,jdbcType=INTEGER},
+      </if>
+      <if test="fileUrl != null">
+        #{fileUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="openType != null">
+        #{openType,jdbcType=BIT},
+      </if>
+      <if test="link != null">
+        #{link,jdbcType=VARCHAR},
+      </if>
+      <if test="click != null">
+        #{click,jdbcType=INTEGER},
+      </if>
+      <if test="publishTime != null">
+        #{publishTime,jdbcType=INTEGER},
+      </if>
+      <if test="thumb != null">
+        #{thumb,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.ArticleExample" resultType="java.lang.Integer">
+    select count(*) from article
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update article
+    <set>
+      <if test="record.articleId != null">
+        article_id = #{record.articleId,jdbcType=INTEGER},
+      </if>
+      <if test="record.catId != null">
+        cat_id = #{record.catId,jdbcType=SMALLINT},
+      </if>
+      <if test="record.title != null">
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.author != null">
+        author = #{record.author,jdbcType=VARCHAR},
+      </if>
+      <if test="record.authorEmail != null">
+        author_email = #{record.authorEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.keywords != null">
+        keywords = #{record.keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="record.articleType != null">
+        article_type = #{record.articleType,jdbcType=BIT},
+      </if>
+      <if test="record.isOpen != null">
+        is_open = #{record.isOpen,jdbcType=BIT},
+      </if>
+      <if test="record.addTime != null">
+        add_time = #{record.addTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.fileUrl != null">
+        file_url = #{record.fileUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openType != null">
+        open_type = #{record.openType,jdbcType=BIT},
+      </if>
+      <if test="record.link != null">
+        link = #{record.link,jdbcType=VARCHAR},
+      </if>
+      <if test="record.click != null">
+        click = #{record.click,jdbcType=INTEGER},
+      </if>
+      <if test="record.publishTime != null">
+        publish_time = #{record.publishTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.thumb != null">
+        thumb = #{record.thumb,jdbcType=VARCHAR},
+      </if>
+      <if test="record.content != null">
+        content = #{record.content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update article
+    set article_id = #{record.articleId,jdbcType=INTEGER},
+      cat_id = #{record.catId,jdbcType=SMALLINT},
+      title = #{record.title,jdbcType=VARCHAR},
+      author = #{record.author,jdbcType=VARCHAR},
+      author_email = #{record.authorEmail,jdbcType=VARCHAR},
+      keywords = #{record.keywords,jdbcType=VARCHAR},
+      article_type = #{record.articleType,jdbcType=BIT},
+      is_open = #{record.isOpen,jdbcType=BIT},
+      add_time = #{record.addTime,jdbcType=INTEGER},
+      file_url = #{record.fileUrl,jdbcType=VARCHAR},
+      open_type = #{record.openType,jdbcType=BIT},
+      link = #{record.link,jdbcType=VARCHAR},
+      click = #{record.click,jdbcType=INTEGER},
+      publish_time = #{record.publishTime,jdbcType=INTEGER},
+      thumb = #{record.thumb,jdbcType=VARCHAR},
+      content = #{record.content,jdbcType=LONGVARCHAR},
+      description = #{record.description,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update article
+    set article_id = #{record.articleId,jdbcType=INTEGER},
+      cat_id = #{record.catId,jdbcType=SMALLINT},
+      title = #{record.title,jdbcType=VARCHAR},
+      author = #{record.author,jdbcType=VARCHAR},
+      author_email = #{record.authorEmail,jdbcType=VARCHAR},
+      keywords = #{record.keywords,jdbcType=VARCHAR},
+      article_type = #{record.articleType,jdbcType=BIT},
+      is_open = #{record.isOpen,jdbcType=BIT},
+      add_time = #{record.addTime,jdbcType=INTEGER},
+      file_url = #{record.fileUrl,jdbcType=VARCHAR},
+      open_type = #{record.openType,jdbcType=BIT},
+      link = #{record.link,jdbcType=VARCHAR},
+      click = #{record.click,jdbcType=INTEGER},
+      publish_time = #{record.publishTime,jdbcType=INTEGER},
+      thumb = #{record.thumb,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.ArticleWithBLOBs">
+    update article
+    <set>
+      <if test="catId != null">
+        cat_id = #{catId,jdbcType=SMALLINT},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorEmail != null">
+        author_email = #{authorEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="keywords != null">
+        keywords = #{keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="articleType != null">
+        article_type = #{articleType,jdbcType=BIT},
+      </if>
+      <if test="isOpen != null">
+        is_open = #{isOpen,jdbcType=BIT},
+      </if>
+      <if test="addTime != null">
+        add_time = #{addTime,jdbcType=INTEGER},
+      </if>
+      <if test="fileUrl != null">
+        file_url = #{fileUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="openType != null">
+        open_type = #{openType,jdbcType=BIT},
+      </if>
+      <if test="link != null">
+        link = #{link,jdbcType=VARCHAR},
+      </if>
+      <if test="click != null">
+        click = #{click,jdbcType=INTEGER},
+      </if>
+      <if test="publishTime != null">
+        publish_time = #{publishTime,jdbcType=INTEGER},
+      </if>
+      <if test="thumb != null">
+        thumb = #{thumb,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where article_id = #{articleId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuyou.entity.ArticleWithBLOBs">
+    update article
+    set cat_id = #{catId,jdbcType=SMALLINT},
+      title = #{title,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      author_email = #{authorEmail,jdbcType=VARCHAR},
+      keywords = #{keywords,jdbcType=VARCHAR},
+      article_type = #{articleType,jdbcType=BIT},
+      is_open = #{isOpen,jdbcType=BIT},
+      add_time = #{addTime,jdbcType=INTEGER},
+      file_url = #{fileUrl,jdbcType=VARCHAR},
+      open_type = #{openType,jdbcType=BIT},
+      link = #{link,jdbcType=VARCHAR},
+      click = #{click,jdbcType=INTEGER},
+      publish_time = #{publishTime,jdbcType=INTEGER},
+      thumb = #{thumb,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR},
+      description = #{description,jdbcType=LONGVARCHAR}
+    where article_id = #{articleId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.Article">
+    update article
+    set cat_id = #{catId,jdbcType=SMALLINT},
+      title = #{title,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      author_email = #{authorEmail,jdbcType=VARCHAR},
+      keywords = #{keywords,jdbcType=VARCHAR},
+      article_type = #{articleType,jdbcType=BIT},
+      is_open = #{isOpen,jdbcType=BIT},
+      add_time = #{addTime,jdbcType=INTEGER},
+      file_url = #{fileUrl,jdbcType=VARCHAR},
+      open_type = #{openType,jdbcType=BIT},
+      link = #{link,jdbcType=VARCHAR},
+      click = #{click,jdbcType=INTEGER},
+      publish_time = #{publishTime,jdbcType=INTEGER},
+      thumb = #{thumb,jdbcType=VARCHAR}
+    where article_id = #{articleId,jdbcType=INTEGER}
+  </update>
+</mapper>

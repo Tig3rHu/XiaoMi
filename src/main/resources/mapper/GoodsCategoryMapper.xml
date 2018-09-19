@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.GoodsCategoryMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.GoodsCategory">
+    <id column="id" jdbcType="SMALLINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="mobile_name" jdbcType="VARCHAR" property="mobileName" />
+    <result column="parent_id" jdbcType="SMALLINT" property="parentId" />
+    <result column="parent_id_path" jdbcType="VARCHAR" property="parentIdPath" />
+    <result column="level" jdbcType="BIT" property="level" />
+    <result column="sort_order" jdbcType="BIT" property="sortOrder" />
+    <result column="is_show" jdbcType="BIT" property="isShow" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="is_hot" jdbcType="BIT" property="isHot" />
+    <result column="cat_group" jdbcType="BIT" property="catGroup" />
+    <result column="commission_rate" jdbcType="BIT" property="commissionRate" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, mobile_name, parent_id, parent_id_path, level, sort_order, is_show, image, 
+    is_hot, cat_group, commission_rate
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.GoodsCategoryExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from goods_category
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from goods_category
+    where id = #{id,jdbcType=SMALLINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from goods_category
+    where id = #{id,jdbcType=SMALLINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.GoodsCategoryExample">
+    delete from goods_category
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.GoodsCategory">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Short">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into goods_category (name, mobile_name, parent_id, 
+      parent_id_path, level, sort_order, 
+      is_show, image, is_hot, cat_group, 
+      commission_rate)
+    values (#{name,jdbcType=VARCHAR}, #{mobileName,jdbcType=VARCHAR}, #{parentId,jdbcType=SMALLINT}, 
+      #{parentIdPath,jdbcType=VARCHAR}, #{level,jdbcType=BIT}, #{sortOrder,jdbcType=BIT}, 
+      #{isShow,jdbcType=BIT}, #{image,jdbcType=VARCHAR}, #{isHot,jdbcType=BIT}, #{catGroup,jdbcType=BIT}, 
+      #{commissionRate,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.GoodsCategory">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Short">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into goods_category
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="mobileName != null">
+        mobile_name,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="parentIdPath != null">
+        parent_id_path,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="sortOrder != null">
+        sort_order,
+      </if>
+      <if test="isShow != null">
+        is_show,
+      </if>
+      <if test="image != null">
+        image,
+      </if>
+      <if test="isHot != null">
+        is_hot,
+      </if>
+      <if test="catGroup != null">
+        cat_group,
+      </if>
+      <if test="commissionRate != null">
+        commission_rate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileName != null">
+        #{mobileName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=SMALLINT},
+      </if>
+      <if test="parentIdPath != null">
+        #{parentIdPath,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=BIT},
+      </if>
+      <if test="sortOrder != null">
+        #{sortOrder,jdbcType=BIT},
+      </if>
+      <if test="isShow != null">
+        #{isShow,jdbcType=BIT},
+      </if>
+      <if test="image != null">
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="isHot != null">
+        #{isHot,jdbcType=BIT},
+      </if>
+      <if test="catGroup != null">
+        #{catGroup,jdbcType=BIT},
+      </if>
+      <if test="commissionRate != null">
+        #{commissionRate,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.GoodsCategoryExample" resultType="java.lang.Integer">
+    select count(*) from goods_category
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update goods_category
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=SMALLINT},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mobileName != null">
+        mobile_name = #{record.mobileName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.parentId != null">
+        parent_id = #{record.parentId,jdbcType=SMALLINT},
+      </if>
+      <if test="record.parentIdPath != null">
+        parent_id_path = #{record.parentIdPath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.level != null">
+        level = #{record.level,jdbcType=BIT},
+      </if>
+      <if test="record.sortOrder != null">
+        sort_order = #{record.sortOrder,jdbcType=BIT},
+      </if>
+      <if test="record.isShow != null">
+        is_show = #{record.isShow,jdbcType=BIT},
+      </if>
+      <if test="record.image != null">
+        image = #{record.image,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isHot != null">
+        is_hot = #{record.isHot,jdbcType=BIT},
+      </if>
+      <if test="record.catGroup != null">
+        cat_group = #{record.catGroup,jdbcType=BIT},
+      </if>
+      <if test="record.commissionRate != null">
+        commission_rate = #{record.commissionRate,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update goods_category
+    set id = #{record.id,jdbcType=SMALLINT},
+      name = #{record.name,jdbcType=VARCHAR},
+      mobile_name = #{record.mobileName,jdbcType=VARCHAR},
+      parent_id = #{record.parentId,jdbcType=SMALLINT},
+      parent_id_path = #{record.parentIdPath,jdbcType=VARCHAR},
+      level = #{record.level,jdbcType=BIT},
+      sort_order = #{record.sortOrder,jdbcType=BIT},
+      is_show = #{record.isShow,jdbcType=BIT},
+      image = #{record.image,jdbcType=VARCHAR},
+      is_hot = #{record.isHot,jdbcType=BIT},
+      cat_group = #{record.catGroup,jdbcType=BIT},
+      commission_rate = #{record.commissionRate,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.GoodsCategory">
+    update goods_category
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileName != null">
+        mobile_name = #{mobileName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=SMALLINT},
+      </if>
+      <if test="parentIdPath != null">
+        parent_id_path = #{parentIdPath,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        level = #{level,jdbcType=BIT},
+      </if>
+      <if test="sortOrder != null">
+        sort_order = #{sortOrder,jdbcType=BIT},
+      </if>
+      <if test="isShow != null">
+        is_show = #{isShow,jdbcType=BIT},
+      </if>
+      <if test="image != null">
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="isHot != null">
+        is_hot = #{isHot,jdbcType=BIT},
+      </if>
+      <if test="catGroup != null">
+        cat_group = #{catGroup,jdbcType=BIT},
+      </if>
+      <if test="commissionRate != null">
+        commission_rate = #{commissionRate,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=SMALLINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.GoodsCategory">
+    update goods_category
+    set name = #{name,jdbcType=VARCHAR},
+      mobile_name = #{mobileName,jdbcType=VARCHAR},
+      parent_id = #{parentId,jdbcType=SMALLINT},
+      parent_id_path = #{parentIdPath,jdbcType=VARCHAR},
+      level = #{level,jdbcType=BIT},
+      sort_order = #{sortOrder,jdbcType=BIT},
+      is_show = #{isShow,jdbcType=BIT},
+      image = #{image,jdbcType=VARCHAR},
+      is_hot = #{isHot,jdbcType=BIT},
+      cat_group = #{catGroup,jdbcType=BIT},
+      commission_rate = #{commissionRate,jdbcType=BIT}
+    where id = #{id,jdbcType=SMALLINT}
+  </update>
+</mapper>

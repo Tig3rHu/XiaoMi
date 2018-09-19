@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.UserLevelMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.UserLevel">
+    <id column="level_id" jdbcType="SMALLINT" property="levelId" />
+    <result column="level_name" jdbcType="VARCHAR" property="levelName" />
+    <result column="amount" jdbcType="DECIMAL" property="amount" />
+    <result column="discount" jdbcType="SMALLINT" property="discount" />
+    <result column="describe" jdbcType="VARCHAR" property="describe" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    level_id, level_name, amount, discount, describe
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.UserLevelExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from user_level
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_level
+    where level_id = #{levelId,jdbcType=SMALLINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from user_level
+    where level_id = #{levelId,jdbcType=SMALLINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.UserLevelExample">
+    delete from user_level
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.UserLevel">
+    insert into user_level (level_id, level_name, amount, 
+      discount, describe)
+    values (#{levelId,jdbcType=SMALLINT}, #{levelName,jdbcType=VARCHAR}, #{amount,jdbcType=DECIMAL}, 
+      #{discount,jdbcType=SMALLINT}, #{describe,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.UserLevel">
+    insert into user_level
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="levelId != null">
+        level_id,
+      </if>
+      <if test="levelName != null">
+        level_name,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="discount != null">
+        discount,
+      </if>
+      <if test="describe != null">
+        describe,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="levelId != null">
+        #{levelId,jdbcType=SMALLINT},
+      </if>
+      <if test="levelName != null">
+        #{levelName,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="discount != null">
+        #{discount,jdbcType=SMALLINT},
+      </if>
+      <if test="describe != null">
+        #{describe,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.UserLevelExample" resultType="java.lang.Integer">
+    select count(*) from user_level
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update user_level
+    <set>
+      <if test="record.levelId != null">
+        level_id = #{record.levelId,jdbcType=SMALLINT},
+      </if>
+      <if test="record.levelName != null">
+        level_name = #{record.levelName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.amount != null">
+        amount = #{record.amount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.discount != null">
+        discount = #{record.discount,jdbcType=SMALLINT},
+      </if>
+      <if test="record.describe != null">
+        describe = #{record.describe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update user_level
+    set level_id = #{record.levelId,jdbcType=SMALLINT},
+      level_name = #{record.levelName,jdbcType=VARCHAR},
+      amount = #{record.amount,jdbcType=DECIMAL},
+      discount = #{record.discount,jdbcType=SMALLINT},
+      describe = #{record.describe,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.UserLevel">
+    update user_level
+    <set>
+      <if test="levelName != null">
+        level_name = #{levelName,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="discount != null">
+        discount = #{discount,jdbcType=SMALLINT},
+      </if>
+      <if test="describe != null">
+        describe = #{describe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where level_id = #{levelId,jdbcType=SMALLINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.UserLevel">
+    update user_level
+    set level_name = #{levelName,jdbcType=VARCHAR},
+      amount = #{amount,jdbcType=DECIMAL},
+      discount = #{discount,jdbcType=SMALLINT},
+      describe = #{describe,jdbcType=VARCHAR}
+    where level_id = #{levelId,jdbcType=SMALLINT}
+  </update>
+</mapper>

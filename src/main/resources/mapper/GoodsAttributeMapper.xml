@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.GoodsAttributeMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.GoodsAttribute">
+    <id column="attr_id" jdbcType="INTEGER" property="attrId" />
+    <result column="attr_name" jdbcType="VARCHAR" property="attrName" />
+    <result column="type_id" jdbcType="SMALLINT" property="typeId" />
+    <result column="attr_index" jdbcType="BIT" property="attrIndex" />
+    <result column="attr_type" jdbcType="BIT" property="attrType" />
+    <result column="attr_input_type" jdbcType="BIT" property="attrInputType" />
+    <result column="order" jdbcType="TINYINT" property="order" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.GoodsAttribute">
+    <result column="attr_values" jdbcType="LONGVARCHAR" property="attrValues" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    attr_id, attr_name, type_id, attr_index, attr_type, attr_input_type, order
+  </sql>
+  <sql id="Blob_Column_List">
+    attr_values
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.wuyou.entity.GoodsAttributeExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from goods_attribute
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.wuyou.entity.GoodsAttributeExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from goods_attribute
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from goods_attribute
+    where attr_id = #{attrId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from goods_attribute
+    where attr_id = #{attrId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.GoodsAttributeExample">
+    delete from goods_attribute
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.GoodsAttribute">
+    insert into goods_attribute (attr_id, attr_name, type_id, 
+      attr_index, attr_type, attr_input_type, 
+      order, attr_values)
+    values (#{attrId,jdbcType=INTEGER}, #{attrName,jdbcType=VARCHAR}, #{typeId,jdbcType=SMALLINT}, 
+      #{attrIndex,jdbcType=BIT}, #{attrType,jdbcType=BIT}, #{attrInputType,jdbcType=BIT}, 
+      #{order,jdbcType=TINYINT}, #{attrValues,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.GoodsAttribute">
+    insert into goods_attribute
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="attrId != null">
+        attr_id,
+      </if>
+      <if test="attrName != null">
+        attr_name,
+      </if>
+      <if test="typeId != null">
+        type_id,
+      </if>
+      <if test="attrIndex != null">
+        attr_index,
+      </if>
+      <if test="attrType != null">
+        attr_type,
+      </if>
+      <if test="attrInputType != null">
+        attr_input_type,
+      </if>
+      <if test="order != null">
+        order,
+      </if>
+      <if test="attrValues != null">
+        attr_values,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="attrId != null">
+        #{attrId,jdbcType=INTEGER},
+      </if>
+      <if test="attrName != null">
+        #{attrName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=SMALLINT},
+      </if>
+      <if test="attrIndex != null">
+        #{attrIndex,jdbcType=BIT},
+      </if>
+      <if test="attrType != null">
+        #{attrType,jdbcType=BIT},
+      </if>
+      <if test="attrInputType != null">
+        #{attrInputType,jdbcType=BIT},
+      </if>
+      <if test="order != null">
+        #{order,jdbcType=TINYINT},
+      </if>
+      <if test="attrValues != null">
+        #{attrValues,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.GoodsAttributeExample" resultType="java.lang.Integer">
+    select count(*) from goods_attribute
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update goods_attribute
+    <set>
+      <if test="record.attrId != null">
+        attr_id = #{record.attrId,jdbcType=INTEGER},
+      </if>
+      <if test="record.attrName != null">
+        attr_name = #{record.attrName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.typeId != null">
+        type_id = #{record.typeId,jdbcType=SMALLINT},
+      </if>
+      <if test="record.attrIndex != null">
+        attr_index = #{record.attrIndex,jdbcType=BIT},
+      </if>
+      <if test="record.attrType != null">
+        attr_type = #{record.attrType,jdbcType=BIT},
+      </if>
+      <if test="record.attrInputType != null">
+        attr_input_type = #{record.attrInputType,jdbcType=BIT},
+      </if>
+      <if test="record.order != null">
+        order = #{record.order,jdbcType=TINYINT},
+      </if>
+      <if test="record.attrValues != null">
+        attr_values = #{record.attrValues,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update goods_attribute
+    set attr_id = #{record.attrId,jdbcType=INTEGER},
+      attr_name = #{record.attrName,jdbcType=VARCHAR},
+      type_id = #{record.typeId,jdbcType=SMALLINT},
+      attr_index = #{record.attrIndex,jdbcType=BIT},
+      attr_type = #{record.attrType,jdbcType=BIT},
+      attr_input_type = #{record.attrInputType,jdbcType=BIT},
+      order = #{record.order,jdbcType=TINYINT},
+      attr_values = #{record.attrValues,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update goods_attribute
+    set attr_id = #{record.attrId,jdbcType=INTEGER},
+      attr_name = #{record.attrName,jdbcType=VARCHAR},
+      type_id = #{record.typeId,jdbcType=SMALLINT},
+      attr_index = #{record.attrIndex,jdbcType=BIT},
+      attr_type = #{record.attrType,jdbcType=BIT},
+      attr_input_type = #{record.attrInputType,jdbcType=BIT},
+      order = #{record.order,jdbcType=TINYINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.GoodsAttribute">
+    update goods_attribute
+    <set>
+      <if test="attrName != null">
+        attr_name = #{attrName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        type_id = #{typeId,jdbcType=SMALLINT},
+      </if>
+      <if test="attrIndex != null">
+        attr_index = #{attrIndex,jdbcType=BIT},
+      </if>
+      <if test="attrType != null">
+        attr_type = #{attrType,jdbcType=BIT},
+      </if>
+      <if test="attrInputType != null">
+        attr_input_type = #{attrInputType,jdbcType=BIT},
+      </if>
+      <if test="order != null">
+        order = #{order,jdbcType=TINYINT},
+      </if>
+      <if test="attrValues != null">
+        attr_values = #{attrValues,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where attr_id = #{attrId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuyou.entity.GoodsAttribute">
+    update goods_attribute
+    set attr_name = #{attrName,jdbcType=VARCHAR},
+      type_id = #{typeId,jdbcType=SMALLINT},
+      attr_index = #{attrIndex,jdbcType=BIT},
+      attr_type = #{attrType,jdbcType=BIT},
+      attr_input_type = #{attrInputType,jdbcType=BIT},
+      order = #{order,jdbcType=TINYINT},
+      attr_values = #{attrValues,jdbcType=LONGVARCHAR}
+    where attr_id = #{attrId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.GoodsAttribute">
+    update goods_attribute
+    set attr_name = #{attrName,jdbcType=VARCHAR},
+      type_id = #{typeId,jdbcType=SMALLINT},
+      attr_index = #{attrIndex,jdbcType=BIT},
+      attr_type = #{attrType,jdbcType=BIT},
+      attr_input_type = #{attrInputType,jdbcType=BIT},
+      order = #{order,jdbcType=TINYINT}
+    where attr_id = #{attrId,jdbcType=INTEGER}
+  </update>
+</mapper>

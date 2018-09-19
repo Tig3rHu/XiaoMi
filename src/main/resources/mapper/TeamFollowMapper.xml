@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.TeamFollowMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.TeamFollow">
+    <id column="follow_id" jdbcType="INTEGER" property="followId" />
+    <result column="follow_user_id" jdbcType="INTEGER" property="followUserId" />
+    <result column="follow_user_nickname" jdbcType="VARCHAR" property="followUserNickname" />
+    <result column="follow_user_head_pic" jdbcType="VARCHAR" property="followUserHeadPic" />
+    <result column="follow_time" jdbcType="INTEGER" property="followTime" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="found_id" jdbcType="INTEGER" property="foundId" />
+    <result column="found_user_id" jdbcType="INTEGER" property="foundUserId" />
+    <result column="team_id" jdbcType="INTEGER" property="teamId" />
+    <result column="status" jdbcType="BIT" property="status" />
+    <result column="is_win" jdbcType="BIT" property="isWin" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    follow_id, follow_user_id, follow_user_nickname, follow_user_head_pic, follow_time, 
+    order_id, found_id, found_user_id, team_id, status, is_win
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.TeamFollowExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from team_follow
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from team_follow
+    where follow_id = #{followId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from team_follow
+    where follow_id = #{followId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.TeamFollowExample">
+    delete from team_follow
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.TeamFollow">
+    insert into team_follow (follow_id, follow_user_id, follow_user_nickname, 
+      follow_user_head_pic, follow_time, order_id, 
+      found_id, found_user_id, team_id, 
+      status, is_win)
+    values (#{followId,jdbcType=INTEGER}, #{followUserId,jdbcType=INTEGER}, #{followUserNickname,jdbcType=VARCHAR}, 
+      #{followUserHeadPic,jdbcType=VARCHAR}, #{followTime,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, 
+      #{foundId,jdbcType=INTEGER}, #{foundUserId,jdbcType=INTEGER}, #{teamId,jdbcType=INTEGER}, 
+      #{status,jdbcType=BIT}, #{isWin,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.TeamFollow">
+    insert into team_follow
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="followId != null">
+        follow_id,
+      </if>
+      <if test="followUserId != null">
+        follow_user_id,
+      </if>
+      <if test="followUserNickname != null">
+        follow_user_nickname,
+      </if>
+      <if test="followUserHeadPic != null">
+        follow_user_head_pic,
+      </if>
+      <if test="followTime != null">
+        follow_time,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="foundId != null">
+        found_id,
+      </if>
+      <if test="foundUserId != null">
+        found_user_id,
+      </if>
+      <if test="teamId != null">
+        team_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="isWin != null">
+        is_win,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="followId != null">
+        #{followId,jdbcType=INTEGER},
+      </if>
+      <if test="followUserId != null">
+        #{followUserId,jdbcType=INTEGER},
+      </if>
+      <if test="followUserNickname != null">
+        #{followUserNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="followUserHeadPic != null">
+        #{followUserHeadPic,jdbcType=VARCHAR},
+      </if>
+      <if test="followTime != null">
+        #{followTime,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="foundId != null">
+        #{foundId,jdbcType=INTEGER},
+      </if>
+      <if test="foundUserId != null">
+        #{foundUserId,jdbcType=INTEGER},
+      </if>
+      <if test="teamId != null">
+        #{teamId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=BIT},
+      </if>
+      <if test="isWin != null">
+        #{isWin,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.TeamFollowExample" resultType="java.lang.Integer">
+    select count(*) from team_follow
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update team_follow
+    <set>
+      <if test="record.followId != null">
+        follow_id = #{record.followId,jdbcType=INTEGER},
+      </if>
+      <if test="record.followUserId != null">
+        follow_user_id = #{record.followUserId,jdbcType=INTEGER},
+      </if>
+      <if test="record.followUserNickname != null">
+        follow_user_nickname = #{record.followUserNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.followUserHeadPic != null">
+        follow_user_head_pic = #{record.followUserHeadPic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.followTime != null">
+        follow_time = #{record.followTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.foundId != null">
+        found_id = #{record.foundId,jdbcType=INTEGER},
+      </if>
+      <if test="record.foundUserId != null">
+        found_user_id = #{record.foundUserId,jdbcType=INTEGER},
+      </if>
+      <if test="record.teamId != null">
+        team_id = #{record.teamId,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=BIT},
+      </if>
+      <if test="record.isWin != null">
+        is_win = #{record.isWin,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update team_follow
+    set follow_id = #{record.followId,jdbcType=INTEGER},
+      follow_user_id = #{record.followUserId,jdbcType=INTEGER},
+      follow_user_nickname = #{record.followUserNickname,jdbcType=VARCHAR},
+      follow_user_head_pic = #{record.followUserHeadPic,jdbcType=VARCHAR},
+      follow_time = #{record.followTime,jdbcType=INTEGER},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      found_id = #{record.foundId,jdbcType=INTEGER},
+      found_user_id = #{record.foundUserId,jdbcType=INTEGER},
+      team_id = #{record.teamId,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=BIT},
+      is_win = #{record.isWin,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.TeamFollow">
+    update team_follow
+    <set>
+      <if test="followUserId != null">
+        follow_user_id = #{followUserId,jdbcType=INTEGER},
+      </if>
+      <if test="followUserNickname != null">
+        follow_user_nickname = #{followUserNickname,jdbcType=VARCHAR},
+      </if>
+      <if test="followUserHeadPic != null">
+        follow_user_head_pic = #{followUserHeadPic,jdbcType=VARCHAR},
+      </if>
+      <if test="followTime != null">
+        follow_time = #{followTime,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="foundId != null">
+        found_id = #{foundId,jdbcType=INTEGER},
+      </if>
+      <if test="foundUserId != null">
+        found_user_id = #{foundUserId,jdbcType=INTEGER},
+      </if>
+      <if test="teamId != null">
+        team_id = #{teamId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=BIT},
+      </if>
+      <if test="isWin != null">
+        is_win = #{isWin,jdbcType=BIT},
+      </if>
+    </set>
+    where follow_id = #{followId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.TeamFollow">
+    update team_follow
+    set follow_user_id = #{followUserId,jdbcType=INTEGER},
+      follow_user_nickname = #{followUserNickname,jdbcType=VARCHAR},
+      follow_user_head_pic = #{followUserHeadPic,jdbcType=VARCHAR},
+      follow_time = #{followTime,jdbcType=INTEGER},
+      order_id = #{orderId,jdbcType=INTEGER},
+      found_id = #{foundId,jdbcType=INTEGER},
+      found_user_id = #{foundUserId,jdbcType=INTEGER},
+      team_id = #{teamId,jdbcType=INTEGER},
+      status = #{status,jdbcType=BIT},
+      is_win = #{isWin,jdbcType=BIT}
+    where follow_id = #{followId,jdbcType=INTEGER}
+  </update>
+</mapper>

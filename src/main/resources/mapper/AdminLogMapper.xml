@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.AdminLogMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.AdminLog">
+    <id column="log_id" jdbcType="BIGINT" property="logId" />
+    <result column="admin_id" jdbcType="INTEGER" property="adminId" />
+    <result column="log_info" jdbcType="VARCHAR" property="logInfo" />
+    <result column="log_ip" jdbcType="VARCHAR" property="logIp" />
+    <result column="log_url" jdbcType="VARCHAR" property="logUrl" />
+    <result column="log_time" jdbcType="INTEGER" property="logTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    log_id, admin_id, log_info, log_ip, log_url, log_time
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.AdminLogExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from admin_log
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from admin_log
+    where log_id = #{logId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from admin_log
+    where log_id = #{logId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.AdminLogExample">
+    delete from admin_log
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.AdminLog">
+    insert into admin_log (log_id, admin_id, log_info, 
+      log_ip, log_url, log_time
+      )
+    values (#{logId,jdbcType=BIGINT}, #{adminId,jdbcType=INTEGER}, #{logInfo,jdbcType=VARCHAR}, 
+      #{logIp,jdbcType=VARCHAR}, #{logUrl,jdbcType=VARCHAR}, #{logTime,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.AdminLog">
+    insert into admin_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        log_id,
+      </if>
+      <if test="adminId != null">
+        admin_id,
+      </if>
+      <if test="logInfo != null">
+        log_info,
+      </if>
+      <if test="logIp != null">
+        log_ip,
+      </if>
+      <if test="logUrl != null">
+        log_url,
+      </if>
+      <if test="logTime != null">
+        log_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        #{logId,jdbcType=BIGINT},
+      </if>
+      <if test="adminId != null">
+        #{adminId,jdbcType=INTEGER},
+      </if>
+      <if test="logInfo != null">
+        #{logInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="logIp != null">
+        #{logIp,jdbcType=VARCHAR},
+      </if>
+      <if test="logUrl != null">
+        #{logUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="logTime != null">
+        #{logTime,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.AdminLogExample" resultType="java.lang.Integer">
+    select count(*) from admin_log
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update admin_log
+    <set>
+      <if test="record.logId != null">
+        log_id = #{record.logId,jdbcType=BIGINT},
+      </if>
+      <if test="record.adminId != null">
+        admin_id = #{record.adminId,jdbcType=INTEGER},
+      </if>
+      <if test="record.logInfo != null">
+        log_info = #{record.logInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logIp != null">
+        log_ip = #{record.logIp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logUrl != null">
+        log_url = #{record.logUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logTime != null">
+        log_time = #{record.logTime,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update admin_log
+    set log_id = #{record.logId,jdbcType=BIGINT},
+      admin_id = #{record.adminId,jdbcType=INTEGER},
+      log_info = #{record.logInfo,jdbcType=VARCHAR},
+      log_ip = #{record.logIp,jdbcType=VARCHAR},
+      log_url = #{record.logUrl,jdbcType=VARCHAR},
+      log_time = #{record.logTime,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.AdminLog">
+    update admin_log
+    <set>
+      <if test="adminId != null">
+        admin_id = #{adminId,jdbcType=INTEGER},
+      </if>
+      <if test="logInfo != null">
+        log_info = #{logInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="logIp != null">
+        log_ip = #{logIp,jdbcType=VARCHAR},
+      </if>
+      <if test="logUrl != null">
+        log_url = #{logUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="logTime != null">
+        log_time = #{logTime,jdbcType=INTEGER},
+      </if>
+    </set>
+    where log_id = #{logId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.AdminLog">
+    update admin_log
+    set admin_id = #{adminId,jdbcType=INTEGER},
+      log_info = #{logInfo,jdbcType=VARCHAR},
+      log_ip = #{logIp,jdbcType=VARCHAR},
+      log_url = #{logUrl,jdbcType=VARCHAR},
+      log_time = #{logTime,jdbcType=INTEGER}
+    where log_id = #{logId,jdbcType=BIGINT}
+  </update>
+</mapper>

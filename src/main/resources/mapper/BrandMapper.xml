@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.BrandMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.Brand">
+    <id column="id" jdbcType="SMALLINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="logo" jdbcType="VARCHAR" property="logo" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="sort" jdbcType="TINYINT" property="sort" />
+    <result column="cat_name" jdbcType="VARCHAR" property="catName" />
+    <result column="parent_cat_id" jdbcType="INTEGER" property="parentCatId" />
+    <result column="cat_id" jdbcType="INTEGER" property="catId" />
+    <result column="is_hot" jdbcType="BIT" property="isHot" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.Brand">
+    <result column="desc" jdbcType="LONGVARCHAR" property="desc" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, logo, url, sort, cat_name, parent_cat_id, cat_id, is_hot
+  </sql>
+  <sql id="Blob_Column_List">
+    desc
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.wuyou.entity.BrandExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from brand
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.wuyou.entity.BrandExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from brand
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from brand
+    where id = #{id,jdbcType=SMALLINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from brand
+    where id = #{id,jdbcType=SMALLINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.BrandExample">
+    delete from brand
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.Brand">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Short">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into brand (name, logo, url, 
+      sort, cat_name, parent_cat_id, 
+      cat_id, is_hot, desc)
+    values (#{name,jdbcType=VARCHAR}, #{logo,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{sort,jdbcType=TINYINT}, #{catName,jdbcType=VARCHAR}, #{parentCatId,jdbcType=INTEGER}, 
+      #{catId,jdbcType=INTEGER}, #{isHot,jdbcType=BIT}, #{desc,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.Brand">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Short">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into brand
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="logo != null">
+        logo,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="catName != null">
+        cat_name,
+      </if>
+      <if test="parentCatId != null">
+        parent_cat_id,
+      </if>
+      <if test="catId != null">
+        cat_id,
+      </if>
+      <if test="isHot != null">
+        is_hot,
+      </if>
+      <if test="desc != null">
+        desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null">
+        #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=TINYINT},
+      </if>
+      <if test="catName != null">
+        #{catName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentCatId != null">
+        #{parentCatId,jdbcType=INTEGER},
+      </if>
+      <if test="catId != null">
+        #{catId,jdbcType=INTEGER},
+      </if>
+      <if test="isHot != null">
+        #{isHot,jdbcType=BIT},
+      </if>
+      <if test="desc != null">
+        #{desc,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.BrandExample" resultType="java.lang.Integer">
+    select count(*) from brand
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update brand
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=SMALLINT},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logo != null">
+        logo = #{record.logo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.url != null">
+        url = #{record.url,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sort != null">
+        sort = #{record.sort,jdbcType=TINYINT},
+      </if>
+      <if test="record.catName != null">
+        cat_name = #{record.catName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.parentCatId != null">
+        parent_cat_id = #{record.parentCatId,jdbcType=INTEGER},
+      </if>
+      <if test="record.catId != null">
+        cat_id = #{record.catId,jdbcType=INTEGER},
+      </if>
+      <if test="record.isHot != null">
+        is_hot = #{record.isHot,jdbcType=BIT},
+      </if>
+      <if test="record.desc != null">
+        desc = #{record.desc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update brand
+    set id = #{record.id,jdbcType=SMALLINT},
+      name = #{record.name,jdbcType=VARCHAR},
+      logo = #{record.logo,jdbcType=VARCHAR},
+      url = #{record.url,jdbcType=VARCHAR},
+      sort = #{record.sort,jdbcType=TINYINT},
+      cat_name = #{record.catName,jdbcType=VARCHAR},
+      parent_cat_id = #{record.parentCatId,jdbcType=INTEGER},
+      cat_id = #{record.catId,jdbcType=INTEGER},
+      is_hot = #{record.isHot,jdbcType=BIT},
+      desc = #{record.desc,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update brand
+    set id = #{record.id,jdbcType=SMALLINT},
+      name = #{record.name,jdbcType=VARCHAR},
+      logo = #{record.logo,jdbcType=VARCHAR},
+      url = #{record.url,jdbcType=VARCHAR},
+      sort = #{record.sort,jdbcType=TINYINT},
+      cat_name = #{record.catName,jdbcType=VARCHAR},
+      parent_cat_id = #{record.parentCatId,jdbcType=INTEGER},
+      cat_id = #{record.catId,jdbcType=INTEGER},
+      is_hot = #{record.isHot,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.Brand">
+    update brand
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null">
+        logo = #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=TINYINT},
+      </if>
+      <if test="catName != null">
+        cat_name = #{catName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentCatId != null">
+        parent_cat_id = #{parentCatId,jdbcType=INTEGER},
+      </if>
+      <if test="catId != null">
+        cat_id = #{catId,jdbcType=INTEGER},
+      </if>
+      <if test="isHot != null">
+        is_hot = #{isHot,jdbcType=BIT},
+      </if>
+      <if test="desc != null">
+        desc = #{desc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=SMALLINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuyou.entity.Brand">
+    update brand
+    set name = #{name,jdbcType=VARCHAR},
+      logo = #{logo,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=TINYINT},
+      cat_name = #{catName,jdbcType=VARCHAR},
+      parent_cat_id = #{parentCatId,jdbcType=INTEGER},
+      cat_id = #{catId,jdbcType=INTEGER},
+      is_hot = #{isHot,jdbcType=BIT},
+      desc = #{desc,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=SMALLINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.Brand">
+    update brand
+    set name = #{name,jdbcType=VARCHAR},
+      logo = #{logo,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=TINYINT},
+      cat_name = #{catName,jdbcType=VARCHAR},
+      parent_cat_id = #{parentCatId,jdbcType=INTEGER},
+      cat_id = #{catId,jdbcType=INTEGER},
+      is_hot = #{isHot,jdbcType=BIT}
+    where id = #{id,jdbcType=SMALLINT}
+  </update>
+</mapper>

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.DistributLevelMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.DistributLevel">
+    <id column="level_id" jdbcType="TINYINT" property="levelId" />
+    <result column="level_type" jdbcType="BIT" property="levelType" />
+    <result column="rate1" jdbcType="DECIMAL" property="rate1" />
+    <result column="rate2" jdbcType="DECIMAL" property="rate2" />
+    <result column="rate3" jdbcType="DECIMAL" property="rate3" />
+    <result column="order_money" jdbcType="DECIMAL" property="orderMoney" />
+    <result column="level_name" jdbcType="VARCHAR" property="levelName" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    level_id, level_type, rate1, rate2, rate3, order_money, level_name
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.DistributLevelExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from distribut_level
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Byte" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from distribut_level
+    where level_id = #{levelId,jdbcType=TINYINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Byte">
+    delete from distribut_level
+    where level_id = #{levelId,jdbcType=TINYINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.DistributLevelExample">
+    delete from distribut_level
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.DistributLevel">
+    insert into distribut_level (level_id, level_type, rate1, 
+      rate2, rate3, order_money, 
+      level_name)
+    values (#{levelId,jdbcType=TINYINT}, #{levelType,jdbcType=BIT}, #{rate1,jdbcType=DECIMAL}, 
+      #{rate2,jdbcType=DECIMAL}, #{rate3,jdbcType=DECIMAL}, #{orderMoney,jdbcType=DECIMAL}, 
+      #{levelName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.DistributLevel">
+    insert into distribut_level
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="levelId != null">
+        level_id,
+      </if>
+      <if test="levelType != null">
+        level_type,
+      </if>
+      <if test="rate1 != null">
+        rate1,
+      </if>
+      <if test="rate2 != null">
+        rate2,
+      </if>
+      <if test="rate3 != null">
+        rate3,
+      </if>
+      <if test="orderMoney != null">
+        order_money,
+      </if>
+      <if test="levelName != null">
+        level_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="levelId != null">
+        #{levelId,jdbcType=TINYINT},
+      </if>
+      <if test="levelType != null">
+        #{levelType,jdbcType=BIT},
+      </if>
+      <if test="rate1 != null">
+        #{rate1,jdbcType=DECIMAL},
+      </if>
+      <if test="rate2 != null">
+        #{rate2,jdbcType=DECIMAL},
+      </if>
+      <if test="rate3 != null">
+        #{rate3,jdbcType=DECIMAL},
+      </if>
+      <if test="orderMoney != null">
+        #{orderMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="levelName != null">
+        #{levelName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.DistributLevelExample" resultType="java.lang.Integer">
+    select count(*) from distribut_level
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update distribut_level
+    <set>
+      <if test="record.levelId != null">
+        level_id = #{record.levelId,jdbcType=TINYINT},
+      </if>
+      <if test="record.levelType != null">
+        level_type = #{record.levelType,jdbcType=BIT},
+      </if>
+      <if test="record.rate1 != null">
+        rate1 = #{record.rate1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.rate2 != null">
+        rate2 = #{record.rate2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.rate3 != null">
+        rate3 = #{record.rate3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.orderMoney != null">
+        order_money = #{record.orderMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="record.levelName != null">
+        level_name = #{record.levelName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update distribut_level
+    set level_id = #{record.levelId,jdbcType=TINYINT},
+      level_type = #{record.levelType,jdbcType=BIT},
+      rate1 = #{record.rate1,jdbcType=DECIMAL},
+      rate2 = #{record.rate2,jdbcType=DECIMAL},
+      rate3 = #{record.rate3,jdbcType=DECIMAL},
+      order_money = #{record.orderMoney,jdbcType=DECIMAL},
+      level_name = #{record.levelName,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.DistributLevel">
+    update distribut_level
+    <set>
+      <if test="levelType != null">
+        level_type = #{levelType,jdbcType=BIT},
+      </if>
+      <if test="rate1 != null">
+        rate1 = #{rate1,jdbcType=DECIMAL},
+      </if>
+      <if test="rate2 != null">
+        rate2 = #{rate2,jdbcType=DECIMAL},
+      </if>
+      <if test="rate3 != null">
+        rate3 = #{rate3,jdbcType=DECIMAL},
+      </if>
+      <if test="orderMoney != null">
+        order_money = #{orderMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="levelName != null">
+        level_name = #{levelName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where level_id = #{levelId,jdbcType=TINYINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.DistributLevel">
+    update distribut_level
+    set level_type = #{levelType,jdbcType=BIT},
+      rate1 = #{rate1,jdbcType=DECIMAL},
+      rate2 = #{rate2,jdbcType=DECIMAL},
+      rate3 = #{rate3,jdbcType=DECIMAL},
+      order_money = #{orderMoney,jdbcType=DECIMAL},
+      level_name = #{levelName,jdbcType=VARCHAR}
+    where level_id = #{levelId,jdbcType=TINYINT}
+  </update>
+</mapper>

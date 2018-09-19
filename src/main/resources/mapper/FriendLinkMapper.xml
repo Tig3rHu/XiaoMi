@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.FriendLinkMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.FriendLink">
+    <id column="link_id" jdbcType="SMALLINT" property="linkId" />
+    <result column="link_name" jdbcType="VARCHAR" property="linkName" />
+    <result column="link_url" jdbcType="VARCHAR" property="linkUrl" />
+    <result column="link_logo" jdbcType="VARCHAR" property="linkLogo" />
+    <result column="orderby" jdbcType="TINYINT" property="orderby" />
+    <result column="is_show" jdbcType="BIT" property="isShow" />
+    <result column="target" jdbcType="BIT" property="target" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    link_id, link_name, link_url, link_logo, orderby, is_show, target
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.FriendLinkExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from friend_link
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from friend_link
+    where link_id = #{linkId,jdbcType=SMALLINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from friend_link
+    where link_id = #{linkId,jdbcType=SMALLINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.FriendLinkExample">
+    delete from friend_link
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.FriendLink">
+    insert into friend_link (link_id, link_name, link_url, 
+      link_logo, orderby, is_show, 
+      target)
+    values (#{linkId,jdbcType=SMALLINT}, #{linkName,jdbcType=VARCHAR}, #{linkUrl,jdbcType=VARCHAR}, 
+      #{linkLogo,jdbcType=VARCHAR}, #{orderby,jdbcType=TINYINT}, #{isShow,jdbcType=BIT}, 
+      #{target,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.FriendLink">
+    insert into friend_link
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="linkId != null">
+        link_id,
+      </if>
+      <if test="linkName != null">
+        link_name,
+      </if>
+      <if test="linkUrl != null">
+        link_url,
+      </if>
+      <if test="linkLogo != null">
+        link_logo,
+      </if>
+      <if test="orderby != null">
+        orderby,
+      </if>
+      <if test="isShow != null">
+        is_show,
+      </if>
+      <if test="target != null">
+        target,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="linkId != null">
+        #{linkId,jdbcType=SMALLINT},
+      </if>
+      <if test="linkName != null">
+        #{linkName,jdbcType=VARCHAR},
+      </if>
+      <if test="linkUrl != null">
+        #{linkUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="linkLogo != null">
+        #{linkLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderby != null">
+        #{orderby,jdbcType=TINYINT},
+      </if>
+      <if test="isShow != null">
+        #{isShow,jdbcType=BIT},
+      </if>
+      <if test="target != null">
+        #{target,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.FriendLinkExample" resultType="java.lang.Integer">
+    select count(*) from friend_link
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update friend_link
+    <set>
+      <if test="record.linkId != null">
+        link_id = #{record.linkId,jdbcType=SMALLINT},
+      </if>
+      <if test="record.linkName != null">
+        link_name = #{record.linkName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkUrl != null">
+        link_url = #{record.linkUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkLogo != null">
+        link_logo = #{record.linkLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderby != null">
+        orderby = #{record.orderby,jdbcType=TINYINT},
+      </if>
+      <if test="record.isShow != null">
+        is_show = #{record.isShow,jdbcType=BIT},
+      </if>
+      <if test="record.target != null">
+        target = #{record.target,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update friend_link
+    set link_id = #{record.linkId,jdbcType=SMALLINT},
+      link_name = #{record.linkName,jdbcType=VARCHAR},
+      link_url = #{record.linkUrl,jdbcType=VARCHAR},
+      link_logo = #{record.linkLogo,jdbcType=VARCHAR},
+      orderby = #{record.orderby,jdbcType=TINYINT},
+      is_show = #{record.isShow,jdbcType=BIT},
+      target = #{record.target,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.FriendLink">
+    update friend_link
+    <set>
+      <if test="linkName != null">
+        link_name = #{linkName,jdbcType=VARCHAR},
+      </if>
+      <if test="linkUrl != null">
+        link_url = #{linkUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="linkLogo != null">
+        link_logo = #{linkLogo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderby != null">
+        orderby = #{orderby,jdbcType=TINYINT},
+      </if>
+      <if test="isShow != null">
+        is_show = #{isShow,jdbcType=BIT},
+      </if>
+      <if test="target != null">
+        target = #{target,jdbcType=BIT},
+      </if>
+    </set>
+    where link_id = #{linkId,jdbcType=SMALLINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.FriendLink">
+    update friend_link
+    set link_name = #{linkName,jdbcType=VARCHAR},
+      link_url = #{linkUrl,jdbcType=VARCHAR},
+      link_logo = #{linkLogo,jdbcType=VARCHAR},
+      orderby = #{orderby,jdbcType=TINYINT},
+      is_show = #{isShow,jdbcType=BIT},
+      target = #{target,jdbcType=BIT}
+    where link_id = #{linkId,jdbcType=SMALLINT}
+  </update>
+</mapper>

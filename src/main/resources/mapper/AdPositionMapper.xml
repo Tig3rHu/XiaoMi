@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.AdPositionMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.AdPosition">
+    <id column="position_id" jdbcType="INTEGER" property="positionId" />
+    <result column="position_name" jdbcType="VARCHAR" property="positionName" />
+    <result column="ad_width" jdbcType="SMALLINT" property="adWidth" />
+    <result column="ad_height" jdbcType="SMALLINT" property="adHeight" />
+    <result column="position_desc" jdbcType="VARCHAR" property="positionDesc" />
+    <result column="is_open" jdbcType="BIT" property="isOpen" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.AdPosition">
+    <result column="position_style" jdbcType="LONGVARCHAR" property="positionStyle" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    position_id, position_name, ad_width, ad_height, position_desc, is_open
+  </sql>
+  <sql id="Blob_Column_List">
+    position_style
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.wuyou.entity.AdPositionExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ad_position
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.wuyou.entity.AdPositionExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from ad_position
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ad_position
+    where position_id = #{positionId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ad_position
+    where position_id = #{positionId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.AdPositionExample">
+    delete from ad_position
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.AdPosition">
+    insert into ad_position (position_id, position_name, ad_width, 
+      ad_height, position_desc, is_open, 
+      position_style)
+    values (#{positionId,jdbcType=INTEGER}, #{positionName,jdbcType=VARCHAR}, #{adWidth,jdbcType=SMALLINT}, 
+      #{adHeight,jdbcType=SMALLINT}, #{positionDesc,jdbcType=VARCHAR}, #{isOpen,jdbcType=BIT}, 
+      #{positionStyle,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.AdPosition">
+    insert into ad_position
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="positionId != null">
+        position_id,
+      </if>
+      <if test="positionName != null">
+        position_name,
+      </if>
+      <if test="adWidth != null">
+        ad_width,
+      </if>
+      <if test="adHeight != null">
+        ad_height,
+      </if>
+      <if test="positionDesc != null">
+        position_desc,
+      </if>
+      <if test="isOpen != null">
+        is_open,
+      </if>
+      <if test="positionStyle != null">
+        position_style,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="positionId != null">
+        #{positionId,jdbcType=INTEGER},
+      </if>
+      <if test="positionName != null">
+        #{positionName,jdbcType=VARCHAR},
+      </if>
+      <if test="adWidth != null">
+        #{adWidth,jdbcType=SMALLINT},
+      </if>
+      <if test="adHeight != null">
+        #{adHeight,jdbcType=SMALLINT},
+      </if>
+      <if test="positionDesc != null">
+        #{positionDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="isOpen != null">
+        #{isOpen,jdbcType=BIT},
+      </if>
+      <if test="positionStyle != null">
+        #{positionStyle,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.AdPositionExample" resultType="java.lang.Integer">
+    select count(*) from ad_position
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update ad_position
+    <set>
+      <if test="record.positionId != null">
+        position_id = #{record.positionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.positionName != null">
+        position_name = #{record.positionName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adWidth != null">
+        ad_width = #{record.adWidth,jdbcType=SMALLINT},
+      </if>
+      <if test="record.adHeight != null">
+        ad_height = #{record.adHeight,jdbcType=SMALLINT},
+      </if>
+      <if test="record.positionDesc != null">
+        position_desc = #{record.positionDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isOpen != null">
+        is_open = #{record.isOpen,jdbcType=BIT},
+      </if>
+      <if test="record.positionStyle != null">
+        position_style = #{record.positionStyle,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update ad_position
+    set position_id = #{record.positionId,jdbcType=INTEGER},
+      position_name = #{record.positionName,jdbcType=VARCHAR},
+      ad_width = #{record.adWidth,jdbcType=SMALLINT},
+      ad_height = #{record.adHeight,jdbcType=SMALLINT},
+      position_desc = #{record.positionDesc,jdbcType=VARCHAR},
+      is_open = #{record.isOpen,jdbcType=BIT},
+      position_style = #{record.positionStyle,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update ad_position
+    set position_id = #{record.positionId,jdbcType=INTEGER},
+      position_name = #{record.positionName,jdbcType=VARCHAR},
+      ad_width = #{record.adWidth,jdbcType=SMALLINT},
+      ad_height = #{record.adHeight,jdbcType=SMALLINT},
+      position_desc = #{record.positionDesc,jdbcType=VARCHAR},
+      is_open = #{record.isOpen,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.AdPosition">
+    update ad_position
+    <set>
+      <if test="positionName != null">
+        position_name = #{positionName,jdbcType=VARCHAR},
+      </if>
+      <if test="adWidth != null">
+        ad_width = #{adWidth,jdbcType=SMALLINT},
+      </if>
+      <if test="adHeight != null">
+        ad_height = #{adHeight,jdbcType=SMALLINT},
+      </if>
+      <if test="positionDesc != null">
+        position_desc = #{positionDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="isOpen != null">
+        is_open = #{isOpen,jdbcType=BIT},
+      </if>
+      <if test="positionStyle != null">
+        position_style = #{positionStyle,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where position_id = #{positionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuyou.entity.AdPosition">
+    update ad_position
+    set position_name = #{positionName,jdbcType=VARCHAR},
+      ad_width = #{adWidth,jdbcType=SMALLINT},
+      ad_height = #{adHeight,jdbcType=SMALLINT},
+      position_desc = #{positionDesc,jdbcType=VARCHAR},
+      is_open = #{isOpen,jdbcType=BIT},
+      position_style = #{positionStyle,jdbcType=LONGVARCHAR}
+    where position_id = #{positionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.AdPosition">
+    update ad_position
+    set position_name = #{positionName,jdbcType=VARCHAR},
+      ad_width = #{adWidth,jdbcType=SMALLINT},
+      ad_height = #{adHeight,jdbcType=SMALLINT},
+      position_desc = #{positionDesc,jdbcType=VARCHAR},
+      is_open = #{isOpen,jdbcType=BIT}
+    where position_id = #{positionId,jdbcType=INTEGER}
+  </update>
+</mapper>

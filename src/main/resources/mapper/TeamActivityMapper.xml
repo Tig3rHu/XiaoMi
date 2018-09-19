@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.TeamActivityMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.TeamActivity">
+    <id column="team_id" jdbcType="INTEGER" property="teamId" />
+    <result column="act_name" jdbcType="VARCHAR" property="actName" />
+    <result column="team_type" jdbcType="BIT" property="teamType" />
+    <result column="time_limit" jdbcType="INTEGER" property="timeLimit" />
+    <result column="team_price" jdbcType="DECIMAL" property="teamPrice" />
+    <result column="needer" jdbcType="INTEGER" property="needer" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="item_id" jdbcType="INTEGER" property="itemId" />
+    <result column="bonus" jdbcType="DECIMAL" property="bonus" />
+    <result column="stock_limit" jdbcType="INTEGER" property="stockLimit" />
+    <result column="buy_limit" jdbcType="SMALLINT" property="buyLimit" />
+    <result column="sales_sum" jdbcType="INTEGER" property="salesSum" />
+    <result column="virtual_num" jdbcType="INTEGER" property="virtualNum" />
+    <result column="share_title" jdbcType="VARCHAR" property="shareTitle" />
+    <result column="share_desc" jdbcType="VARCHAR" property="shareDesc" />
+    <result column="share_img" jdbcType="VARCHAR" property="shareImg" />
+    <result column="sort" jdbcType="SMALLINT" property="sort" />
+    <result column="is_recommend" jdbcType="BIT" property="isRecommend" />
+    <result column="status" jdbcType="BIT" property="status" />
+    <result column="is_lottery" jdbcType="BIT" property="isLottery" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    team_id, act_name, team_type, time_limit, team_price, needer, goods_name, goods_id, 
+    item_id, bonus, stock_limit, buy_limit, sales_sum, virtual_num, share_title, share_desc, 
+    share_img, sort, is_recommend, status, is_lottery
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.TeamActivityExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from team_activity
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from team_activity
+    where team_id = #{teamId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from team_activity
+    where team_id = #{teamId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.TeamActivityExample">
+    delete from team_activity
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.TeamActivity">
+    insert into team_activity (team_id, act_name, team_type, 
+      time_limit, team_price, needer, 
+      goods_name, goods_id, item_id, 
+      bonus, stock_limit, buy_limit, 
+      sales_sum, virtual_num, share_title, 
+      share_desc, share_img, sort, 
+      is_recommend, status, is_lottery)
+    values (#{teamId,jdbcType=INTEGER}, #{actName,jdbcType=VARCHAR}, #{teamType,jdbcType=BIT}, 
+      #{timeLimit,jdbcType=INTEGER}, #{teamPrice,jdbcType=DECIMAL}, #{needer,jdbcType=INTEGER}, 
+      #{goodsName,jdbcType=VARCHAR}, #{goodsId,jdbcType=INTEGER}, #{itemId,jdbcType=INTEGER}, 
+      #{bonus,jdbcType=DECIMAL}, #{stockLimit,jdbcType=INTEGER}, #{buyLimit,jdbcType=SMALLINT}, 
+      #{salesSum,jdbcType=INTEGER}, #{virtualNum,jdbcType=INTEGER}, #{shareTitle,jdbcType=VARCHAR}, 
+      #{shareDesc,jdbcType=VARCHAR}, #{shareImg,jdbcType=VARCHAR}, #{sort,jdbcType=SMALLINT}, 
+      #{isRecommend,jdbcType=BIT}, #{status,jdbcType=BIT}, #{isLottery,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.TeamActivity">
+    insert into team_activity
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="teamId != null">
+        team_id,
+      </if>
+      <if test="actName != null">
+        act_name,
+      </if>
+      <if test="teamType != null">
+        team_type,
+      </if>
+      <if test="timeLimit != null">
+        time_limit,
+      </if>
+      <if test="teamPrice != null">
+        team_price,
+      </if>
+      <if test="needer != null">
+        needer,
+      </if>
+      <if test="goodsName != null">
+        goods_name,
+      </if>
+      <if test="goodsId != null">
+        goods_id,
+      </if>
+      <if test="itemId != null">
+        item_id,
+      </if>
+      <if test="bonus != null">
+        bonus,
+      </if>
+      <if test="stockLimit != null">
+        stock_limit,
+      </if>
+      <if test="buyLimit != null">
+        buy_limit,
+      </if>
+      <if test="salesSum != null">
+        sales_sum,
+      </if>
+      <if test="virtualNum != null">
+        virtual_num,
+      </if>
+      <if test="shareTitle != null">
+        share_title,
+      </if>
+      <if test="shareDesc != null">
+        share_desc,
+      </if>
+      <if test="shareImg != null">
+        share_img,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="isRecommend != null">
+        is_recommend,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="isLottery != null">
+        is_lottery,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="teamId != null">
+        #{teamId,jdbcType=INTEGER},
+      </if>
+      <if test="actName != null">
+        #{actName,jdbcType=VARCHAR},
+      </if>
+      <if test="teamType != null">
+        #{teamType,jdbcType=BIT},
+      </if>
+      <if test="timeLimit != null">
+        #{timeLimit,jdbcType=INTEGER},
+      </if>
+      <if test="teamPrice != null">
+        #{teamPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="needer != null">
+        #{needer,jdbcType=INTEGER},
+      </if>
+      <if test="goodsName != null">
+        #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null">
+        #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="itemId != null">
+        #{itemId,jdbcType=INTEGER},
+      </if>
+      <if test="bonus != null">
+        #{bonus,jdbcType=DECIMAL},
+      </if>
+      <if test="stockLimit != null">
+        #{stockLimit,jdbcType=INTEGER},
+      </if>
+      <if test="buyLimit != null">
+        #{buyLimit,jdbcType=SMALLINT},
+      </if>
+      <if test="salesSum != null">
+        #{salesSum,jdbcType=INTEGER},
+      </if>
+      <if test="virtualNum != null">
+        #{virtualNum,jdbcType=INTEGER},
+      </if>
+      <if test="shareTitle != null">
+        #{shareTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="shareDesc != null">
+        #{shareDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="shareImg != null">
+        #{shareImg,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=SMALLINT},
+      </if>
+      <if test="isRecommend != null">
+        #{isRecommend,jdbcType=BIT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=BIT},
+      </if>
+      <if test="isLottery != null">
+        #{isLottery,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.TeamActivityExample" resultType="java.lang.Integer">
+    select count(*) from team_activity
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update team_activity
+    <set>
+      <if test="record.teamId != null">
+        team_id = #{record.teamId,jdbcType=INTEGER},
+      </if>
+      <if test="record.actName != null">
+        act_name = #{record.actName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.teamType != null">
+        team_type = #{record.teamType,jdbcType=BIT},
+      </if>
+      <if test="record.timeLimit != null">
+        time_limit = #{record.timeLimit,jdbcType=INTEGER},
+      </if>
+      <if test="record.teamPrice != null">
+        team_price = #{record.teamPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.needer != null">
+        needer = #{record.needer,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsName != null">
+        goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsId != null">
+        goods_id = #{record.goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.itemId != null">
+        item_id = #{record.itemId,jdbcType=INTEGER},
+      </if>
+      <if test="record.bonus != null">
+        bonus = #{record.bonus,jdbcType=DECIMAL},
+      </if>
+      <if test="record.stockLimit != null">
+        stock_limit = #{record.stockLimit,jdbcType=INTEGER},
+      </if>
+      <if test="record.buyLimit != null">
+        buy_limit = #{record.buyLimit,jdbcType=SMALLINT},
+      </if>
+      <if test="record.salesSum != null">
+        sales_sum = #{record.salesSum,jdbcType=INTEGER},
+      </if>
+      <if test="record.virtualNum != null">
+        virtual_num = #{record.virtualNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.shareTitle != null">
+        share_title = #{record.shareTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shareDesc != null">
+        share_desc = #{record.shareDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shareImg != null">
+        share_img = #{record.shareImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sort != null">
+        sort = #{record.sort,jdbcType=SMALLINT},
+      </if>
+      <if test="record.isRecommend != null">
+        is_recommend = #{record.isRecommend,jdbcType=BIT},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=BIT},
+      </if>
+      <if test="record.isLottery != null">
+        is_lottery = #{record.isLottery,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update team_activity
+    set team_id = #{record.teamId,jdbcType=INTEGER},
+      act_name = #{record.actName,jdbcType=VARCHAR},
+      team_type = #{record.teamType,jdbcType=BIT},
+      time_limit = #{record.timeLimit,jdbcType=INTEGER},
+      team_price = #{record.teamPrice,jdbcType=DECIMAL},
+      needer = #{record.needer,jdbcType=INTEGER},
+      goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
+      item_id = #{record.itemId,jdbcType=INTEGER},
+      bonus = #{record.bonus,jdbcType=DECIMAL},
+      stock_limit = #{record.stockLimit,jdbcType=INTEGER},
+      buy_limit = #{record.buyLimit,jdbcType=SMALLINT},
+      sales_sum = #{record.salesSum,jdbcType=INTEGER},
+      virtual_num = #{record.virtualNum,jdbcType=INTEGER},
+      share_title = #{record.shareTitle,jdbcType=VARCHAR},
+      share_desc = #{record.shareDesc,jdbcType=VARCHAR},
+      share_img = #{record.shareImg,jdbcType=VARCHAR},
+      sort = #{record.sort,jdbcType=SMALLINT},
+      is_recommend = #{record.isRecommend,jdbcType=BIT},
+      status = #{record.status,jdbcType=BIT},
+      is_lottery = #{record.isLottery,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.TeamActivity">
+    update team_activity
+    <set>
+      <if test="actName != null">
+        act_name = #{actName,jdbcType=VARCHAR},
+      </if>
+      <if test="teamType != null">
+        team_type = #{teamType,jdbcType=BIT},
+      </if>
+      <if test="timeLimit != null">
+        time_limit = #{timeLimit,jdbcType=INTEGER},
+      </if>
+      <if test="teamPrice != null">
+        team_price = #{teamPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="needer != null">
+        needer = #{needer,jdbcType=INTEGER},
+      </if>
+      <if test="goodsName != null">
+        goods_name = #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null">
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="itemId != null">
+        item_id = #{itemId,jdbcType=INTEGER},
+      </if>
+      <if test="bonus != null">
+        bonus = #{bonus,jdbcType=DECIMAL},
+      </if>
+      <if test="stockLimit != null">
+        stock_limit = #{stockLimit,jdbcType=INTEGER},
+      </if>
+      <if test="buyLimit != null">
+        buy_limit = #{buyLimit,jdbcType=SMALLINT},
+      </if>
+      <if test="salesSum != null">
+        sales_sum = #{salesSum,jdbcType=INTEGER},
+      </if>
+      <if test="virtualNum != null">
+        virtual_num = #{virtualNum,jdbcType=INTEGER},
+      </if>
+      <if test="shareTitle != null">
+        share_title = #{shareTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="shareDesc != null">
+        share_desc = #{shareDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="shareImg != null">
+        share_img = #{shareImg,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=SMALLINT},
+      </if>
+      <if test="isRecommend != null">
+        is_recommend = #{isRecommend,jdbcType=BIT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=BIT},
+      </if>
+      <if test="isLottery != null">
+        is_lottery = #{isLottery,jdbcType=BIT},
+      </if>
+    </set>
+    where team_id = #{teamId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.TeamActivity">
+    update team_activity
+    set act_name = #{actName,jdbcType=VARCHAR},
+      team_type = #{teamType,jdbcType=BIT},
+      time_limit = #{timeLimit,jdbcType=INTEGER},
+      team_price = #{teamPrice,jdbcType=DECIMAL},
+      needer = #{needer,jdbcType=INTEGER},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      item_id = #{itemId,jdbcType=INTEGER},
+      bonus = #{bonus,jdbcType=DECIMAL},
+      stock_limit = #{stockLimit,jdbcType=INTEGER},
+      buy_limit = #{buyLimit,jdbcType=SMALLINT},
+      sales_sum = #{salesSum,jdbcType=INTEGER},
+      virtual_num = #{virtualNum,jdbcType=INTEGER},
+      share_title = #{shareTitle,jdbcType=VARCHAR},
+      share_desc = #{shareDesc,jdbcType=VARCHAR},
+      share_img = #{shareImg,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=SMALLINT},
+      is_recommend = #{isRecommend,jdbcType=BIT},
+      status = #{status,jdbcType=BIT},
+      is_lottery = #{isLottery,jdbcType=BIT}
+    where team_id = #{teamId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.SpecGoodsPriceMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.SpecGoodsPrice">
+    <id column="item_id" jdbcType="BIGINT" property="itemId" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="key" jdbcType="VARCHAR" property="key" />
+    <result column="key_name" jdbcType="VARCHAR" property="keyName" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="store_count" jdbcType="INTEGER" property="storeCount" />
+    <result column="bar_code" jdbcType="VARCHAR" property="barCode" />
+    <result column="sku" jdbcType="VARCHAR" property="sku" />
+    <result column="spec_img" jdbcType="VARCHAR" property="specImg" />
+    <result column="prom_id" jdbcType="INTEGER" property="promId" />
+    <result column="prom_type" jdbcType="TINYINT" property="promType" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    item_id, goods_id, key, key_name, price, store_count, bar_code, sku, spec_img, prom_id, 
+    prom_type
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.SpecGoodsPriceExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from spec_goods_price
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from spec_goods_price
+    where item_id = #{itemId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from spec_goods_price
+    where item_id = #{itemId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.SpecGoodsPriceExample">
+    delete from spec_goods_price
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.SpecGoodsPrice">
+    insert into spec_goods_price (item_id, goods_id, key, 
+      key_name, price, store_count, 
+      bar_code, sku, spec_img, 
+      prom_id, prom_type)
+    values (#{itemId,jdbcType=BIGINT}, #{goodsId,jdbcType=INTEGER}, #{key,jdbcType=VARCHAR}, 
+      #{keyName,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{storeCount,jdbcType=INTEGER}, 
+      #{barCode,jdbcType=VARCHAR}, #{sku,jdbcType=VARCHAR}, #{specImg,jdbcType=VARCHAR}, 
+      #{promId,jdbcType=INTEGER}, #{promType,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.SpecGoodsPrice">
+    insert into spec_goods_price
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="itemId != null">
+        item_id,
+      </if>
+      <if test="goodsId != null">
+        goods_id,
+      </if>
+      <if test="key != null">
+        key,
+      </if>
+      <if test="keyName != null">
+        key_name,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="storeCount != null">
+        store_count,
+      </if>
+      <if test="barCode != null">
+        bar_code,
+      </if>
+      <if test="sku != null">
+        sku,
+      </if>
+      <if test="specImg != null">
+        spec_img,
+      </if>
+      <if test="promId != null">
+        prom_id,
+      </if>
+      <if test="promType != null">
+        prom_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="itemId != null">
+        #{itemId,jdbcType=BIGINT},
+      </if>
+      <if test="goodsId != null">
+        #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="key != null">
+        #{key,jdbcType=VARCHAR},
+      </if>
+      <if test="keyName != null">
+        #{keyName,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="storeCount != null">
+        #{storeCount,jdbcType=INTEGER},
+      </if>
+      <if test="barCode != null">
+        #{barCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sku != null">
+        #{sku,jdbcType=VARCHAR},
+      </if>
+      <if test="specImg != null">
+        #{specImg,jdbcType=VARCHAR},
+      </if>
+      <if test="promId != null">
+        #{promId,jdbcType=INTEGER},
+      </if>
+      <if test="promType != null">
+        #{promType,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.SpecGoodsPriceExample" resultType="java.lang.Integer">
+    select count(*) from spec_goods_price
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update spec_goods_price
+    <set>
+      <if test="record.itemId != null">
+        item_id = #{record.itemId,jdbcType=BIGINT},
+      </if>
+      <if test="record.goodsId != null">
+        goods_id = #{record.goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.key != null">
+        key = #{record.key,jdbcType=VARCHAR},
+      </if>
+      <if test="record.keyName != null">
+        key_name = #{record.keyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.storeCount != null">
+        store_count = #{record.storeCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.barCode != null">
+        bar_code = #{record.barCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sku != null">
+        sku = #{record.sku,jdbcType=VARCHAR},
+      </if>
+      <if test="record.specImg != null">
+        spec_img = #{record.specImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.promId != null">
+        prom_id = #{record.promId,jdbcType=INTEGER},
+      </if>
+      <if test="record.promType != null">
+        prom_type = #{record.promType,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update spec_goods_price
+    set item_id = #{record.itemId,jdbcType=BIGINT},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
+      key = #{record.key,jdbcType=VARCHAR},
+      key_name = #{record.keyName,jdbcType=VARCHAR},
+      price = #{record.price,jdbcType=DECIMAL},
+      store_count = #{record.storeCount,jdbcType=INTEGER},
+      bar_code = #{record.barCode,jdbcType=VARCHAR},
+      sku = #{record.sku,jdbcType=VARCHAR},
+      spec_img = #{record.specImg,jdbcType=VARCHAR},
+      prom_id = #{record.promId,jdbcType=INTEGER},
+      prom_type = #{record.promType,jdbcType=TINYINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.SpecGoodsPrice">
+    update spec_goods_price
+    <set>
+      <if test="goodsId != null">
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="key != null">
+        key = #{key,jdbcType=VARCHAR},
+      </if>
+      <if test="keyName != null">
+        key_name = #{keyName,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="storeCount != null">
+        store_count = #{storeCount,jdbcType=INTEGER},
+      </if>
+      <if test="barCode != null">
+        bar_code = #{barCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sku != null">
+        sku = #{sku,jdbcType=VARCHAR},
+      </if>
+      <if test="specImg != null">
+        spec_img = #{specImg,jdbcType=VARCHAR},
+      </if>
+      <if test="promId != null">
+        prom_id = #{promId,jdbcType=INTEGER},
+      </if>
+      <if test="promType != null">
+        prom_type = #{promType,jdbcType=TINYINT},
+      </if>
+    </set>
+    where item_id = #{itemId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.SpecGoodsPrice">
+    update spec_goods_price
+    set goods_id = #{goodsId,jdbcType=INTEGER},
+      key = #{key,jdbcType=VARCHAR},
+      key_name = #{keyName,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      store_count = #{storeCount,jdbcType=INTEGER},
+      bar_code = #{barCode,jdbcType=VARCHAR},
+      sku = #{sku,jdbcType=VARCHAR},
+      spec_img = #{specImg,jdbcType=VARCHAR},
+      prom_id = #{promId,jdbcType=INTEGER},
+      prom_type = #{promType,jdbcType=TINYINT}
+    where item_id = #{itemId,jdbcType=BIGINT}
+  </update>
+</mapper>

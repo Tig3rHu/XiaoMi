@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.OauthUsersMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.OauthUsers">
+    <id column="tu_id" jdbcType="INTEGER" property="tuId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="openid" jdbcType="VARCHAR" property="openid" />
+    <result column="oauth" jdbcType="VARCHAR" property="oauth" />
+    <result column="unionid" jdbcType="VARCHAR" property="unionid" />
+    <result column="oauth_child" jdbcType="VARCHAR" property="oauthChild" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    tu_id, user_id, openid, oauth, unionid, oauth_child
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.OauthUsersExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from oauth_users
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from oauth_users
+    where tu_id = #{tuId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from oauth_users
+    where tu_id = #{tuId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.OauthUsersExample">
+    delete from oauth_users
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.OauthUsers">
+    insert into oauth_users (tu_id, user_id, openid, 
+      oauth, unionid, oauth_child
+      )
+    values (#{tuId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{openid,jdbcType=VARCHAR}, 
+      #{oauth,jdbcType=VARCHAR}, #{unionid,jdbcType=VARCHAR}, #{oauthChild,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.OauthUsers">
+    insert into oauth_users
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tuId != null">
+        tu_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="openid != null">
+        openid,
+      </if>
+      <if test="oauth != null">
+        oauth,
+      </if>
+      <if test="unionid != null">
+        unionid,
+      </if>
+      <if test="oauthChild != null">
+        oauth_child,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tuId != null">
+        #{tuId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="openid != null">
+        #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="oauth != null">
+        #{oauth,jdbcType=VARCHAR},
+      </if>
+      <if test="unionid != null">
+        #{unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="oauthChild != null">
+        #{oauthChild,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.OauthUsersExample" resultType="java.lang.Integer">
+    select count(*) from oauth_users
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update oauth_users
+    <set>
+      <if test="record.tuId != null">
+        tu_id = #{record.tuId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.openid != null">
+        openid = #{record.openid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oauth != null">
+        oauth = #{record.oauth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.unionid != null">
+        unionid = #{record.unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oauthChild != null">
+        oauth_child = #{record.oauthChild,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update oauth_users
+    set tu_id = #{record.tuId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      openid = #{record.openid,jdbcType=VARCHAR},
+      oauth = #{record.oauth,jdbcType=VARCHAR},
+      unionid = #{record.unionid,jdbcType=VARCHAR},
+      oauth_child = #{record.oauthChild,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.OauthUsers">
+    update oauth_users
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="openid != null">
+        openid = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="oauth != null">
+        oauth = #{oauth,jdbcType=VARCHAR},
+      </if>
+      <if test="unionid != null">
+        unionid = #{unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="oauthChild != null">
+        oauth_child = #{oauthChild,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where tu_id = #{tuId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.OauthUsers">
+    update oauth_users
+    set user_id = #{userId,jdbcType=INTEGER},
+      openid = #{openid,jdbcType=VARCHAR},
+      oauth = #{oauth,jdbcType=VARCHAR},
+      unionid = #{unionid,jdbcType=VARCHAR},
+      oauth_child = #{oauthChild,jdbcType=VARCHAR}
+    where tu_id = #{tuId,jdbcType=INTEGER}
+  </update>
+</mapper>

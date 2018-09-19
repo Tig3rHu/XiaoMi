@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.TeamFoundMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.TeamFound">
+    <id column="found_id" jdbcType="INTEGER" property="foundId" />
+    <result column="found_time" jdbcType="INTEGER" property="foundTime" />
+    <result column="found_end_time" jdbcType="INTEGER" property="foundEndTime" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="team_id" jdbcType="INTEGER" property="teamId" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="head_pic" jdbcType="VARCHAR" property="headPic" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="join" jdbcType="INTEGER" property="join" />
+    <result column="need" jdbcType="INTEGER" property="need" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="goods_price" jdbcType="DECIMAL" property="goodsPrice" />
+    <result column="status" jdbcType="BIT" property="status" />
+    <result column="bonus_status" jdbcType="BIT" property="bonusStatus" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    found_id, found_time, found_end_time, user_id, team_id, nickname, head_pic, order_id, 
+    join, need, price, goods_price, status, bonus_status
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.TeamFoundExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from team_found
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from team_found
+    where found_id = #{foundId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from team_found
+    where found_id = #{foundId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.TeamFoundExample">
+    delete from team_found
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.TeamFound">
+    insert into team_found (found_id, found_time, found_end_time, 
+      user_id, team_id, nickname, 
+      head_pic, order_id, join, 
+      need, price, goods_price, 
+      status, bonus_status)
+    values (#{foundId,jdbcType=INTEGER}, #{foundTime,jdbcType=INTEGER}, #{foundEndTime,jdbcType=INTEGER}, 
+      #{userId,jdbcType=INTEGER}, #{teamId,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, 
+      #{headPic,jdbcType=VARCHAR}, #{orderId,jdbcType=INTEGER}, #{join,jdbcType=INTEGER}, 
+      #{need,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, #{goodsPrice,jdbcType=DECIMAL}, 
+      #{status,jdbcType=BIT}, #{bonusStatus,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.TeamFound">
+    insert into team_found
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="foundId != null">
+        found_id,
+      </if>
+      <if test="foundTime != null">
+        found_time,
+      </if>
+      <if test="foundEndTime != null">
+        found_end_time,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="teamId != null">
+        team_id,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="headPic != null">
+        head_pic,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="join != null">
+        join,
+      </if>
+      <if test="need != null">
+        need,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="goodsPrice != null">
+        goods_price,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="bonusStatus != null">
+        bonus_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="foundId != null">
+        #{foundId,jdbcType=INTEGER},
+      </if>
+      <if test="foundTime != null">
+        #{foundTime,jdbcType=INTEGER},
+      </if>
+      <if test="foundEndTime != null">
+        #{foundEndTime,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="teamId != null">
+        #{teamId,jdbcType=INTEGER},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="headPic != null">
+        #{headPic,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="join != null">
+        #{join,jdbcType=INTEGER},
+      </if>
+      <if test="need != null">
+        #{need,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsPrice != null">
+        #{goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=BIT},
+      </if>
+      <if test="bonusStatus != null">
+        #{bonusStatus,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.TeamFoundExample" resultType="java.lang.Integer">
+    select count(*) from team_found
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update team_found
+    <set>
+      <if test="record.foundId != null">
+        found_id = #{record.foundId,jdbcType=INTEGER},
+      </if>
+      <if test="record.foundTime != null">
+        found_time = #{record.foundTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.foundEndTime != null">
+        found_end_time = #{record.foundEndTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.teamId != null">
+        team_id = #{record.teamId,jdbcType=INTEGER},
+      </if>
+      <if test="record.nickname != null">
+        nickname = #{record.nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.headPic != null">
+        head_pic = #{record.headPic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.join != null">
+        join = #{record.join,jdbcType=INTEGER},
+      </if>
+      <if test="record.need != null">
+        need = #{record.need,jdbcType=INTEGER},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.goodsPrice != null">
+        goods_price = #{record.goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=BIT},
+      </if>
+      <if test="record.bonusStatus != null">
+        bonus_status = #{record.bonusStatus,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update team_found
+    set found_id = #{record.foundId,jdbcType=INTEGER},
+      found_time = #{record.foundTime,jdbcType=INTEGER},
+      found_end_time = #{record.foundEndTime,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      team_id = #{record.teamId,jdbcType=INTEGER},
+      nickname = #{record.nickname,jdbcType=VARCHAR},
+      head_pic = #{record.headPic,jdbcType=VARCHAR},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      join = #{record.join,jdbcType=INTEGER},
+      need = #{record.need,jdbcType=INTEGER},
+      price = #{record.price,jdbcType=DECIMAL},
+      goods_price = #{record.goodsPrice,jdbcType=DECIMAL},
+      status = #{record.status,jdbcType=BIT},
+      bonus_status = #{record.bonusStatus,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.TeamFound">
+    update team_found
+    <set>
+      <if test="foundTime != null">
+        found_time = #{foundTime,jdbcType=INTEGER},
+      </if>
+      <if test="foundEndTime != null">
+        found_end_time = #{foundEndTime,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="teamId != null">
+        team_id = #{teamId,jdbcType=INTEGER},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="headPic != null">
+        head_pic = #{headPic,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="join != null">
+        join = #{join,jdbcType=INTEGER},
+      </if>
+      <if test="need != null">
+        need = #{need,jdbcType=INTEGER},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsPrice != null">
+        goods_price = #{goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=BIT},
+      </if>
+      <if test="bonusStatus != null">
+        bonus_status = #{bonusStatus,jdbcType=BIT},
+      </if>
+    </set>
+    where found_id = #{foundId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.TeamFound">
+    update team_found
+    set found_time = #{foundTime,jdbcType=INTEGER},
+      found_end_time = #{foundEndTime,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      team_id = #{teamId,jdbcType=INTEGER},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      head_pic = #{headPic,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=INTEGER},
+      join = #{join,jdbcType=INTEGER},
+      need = #{need,jdbcType=INTEGER},
+      price = #{price,jdbcType=DECIMAL},
+      goods_price = #{goodsPrice,jdbcType=DECIMAL},
+      status = #{status,jdbcType=BIT},
+      bonus_status = #{bonusStatus,jdbcType=BIT}
+    where found_id = #{foundId,jdbcType=INTEGER}
+  </update>
+</mapper>

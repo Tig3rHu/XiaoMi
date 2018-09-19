@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.VrOrderCodeMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.VrOrderCode">
+    <id column="rec_id" jdbcType="INTEGER" property="recId" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="vr_code" jdbcType="VARCHAR" property="vrCode" />
+    <result column="vr_state" jdbcType="TINYINT" property="vrState" />
+    <result column="vr_usetime" jdbcType="INTEGER" property="vrUsetime" />
+    <result column="pay_price" jdbcType="DECIMAL" property="payPrice" />
+    <result column="vr_indate" jdbcType="INTEGER" property="vrIndate" />
+    <result column="refund_lock" jdbcType="BIT" property="refundLock" />
+    <result column="vr_invalid_refund" jdbcType="TINYINT" property="vrInvalidRefund" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    rec_id, order_id, user_id, vr_code, vr_state, vr_usetime, pay_price, vr_indate, refund_lock, 
+    vr_invalid_refund
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.VrOrderCodeExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from vr_order_code
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from vr_order_code
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from vr_order_code
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.VrOrderCodeExample">
+    delete from vr_order_code
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.VrOrderCode">
+    insert into vr_order_code (rec_id, order_id, user_id, 
+      vr_code, vr_state, vr_usetime, 
+      pay_price, vr_indate, refund_lock, 
+      vr_invalid_refund)
+    values (#{recId,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{vrCode,jdbcType=VARCHAR}, #{vrState,jdbcType=TINYINT}, #{vrUsetime,jdbcType=INTEGER}, 
+      #{payPrice,jdbcType=DECIMAL}, #{vrIndate,jdbcType=INTEGER}, #{refundLock,jdbcType=BIT}, 
+      #{vrInvalidRefund,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.VrOrderCode">
+    insert into vr_order_code
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="recId != null">
+        rec_id,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="vrCode != null">
+        vr_code,
+      </if>
+      <if test="vrState != null">
+        vr_state,
+      </if>
+      <if test="vrUsetime != null">
+        vr_usetime,
+      </if>
+      <if test="payPrice != null">
+        pay_price,
+      </if>
+      <if test="vrIndate != null">
+        vr_indate,
+      </if>
+      <if test="refundLock != null">
+        refund_lock,
+      </if>
+      <if test="vrInvalidRefund != null">
+        vr_invalid_refund,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="recId != null">
+        #{recId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="vrCode != null">
+        #{vrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="vrState != null">
+        #{vrState,jdbcType=TINYINT},
+      </if>
+      <if test="vrUsetime != null">
+        #{vrUsetime,jdbcType=INTEGER},
+      </if>
+      <if test="payPrice != null">
+        #{payPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="vrIndate != null">
+        #{vrIndate,jdbcType=INTEGER},
+      </if>
+      <if test="refundLock != null">
+        #{refundLock,jdbcType=BIT},
+      </if>
+      <if test="vrInvalidRefund != null">
+        #{vrInvalidRefund,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.VrOrderCodeExample" resultType="java.lang.Integer">
+    select count(*) from vr_order_code
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update vr_order_code
+    <set>
+      <if test="record.recId != null">
+        rec_id = #{record.recId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.vrCode != null">
+        vr_code = #{record.vrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.vrState != null">
+        vr_state = #{record.vrState,jdbcType=TINYINT},
+      </if>
+      <if test="record.vrUsetime != null">
+        vr_usetime = #{record.vrUsetime,jdbcType=INTEGER},
+      </if>
+      <if test="record.payPrice != null">
+        pay_price = #{record.payPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.vrIndate != null">
+        vr_indate = #{record.vrIndate,jdbcType=INTEGER},
+      </if>
+      <if test="record.refundLock != null">
+        refund_lock = #{record.refundLock,jdbcType=BIT},
+      </if>
+      <if test="record.vrInvalidRefund != null">
+        vr_invalid_refund = #{record.vrInvalidRefund,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update vr_order_code
+    set rec_id = #{record.recId,jdbcType=INTEGER},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      vr_code = #{record.vrCode,jdbcType=VARCHAR},
+      vr_state = #{record.vrState,jdbcType=TINYINT},
+      vr_usetime = #{record.vrUsetime,jdbcType=INTEGER},
+      pay_price = #{record.payPrice,jdbcType=DECIMAL},
+      vr_indate = #{record.vrIndate,jdbcType=INTEGER},
+      refund_lock = #{record.refundLock,jdbcType=BIT},
+      vr_invalid_refund = #{record.vrInvalidRefund,jdbcType=TINYINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.VrOrderCode">
+    update vr_order_code
+    <set>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="vrCode != null">
+        vr_code = #{vrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="vrState != null">
+        vr_state = #{vrState,jdbcType=TINYINT},
+      </if>
+      <if test="vrUsetime != null">
+        vr_usetime = #{vrUsetime,jdbcType=INTEGER},
+      </if>
+      <if test="payPrice != null">
+        pay_price = #{payPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="vrIndate != null">
+        vr_indate = #{vrIndate,jdbcType=INTEGER},
+      </if>
+      <if test="refundLock != null">
+        refund_lock = #{refundLock,jdbcType=BIT},
+      </if>
+      <if test="vrInvalidRefund != null">
+        vr_invalid_refund = #{vrInvalidRefund,jdbcType=TINYINT},
+      </if>
+    </set>
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.VrOrderCode">
+    update vr_order_code
+    set order_id = #{orderId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      vr_code = #{vrCode,jdbcType=VARCHAR},
+      vr_state = #{vrState,jdbcType=TINYINT},
+      vr_usetime = #{vrUsetime,jdbcType=INTEGER},
+      pay_price = #{payPrice,jdbcType=DECIMAL},
+      vr_indate = #{vrIndate,jdbcType=INTEGER},
+      refund_lock = #{refundLock,jdbcType=BIT},
+      vr_invalid_refund = #{vrInvalidRefund,jdbcType=TINYINT}
+    where rec_id = #{recId,jdbcType=INTEGER}
+  </update>
+</mapper>

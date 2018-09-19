@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.ReturnGoodsMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.ReturnGoods">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="rec_id" jdbcType="INTEGER" property="recId" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="order_sn" jdbcType="VARCHAR" property="orderSn" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="goods_num" jdbcType="INTEGER" property="goodsNum" />
+    <result column="type" jdbcType="BIT" property="type" />
+    <result column="reason" jdbcType="VARCHAR" property="reason" />
+    <result column="describe" jdbcType="VARCHAR" property="describe" />
+    <result column="imgs" jdbcType="VARCHAR" property="imgs" />
+    <result column="addtime" jdbcType="INTEGER" property="addtime" />
+    <result column="status" jdbcType="BIT" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="spec_key" jdbcType="VARCHAR" property="specKey" />
+    <result column="refund_money" jdbcType="DECIMAL" property="refundMoney" />
+    <result column="refund_deposit" jdbcType="DECIMAL" property="refundDeposit" />
+    <result column="refund_integral" jdbcType="INTEGER" property="refundIntegral" />
+    <result column="refund_type" jdbcType="BIT" property="refundType" />
+    <result column="refund_mark" jdbcType="VARCHAR" property="refundMark" />
+    <result column="refund_time" jdbcType="INTEGER" property="refundTime" />
+    <result column="is_receive" jdbcType="TINYINT" property="isReceive" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.ReturnGoods">
+    <result column="seller_delivery" jdbcType="LONGVARCHAR" property="sellerDelivery" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, rec_id, order_id, order_sn, goods_id, goods_num, type, reason, describe, imgs, 
+    addtime, status, remark, user_id, spec_key, refund_money, refund_deposit, refund_integral, 
+    refund_type, refund_mark, refund_time, is_receive
+  </sql>
+  <sql id="Blob_Column_List">
+    seller_delivery
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.wuyou.entity.ReturnGoodsExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from return_goods
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.wuyou.entity.ReturnGoodsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from return_goods
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from return_goods
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from return_goods
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.ReturnGoodsExample">
+    delete from return_goods
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.ReturnGoods">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into return_goods (rec_id, order_id, order_sn, 
+      goods_id, goods_num, type, 
+      reason, describe, imgs, 
+      addtime, status, remark, 
+      user_id, spec_key, refund_money, 
+      refund_deposit, refund_integral, refund_type, 
+      refund_mark, refund_time, is_receive, 
+      seller_delivery)
+    values (#{recId,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, #{orderSn,jdbcType=VARCHAR}, 
+      #{goodsId,jdbcType=INTEGER}, #{goodsNum,jdbcType=INTEGER}, #{type,jdbcType=BIT}, 
+      #{reason,jdbcType=VARCHAR}, #{describe,jdbcType=VARCHAR}, #{imgs,jdbcType=VARCHAR}, 
+      #{addtime,jdbcType=INTEGER}, #{status,jdbcType=BIT}, #{remark,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=INTEGER}, #{specKey,jdbcType=VARCHAR}, #{refundMoney,jdbcType=DECIMAL}, 
+      #{refundDeposit,jdbcType=DECIMAL}, #{refundIntegral,jdbcType=INTEGER}, #{refundType,jdbcType=BIT}, 
+      #{refundMark,jdbcType=VARCHAR}, #{refundTime,jdbcType=INTEGER}, #{isReceive,jdbcType=TINYINT}, 
+      #{sellerDelivery,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.ReturnGoods">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into return_goods
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="recId != null">
+        rec_id,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="orderSn != null">
+        order_sn,
+      </if>
+      <if test="goodsId != null">
+        goods_id,
+      </if>
+      <if test="goodsNum != null">
+        goods_num,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="reason != null">
+        reason,
+      </if>
+      <if test="describe != null">
+        describe,
+      </if>
+      <if test="imgs != null">
+        imgs,
+      </if>
+      <if test="addtime != null">
+        addtime,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="specKey != null">
+        spec_key,
+      </if>
+      <if test="refundMoney != null">
+        refund_money,
+      </if>
+      <if test="refundDeposit != null">
+        refund_deposit,
+      </if>
+      <if test="refundIntegral != null">
+        refund_integral,
+      </if>
+      <if test="refundType != null">
+        refund_type,
+      </if>
+      <if test="refundMark != null">
+        refund_mark,
+      </if>
+      <if test="refundTime != null">
+        refund_time,
+      </if>
+      <if test="isReceive != null">
+        is_receive,
+      </if>
+      <if test="sellerDelivery != null">
+        seller_delivery,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="recId != null">
+        #{recId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="orderSn != null">
+        #{orderSn,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null">
+        #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsNum != null">
+        #{goodsNum,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=BIT},
+      </if>
+      <if test="reason != null">
+        #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="describe != null">
+        #{describe,jdbcType=VARCHAR},
+      </if>
+      <if test="imgs != null">
+        #{imgs,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null">
+        #{addtime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=BIT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="specKey != null">
+        #{specKey,jdbcType=VARCHAR},
+      </if>
+      <if test="refundMoney != null">
+        #{refundMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="refundDeposit != null">
+        #{refundDeposit,jdbcType=DECIMAL},
+      </if>
+      <if test="refundIntegral != null">
+        #{refundIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="refundType != null">
+        #{refundType,jdbcType=BIT},
+      </if>
+      <if test="refundMark != null">
+        #{refundMark,jdbcType=VARCHAR},
+      </if>
+      <if test="refundTime != null">
+        #{refundTime,jdbcType=INTEGER},
+      </if>
+      <if test="isReceive != null">
+        #{isReceive,jdbcType=TINYINT},
+      </if>
+      <if test="sellerDelivery != null">
+        #{sellerDelivery,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.ReturnGoodsExample" resultType="java.lang.Integer">
+    select count(*) from return_goods
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update return_goods
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.recId != null">
+        rec_id = #{record.recId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderSn != null">
+        order_sn = #{record.orderSn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.goodsId != null">
+        goods_id = #{record.goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsNum != null">
+        goods_num = #{record.goodsNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=BIT},
+      </if>
+      <if test="record.reason != null">
+        reason = #{record.reason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.describe != null">
+        describe = #{record.describe,jdbcType=VARCHAR},
+      </if>
+      <if test="record.imgs != null">
+        imgs = #{record.imgs,jdbcType=VARCHAR},
+      </if>
+      <if test="record.addtime != null">
+        addtime = #{record.addtime,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=BIT},
+      </if>
+      <if test="record.remark != null">
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.specKey != null">
+        spec_key = #{record.specKey,jdbcType=VARCHAR},
+      </if>
+      <if test="record.refundMoney != null">
+        refund_money = #{record.refundMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="record.refundDeposit != null">
+        refund_deposit = #{record.refundDeposit,jdbcType=DECIMAL},
+      </if>
+      <if test="record.refundIntegral != null">
+        refund_integral = #{record.refundIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="record.refundType != null">
+        refund_type = #{record.refundType,jdbcType=BIT},
+      </if>
+      <if test="record.refundMark != null">
+        refund_mark = #{record.refundMark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.refundTime != null">
+        refund_time = #{record.refundTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.isReceive != null">
+        is_receive = #{record.isReceive,jdbcType=TINYINT},
+      </if>
+      <if test="record.sellerDelivery != null">
+        seller_delivery = #{record.sellerDelivery,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update return_goods
+    set id = #{record.id,jdbcType=INTEGER},
+      rec_id = #{record.recId,jdbcType=INTEGER},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      order_sn = #{record.orderSn,jdbcType=VARCHAR},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
+      goods_num = #{record.goodsNum,jdbcType=INTEGER},
+      type = #{record.type,jdbcType=BIT},
+      reason = #{record.reason,jdbcType=VARCHAR},
+      describe = #{record.describe,jdbcType=VARCHAR},
+      imgs = #{record.imgs,jdbcType=VARCHAR},
+      addtime = #{record.addtime,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=BIT},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      spec_key = #{record.specKey,jdbcType=VARCHAR},
+      refund_money = #{record.refundMoney,jdbcType=DECIMAL},
+      refund_deposit = #{record.refundDeposit,jdbcType=DECIMAL},
+      refund_integral = #{record.refundIntegral,jdbcType=INTEGER},
+      refund_type = #{record.refundType,jdbcType=BIT},
+      refund_mark = #{record.refundMark,jdbcType=VARCHAR},
+      refund_time = #{record.refundTime,jdbcType=INTEGER},
+      is_receive = #{record.isReceive,jdbcType=TINYINT},
+      seller_delivery = #{record.sellerDelivery,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update return_goods
+    set id = #{record.id,jdbcType=INTEGER},
+      rec_id = #{record.recId,jdbcType=INTEGER},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      order_sn = #{record.orderSn,jdbcType=VARCHAR},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
+      goods_num = #{record.goodsNum,jdbcType=INTEGER},
+      type = #{record.type,jdbcType=BIT},
+      reason = #{record.reason,jdbcType=VARCHAR},
+      describe = #{record.describe,jdbcType=VARCHAR},
+      imgs = #{record.imgs,jdbcType=VARCHAR},
+      addtime = #{record.addtime,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=BIT},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=INTEGER},
+      spec_key = #{record.specKey,jdbcType=VARCHAR},
+      refund_money = #{record.refundMoney,jdbcType=DECIMAL},
+      refund_deposit = #{record.refundDeposit,jdbcType=DECIMAL},
+      refund_integral = #{record.refundIntegral,jdbcType=INTEGER},
+      refund_type = #{record.refundType,jdbcType=BIT},
+      refund_mark = #{record.refundMark,jdbcType=VARCHAR},
+      refund_time = #{record.refundTime,jdbcType=INTEGER},
+      is_receive = #{record.isReceive,jdbcType=TINYINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.ReturnGoods">
+    update return_goods
+    <set>
+      <if test="recId != null">
+        rec_id = #{recId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="orderSn != null">
+        order_sn = #{orderSn,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsId != null">
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="goodsNum != null">
+        goods_num = #{goodsNum,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=BIT},
+      </if>
+      <if test="reason != null">
+        reason = #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="describe != null">
+        describe = #{describe,jdbcType=VARCHAR},
+      </if>
+      <if test="imgs != null">
+        imgs = #{imgs,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null">
+        addtime = #{addtime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=BIT},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="specKey != null">
+        spec_key = #{specKey,jdbcType=VARCHAR},
+      </if>
+      <if test="refundMoney != null">
+        refund_money = #{refundMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="refundDeposit != null">
+        refund_deposit = #{refundDeposit,jdbcType=DECIMAL},
+      </if>
+      <if test="refundIntegral != null">
+        refund_integral = #{refundIntegral,jdbcType=INTEGER},
+      </if>
+      <if test="refundType != null">
+        refund_type = #{refundType,jdbcType=BIT},
+      </if>
+      <if test="refundMark != null">
+        refund_mark = #{refundMark,jdbcType=VARCHAR},
+      </if>
+      <if test="refundTime != null">
+        refund_time = #{refundTime,jdbcType=INTEGER},
+      </if>
+      <if test="isReceive != null">
+        is_receive = #{isReceive,jdbcType=TINYINT},
+      </if>
+      <if test="sellerDelivery != null">
+        seller_delivery = #{sellerDelivery,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuyou.entity.ReturnGoods">
+    update return_goods
+    set rec_id = #{recId,jdbcType=INTEGER},
+      order_id = #{orderId,jdbcType=INTEGER},
+      order_sn = #{orderSn,jdbcType=VARCHAR},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      goods_num = #{goodsNum,jdbcType=INTEGER},
+      type = #{type,jdbcType=BIT},
+      reason = #{reason,jdbcType=VARCHAR},
+      describe = #{describe,jdbcType=VARCHAR},
+      imgs = #{imgs,jdbcType=VARCHAR},
+      addtime = #{addtime,jdbcType=INTEGER},
+      status = #{status,jdbcType=BIT},
+      remark = #{remark,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
+      spec_key = #{specKey,jdbcType=VARCHAR},
+      refund_money = #{refundMoney,jdbcType=DECIMAL},
+      refund_deposit = #{refundDeposit,jdbcType=DECIMAL},
+      refund_integral = #{refundIntegral,jdbcType=INTEGER},
+      refund_type = #{refundType,jdbcType=BIT},
+      refund_mark = #{refundMark,jdbcType=VARCHAR},
+      refund_time = #{refundTime,jdbcType=INTEGER},
+      is_receive = #{isReceive,jdbcType=TINYINT},
+      seller_delivery = #{sellerDelivery,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.ReturnGoods">
+    update return_goods
+    set rec_id = #{recId,jdbcType=INTEGER},
+      order_id = #{orderId,jdbcType=INTEGER},
+      order_sn = #{orderSn,jdbcType=VARCHAR},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      goods_num = #{goodsNum,jdbcType=INTEGER},
+      type = #{type,jdbcType=BIT},
+      reason = #{reason,jdbcType=VARCHAR},
+      describe = #{describe,jdbcType=VARCHAR},
+      imgs = #{imgs,jdbcType=VARCHAR},
+      addtime = #{addtime,jdbcType=INTEGER},
+      status = #{status,jdbcType=BIT},
+      remark = #{remark,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=INTEGER},
+      spec_key = #{specKey,jdbcType=VARCHAR},
+      refund_money = #{refundMoney,jdbcType=DECIMAL},
+      refund_deposit = #{refundDeposit,jdbcType=DECIMAL},
+      refund_integral = #{refundIntegral,jdbcType=INTEGER},
+      refund_type = #{refundType,jdbcType=BIT},
+      refund_mark = #{refundMark,jdbcType=VARCHAR},
+      refund_time = #{refundTime,jdbcType=INTEGER},
+      is_receive = #{isReceive,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

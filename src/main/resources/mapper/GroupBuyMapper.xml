@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.GroupBuyMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.GroupBuy">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="start_time" jdbcType="INTEGER" property="startTime" />
+    <result column="end_time" jdbcType="INTEGER" property="endTime" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="item_id" jdbcType="BIGINT" property="itemId" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="goods_num" jdbcType="INTEGER" property="goodsNum" />
+    <result column="buy_num" jdbcType="INTEGER" property="buyNum" />
+    <result column="order_num" jdbcType="INTEGER" property="orderNum" />
+    <result column="virtual_num" jdbcType="INTEGER" property="virtualNum" />
+    <result column="rebate" jdbcType="DECIMAL" property="rebate" />
+    <result column="goods_price" jdbcType="DECIMAL" property="goodsPrice" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="recommended" jdbcType="BIT" property="recommended" />
+    <result column="views" jdbcType="INTEGER" property="views" />
+    <result column="is_end" jdbcType="BIT" property="isEnd" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.GroupBuy">
+    <result column="intro" jdbcType="LONGVARCHAR" property="intro" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, title, start_time, end_time, goods_id, item_id, price, goods_num, buy_num, order_num, 
+    virtual_num, rebate, goods_price, goods_name, recommended, views, is_end
+  </sql>
+  <sql id="Blob_Column_List">
+    intro
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.wuyou.entity.GroupBuyExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from group_buy
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.wuyou.entity.GroupBuyExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from group_buy
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from group_buy
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from group_buy
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.GroupBuyExample">
+    delete from group_buy
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.GroupBuy">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into group_buy (title, start_time, end_time, 
+      goods_id, item_id, price, 
+      goods_num, buy_num, order_num, 
+      virtual_num, rebate, goods_price, 
+      goods_name, recommended, views, 
+      is_end, intro)
+    values (#{title,jdbcType=VARCHAR}, #{startTime,jdbcType=INTEGER}, #{endTime,jdbcType=INTEGER}, 
+      #{goodsId,jdbcType=INTEGER}, #{itemId,jdbcType=BIGINT}, #{price,jdbcType=DECIMAL}, 
+      #{goodsNum,jdbcType=INTEGER}, #{buyNum,jdbcType=INTEGER}, #{orderNum,jdbcType=INTEGER}, 
+      #{virtualNum,jdbcType=INTEGER}, #{rebate,jdbcType=DECIMAL}, #{goodsPrice,jdbcType=DECIMAL}, 
+      #{goodsName,jdbcType=VARCHAR}, #{recommended,jdbcType=BIT}, #{views,jdbcType=INTEGER}, 
+      #{isEnd,jdbcType=BIT}, #{intro,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.GroupBuy">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into group_buy
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="title != null">
+        title,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+      <if test="goodsId != null">
+        goods_id,
+      </if>
+      <if test="itemId != null">
+        item_id,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="goodsNum != null">
+        goods_num,
+      </if>
+      <if test="buyNum != null">
+        buy_num,
+      </if>
+      <if test="orderNum != null">
+        order_num,
+      </if>
+      <if test="virtualNum != null">
+        virtual_num,
+      </if>
+      <if test="rebate != null">
+        rebate,
+      </if>
+      <if test="goodsPrice != null">
+        goods_price,
+      </if>
+      <if test="goodsName != null">
+        goods_name,
+      </if>
+      <if test="recommended != null">
+        recommended,
+      </if>
+      <if test="views != null">
+        views,
+      </if>
+      <if test="isEnd != null">
+        is_end,
+      </if>
+      <if test="intro != null">
+        intro,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=INTEGER},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=INTEGER},
+      </if>
+      <if test="goodsId != null">
+        #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="itemId != null">
+        #{itemId,jdbcType=BIGINT},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsNum != null">
+        #{goodsNum,jdbcType=INTEGER},
+      </if>
+      <if test="buyNum != null">
+        #{buyNum,jdbcType=INTEGER},
+      </if>
+      <if test="orderNum != null">
+        #{orderNum,jdbcType=INTEGER},
+      </if>
+      <if test="virtualNum != null">
+        #{virtualNum,jdbcType=INTEGER},
+      </if>
+      <if test="rebate != null">
+        #{rebate,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsPrice != null">
+        #{goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsName != null">
+        #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="recommended != null">
+        #{recommended,jdbcType=BIT},
+      </if>
+      <if test="views != null">
+        #{views,jdbcType=INTEGER},
+      </if>
+      <if test="isEnd != null">
+        #{isEnd,jdbcType=BIT},
+      </if>
+      <if test="intro != null">
+        #{intro,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.GroupBuyExample" resultType="java.lang.Integer">
+    select count(*) from group_buy
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update group_buy
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.title != null">
+        title = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startTime != null">
+        start_time = #{record.startTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.endTime != null">
+        end_time = #{record.endTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodsId != null">
+        goods_id = #{record.goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.itemId != null">
+        item_id = #{record.itemId,jdbcType=BIGINT},
+      </if>
+      <if test="record.price != null">
+        price = #{record.price,jdbcType=DECIMAL},
+      </if>
+      <if test="record.goodsNum != null">
+        goods_num = #{record.goodsNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.buyNum != null">
+        buy_num = #{record.buyNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderNum != null">
+        order_num = #{record.orderNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.virtualNum != null">
+        virtual_num = #{record.virtualNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.rebate != null">
+        rebate = #{record.rebate,jdbcType=DECIMAL},
+      </if>
+      <if test="record.goodsPrice != null">
+        goods_price = #{record.goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.goodsName != null">
+        goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.recommended != null">
+        recommended = #{record.recommended,jdbcType=BIT},
+      </if>
+      <if test="record.views != null">
+        views = #{record.views,jdbcType=INTEGER},
+      </if>
+      <if test="record.isEnd != null">
+        is_end = #{record.isEnd,jdbcType=BIT},
+      </if>
+      <if test="record.intro != null">
+        intro = #{record.intro,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update group_buy
+    set id = #{record.id,jdbcType=INTEGER},
+      title = #{record.title,jdbcType=VARCHAR},
+      start_time = #{record.startTime,jdbcType=INTEGER},
+      end_time = #{record.endTime,jdbcType=INTEGER},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
+      item_id = #{record.itemId,jdbcType=BIGINT},
+      price = #{record.price,jdbcType=DECIMAL},
+      goods_num = #{record.goodsNum,jdbcType=INTEGER},
+      buy_num = #{record.buyNum,jdbcType=INTEGER},
+      order_num = #{record.orderNum,jdbcType=INTEGER},
+      virtual_num = #{record.virtualNum,jdbcType=INTEGER},
+      rebate = #{record.rebate,jdbcType=DECIMAL},
+      goods_price = #{record.goodsPrice,jdbcType=DECIMAL},
+      goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      recommended = #{record.recommended,jdbcType=BIT},
+      views = #{record.views,jdbcType=INTEGER},
+      is_end = #{record.isEnd,jdbcType=BIT},
+      intro = #{record.intro,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update group_buy
+    set id = #{record.id,jdbcType=INTEGER},
+      title = #{record.title,jdbcType=VARCHAR},
+      start_time = #{record.startTime,jdbcType=INTEGER},
+      end_time = #{record.endTime,jdbcType=INTEGER},
+      goods_id = #{record.goodsId,jdbcType=INTEGER},
+      item_id = #{record.itemId,jdbcType=BIGINT},
+      price = #{record.price,jdbcType=DECIMAL},
+      goods_num = #{record.goodsNum,jdbcType=INTEGER},
+      buy_num = #{record.buyNum,jdbcType=INTEGER},
+      order_num = #{record.orderNum,jdbcType=INTEGER},
+      virtual_num = #{record.virtualNum,jdbcType=INTEGER},
+      rebate = #{record.rebate,jdbcType=DECIMAL},
+      goods_price = #{record.goodsPrice,jdbcType=DECIMAL},
+      goods_name = #{record.goodsName,jdbcType=VARCHAR},
+      recommended = #{record.recommended,jdbcType=BIT},
+      views = #{record.views,jdbcType=INTEGER},
+      is_end = #{record.isEnd,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.GroupBuy">
+    update group_buy
+    <set>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=INTEGER},
+      </if>
+      <if test="endTime != null">
+        end_time = #{endTime,jdbcType=INTEGER},
+      </if>
+      <if test="goodsId != null">
+        goods_id = #{goodsId,jdbcType=INTEGER},
+      </if>
+      <if test="itemId != null">
+        item_id = #{itemId,jdbcType=BIGINT},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsNum != null">
+        goods_num = #{goodsNum,jdbcType=INTEGER},
+      </if>
+      <if test="buyNum != null">
+        buy_num = #{buyNum,jdbcType=INTEGER},
+      </if>
+      <if test="orderNum != null">
+        order_num = #{orderNum,jdbcType=INTEGER},
+      </if>
+      <if test="virtualNum != null">
+        virtual_num = #{virtualNum,jdbcType=INTEGER},
+      </if>
+      <if test="rebate != null">
+        rebate = #{rebate,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsPrice != null">
+        goods_price = #{goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsName != null">
+        goods_name = #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="recommended != null">
+        recommended = #{recommended,jdbcType=BIT},
+      </if>
+      <if test="views != null">
+        views = #{views,jdbcType=INTEGER},
+      </if>
+      <if test="isEnd != null">
+        is_end = #{isEnd,jdbcType=BIT},
+      </if>
+      <if test="intro != null">
+        intro = #{intro,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuyou.entity.GroupBuy">
+    update group_buy
+    set title = #{title,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=INTEGER},
+      end_time = #{endTime,jdbcType=INTEGER},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      item_id = #{itemId,jdbcType=BIGINT},
+      price = #{price,jdbcType=DECIMAL},
+      goods_num = #{goodsNum,jdbcType=INTEGER},
+      buy_num = #{buyNum,jdbcType=INTEGER},
+      order_num = #{orderNum,jdbcType=INTEGER},
+      virtual_num = #{virtualNum,jdbcType=INTEGER},
+      rebate = #{rebate,jdbcType=DECIMAL},
+      goods_price = #{goodsPrice,jdbcType=DECIMAL},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      recommended = #{recommended,jdbcType=BIT},
+      views = #{views,jdbcType=INTEGER},
+      is_end = #{isEnd,jdbcType=BIT},
+      intro = #{intro,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.GroupBuy">
+    update group_buy
+    set title = #{title,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=INTEGER},
+      end_time = #{endTime,jdbcType=INTEGER},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      item_id = #{itemId,jdbcType=BIGINT},
+      price = #{price,jdbcType=DECIMAL},
+      goods_num = #{goodsNum,jdbcType=INTEGER},
+      buy_num = #{buyNum,jdbcType=INTEGER},
+      order_num = #{orderNum,jdbcType=INTEGER},
+      virtual_num = #{virtualNum,jdbcType=INTEGER},
+      rebate = #{rebate,jdbcType=DECIMAL},
+      goods_price = #{goodsPrice,jdbcType=DECIMAL},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      recommended = #{recommended,jdbcType=BIT},
+      views = #{views,jdbcType=INTEGER},
+      is_end = #{isEnd,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

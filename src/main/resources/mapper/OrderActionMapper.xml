@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wuyou.dao.OrderActionMapper">
+  <resultMap id="BaseResultMap" type="com.wuyou.entity.OrderAction">
+    <id column="action_id" jdbcType="INTEGER" property="actionId" />
+    <result column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="action_user" jdbcType="INTEGER" property="actionUser" />
+    <result column="order_status" jdbcType="BIT" property="orderStatus" />
+    <result column="shipping_status" jdbcType="BIT" property="shippingStatus" />
+    <result column="pay_status" jdbcType="BIT" property="payStatus" />
+    <result column="action_note" jdbcType="VARCHAR" property="actionNote" />
+    <result column="log_time" jdbcType="INTEGER" property="logTime" />
+    <result column="status_desc" jdbcType="VARCHAR" property="statusDesc" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    action_id, order_id, action_user, order_status, shipping_status, pay_status, action_note, 
+    log_time, status_desc
+  </sql>
+  <select id="selectByExample" parameterType="com.wuyou.entity.OrderActionExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from order_action
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from order_action
+    where action_id = #{actionId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from order_action
+    where action_id = #{actionId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.wuyou.entity.OrderActionExample">
+    delete from order_action
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wuyou.entity.OrderAction">
+    insert into order_action (action_id, order_id, action_user, 
+      order_status, shipping_status, pay_status, 
+      action_note, log_time, status_desc
+      )
+    values (#{actionId,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, #{actionUser,jdbcType=INTEGER}, 
+      #{orderStatus,jdbcType=BIT}, #{shippingStatus,jdbcType=BIT}, #{payStatus,jdbcType=BIT}, 
+      #{actionNote,jdbcType=VARCHAR}, #{logTime,jdbcType=INTEGER}, #{statusDesc,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wuyou.entity.OrderAction">
+    insert into order_action
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="actionId != null">
+        action_id,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="actionUser != null">
+        action_user,
+      </if>
+      <if test="orderStatus != null">
+        order_status,
+      </if>
+      <if test="shippingStatus != null">
+        shipping_status,
+      </if>
+      <if test="payStatus != null">
+        pay_status,
+      </if>
+      <if test="actionNote != null">
+        action_note,
+      </if>
+      <if test="logTime != null">
+        log_time,
+      </if>
+      <if test="statusDesc != null">
+        status_desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="actionId != null">
+        #{actionId,jdbcType=INTEGER},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="actionUser != null">
+        #{actionUser,jdbcType=INTEGER},
+      </if>
+      <if test="orderStatus != null">
+        #{orderStatus,jdbcType=BIT},
+      </if>
+      <if test="shippingStatus != null">
+        #{shippingStatus,jdbcType=BIT},
+      </if>
+      <if test="payStatus != null">
+        #{payStatus,jdbcType=BIT},
+      </if>
+      <if test="actionNote != null">
+        #{actionNote,jdbcType=VARCHAR},
+      </if>
+      <if test="logTime != null">
+        #{logTime,jdbcType=INTEGER},
+      </if>
+      <if test="statusDesc != null">
+        #{statusDesc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wuyou.entity.OrderActionExample" resultType="java.lang.Integer">
+    select count(*) from order_action
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update order_action
+    <set>
+      <if test="record.actionId != null">
+        action_id = #{record.actionId,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=INTEGER},
+      </if>
+      <if test="record.actionUser != null">
+        action_user = #{record.actionUser,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderStatus != null">
+        order_status = #{record.orderStatus,jdbcType=BIT},
+      </if>
+      <if test="record.shippingStatus != null">
+        shipping_status = #{record.shippingStatus,jdbcType=BIT},
+      </if>
+      <if test="record.payStatus != null">
+        pay_status = #{record.payStatus,jdbcType=BIT},
+      </if>
+      <if test="record.actionNote != null">
+        action_note = #{record.actionNote,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logTime != null">
+        log_time = #{record.logTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.statusDesc != null">
+        status_desc = #{record.statusDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update order_action
+    set action_id = #{record.actionId,jdbcType=INTEGER},
+      order_id = #{record.orderId,jdbcType=INTEGER},
+      action_user = #{record.actionUser,jdbcType=INTEGER},
+      order_status = #{record.orderStatus,jdbcType=BIT},
+      shipping_status = #{record.shippingStatus,jdbcType=BIT},
+      pay_status = #{record.payStatus,jdbcType=BIT},
+      action_note = #{record.actionNote,jdbcType=VARCHAR},
+      log_time = #{record.logTime,jdbcType=INTEGER},
+      status_desc = #{record.statusDesc,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.OrderAction">
+    update order_action
+    <set>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=INTEGER},
+      </if>
+      <if test="actionUser != null">
+        action_user = #{actionUser,jdbcType=INTEGER},
+      </if>
+      <if test="orderStatus != null">
+        order_status = #{orderStatus,jdbcType=BIT},
+      </if>
+      <if test="shippingStatus != null">
+        shipping_status = #{shippingStatus,jdbcType=BIT},
+      </if>
+      <if test="payStatus != null">
+        pay_status = #{payStatus,jdbcType=BIT},
+      </if>
+      <if test="actionNote != null">
+        action_note = #{actionNote,jdbcType=VARCHAR},
+      </if>
+      <if test="logTime != null">
+        log_time = #{logTime,jdbcType=INTEGER},
+      </if>
+      <if test="statusDesc != null">
+        status_desc = #{statusDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where action_id = #{actionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.OrderAction">
+    update order_action
+    set order_id = #{orderId,jdbcType=INTEGER},
+      action_user = #{actionUser,jdbcType=INTEGER},
+      order_status = #{orderStatus,jdbcType=BIT},
+      shipping_status = #{shippingStatus,jdbcType=BIT},
+      pay_status = #{payStatus,jdbcType=BIT},
+      action_note = #{actionNote,jdbcType=VARCHAR},
+      log_time = #{logTime,jdbcType=INTEGER},
+      status_desc = #{statusDesc,jdbcType=VARCHAR}
+    where action_id = #{actionId,jdbcType=INTEGER}
+  </update>
+</mapper>
