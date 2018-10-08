@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.RebateLog;
 import com.wuyou.entity.RebateLogExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface RebateLogMapper {
     int countByExample(RebateLogExample example);
 

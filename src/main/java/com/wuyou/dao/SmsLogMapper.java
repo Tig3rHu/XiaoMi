@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.SmsLog;
 import com.wuyou.entity.SmsLogExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SmsLogMapper {
     int countByExample(SmsLogExample example);
 

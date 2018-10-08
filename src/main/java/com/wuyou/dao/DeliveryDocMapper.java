@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.DeliveryDoc;
 import com.wuyou.entity.DeliveryDocExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface DeliveryDocMapper {
     int countByExample(DeliveryDocExample example);
 

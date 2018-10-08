@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.Spec;
 import com.wuyou.entity.SpecExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SpecMapper {
     int countByExample(SpecExample example);
 

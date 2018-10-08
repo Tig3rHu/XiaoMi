@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.PromOrder;
 import com.wuyou.entity.PromOrderExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface PromOrderMapper {
     int countByExample(PromOrderExample example);
 

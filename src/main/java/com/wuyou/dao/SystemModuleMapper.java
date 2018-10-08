@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.SystemModule;
 import com.wuyou.entity.SystemModuleExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SystemModuleMapper {
     int countByExample(SystemModuleExample example);
 

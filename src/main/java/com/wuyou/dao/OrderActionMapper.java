@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.OrderAction;
 import com.wuyou.entity.OrderActionExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface OrderActionMapper {
     int countByExample(OrderActionExample example);
 

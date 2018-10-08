@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.TeamActivity;
 import com.wuyou.entity.TeamActivityExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface TeamActivityMapper {
     int countByExample(TeamActivityExample example);
 

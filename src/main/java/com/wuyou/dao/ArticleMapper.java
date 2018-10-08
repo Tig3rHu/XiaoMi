@@ -3,9 +3,13 @@ package com.wuyou.dao;
 import com.wuyou.entity.Article;
 import com.wuyou.entity.ArticleExample;
 import com.wuyou.entity.ArticleWithBLOBs;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface ArticleMapper {
     int countByExample(ArticleExample example);
 

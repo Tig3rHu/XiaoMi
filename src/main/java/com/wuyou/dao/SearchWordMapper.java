@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.SearchWord;
 import com.wuyou.entity.SearchWordExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SearchWordMapper {
     int countByExample(SearchWordExample example);
 

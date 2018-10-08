@@ -71,8 +71,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    log_id, user_id, user_money, frozen_money, pay_points, change_time, desc, order_sn, 
-    order_id
+    log_id, user_id, user_money, frozen_money, pay_points, change_time<!-- , desc, order_sn, 
+    order_id -->
   </sql>
   <select id="selectByExample" parameterType="com.wuyou.entity.AccountLogExample" resultMap="BaseResultMap">
     select

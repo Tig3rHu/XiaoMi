@@ -3,9 +3,13 @@ package com.wuyou.dao;
 import com.wuyou.entity.GoodsVisit;
 import com.wuyou.entity.GoodsVisitExample;
 import com.wuyou.entity.GoodsVisitKey;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface GoodsVisitMapper {
     int countByExample(GoodsVisitExample example);
 

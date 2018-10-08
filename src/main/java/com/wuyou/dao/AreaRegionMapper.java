@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.AreaRegion;
 import com.wuyou.entity.AreaRegionExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface AreaRegionMapper {
     int countByExample(AreaRegionExample example);
 

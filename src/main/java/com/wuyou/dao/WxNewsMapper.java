@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.WxNews;
 import com.wuyou.entity.WxNewsExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface WxNewsMapper {
     int countByExample(WxNewsExample example);
 

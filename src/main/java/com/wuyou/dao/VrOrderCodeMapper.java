@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.VrOrderCode;
 import com.wuyou.entity.VrOrderCodeExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface VrOrderCodeMapper {
     int countByExample(VrOrderCodeExample example);
 

@@ -3,9 +3,13 @@ package com.wuyou.dao;
 import com.wuyou.entity.Payment;
 import com.wuyou.entity.PaymentExample;
 import com.wuyou.entity.PaymentWithBLOBs;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface PaymentMapper {
     int countByExample(PaymentExample example);
 
@@ -13,7 +17,7 @@ public interface PaymentMapper {
 
     int deleteByPrimaryKey(Byte payId);
 
-    int insert(PaymentWithBLOBs record);
+    int insert(Payment payment);
 
     int insertSelective(PaymentWithBLOBs record);
 

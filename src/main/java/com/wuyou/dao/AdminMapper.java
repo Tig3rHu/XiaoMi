@@ -3,9 +3,13 @@ package com.wuyou.dao;
 import com.wuyou.entity.Admin;
 import com.wuyou.entity.AdminExample;
 import com.wuyou.entity.AdminWithBLOBs;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface AdminMapper {
     int countByExample(AdminExample example);
 
@@ -13,7 +17,7 @@ public interface AdminMapper {
 
     int deleteByPrimaryKey(Short adminId);
 
-    int insert(AdminWithBLOBs record);
+    int insert(Admin admin);
 
     int insertSelective(AdminWithBLOBs record);
 

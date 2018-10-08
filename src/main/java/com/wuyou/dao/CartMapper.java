@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.Cart;
 import com.wuyou.entity.CartExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface CartMapper {
     int countByExample(CartExample example);
 

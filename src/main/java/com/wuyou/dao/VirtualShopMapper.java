@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.VirtualShop;
 import com.wuyou.entity.VirtualShopExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface VirtualShopMapper {
     int countByExample(VirtualShopExample example);
 

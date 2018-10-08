@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.UserStore;
 import com.wuyou.entity.UserStoreExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface UserStoreMapper {
     int countByExample(UserStoreExample example);
 

@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.ArticleCat2;
 import com.wuyou.entity.ArticleCat2Example;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface ArticleCat2Mapper {
     int countByExample(ArticleCat2Example example);
 

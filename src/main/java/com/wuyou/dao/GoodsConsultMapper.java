@@ -2,9 +2,12 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.GoodsConsult;
 import com.wuyou.entity.GoodsConsultExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+@Mapper
 public interface GoodsConsultMapper {
     int countByExample(GoodsConsultExample example);
 

@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.Recharge;
 import com.wuyou.entity.RechargeExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface RechargeMapper {
     int countByExample(RechargeExample example);
 

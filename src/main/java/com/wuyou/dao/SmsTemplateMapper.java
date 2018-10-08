@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.SmsTemplate;
 import com.wuyou.entity.SmsTemplateExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SmsTemplateMapper {
     int countByExample(SmsTemplateExample example);
 

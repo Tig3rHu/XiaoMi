@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.SystemMenu;
 import com.wuyou.entity.SystemMenuExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SystemMenuMapper {
     int countByExample(SystemMenuExample example);
 

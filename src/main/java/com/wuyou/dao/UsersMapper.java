@@ -2,9 +2,12 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.Users;
 import com.wuyou.entity.UsersExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+@Mapper
 public interface UsersMapper {
     int countByExample(UsersExample example);
 

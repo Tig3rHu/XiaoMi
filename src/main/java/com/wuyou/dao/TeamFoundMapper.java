@@ -2,9 +2,12 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.TeamFound;
 import com.wuyou.entity.TeamFoundExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+@Mapper
 public interface TeamFoundMapper {
     int countByExample(TeamFoundExample example);
 

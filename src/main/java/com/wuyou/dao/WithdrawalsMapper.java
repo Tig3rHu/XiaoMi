@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.Withdrawals;
 import com.wuyou.entity.WithdrawalsExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface WithdrawalsMapper {
     int countByExample(WithdrawalsExample example);
 

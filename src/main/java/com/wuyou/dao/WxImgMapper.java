@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.WxImg;
 import com.wuyou.entity.WxImgExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface WxImgMapper {
     int countByExample(WxImgExample example);
 

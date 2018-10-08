@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.AdminLog;
 import com.wuyou.entity.AdminLogExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface AdminLogMapper {
     int countByExample(AdminLogExample example);
 

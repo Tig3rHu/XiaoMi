@@ -7,8 +7,6 @@ import com.wuyou.entity.User;
 @Service
 public interface UserService {
    
-	
-	
-	
+		
 	public User findById(Integer id);
 }

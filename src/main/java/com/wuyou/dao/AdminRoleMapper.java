@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.AdminRole;
 import com.wuyou.entity.AdminRoleExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface AdminRoleMapper {
     int countByExample(AdminRoleExample example);
 

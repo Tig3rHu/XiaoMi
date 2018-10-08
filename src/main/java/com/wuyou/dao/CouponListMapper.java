@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.CouponList;
 import com.wuyou.entity.CouponListExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface CouponListMapper {
     int countByExample(CouponListExample example);
 

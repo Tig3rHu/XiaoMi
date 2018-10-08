@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.WxText;
 import com.wuyou.entity.WxTextExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface WxTextMapper {
     int countByExample(WxTextExample example);
 

@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.Shipping;
 import com.wuyou.entity.ShippingExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface ShippingMapper {
     int countByExample(ShippingExample example);
 

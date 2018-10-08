@@ -3,9 +3,12 @@ package com.wuyou.dao;
 import com.wuyou.entity.Goods;
 import com.wuyou.entity.GoodsExample;
 import com.wuyou.entity.GoodsWithBLOBs;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+@Mapper
 public interface GoodsMapper {
     int countByExample(GoodsExample example);
 

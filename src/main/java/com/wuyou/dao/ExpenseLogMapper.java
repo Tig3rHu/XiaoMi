@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.ExpenseLog;
 import com.wuyou.entity.ExpenseLogExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface ExpenseLogMapper {
     int countByExample(ExpenseLogExample example);
 

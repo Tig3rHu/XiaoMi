@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.WxUser;
 import com.wuyou.entity.WxUserExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface WxUserMapper {
     int countByExample(WxUserExample example);
 

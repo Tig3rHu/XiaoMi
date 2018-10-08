@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.WxKeyword;
 import com.wuyou.entity.WxKeywordExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface WxKeywordMapper {
     int countByExample(WxKeywordExample example);
 

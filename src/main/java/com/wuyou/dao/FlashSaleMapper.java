@@ -2,9 +2,12 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.FlashSale;
 import com.wuyou.entity.FlashSaleExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+@Mapper
 public interface FlashSaleMapper {
     int countByExample(FlashSaleExample example);
 

@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.Topic;
 import com.wuyou.entity.TopicExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface TopicMapper {
     int countByExample(TopicExample example);
 

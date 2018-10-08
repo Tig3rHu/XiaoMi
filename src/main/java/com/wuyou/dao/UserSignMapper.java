@@ -2,9 +2,13 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.UserSign;
 import com.wuyou.entity.UserSignExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface UserSignMapper {
     int countByExample(UserSignExample example);
 
