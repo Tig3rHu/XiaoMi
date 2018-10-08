@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+.main{
+ z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-family: "Montserrat";
+  text-align: center;
+  width: 100%;
+	
+}
+.layui-header{
+	margin-top: 400px;
+}
+.layui-main{
+	margin-top:158px;
+	height:588px;
+	width: 300px;
+	opacity:0.8;
+	
+}
+.layui-main-login{
+	
+	top:100px;
+}
