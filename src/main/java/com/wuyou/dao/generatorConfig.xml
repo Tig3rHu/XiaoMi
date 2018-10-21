@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <!-- <properties resource="db.properties"/> -->
+  <!-- 一个数据库一个context --> 
+  <context id="demo">
+    <commentGenerator>  
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->  
+            <property name="suppressAllComments" value="true" />  
+    </commentGenerator>  
+   
+    <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/mi" driverClass="com.mysql.jdbc.Driver" password="root" userId="root" />
+    <!-- 生成po类 -->
+    <javaModelGenerator targetPackage="com.wuyou.entity" targetProject="generatorSqlMapperConfig/src" />
+    <!-- 生成mapper映射文件 -->
+    <sqlMapGenerator targetPackage="mapper" targetProject="generatorSqlMapperConfig/src" />
+    <!-- 生成mapper接口类 -->
+    <javaClientGenerator targetPackage="com.wuyou.dao" targetProject="generatorSqlMapperConfig/src" type="XMLMAPPER" />
+    <!-- 指定数据库表 -->
+<!--    <table tableName="items"></table>
+    <table tableName="orders"></table>
+    <table tableName="users"></table>
+    <table tableName="orderdetial"></table> -->
+<!--     <table tableName="tp_brand"></table>
+    <table tableName="tp_type"></table>
+    <table tableName="brandandtype"></table> -->
+  <!--   <table tableName="tpFlashsale"></table> -->
+  <!-- <table tableName="usersign"></table>
+  <table tableName="course"></table>
+  <table tableName="class_course"></table> -->
+  <table tableName="group_buy"></table>
+ <!--  <table tableName="%"
+               enableCountByExample="true"
+               enableUpdateByExample="true"
+               enableDeleteByExample="true"
+               enableSelectByExample="true"
+               selectByExampleQueryId="true">
+            <property name="useActualColumnNames" value="false" />
+            数据库表主键
+            <generatedKey column="id" sqlStatement="Mysql" identity="true" />
+        </table> -->
+  </context>
+</generatorConfiguration>
