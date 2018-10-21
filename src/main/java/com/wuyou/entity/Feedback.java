@@ -1,5 +1,7 @@
 package com.wuyou.entity;
 
+import java.util.Date;
+
 public class Feedback {
     private Integer msgId;
 
@@ -11,11 +13,11 @@ public class Feedback {
 
     private String msgTitle;
 
-    private Boolean msgType;
+    private Integer msgType;
 
-    private Boolean msgStatus;
+    private Integer msgStatus;
 
-    private Integer msgTime;
+    private Date msgTime;
 
     private String messageImg;
 
@@ -65,27 +67,27 @@ public class Feedback {
         this.msgTitle = msgTitle;
     }
 
-    public Boolean getMsgType() {
+    public Integer getMsgType() {
         return msgType;
     }
 
-    public void setMsgType(Boolean msgType) {
+    public void setMsgType(Integer msgType) {
         this.msgType = msgType;
     }
 
-    public Boolean getMsgStatus() {
+    public Integer getMsgStatus() {
         return msgStatus;
     }
 
-    public void setMsgStatus(Boolean msgStatus) {
+    public void setMsgStatus(Integer msgStatus) {
         this.msgStatus = msgStatus;
     }
 
-    public Integer getMsgTime() {
+    public Date getMsgTime() {
         return msgTime;
     }
 
-    public void setMsgTime(Integer msgTime) {
+    public void setMsgTime(Date msgTime) {
         this.msgTime = msgTime;
     }
 

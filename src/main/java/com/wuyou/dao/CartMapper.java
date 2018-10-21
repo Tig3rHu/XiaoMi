@@ -2,6 +2,7 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.Cart;
 import com.wuyou.entity.CartExample;
+import com.wuyou.entity.CartVo;
 
 import java.util.List;
 
@@ -23,6 +24,8 @@ public interface CartMapper {
     List<Cart> selectByExample(CartExample example);
 
     Cart selectByPrimaryKey(Integer id);
+    
+    List<CartVo> selectfromCartAndPromOrder();
 
     int updateByExampleSelective(@Param("record") Cart record, @Param("example") CartExample example);
 

@@ -1,15 +1,16 @@
 package com.wuyou.entity;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class GroupBuy {
     private Integer id;
 
     private String title;
 
-    private Integer startTime;
+    private Date startTime;
 
-    private Integer endTime;
+    private Date endTime;
 
     private Integer goodsId;
 
@@ -55,19 +56,19 @@ public class GroupBuy {
         this.title = title;
     }
 
-    public Integer getStartTime() {
+    public Date getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(Date startTime) {
         this.startTime = startTime;
     }
 
-    public Integer getEndTime() {
+    public Date getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
 

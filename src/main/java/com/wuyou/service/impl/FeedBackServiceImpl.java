@@ -48,16 +48,6 @@ public class FeedBackServiceImpl implements FeedbackService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.wuyou.service.FeedbackService#updateById(java.lang.Integer, com.wuyou.entity.Feedback)
-	 */
-	@Override
-	public int updateById(Integer msgId, Feedback record) {
-		// TODO Auto-generated method stub
-		record.setMsgId(msgId);
-		return feedBackMapper.updateByPrimaryKey(record);
-	}
-
-	/* (non-Javadoc)
 	 * @see com.wuyou.service.FeedbackService#selectByExample(com.wuyou.entity.FeedbackExample)
 	 */
 	@Override
@@ -73,6 +63,15 @@ public class FeedBackServiceImpl implements FeedbackService {
 	public Feedback selectByPrimaryKey(Integer msgId) {
 		// TODO Auto-generated method stub
 		return feedBackMapper.selectByPrimaryKey(msgId);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.FeedbackService#updateByPrimaryKey(com.wuyou.entity.Feedback)
+	 */
+	@Override
+	public int updateByPrimaryKey(Feedback record) {
+		// TODO Auto-generated method stub
+		return feedBackMapper.updateByPrimaryKey(record);
 	}
 
 }

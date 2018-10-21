@@ -79,4 +79,13 @@ public class OrderServiceImpl implements OrderService {
 		return orderMapper.selectByExample(orderExample);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.OrderService#selectByExample(com.wuyou.entity.OrderExample)
+	 */
+	@Override
+	public List<Order> selectByExample(OrderExample example) {
+		// TODO Auto-generated method stub
+		return orderMapper.selectByExample(example);
+	}
+
 }

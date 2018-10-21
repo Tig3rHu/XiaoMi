@@ -2,12 +2,12 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.GoodsConsult;
 import com.wuyou.entity.GoodsConsultExample;
+import com.wuyou.entity.GoodsConsultVo;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface GoodsConsultMapper {
     int countByExample(GoodsConsultExample example);
 
@@ -20,6 +20,8 @@ public interface GoodsConsultMapper {
     int insertSelective(GoodsConsult record);
 
     List<GoodsConsult> selectByExample(GoodsConsultExample example);
+    
+    List<GoodsConsultVo> goodsConsultAndgoods();
 
     GoodsConsult selectByPrimaryKey(Integer id);
 
@@ -29,5 +31,7 @@ public interface GoodsConsultMapper {
 
     int updateByPrimaryKeySelective(GoodsConsult record);
 
-    int updateByPrimaryKey(GoodsConsult record);
+    int updateByPrimaryKey(GoodsConsultVo record);
+
+	
 }

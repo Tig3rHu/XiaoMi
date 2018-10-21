@@ -1,6 +1,7 @@
 package com.wuyou.entity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class FeedbackExample {
@@ -434,52 +435,52 @@ public class FeedbackExample {
             return (Criteria) this;
         }
 
-        public Criteria andMsgTypeEqualTo(Boolean value) {
+        public Criteria andMsgTypeEqualTo(Integer value) {
             addCriterion("msg_type =", value, "msgType");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTypeNotEqualTo(Boolean value) {
+        public Criteria andMsgTypeNotEqualTo(Integer value) {
             addCriterion("msg_type <>", value, "msgType");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTypeGreaterThan(Boolean value) {
+        public Criteria andMsgTypeGreaterThan(Integer value) {
             addCriterion("msg_type >", value, "msgType");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTypeGreaterThanOrEqualTo(Boolean value) {
+        public Criteria andMsgTypeGreaterThanOrEqualTo(Integer value) {
             addCriterion("msg_type >=", value, "msgType");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTypeLessThan(Boolean value) {
+        public Criteria andMsgTypeLessThan(Integer value) {
             addCriterion("msg_type <", value, "msgType");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTypeLessThanOrEqualTo(Boolean value) {
+        public Criteria andMsgTypeLessThanOrEqualTo(Integer value) {
             addCriterion("msg_type <=", value, "msgType");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTypeIn(List<Boolean> values) {
+        public Criteria andMsgTypeIn(List<Integer> values) {
             addCriterion("msg_type in", values, "msgType");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTypeNotIn(List<Boolean> values) {
+        public Criteria andMsgTypeNotIn(List<Integer> values) {
             addCriterion("msg_type not in", values, "msgType");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTypeBetween(Boolean value1, Boolean value2) {
+        public Criteria andMsgTypeBetween(Integer value1, Integer value2) {
             addCriterion("msg_type between", value1, value2, "msgType");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTypeNotBetween(Boolean value1, Boolean value2) {
+        public Criteria andMsgTypeNotBetween(Integer value1, Integer value2) {
             addCriterion("msg_type not between", value1, value2, "msgType");
             return (Criteria) this;
         }
@@ -494,52 +495,52 @@ public class FeedbackExample {
             return (Criteria) this;
         }
 
-        public Criteria andMsgStatusEqualTo(Boolean value) {
+        public Criteria andMsgStatusEqualTo(Integer value) {
             addCriterion("msg_status =", value, "msgStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMsgStatusNotEqualTo(Boolean value) {
+        public Criteria andMsgStatusNotEqualTo(Integer value) {
             addCriterion("msg_status <>", value, "msgStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMsgStatusGreaterThan(Boolean value) {
+        public Criteria andMsgStatusGreaterThan(Integer value) {
             addCriterion("msg_status >", value, "msgStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMsgStatusGreaterThanOrEqualTo(Boolean value) {
+        public Criteria andMsgStatusGreaterThanOrEqualTo(Integer value) {
             addCriterion("msg_status >=", value, "msgStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMsgStatusLessThan(Boolean value) {
+        public Criteria andMsgStatusLessThan(Integer value) {
             addCriterion("msg_status <", value, "msgStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMsgStatusLessThanOrEqualTo(Boolean value) {
+        public Criteria andMsgStatusLessThanOrEqualTo(Integer value) {
             addCriterion("msg_status <=", value, "msgStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMsgStatusIn(List<Boolean> values) {
+        public Criteria andMsgStatusIn(List<Integer> values) {
             addCriterion("msg_status in", values, "msgStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMsgStatusNotIn(List<Boolean> values) {
+        public Criteria andMsgStatusNotIn(List<Integer> values) {
             addCriterion("msg_status not in", values, "msgStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMsgStatusBetween(Boolean value1, Boolean value2) {
+        public Criteria andMsgStatusBetween(Integer value1, Integer value2) {
             addCriterion("msg_status between", value1, value2, "msgStatus");
             return (Criteria) this;
         }
 
-        public Criteria andMsgStatusNotBetween(Boolean value1, Boolean value2) {
+        public Criteria andMsgStatusNotBetween(Integer value1, Integer value2) {
             addCriterion("msg_status not between", value1, value2, "msgStatus");
             return (Criteria) this;
         }
@@ -554,52 +555,52 @@ public class FeedbackExample {
             return (Criteria) this;
         }
 
-        public Criteria andMsgTimeEqualTo(Integer value) {
+        public Criteria andMsgTimeEqualTo(Date value) {
             addCriterion("msg_time =", value, "msgTime");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTimeNotEqualTo(Integer value) {
+        public Criteria andMsgTimeNotEqualTo(Date value) {
             addCriterion("msg_time <>", value, "msgTime");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTimeGreaterThan(Integer value) {
+        public Criteria andMsgTimeGreaterThan(Date value) {
             addCriterion("msg_time >", value, "msgTime");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTimeGreaterThanOrEqualTo(Integer value) {
+        public Criteria andMsgTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("msg_time >=", value, "msgTime");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTimeLessThan(Integer value) {
+        public Criteria andMsgTimeLessThan(Date value) {
             addCriterion("msg_time <", value, "msgTime");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTimeLessThanOrEqualTo(Integer value) {
+        public Criteria andMsgTimeLessThanOrEqualTo(Date value) {
             addCriterion("msg_time <=", value, "msgTime");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTimeIn(List<Integer> values) {
+        public Criteria andMsgTimeIn(List<Date> values) {
             addCriterion("msg_time in", values, "msgTime");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTimeNotIn(List<Integer> values) {
+        public Criteria andMsgTimeNotIn(List<Date> values) {
             addCriterion("msg_time not in", values, "msgTime");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTimeBetween(Integer value1, Integer value2) {
+        public Criteria andMsgTimeBetween(Date value1, Date value2) {
             addCriterion("msg_time between", value1, value2, "msgTime");
             return (Criteria) this;
         }
 
-        public Criteria andMsgTimeNotBetween(Integer value1, Integer value2) {
+        public Criteria andMsgTimeNotBetween(Date value1, Date value2) {
             addCriterion("msg_time not between", value1, value2, "msgTime");
             return (Criteria) this;
         }

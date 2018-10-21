@@ -4,6 +4,8 @@ public class CommentWithBLOBs extends Comment {
     private String content;
 
     private String img;
+    
+    private String goodsName;
 
     public String getContent() {
         return content;
@@ -20,4 +22,12 @@ public class CommentWithBLOBs extends Comment {
     public void setImg(String img) {
         this.img = img;
     }
+
+	public String getGoodsName() {
+		return goodsName;
+	}
+
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
+	}
 }

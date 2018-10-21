@@ -2,13 +2,9 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.GoodsCategory;
 import com.wuyou.entity.GoodsCategoryExample;
-
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-@Mapper
 public interface GoodsCategoryMapper {
     int countByExample(GoodsCategoryExample example);
 

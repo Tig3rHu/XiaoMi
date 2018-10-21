@@ -31,5 +31,7 @@ public interface GoodsCategoryService {
 	List<GoodsCategory> selectByExample(GoodsCategoryExample example);
 
     GoodsCategory selectByPrimaryKey(Short id);
+    
+    int updateByPrimaryKey(GoodsCategory record);
 
 }

@@ -304,52 +304,52 @@ public class GoodsAttributeExample {
             return (Criteria) this;
         }
 
-        public Criteria andAttrIndexEqualTo(Boolean value) {
+        public Criteria andAttrIndexEqualTo(Integer value) {
             addCriterion("attr_index =", value, "attrIndex");
             return (Criteria) this;
         }
 
-        public Criteria andAttrIndexNotEqualTo(Boolean value) {
+        public Criteria andAttrIndexNotEqualTo(Integer value) {
             addCriterion("attr_index <>", value, "attrIndex");
             return (Criteria) this;
         }
 
-        public Criteria andAttrIndexGreaterThan(Boolean value) {
+        public Criteria andAttrIndexGreaterThan(Integer value) {
             addCriterion("attr_index >", value, "attrIndex");
             return (Criteria) this;
         }
 
-        public Criteria andAttrIndexGreaterThanOrEqualTo(Boolean value) {
+        public Criteria andAttrIndexGreaterThanOrEqualTo(Integer value) {
             addCriterion("attr_index >=", value, "attrIndex");
             return (Criteria) this;
         }
 
-        public Criteria andAttrIndexLessThan(Boolean value) {
+        public Criteria andAttrIndexLessThan(Integer value) {
             addCriterion("attr_index <", value, "attrIndex");
             return (Criteria) this;
         }
 
-        public Criteria andAttrIndexLessThanOrEqualTo(Boolean value) {
+        public Criteria andAttrIndexLessThanOrEqualTo(Integer value) {
             addCriterion("attr_index <=", value, "attrIndex");
             return (Criteria) this;
         }
 
-        public Criteria andAttrIndexIn(List<Boolean> values) {
+        public Criteria andAttrIndexIn(List<Integer> values) {
             addCriterion("attr_index in", values, "attrIndex");
             return (Criteria) this;
         }
 
-        public Criteria andAttrIndexNotIn(List<Boolean> values) {
+        public Criteria andAttrIndexNotIn(List<Integer> values) {
             addCriterion("attr_index not in", values, "attrIndex");
             return (Criteria) this;
         }
 
-        public Criteria andAttrIndexBetween(Boolean value1, Boolean value2) {
+        public Criteria andAttrIndexBetween(Integer value1, Integer value2) {
             addCriterion("attr_index between", value1, value2, "attrIndex");
             return (Criteria) this;
         }
 
-        public Criteria andAttrIndexNotBetween(Boolean value1, Boolean value2) {
+        public Criteria andAttrIndexNotBetween(Integer value1, Integer value2) {
             addCriterion("attr_index not between", value1, value2, "attrIndex");
             return (Criteria) this;
         }
@@ -364,52 +364,52 @@ public class GoodsAttributeExample {
             return (Criteria) this;
         }
 
-        public Criteria andAttrTypeEqualTo(Boolean value) {
+        public Criteria andAttrTypeEqualTo(Integer value) {
             addCriterion("attr_type =", value, "attrType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrTypeNotEqualTo(Boolean value) {
+        public Criteria andAttrTypeNotEqualTo(Integer value) {
             addCriterion("attr_type <>", value, "attrType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrTypeGreaterThan(Boolean value) {
+        public Criteria andAttrTypeGreaterThan(Integer value) {
             addCriterion("attr_type >", value, "attrType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrTypeGreaterThanOrEqualTo(Boolean value) {
+        public Criteria andAttrTypeGreaterThanOrEqualTo(Integer value) {
             addCriterion("attr_type >=", value, "attrType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrTypeLessThan(Boolean value) {
+        public Criteria andAttrTypeLessThan(Integer value) {
             addCriterion("attr_type <", value, "attrType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrTypeLessThanOrEqualTo(Boolean value) {
+        public Criteria andAttrTypeLessThanOrEqualTo(Integer value) {
             addCriterion("attr_type <=", value, "attrType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrTypeIn(List<Boolean> values) {
+        public Criteria andAttrTypeIn(List<Integer> values) {
             addCriterion("attr_type in", values, "attrType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrTypeNotIn(List<Boolean> values) {
+        public Criteria andAttrTypeNotIn(List<Integer> values) {
             addCriterion("attr_type not in", values, "attrType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrTypeBetween(Boolean value1, Boolean value2) {
+        public Criteria andAttrTypeBetween(Integer value1, Integer value2) {
             addCriterion("attr_type between", value1, value2, "attrType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrTypeNotBetween(Boolean value1, Boolean value2) {
+        public Criteria andAttrTypeNotBetween(Integer value1, Integer value2) {
             addCriterion("attr_type not between", value1, value2, "attrType");
             return (Criteria) this;
         }
@@ -424,52 +424,52 @@ public class GoodsAttributeExample {
             return (Criteria) this;
         }
 
-        public Criteria andAttrInputTypeEqualTo(Boolean value) {
+        public Criteria andAttrInputTypeEqualTo(Integer value) {
             addCriterion("attr_input_type =", value, "attrInputType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrInputTypeNotEqualTo(Boolean value) {
+        public Criteria andAttrInputTypeNotEqualTo(Integer value) {
             addCriterion("attr_input_type <>", value, "attrInputType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrInputTypeGreaterThan(Boolean value) {
+        public Criteria andAttrInputTypeGreaterThan(Integer value) {
             addCriterion("attr_input_type >", value, "attrInputType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrInputTypeGreaterThanOrEqualTo(Boolean value) {
+        public Criteria andAttrInputTypeGreaterThanOrEqualTo(Integer value) {
             addCriterion("attr_input_type >=", value, "attrInputType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrInputTypeLessThan(Boolean value) {
+        public Criteria andAttrInputTypeLessThan(Integer value) {
             addCriterion("attr_input_type <", value, "attrInputType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrInputTypeLessThanOrEqualTo(Boolean value) {
+        public Criteria andAttrInputTypeLessThanOrEqualTo(Integer value) {
             addCriterion("attr_input_type <=", value, "attrInputType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrInputTypeIn(List<Boolean> values) {
+        public Criteria andAttrInputTypeIn(List<Integer> values) {
             addCriterion("attr_input_type in", values, "attrInputType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrInputTypeNotIn(List<Boolean> values) {
+        public Criteria andAttrInputTypeNotIn(List<Integer> values) {
             addCriterion("attr_input_type not in", values, "attrInputType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrInputTypeBetween(Boolean value1, Boolean value2) {
+        public Criteria andAttrInputTypeBetween(Integer value1, Integer value2) {
             addCriterion("attr_input_type between", value1, value2, "attrInputType");
             return (Criteria) this;
         }
 
-        public Criteria andAttrInputTypeNotBetween(Boolean value1, Boolean value2) {
+        public Criteria andAttrInputTypeNotBetween(Integer value1, Integer value2) {
             addCriterion("attr_input_type not between", value1, value2, "attrInputType");
             return (Criteria) this;
         }
@@ -484,52 +484,52 @@ public class GoodsAttributeExample {
             return (Criteria) this;
         }
 
-        public Criteria andOrderEqualTo(Byte value) {
+        public Criteria andOrderEqualTo(Integer value) {
             addCriterion("order =", value, "order");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNotEqualTo(Byte value) {
+        public Criteria andOrderNotEqualTo(Integer value) {
             addCriterion("order <>", value, "order");
             return (Criteria) this;
         }
 
-        public Criteria andOrderGreaterThan(Byte value) {
+        public Criteria andOrderGreaterThan(Integer value) {
             addCriterion("order >", value, "order");
             return (Criteria) this;
         }
 
-        public Criteria andOrderGreaterThanOrEqualTo(Byte value) {
+        public Criteria andOrderGreaterThanOrEqualTo(Integer value) {
             addCriterion("order >=", value, "order");
             return (Criteria) this;
         }
 
-        public Criteria andOrderLessThan(Byte value) {
+        public Criteria andOrderLessThan(Integer value) {
             addCriterion("order <", value, "order");
             return (Criteria) this;
         }
 
-        public Criteria andOrderLessThanOrEqualTo(Byte value) {
+        public Criteria andOrderLessThanOrEqualTo(Integer value) {
             addCriterion("order <=", value, "order");
             return (Criteria) this;
         }
 
-        public Criteria andOrderIn(List<Byte> values) {
+        public Criteria andOrderIn(List<Integer> values) {
             addCriterion("order in", values, "order");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNotIn(List<Byte> values) {
+        public Criteria andOrderNotIn(List<Integer> values) {
             addCriterion("order not in", values, "order");
             return (Criteria) this;
         }
 
-        public Criteria andOrderBetween(Byte value1, Byte value2) {
+        public Criteria andOrderBetween(Integer value1, Integer value2) {
             addCriterion("order between", value1, value2, "order");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNotBetween(Byte value1, Byte value2) {
+        public Criteria andOrderNotBetween(Integer value1, Integer value2) {
             addCriterion("order not between", value1, value2, "order");
             return (Criteria) this;
         }

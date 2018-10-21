@@ -1,6 +1,7 @@
 package com.wuyou.dao;
 
 import com.wuyou.entity.Brand;
+import com.wuyou.entity.BrandAndArticleCat;
 import com.wuyou.entity.BrandExample;
 
 import java.util.List;
@@ -25,6 +26,8 @@ public interface BrandMapper {
     List<Brand> selectByExample(BrandExample example);
 
     Brand selectByPrimaryKey(Short id);
+    
+    List<BrandAndArticleCat> selectBrandAndArticleCatInCatId();
 
     int updateByExampleSelective(@Param("record") Brand record, @Param("example") BrandExample example);
 

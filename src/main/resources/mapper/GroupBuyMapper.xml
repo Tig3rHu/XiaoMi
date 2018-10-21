@@ -4,8 +4,8 @@
   <resultMap id="BaseResultMap" type="com.wuyou.entity.GroupBuy">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="title" jdbcType="VARCHAR" property="title" />
-    <result column="start_time" jdbcType="INTEGER" property="startTime" />
-    <result column="end_time" jdbcType="INTEGER" property="endTime" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
     <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
     <result column="item_id" jdbcType="BIGINT" property="itemId" />
     <result column="price" jdbcType="DECIMAL" property="price" />
@@ -93,7 +93,6 @@
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
@@ -110,7 +109,6 @@
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     from group_buy
     <if test="_parameter != null">
@@ -139,28 +137,27 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.wuyou.entity.GroupBuy">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into group_buy (title, start_time, end_time, 
-      goods_id, item_id, price, 
-      goods_num, buy_num, order_num, 
-      virtual_num, rebate, goods_price, 
-      goods_name, recommended, views, 
-      is_end, intro)
-    values (#{title,jdbcType=VARCHAR}, #{startTime,jdbcType=INTEGER}, #{endTime,jdbcType=INTEGER}, 
-      #{goodsId,jdbcType=INTEGER}, #{itemId,jdbcType=BIGINT}, #{price,jdbcType=DECIMAL}, 
-      #{goodsNum,jdbcType=INTEGER}, #{buyNum,jdbcType=INTEGER}, #{orderNum,jdbcType=INTEGER}, 
-      #{virtualNum,jdbcType=INTEGER}, #{rebate,jdbcType=DECIMAL}, #{goodsPrice,jdbcType=DECIMAL}, 
-      #{goodsName,jdbcType=VARCHAR}, #{recommended,jdbcType=BIT}, #{views,jdbcType=INTEGER}, 
-      #{isEnd,jdbcType=BIT}, #{intro,jdbcType=LONGVARCHAR})
+    insert into group_buy (id, title, start_time, 
+      end_time, goods_id, item_id, 
+      price, goods_num, buy_num, 
+      order_num, virtual_num, rebate, 
+      goods_price, goods_name, recommended, 
+      views, is_end, intro
+      )
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{startTime,jdbcType=TIMESTAMP}, 
+      #{endTime,jdbcType=TIMESTAMP}, #{goodsId,jdbcType=INTEGER}, #{itemId,jdbcType=BIGINT}, 
+      #{price,jdbcType=DECIMAL}, #{goodsNum,jdbcType=INTEGER}, #{buyNum,jdbcType=INTEGER}, 
+      #{orderNum,jdbcType=INTEGER}, #{virtualNum,jdbcType=INTEGER}, #{rebate,jdbcType=DECIMAL}, 
+      #{goodsPrice,jdbcType=DECIMAL}, #{goodsName,jdbcType=VARCHAR}, #{recommended,jdbcType=BIT}, 
+      #{views,jdbcType=INTEGER}, #{isEnd,jdbcType=BIT}, #{intro,jdbcType=LONGVARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.wuyou.entity.GroupBuy">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
     insert into group_buy
     <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
       <if test="title != null">
         title,
       </if>
@@ -214,14 +211,17 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
       <if test="title != null">
         #{title,jdbcType=VARCHAR},
       </if>
       <if test="startTime != null">
-        #{startTime,jdbcType=INTEGER},
+        #{startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="endTime != null">
-        #{endTime,jdbcType=INTEGER},
+        #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="goodsId != null">
         #{goodsId,jdbcType=INTEGER},
@@ -283,10 +283,10 @@
         title = #{record.title,jdbcType=VARCHAR},
       </if>
       <if test="record.startTime != null">
-        start_time = #{record.startTime,jdbcType=INTEGER},
+        start_time = #{record.startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.endTime != null">
-        end_time = #{record.endTime,jdbcType=INTEGER},
+        end_time = #{record.endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.goodsId != null">
         goods_id = #{record.goodsId,jdbcType=INTEGER},
@@ -339,8 +339,8 @@
     update group_buy
     set id = #{record.id,jdbcType=INTEGER},
       title = #{record.title,jdbcType=VARCHAR},
-      start_time = #{record.startTime,jdbcType=INTEGER},
-      end_time = #{record.endTime,jdbcType=INTEGER},
+      start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      end_time = #{record.endTime,jdbcType=TIMESTAMP},
       goods_id = #{record.goodsId,jdbcType=INTEGER},
       item_id = #{record.itemId,jdbcType=BIGINT},
       price = #{record.price,jdbcType=DECIMAL},
@@ -363,8 +363,8 @@
     update group_buy
     set id = #{record.id,jdbcType=INTEGER},
       title = #{record.title,jdbcType=VARCHAR},
-      start_time = #{record.startTime,jdbcType=INTEGER},
-      end_time = #{record.endTime,jdbcType=INTEGER},
+      start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      end_time = #{record.endTime,jdbcType=TIMESTAMP},
       goods_id = #{record.goodsId,jdbcType=INTEGER},
       item_id = #{record.itemId,jdbcType=BIGINT},
       price = #{record.price,jdbcType=DECIMAL},
@@ -389,10 +389,10 @@
         title = #{title,jdbcType=VARCHAR},
       </if>
       <if test="startTime != null">
-        start_time = #{startTime,jdbcType=INTEGER},
+        start_time = #{startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="endTime != null">
-        end_time = #{endTime,jdbcType=INTEGER},
+        end_time = #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="goodsId != null">
         goods_id = #{goodsId,jdbcType=INTEGER},
@@ -442,8 +442,8 @@
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuyou.entity.GroupBuy">
     update group_buy
     set title = #{title,jdbcType=VARCHAR},
-      start_time = #{startTime,jdbcType=INTEGER},
-      end_time = #{endTime,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
       goods_id = #{goodsId,jdbcType=INTEGER},
       item_id = #{itemId,jdbcType=BIGINT},
       price = #{price,jdbcType=DECIMAL},
@@ -463,8 +463,8 @@
   <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.GroupBuy">
     update group_buy
     set title = #{title,jdbcType=VARCHAR},
-      start_time = #{startTime,jdbcType=INTEGER},
-      end_time = #{endTime,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
       goods_id = #{goodsId,jdbcType=INTEGER},
       item_id = #{itemId,jdbcType=BIGINT},
       price = #{price,jdbcType=DECIMAL},

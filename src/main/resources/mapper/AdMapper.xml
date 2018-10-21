@@ -7,8 +7,8 @@
     <result column="media_type" jdbcType="TINYINT" property="mediaType" />
     <result column="ad_name" jdbcType="VARCHAR" property="adName" />
     <result column="ad_link" jdbcType="VARCHAR" property="adLink" />
-    <result column="start_time" jdbcType="INTEGER" property="startTime" />
-    <result column="end_time" jdbcType="INTEGER" property="endTime" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
     <result column="link_man" jdbcType="VARCHAR" property="linkMan" />
     <result column="link_email" jdbcType="VARCHAR" property="linkEmail" />
     <result column="link_phone" jdbcType="VARCHAR" property="linkPhone" />
@@ -20,6 +20,13 @@
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.Ad">
     <result column="ad_code" jdbcType="LONGVARCHAR" property="adCode" />
+  </resultMap>
+  <resultMap type="com.wuyou.entity.AdAndAdPosition" id="AdAndAdPositionMap" extends="BaseResultMap">
+     <result column="position_name" jdbcType="VARCHAR" property="positionName"/>
+     <result column="position_id" jdbcType="INTEGER" property="positionId"/>
+     <result column="ad_width" jdbcType="SMALLINT" property="adWidth" />
+     <result column="ad_height" jdbcType="SMALLINT" property="adHeight" />
+     <result column="position_desc" jdbcType="VARCHAR" property="positionDesc" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -91,7 +98,6 @@
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
@@ -108,7 +114,6 @@
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     from ad
     <if test="_parameter != null">
@@ -125,6 +130,11 @@
     <include refid="Blob_Column_List" />
     from ad
     where ad_id = #{adId,jdbcType=INTEGER}
+  </select>
+   <select id="selectAdpositionNameFromAdAndAdPosition" resultMap="AdAndAdPositionMap">
+     select ad.*,ad_position.position_name,ad_position.ad_width,ad_position.ad_height,ad_position.position_desc
+     from ad 
+     inner join ad_position on ad.pid=ad_position.position_id;  
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from ad
@@ -144,8 +154,8 @@
       orderby, target, bgcolor, 
       ad_code)
     values (#{adId,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{mediaType,jdbcType=TINYINT}, 
-      #{adName,jdbcType=VARCHAR}, #{adLink,jdbcType=VARCHAR}, #{startTime,jdbcType=INTEGER}, 
-      #{endTime,jdbcType=INTEGER}, #{linkMan,jdbcType=VARCHAR}, #{linkEmail,jdbcType=VARCHAR}, 
+      #{adName,jdbcType=VARCHAR}, #{adLink,jdbcType=VARCHAR}, #{startTime,jdbcType=TIMESTAMP}, 
+      #{endTime,jdbcType=TIMESTAMP}, #{linkMan,jdbcType=VARCHAR}, #{linkEmail,jdbcType=VARCHAR}, 
       #{linkPhone,jdbcType=VARCHAR}, #{clickCount,jdbcType=INTEGER}, #{enabled,jdbcType=TINYINT}, 
       #{orderby,jdbcType=SMALLINT}, #{target,jdbcType=BIT}, #{bgcolor,jdbcType=VARCHAR}, 
       #{adCode,jdbcType=LONGVARCHAR})
@@ -219,10 +229,10 @@
         #{adLink,jdbcType=VARCHAR},
       </if>
       <if test="startTime != null">
-        #{startTime,jdbcType=INTEGER},
+        #{startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="endTime != null">
-        #{endTime,jdbcType=INTEGER},
+        #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="linkMan != null">
         #{linkMan,jdbcType=VARCHAR},
@@ -278,10 +288,10 @@
         ad_link = #{record.adLink,jdbcType=VARCHAR},
       </if>
       <if test="record.startTime != null">
-        start_time = #{record.startTime,jdbcType=INTEGER},
+        start_time = #{record.startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.endTime != null">
-        end_time = #{record.endTime,jdbcType=INTEGER},
+        end_time = #{record.endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.linkMan != null">
         link_man = #{record.linkMan,jdbcType=VARCHAR},
@@ -322,8 +332,8 @@
       media_type = #{record.mediaType,jdbcType=TINYINT},
       ad_name = #{record.adName,jdbcType=VARCHAR},
       ad_link = #{record.adLink,jdbcType=VARCHAR},
-      start_time = #{record.startTime,jdbcType=INTEGER},
-      end_time = #{record.endTime,jdbcType=INTEGER},
+      start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      end_time = #{record.endTime,jdbcType=TIMESTAMP},
       link_man = #{record.linkMan,jdbcType=VARCHAR},
       link_email = #{record.linkEmail,jdbcType=VARCHAR},
       link_phone = #{record.linkPhone,jdbcType=VARCHAR},
@@ -344,8 +354,8 @@
       media_type = #{record.mediaType,jdbcType=TINYINT},
       ad_name = #{record.adName,jdbcType=VARCHAR},
       ad_link = #{record.adLink,jdbcType=VARCHAR},
-      start_time = #{record.startTime,jdbcType=INTEGER},
-      end_time = #{record.endTime,jdbcType=INTEGER},
+      start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      end_time = #{record.endTime,jdbcType=TIMESTAMP},
       link_man = #{record.linkMan,jdbcType=VARCHAR},
       link_email = #{record.linkEmail,jdbcType=VARCHAR},
       link_phone = #{record.linkPhone,jdbcType=VARCHAR},
@@ -374,10 +384,10 @@
         ad_link = #{adLink,jdbcType=VARCHAR},
       </if>
       <if test="startTime != null">
-        start_time = #{startTime,jdbcType=INTEGER},
+        start_time = #{startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="endTime != null">
-        end_time = #{endTime,jdbcType=INTEGER},
+        end_time = #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="linkMan != null">
         link_man = #{linkMan,jdbcType=VARCHAR},
@@ -415,8 +425,8 @@
       media_type = #{mediaType,jdbcType=TINYINT},
       ad_name = #{adName,jdbcType=VARCHAR},
       ad_link = #{adLink,jdbcType=VARCHAR},
-      start_time = #{startTime,jdbcType=INTEGER},
-      end_time = #{endTime,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
       link_man = #{linkMan,jdbcType=VARCHAR},
       link_email = #{linkEmail,jdbcType=VARCHAR},
       link_phone = #{linkPhone,jdbcType=VARCHAR},
@@ -434,8 +444,8 @@
       media_type = #{mediaType,jdbcType=TINYINT},
       ad_name = #{adName,jdbcType=VARCHAR},
       ad_link = #{adLink,jdbcType=VARCHAR},
-      start_time = #{startTime,jdbcType=INTEGER},
-      end_time = #{endTime,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
       link_man = #{linkMan,jdbcType=VARCHAR},
       link_email = #{linkEmail,jdbcType=VARCHAR},
       link_phone = #{linkPhone,jdbcType=VARCHAR},

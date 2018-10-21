@@ -5,12 +5,15 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
     <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="add_time" jdbcType="INTEGER" property="addTime" />
-    <result column="consult_type" jdbcType="BIT" property="consultType" />
+    <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+    <result column="consult_type" jdbcType="INTEGER" property="consultType" />
     <result column="content" jdbcType="VARCHAR" property="content" />
     <result column="parent_id" jdbcType="INTEGER" property="parentId" />
     <result column="is_show" jdbcType="BIT" property="isShow" />
     <result column="status" jdbcType="BIT" property="status" />
+  </resultMap>
+  <resultMap type="com.wuyou.entity.GoodsConsultVo" id="goodsConsultResultMap" extends="BaseResultMap">
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -71,14 +74,13 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, goods_id, username, add_time, consult_type, content, parent_id, is_show, status
+    id, goods_consult.goods_id, goods_consult.username, goods_consult.add_time, goods_consult.consult_type, content, parent_id, is_show, status,goods.goods_name
   </sql>
   <select id="selectByExample" parameterType="com.wuyou.entity.GoodsConsultExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     from goods_consult
     <if test="_parameter != null">
@@ -88,12 +90,19 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="goodsConsultResultMap">
     select 
     <include refid="Base_Column_List" />
     from goods_consult
+    inner join goods on goods_consult.goods_id=goods.goods_id
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="goodsConsultAndgoods" resultMap="goodsConsultResultMap">
+  select id, goods_consult.goods_id, goods_consult.username, goods_consult.add_time, consult_type, content, parent_id, is_show, status,goods.goods_name 
+  from goods_consult 
+  inner join goods on goods_consult.goods_id=goods.goods_id;
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from goods_consult
     where id = #{id,jdbcType=INTEGER}
@@ -105,22 +114,19 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.wuyou.entity.GoodsConsult">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into goods_consult (goods_id, username, add_time, 
-      consult_type, content, parent_id, 
-      is_show, status)
-    values (#{goodsId,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{addTime,jdbcType=INTEGER}, 
-      #{consultType,jdbcType=BIT}, #{content,jdbcType=VARCHAR}, #{parentId,jdbcType=INTEGER}, 
-      #{isShow,jdbcType=BIT}, #{status,jdbcType=BIT})
+    insert into goods_consult (id, goods_id, username, 
+      add_time, consult_type, content, 
+      parent_id, is_show, status)
+    values (#{id,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, 
+      #{addTime,jdbcType=TIMESTAMP}, #{consultType,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, 
+      #{parentId,jdbcType=INTEGER}, #{isShow,jdbcType=BIT}, #{status,jdbcType=BIT})
   </insert>
   <insert id="insertSelective" parameterType="com.wuyou.entity.GoodsConsult">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
     insert into goods_consult
     <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
       <if test="goodsId != null">
         goods_id,
       </if>
@@ -147,6 +153,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
       <if test="goodsId != null">
         #{goodsId,jdbcType=INTEGER},
       </if>
@@ -154,10 +163,10 @@
         #{username,jdbcType=VARCHAR},
       </if>
       <if test="addTime != null">
-        #{addTime,jdbcType=INTEGER},
+        #{addTime,jdbcType=TIMESTAMP},
       </if>
       <if test="consultType != null">
-        #{consultType,jdbcType=BIT},
+        #{consultType,jdbcType=INTEGER},
       </if>
       <if test="content != null">
         #{content,jdbcType=VARCHAR},
@@ -192,10 +201,10 @@
         username = #{record.username,jdbcType=VARCHAR},
       </if>
       <if test="record.addTime != null">
-        add_time = #{record.addTime,jdbcType=INTEGER},
+        add_time = #{record.addTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.consultType != null">
-        consult_type = #{record.consultType,jdbcType=BIT},
+        consult_type = #{record.consultType,jdbcType=INTEGER},
       </if>
       <if test="record.content != null">
         content = #{record.content,jdbcType=VARCHAR},
@@ -219,8 +228,8 @@
     set id = #{record.id,jdbcType=INTEGER},
       goods_id = #{record.goodsId,jdbcType=INTEGER},
       username = #{record.username,jdbcType=VARCHAR},
-      add_time = #{record.addTime,jdbcType=INTEGER},
-      consult_type = #{record.consultType,jdbcType=BIT},
+      add_time = #{record.addTime,jdbcType=TIMESTAMP},
+      consult_type = #{record.consultType,jdbcType=INTEGER},
       content = #{record.content,jdbcType=VARCHAR},
       parent_id = #{record.parentId,jdbcType=INTEGER},
       is_show = #{record.isShow,jdbcType=BIT},
@@ -239,10 +248,10 @@
         username = #{username,jdbcType=VARCHAR},
       </if>
       <if test="addTime != null">
-        add_time = #{addTime,jdbcType=INTEGER},
+        add_time = #{addTime,jdbcType=TIMESTAMP},
       </if>
       <if test="consultType != null">
-        consult_type = #{consultType,jdbcType=BIT},
+        consult_type = #{consultType,jdbcType=INTEGER},
       </if>
       <if test="content != null">
         content = #{content,jdbcType=VARCHAR},
@@ -263,8 +272,8 @@
     update goods_consult
     set goods_id = #{goodsId,jdbcType=INTEGER},
       username = #{username,jdbcType=VARCHAR},
-      add_time = #{addTime,jdbcType=INTEGER},
-      consult_type = #{consultType,jdbcType=BIT},
+      add_time = #{addTime,jdbcType=TIMESTAMP},
+      consult_type = #{consultType,jdbcType=INTEGER},
       content = #{content,jdbcType=VARCHAR},
       parent_id = #{parentId,jdbcType=INTEGER},
       is_show = #{isShow,jdbcType=BIT},

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="${base}/static/css/login.css">
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600"); 
 .more-pens {
   position: fixed;
   left: 20px;

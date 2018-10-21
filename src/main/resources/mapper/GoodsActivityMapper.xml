@@ -8,8 +8,8 @@
     <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
     <result column="spec_id" jdbcType="INTEGER" property="specId" />
     <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
-    <result column="start_time" jdbcType="INTEGER" property="startTime" />
-    <result column="end_time" jdbcType="INTEGER" property="endTime" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
     <result column="is_finished" jdbcType="TINYINT" property="isFinished" />
     <result column="act_count" jdbcType="INTEGER" property="actCount" />
   </resultMap>
@@ -87,7 +87,6 @@
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
@@ -104,7 +103,6 @@
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     from goods_activity
     <if test="_parameter != null">
@@ -140,7 +138,7 @@
       )
     values (#{actId,jdbcType=INTEGER}, #{actName,jdbcType=VARCHAR}, #{actType,jdbcType=TINYINT}, 
       #{goodsId,jdbcType=INTEGER}, #{specId,jdbcType=INTEGER}, #{goodsName,jdbcType=VARCHAR}, 
-      #{startTime,jdbcType=INTEGER}, #{endTime,jdbcType=INTEGER}, #{isFinished,jdbcType=TINYINT}, 
+      #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{isFinished,jdbcType=TINYINT}, 
       #{actCount,jdbcType=INTEGER}, #{actDesc,jdbcType=LONGVARCHAR}, #{extInfo,jdbcType=LONGVARCHAR}
       )
   </insert>
@@ -204,10 +202,10 @@
         #{goodsName,jdbcType=VARCHAR},
       </if>
       <if test="startTime != null">
-        #{startTime,jdbcType=INTEGER},
+        #{startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="endTime != null">
-        #{endTime,jdbcType=INTEGER},
+        #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="isFinished != null">
         #{isFinished,jdbcType=TINYINT},
@@ -251,10 +249,10 @@
         goods_name = #{record.goodsName,jdbcType=VARCHAR},
       </if>
       <if test="record.startTime != null">
-        start_time = #{record.startTime,jdbcType=INTEGER},
+        start_time = #{record.startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.endTime != null">
-        end_time = #{record.endTime,jdbcType=INTEGER},
+        end_time = #{record.endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.isFinished != null">
         is_finished = #{record.isFinished,jdbcType=TINYINT},
@@ -281,8 +279,8 @@
       goods_id = #{record.goodsId,jdbcType=INTEGER},
       spec_id = #{record.specId,jdbcType=INTEGER},
       goods_name = #{record.goodsName,jdbcType=VARCHAR},
-      start_time = #{record.startTime,jdbcType=INTEGER},
-      end_time = #{record.endTime,jdbcType=INTEGER},
+      start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      end_time = #{record.endTime,jdbcType=TIMESTAMP},
       is_finished = #{record.isFinished,jdbcType=TINYINT},
       act_count = #{record.actCount,jdbcType=INTEGER},
       act_desc = #{record.actDesc,jdbcType=LONGVARCHAR},
@@ -299,8 +297,8 @@
       goods_id = #{record.goodsId,jdbcType=INTEGER},
       spec_id = #{record.specId,jdbcType=INTEGER},
       goods_name = #{record.goodsName,jdbcType=VARCHAR},
-      start_time = #{record.startTime,jdbcType=INTEGER},
-      end_time = #{record.endTime,jdbcType=INTEGER},
+      start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      end_time = #{record.endTime,jdbcType=TIMESTAMP},
       is_finished = #{record.isFinished,jdbcType=TINYINT},
       act_count = #{record.actCount,jdbcType=INTEGER}
     <if test="_parameter != null">
@@ -326,10 +324,10 @@
         goods_name = #{goodsName,jdbcType=VARCHAR},
       </if>
       <if test="startTime != null">
-        start_time = #{startTime,jdbcType=INTEGER},
+        start_time = #{startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="endTime != null">
-        end_time = #{endTime,jdbcType=INTEGER},
+        end_time = #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="isFinished != null">
         is_finished = #{isFinished,jdbcType=TINYINT},
@@ -353,8 +351,8 @@
       goods_id = #{goodsId,jdbcType=INTEGER},
       spec_id = #{specId,jdbcType=INTEGER},
       goods_name = #{goodsName,jdbcType=VARCHAR},
-      start_time = #{startTime,jdbcType=INTEGER},
-      end_time = #{endTime,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
       is_finished = #{isFinished,jdbcType=TINYINT},
       act_count = #{actCount,jdbcType=INTEGER},
       act_desc = #{actDesc,jdbcType=LONGVARCHAR},
@@ -368,8 +366,8 @@
       goods_id = #{goodsId,jdbcType=INTEGER},
       spec_id = #{specId,jdbcType=INTEGER},
       goods_name = #{goodsName,jdbcType=VARCHAR},
-      start_time = #{startTime,jdbcType=INTEGER},
-      end_time = #{endTime,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
       is_finished = #{isFinished,jdbcType=TINYINT},
       act_count = #{actCount,jdbcType=INTEGER}
     where act_id = #{actId,jdbcType=INTEGER}

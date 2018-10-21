@@ -39,7 +39,7 @@ public interface AdPositionService {
      * @return
      * @throws Exception
      */
-	public int updateAdPostionByPositionId(Integer positionId,AdPosition record) throws Exception;
+	public int updateAdPostionByPositionId(AdPosition record) throws Exception;
     /**
      * 根据positionId查询
      * @param positionId

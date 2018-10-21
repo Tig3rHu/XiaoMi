@@ -3,7 +3,9 @@ package com.wuyou.service;
 import java.util.List;
 
 
+
 import com.wuyou.entity.Ad;
+import com.wuyou.entity.AdAndAdPosition;
 import com.wuyou.entity.AdExample;
 /**
  * 
@@ -20,6 +22,8 @@ public interface AdService {
      * @throws Exception
      */
 	public Ad findAdById(Integer adId) throws Exception;
+	
+	public List<AdAndAdPosition> selectAdpositionNameFromAdAndAdPosition();
 	/**
 	 * 根据条件查询Ad中的信息
 	 * @param example
@@ -39,7 +43,7 @@ public interface AdService {
 	 * @return
 	 * @throws Exception
 	 */
-	public int updateAdById(Integer adId,Ad ad) throws Exception;
+	public int updateAdById(Ad ad) throws Exception;
     /**
      * 
      * @param ad

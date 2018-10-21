@@ -5,7 +5,7 @@
     <id column="order_id" jdbcType="INTEGER" property="orderId" />
     <result column="order_sn" jdbcType="VARCHAR" property="orderSn" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
-    <result column="order_status" jdbcType="BIT" property="orderStatus" />
+    <result column="order_status" jdbcType="INTEGER" property="orderStatus" />
     <result column="shipping_status" jdbcType="BIT" property="shippingStatus" />
     <result column="pay_status" jdbcType="BIT" property="payStatus" />
     <result column="consignee" jdbcType="VARCHAR" property="consignee" />
@@ -31,12 +31,12 @@
     <result column="integral_money" jdbcType="DECIMAL" property="integralMoney" />
     <result column="order_amount" jdbcType="DECIMAL" property="orderAmount" />
     <result column="total_amount" jdbcType="DECIMAL" property="totalAmount" />
-    <result column="add_time" jdbcType="INTEGER" property="addTime" />
-    <result column="shipping_time" jdbcType="INTEGER" property="shippingTime" />
-    <result column="confirm_time" jdbcType="INTEGER" property="confirmTime" />
-    <result column="pay_time" jdbcType="INTEGER" property="payTime" />
+    <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+    <result column="shipping_time" jdbcType="TIMESTAMP" property="shippingTime" />
+    <result column="confirm_time" jdbcType="TIMESTAMP" property="confirmTime" />
+    <result column="pay_time" jdbcType="TIMESTAMP" property="payTime" />
     <result column="transaction_id" jdbcType="VARCHAR" property="transactionId" />
-    <result column="order_prom_type" jdbcType="TINYINT" property="orderPromType" />
+    <result column="order_prom_type" jdbcType="INTEGER" property="orderPromType" />
     <result column="order_prom_id" jdbcType="SMALLINT" property="orderPromId" />
     <result column="order_prom_amount" jdbcType="DECIMAL" property="orderPromAmount" />
     <result column="discount" jdbcType="DECIMAL" property="discount" />
@@ -106,21 +106,20 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    order_id, order_sn, user_id, order_status, shipping_status, pay_status, consignee, 
-    country, province, city, district, twon, address, zipcode, mobile, email, shipping_code, 
-    shipping_name, pay_code, pay_name, invoice_title, goods_price, shipping_price, user_money, 
-    coupon_price, integral, integral_money, order_amount, total_amount, add_time, shipping_time, 
-    confirm_time, pay_time, transaction_id, order_prom_type, order_prom_id, order_prom_amount, 
-    discount, user_note, admin_note, parent_sn, is_distribut, paid_money, deleted
+    order.order_id, order.order_sn, order.user_id, order.order_status, order.shipping_status, order.pay_status, order.consignee, 
+    order.country, order.province, order.city, order.district, order.twon, order.address, order.zipcode, order.mobile, order.email, order.shipping_code, 
+    order.shipping_name, order.pay_code, order.pay_name, order.invoice_title, order.goods_price, order.shipping_price, order.user_money, 
+    order.coupon_price, order.integral, order.integral_money, order.order_amount, order.total_amount, order.add_time, order.shipping_time, 
+    order.confirm_time, order.pay_time, order.transaction_id, order.order_prom_type, order.order_prom_id, order.order_prom_amount, 
+    order.discount, order.user_note, order.admin_note, order.parent_sn, order.is_distribut, order.paid_money, order.deleted
   </sql>
   <select id="selectByExample" parameterType="com.wuyou.entity.OrderExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
-    from order
+    from `order`
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -131,21 +130,21 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from order
+    from `order`
     where order_id = #{orderId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from order
+    delete from `order`
     where order_id = #{orderId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.wuyou.entity.OrderExample">
-    delete from order
+    delete from `order`
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.wuyou.entity.Order">
-    insert into order (order_id, order_sn, user_id, 
+    insert into `orde` (order_id, order_sn, user_id, 
       order_status, shipping_status, pay_status, 
       consignee, country, province, 
       city, district, twon, 
@@ -161,7 +160,7 @@
       admin_note, parent_sn, is_distribut, 
       paid_money, deleted)
     values (#{orderId,jdbcType=INTEGER}, #{orderSn,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, 
-      #{orderStatus,jdbcType=BIT}, #{shippingStatus,jdbcType=BIT}, #{payStatus,jdbcType=BIT}, 
+      #{orderStatus,jdbcType=INTEGER}, #{shippingStatus,jdbcType=BIT}, #{payStatus,jdbcType=BIT}, 
       #{consignee,jdbcType=VARCHAR}, #{country,jdbcType=INTEGER}, #{province,jdbcType=INTEGER}, 
       #{city,jdbcType=INTEGER}, #{district,jdbcType=INTEGER}, #{twon,jdbcType=INTEGER}, 
       #{address,jdbcType=VARCHAR}, #{zipcode,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
@@ -169,15 +168,15 @@
       #{payCode,jdbcType=VARCHAR}, #{payName,jdbcType=VARCHAR}, #{invoiceTitle,jdbcType=VARCHAR}, 
       #{goodsPrice,jdbcType=DECIMAL}, #{shippingPrice,jdbcType=DECIMAL}, #{userMoney,jdbcType=DECIMAL}, 
       #{couponPrice,jdbcType=DECIMAL}, #{integral,jdbcType=INTEGER}, #{integralMoney,jdbcType=DECIMAL}, 
-      #{orderAmount,jdbcType=DECIMAL}, #{totalAmount,jdbcType=DECIMAL}, #{addTime,jdbcType=INTEGER}, 
-      #{shippingTime,jdbcType=INTEGER}, #{confirmTime,jdbcType=INTEGER}, #{payTime,jdbcType=INTEGER}, 
-      #{transactionId,jdbcType=VARCHAR}, #{orderPromType,jdbcType=TINYINT}, #{orderPromId,jdbcType=SMALLINT}, 
+      #{orderAmount,jdbcType=DECIMAL}, #{totalAmount,jdbcType=DECIMAL}, #{addTime,jdbcType=TIMESTAMP}, 
+      #{shippingTime,jdbcType=TIMESTAMP}, #{confirmTime,jdbcType=TIMESTAMP}, #{payTime,jdbcType=TIMESTAMP}, 
+      #{transactionId,jdbcType=VARCHAR}, #{orderPromType,jdbcType=INTEGER}, #{orderPromId,jdbcType=SMALLINT}, 
       #{orderPromAmount,jdbcType=DECIMAL}, #{discount,jdbcType=DECIMAL}, #{userNote,jdbcType=VARCHAR}, 
       #{adminNote,jdbcType=VARCHAR}, #{parentSn,jdbcType=VARCHAR}, #{isDistribut,jdbcType=BIT}, 
       #{paidMoney,jdbcType=DECIMAL}, #{deleted,jdbcType=BIT})
   </insert>
   <insert id="insertSelective" parameterType="com.wuyou.entity.Order">
-    insert into order
+    insert into `order`
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="orderId != null">
         order_id,
@@ -323,7 +322,7 @@
         #{userId,jdbcType=INTEGER},
       </if>
       <if test="orderStatus != null">
-        #{orderStatus,jdbcType=BIT},
+        #{orderStatus,jdbcType=INTEGER},
       </if>
       <if test="shippingStatus != null">
         #{shippingStatus,jdbcType=BIT},
@@ -401,22 +400,22 @@
         #{totalAmount,jdbcType=DECIMAL},
       </if>
       <if test="addTime != null">
-        #{addTime,jdbcType=INTEGER},
+        #{addTime,jdbcType=TIMESTAMP},
       </if>
       <if test="shippingTime != null">
-        #{shippingTime,jdbcType=INTEGER},
+        #{shippingTime,jdbcType=TIMESTAMP},
       </if>
       <if test="confirmTime != null">
-        #{confirmTime,jdbcType=INTEGER},
+        #{confirmTime,jdbcType=TIMESTAMP},
       </if>
       <if test="payTime != null">
-        #{payTime,jdbcType=INTEGER},
+        #{payTime,jdbcType=TIMESTAMP},
       </if>
       <if test="transactionId != null">
         #{transactionId,jdbcType=VARCHAR},
       </if>
       <if test="orderPromType != null">
-        #{orderPromType,jdbcType=TINYINT},
+        #{orderPromType,jdbcType=INTEGER},
       </if>
       <if test="orderPromId != null">
         #{orderPromId,jdbcType=SMALLINT},
@@ -448,13 +447,13 @@
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.wuyou.entity.OrderExample" resultType="java.lang.Integer">
-    select count(*) from order
+    select count(*) from `order`
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update order
+    update `order`
     <set>
       <if test="record.orderId != null">
         order_id = #{record.orderId,jdbcType=INTEGER},
@@ -466,7 +465,7 @@
         user_id = #{record.userId,jdbcType=INTEGER},
       </if>
       <if test="record.orderStatus != null">
-        order_status = #{record.orderStatus,jdbcType=BIT},
+        order_status = #{record.orderStatus,jdbcType=INTEGER},
       </if>
       <if test="record.shippingStatus != null">
         shipping_status = #{record.shippingStatus,jdbcType=BIT},
@@ -544,22 +543,22 @@
         total_amount = #{record.totalAmount,jdbcType=DECIMAL},
       </if>
       <if test="record.addTime != null">
-        add_time = #{record.addTime,jdbcType=INTEGER},
+        add_time = #{record.addTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.shippingTime != null">
-        shipping_time = #{record.shippingTime,jdbcType=INTEGER},
+        shipping_time = #{record.shippingTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.confirmTime != null">
-        confirm_time = #{record.confirmTime,jdbcType=INTEGER},
+        confirm_time = #{record.confirmTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.payTime != null">
-        pay_time = #{record.payTime,jdbcType=INTEGER},
+        pay_time = #{record.payTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.transactionId != null">
         transaction_id = #{record.transactionId,jdbcType=VARCHAR},
       </if>
       <if test="record.orderPromType != null">
-        order_prom_type = #{record.orderPromType,jdbcType=TINYINT},
+        order_prom_type = #{record.orderPromType,jdbcType=INTEGER},
       </if>
       <if test="record.orderPromId != null">
         order_prom_id = #{record.orderPromId,jdbcType=SMALLINT},
@@ -594,11 +593,11 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update order
+    update `order`
     set order_id = #{record.orderId,jdbcType=INTEGER},
       order_sn = #{record.orderSn,jdbcType=VARCHAR},
       user_id = #{record.userId,jdbcType=INTEGER},
-      order_status = #{record.orderStatus,jdbcType=BIT},
+      order_status = #{record.orderStatus,jdbcType=INTEGER},
       shipping_status = #{record.shippingStatus,jdbcType=BIT},
       pay_status = #{record.payStatus,jdbcType=BIT},
       consignee = #{record.consignee,jdbcType=VARCHAR},
@@ -624,12 +623,12 @@
       integral_money = #{record.integralMoney,jdbcType=DECIMAL},
       order_amount = #{record.orderAmount,jdbcType=DECIMAL},
       total_amount = #{record.totalAmount,jdbcType=DECIMAL},
-      add_time = #{record.addTime,jdbcType=INTEGER},
-      shipping_time = #{record.shippingTime,jdbcType=INTEGER},
-      confirm_time = #{record.confirmTime,jdbcType=INTEGER},
-      pay_time = #{record.payTime,jdbcType=INTEGER},
+      add_time = #{record.addTime,jdbcType=TIMESTAMP},
+      shipping_time = #{record.shippingTime,jdbcType=TIMESTAMP},
+      confirm_time = #{record.confirmTime,jdbcType=TIMESTAMP},
+      pay_time = #{record.payTime,jdbcType=TIMESTAMP},
       transaction_id = #{record.transactionId,jdbcType=VARCHAR},
-      order_prom_type = #{record.orderPromType,jdbcType=TINYINT},
+      order_prom_type = #{record.orderPromType,jdbcType=INTEGER},
       order_prom_id = #{record.orderPromId,jdbcType=SMALLINT},
       order_prom_amount = #{record.orderPromAmount,jdbcType=DECIMAL},
       discount = #{record.discount,jdbcType=DECIMAL},
@@ -644,7 +643,7 @@
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.Order">
-    update order
+    update `order`
     <set>
       <if test="orderSn != null">
         order_sn = #{orderSn,jdbcType=VARCHAR},
@@ -653,7 +652,7 @@
         user_id = #{userId,jdbcType=INTEGER},
       </if>
       <if test="orderStatus != null">
-        order_status = #{orderStatus,jdbcType=BIT},
+        order_status = #{orderStatus,jdbcType=INTEGER},
       </if>
       <if test="shippingStatus != null">
         shipping_status = #{shippingStatus,jdbcType=BIT},
@@ -731,22 +730,22 @@
         total_amount = #{totalAmount,jdbcType=DECIMAL},
       </if>
       <if test="addTime != null">
-        add_time = #{addTime,jdbcType=INTEGER},
+        add_time = #{addTime,jdbcType=TIMESTAMP},
       </if>
       <if test="shippingTime != null">
-        shipping_time = #{shippingTime,jdbcType=INTEGER},
+        shipping_time = #{shippingTime,jdbcType=TIMESTAMP},
       </if>
       <if test="confirmTime != null">
-        confirm_time = #{confirmTime,jdbcType=INTEGER},
+        confirm_time = #{confirmTime,jdbcType=TIMESTAMP},
       </if>
       <if test="payTime != null">
-        pay_time = #{payTime,jdbcType=INTEGER},
+        pay_time = #{payTime,jdbcType=TIMESTAMP},
       </if>
       <if test="transactionId != null">
         transaction_id = #{transactionId,jdbcType=VARCHAR},
       </if>
       <if test="orderPromType != null">
-        order_prom_type = #{orderPromType,jdbcType=TINYINT},
+        order_prom_type = #{orderPromType,jdbcType=INTEGER},
       </if>
       <if test="orderPromId != null">
         order_prom_id = #{orderPromId,jdbcType=SMALLINT},
@@ -779,10 +778,10 @@
     where order_id = #{orderId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.Order">
-    update order
+    update `order`
     set order_sn = #{orderSn,jdbcType=VARCHAR},
       user_id = #{userId,jdbcType=INTEGER},
-      order_status = #{orderStatus,jdbcType=BIT},
+      order_status = #{orderStatus,jdbcType=INTEGER},
       shipping_status = #{shippingStatus,jdbcType=BIT},
       pay_status = #{payStatus,jdbcType=BIT},
       consignee = #{consignee,jdbcType=VARCHAR},
@@ -808,12 +807,12 @@
       integral_money = #{integralMoney,jdbcType=DECIMAL},
       order_amount = #{orderAmount,jdbcType=DECIMAL},
       total_amount = #{totalAmount,jdbcType=DECIMAL},
-      add_time = #{addTime,jdbcType=INTEGER},
-      shipping_time = #{shippingTime,jdbcType=INTEGER},
-      confirm_time = #{confirmTime,jdbcType=INTEGER},
-      pay_time = #{payTime,jdbcType=INTEGER},
+      add_time = #{addTime,jdbcType=TIMESTAMP},
+      shipping_time = #{shippingTime,jdbcType=TIMESTAMP},
+      confirm_time = #{confirmTime,jdbcType=TIMESTAMP},
+      pay_time = #{payTime,jdbcType=TIMESTAMP},
       transaction_id = #{transactionId,jdbcType=VARCHAR},
-      order_prom_type = #{orderPromType,jdbcType=TINYINT},
+      order_prom_type = #{orderPromType,jdbcType=INTEGER},
       order_prom_id = #{orderPromId,jdbcType=SMALLINT},
       order_prom_amount = #{orderPromAmount,jdbcType=DECIMAL},
       discount = #{discount,jdbcType=DECIMAL},

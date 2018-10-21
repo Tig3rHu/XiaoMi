@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.wuyou.dao.AdMapper;
 import com.wuyou.entity.Ad;
+import com.wuyou.entity.AdAndAdPosition;
 import com.wuyou.entity.AdExample;
 import com.wuyou.service.AdService;
 
@@ -35,8 +36,9 @@ public class AdServiceImpl implements AdService {
 	}
 
 	@Override
-	public int updateAdById(Integer adId, Ad ad) throws Exception {
+	public int updateAdById(Ad ad) throws Exception {
 		// TODO Auto-generated method stub
+		
 		return adMapper.updateByPrimaryKey(ad);
 	}
 
@@ -44,6 +46,15 @@ public class AdServiceImpl implements AdService {
 	public int insertAd(Ad ad) throws Exception {
 		// TODO Auto-generated method stub
 		return adMapper.insert(ad);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.AdService#selectAdpositionNameFromAdAndAdPosition()
+	 */
+	@Override
+	public List<AdAndAdPosition> selectAdpositionNameFromAdAndAdPosition() {
+		// TODO Auto-generated method stub
+		return adMapper.selectAdpositionNameFromAdAndAdPosition();
 	}
 
 }

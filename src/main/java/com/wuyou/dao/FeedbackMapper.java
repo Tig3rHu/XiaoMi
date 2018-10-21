@@ -2,13 +2,9 @@ package com.wuyou.dao;
 
 import com.wuyou.entity.Feedback;
 import com.wuyou.entity.FeedbackExample;
-
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-@Mapper
 public interface FeedbackMapper {
     int countByExample(FeedbackExample example);
 

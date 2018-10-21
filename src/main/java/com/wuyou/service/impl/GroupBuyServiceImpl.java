@@ -74,4 +74,13 @@ public class GroupBuyServiceImpl implements GroupBuyService {
 		return groupBuyMapper.selectByPrimaryKey(id);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.GroupBuyService#updateByPrimaryKey(com.wuyou.entity.GroupBuy)
+	 */
+	@Override
+	public int updateByPrimaryKey(GroupBuy record) {
+		// TODO Auto-generated method stub
+		return groupBuyMapper.updateByPrimaryKey(record);
+	}
+
 }

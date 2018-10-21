@@ -26,6 +26,7 @@ public interface GroupBuyService {
 
     int insert(GroupBuy record);
     
+    int updateByPrimaryKey(GroupBuy record);
     int updateByExample(@Param("record") GroupBuy record, @Param("example") GroupBuyExample example);
     
     List<GroupBuy> selectByExample(GroupBuyExample example);

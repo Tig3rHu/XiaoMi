@@ -9,10 +9,14 @@ package com.wuyou.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.wuyou.dao.GoodsCategoryMapper;
+import com.wuyou.dao.GoodsConsultMapper;
 import com.wuyou.entity.GoodsConsult;
 import com.wuyou.entity.GoodsConsultExample;
+import com.wuyou.entity.GoodsConsultVo;
 import com.wuyou.service.GoodsConsultService;
 
 /**
@@ -23,14 +27,16 @@ import com.wuyou.service.GoodsConsultService;
  */
 @Service
 public class GoodsConsultServiceImpl implements GoodsConsultService {
-
+    
+	@Autowired
+	private GoodsConsultMapper goodsConsultMapper;
 	/* (non-Javadoc)
 	 * @see com.wuyou.service.GoodsConsultService#insert(com.wuyou.entity.GoodsConsult)
 	 */
 	@Override
 	public int insert(GoodsConsult record) {
 		// TODO Auto-generated method stub
-		return 0;
+		return goodsConsultMapper.insert(record);
 	}
 
 	/* (non-Javadoc)
@@ -39,7 +45,7 @@ public class GoodsConsultServiceImpl implements GoodsConsultService {
 	@Override
 	public int deleteByPrimaryKey(Integer id) {
 		// TODO Auto-generated method stub
-		return 0;
+		return goodsConsultMapper.deleteByPrimaryKey(id);
 	}
 
 	/* (non-Javadoc)
@@ -57,7 +63,7 @@ public class GoodsConsultServiceImpl implements GoodsConsultService {
 	@Override
 	public List<GoodsConsult> selectByExample(GoodsConsultExample example) {
 		// TODO Auto-generated method stub
-		return null;
+		return goodsConsultMapper.selectByExample(example);
 	}
 
 	/* (non-Javadoc)
@@ -66,7 +72,25 @@ public class GoodsConsultServiceImpl implements GoodsConsultService {
 	@Override
 	public GoodsConsult selectByPrimaryKey(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		return goodsConsultMapper.selectByPrimaryKey(id);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.GoodsConsultService#updateByPrimaryKey(com.wuyou.entity.GoodsConsult)
+	 */
+	@Override
+	public int updateByPrimaryKey(GoodsConsultVo record) {
+		// TODO Auto-generated method stub
+		return goodsConsultMapper.updateByPrimaryKey(record);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.GoodsConsultService#goodsConsultAndgoods()
+	 */
+	@Override
+	public List<GoodsConsultVo> goodsConsultAndgoods() {
+		// TODO Auto-generated method stub
+		return goodsConsultMapper.goodsConsultAndgoods();
 	}
 
 }

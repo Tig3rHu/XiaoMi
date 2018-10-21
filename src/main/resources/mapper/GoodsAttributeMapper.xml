@@ -5,10 +5,10 @@
     <id column="attr_id" jdbcType="INTEGER" property="attrId" />
     <result column="attr_name" jdbcType="VARCHAR" property="attrName" />
     <result column="type_id" jdbcType="SMALLINT" property="typeId" />
-    <result column="attr_index" jdbcType="BIT" property="attrIndex" />
-    <result column="attr_type" jdbcType="BIT" property="attrType" />
-    <result column="attr_input_type" jdbcType="BIT" property="attrInputType" />
-    <result column="order" jdbcType="TINYINT" property="order" />
+    <result column="attr_index" jdbcType="INTEGER" property="attrIndex" />
+    <result column="attr_type" jdbcType="INTEGER" property="attrType" />
+    <result column="attr_input_type" jdbcType="INTEGER" property="attrInputType" />
+    <result column="order" jdbcType="INTEGER" property="order" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.GoodsAttribute">
     <result column="attr_values" jdbcType="LONGVARCHAR" property="attrValues" />
@@ -72,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    attr_id, attr_name, type_id, attr_index, attr_type, attr_input_type, order
+    attr_id, attr_name, type_id, attr_index, attr_type, attr_input_type, goods_attribute.order
   </sql>
   <sql id="Blob_Column_List">
     attr_values
@@ -82,7 +82,6 @@
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
@@ -99,7 +98,6 @@
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     from goods_attribute
     <if test="_parameter != null">
@@ -130,10 +128,10 @@
   <insert id="insert" parameterType="com.wuyou.entity.GoodsAttribute">
     insert into goods_attribute (attr_id, attr_name, type_id, 
       attr_index, attr_type, attr_input_type, 
-      order, attr_values)
+      goods_attribute.order, attr_values)
     values (#{attrId,jdbcType=INTEGER}, #{attrName,jdbcType=VARCHAR}, #{typeId,jdbcType=SMALLINT}, 
-      #{attrIndex,jdbcType=BIT}, #{attrType,jdbcType=BIT}, #{attrInputType,jdbcType=BIT}, 
-      #{order,jdbcType=TINYINT}, #{attrValues,jdbcType=LONGVARCHAR})
+      #{attrIndex,jdbcType=INTEGER}, #{attrType,jdbcType=INTEGER}, #{attrInputType,jdbcType=INTEGER}, 
+      #{goods_attribute.order,jdbcType=INTEGER}, #{attrValues,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.wuyou.entity.GoodsAttribute">
     insert into goods_attribute
@@ -157,7 +155,7 @@
         attr_input_type,
       </if>
       <if test="order != null">
-        order,
+        goods_attribute.order,
       </if>
       <if test="attrValues != null">
         attr_values,
@@ -174,16 +172,16 @@
         #{typeId,jdbcType=SMALLINT},
       </if>
       <if test="attrIndex != null">
-        #{attrIndex,jdbcType=BIT},
+        #{attrIndex,jdbcType=INTEGER},
       </if>
       <if test="attrType != null">
-        #{attrType,jdbcType=BIT},
+        #{attrType,jdbcType=INTEGER},
       </if>
       <if test="attrInputType != null">
-        #{attrInputType,jdbcType=BIT},
+        #{attrInputType,jdbcType=INTEGER},
       </if>
       <if test="order != null">
-        #{order,jdbcType=TINYINT},
+        #{goods_attribute.order,jdbcType=INTEGER},
       </if>
       <if test="attrValues != null">
         #{attrValues,jdbcType=LONGVARCHAR},
@@ -209,16 +207,16 @@
         type_id = #{record.typeId,jdbcType=SMALLINT},
       </if>
       <if test="record.attrIndex != null">
-        attr_index = #{record.attrIndex,jdbcType=BIT},
+        attr_index = #{record.attrIndex,jdbcType=INTEGER},
       </if>
       <if test="record.attrType != null">
-        attr_type = #{record.attrType,jdbcType=BIT},
+        attr_type = #{record.attrType,jdbcType=INTEGER},
       </if>
       <if test="record.attrInputType != null">
-        attr_input_type = #{record.attrInputType,jdbcType=BIT},
+        attr_input_type = #{record.attrInputType,jdbcType=INTEGER},
       </if>
       <if test="record.order != null">
-        order = #{record.order,jdbcType=TINYINT},
+        goods_attribute.order = #{record.order,jdbcType=INTEGER},
       </if>
       <if test="record.attrValues != null">
         attr_values = #{record.attrValues,jdbcType=LONGVARCHAR},
@@ -233,10 +231,10 @@
     set attr_id = #{record.attrId,jdbcType=INTEGER},
       attr_name = #{record.attrName,jdbcType=VARCHAR},
       type_id = #{record.typeId,jdbcType=SMALLINT},
-      attr_index = #{record.attrIndex,jdbcType=BIT},
-      attr_type = #{record.attrType,jdbcType=BIT},
-      attr_input_type = #{record.attrInputType,jdbcType=BIT},
-      order = #{record.order,jdbcType=TINYINT},
+      attr_index = #{record.attrIndex,jdbcType=INTEGER},
+      attr_type = #{record.attrType,jdbcType=INTEGER},
+      attr_input_type = #{record.attrInputType,jdbcType=INTEGER},
+      goods_attribute.order = #{record.order,jdbcType=INTEGER},
       attr_values = #{record.attrValues,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -247,10 +245,10 @@
     set attr_id = #{record.attrId,jdbcType=INTEGER},
       attr_name = #{record.attrName,jdbcType=VARCHAR},
       type_id = #{record.typeId,jdbcType=SMALLINT},
-      attr_index = #{record.attrIndex,jdbcType=BIT},
-      attr_type = #{record.attrType,jdbcType=BIT},
-      attr_input_type = #{record.attrInputType,jdbcType=BIT},
-      order = #{record.order,jdbcType=TINYINT}
+      attr_index = #{record.attrIndex,jdbcType=INTEGER},
+      attr_type = #{record.attrType,jdbcType=INTEGER},
+      attr_input_type = #{record.attrInputType,jdbcType=INTEGER},
+      goods_attribute.order = #{record.order,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -265,16 +263,16 @@
         type_id = #{typeId,jdbcType=SMALLINT},
       </if>
       <if test="attrIndex != null">
-        attr_index = #{attrIndex,jdbcType=BIT},
+        attr_index = #{attrIndex,jdbcType=INTEGER},
       </if>
       <if test="attrType != null">
-        attr_type = #{attrType,jdbcType=BIT},
+        attr_type = #{attrType,jdbcType=INTEGER},
       </if>
       <if test="attrInputType != null">
-        attr_input_type = #{attrInputType,jdbcType=BIT},
+        attr_input_type = #{attrInputType,jdbcType=INTEGER},
       </if>
       <if test="order != null">
-        order = #{order,jdbcType=TINYINT},
+        goods_attribute.order = #{order,jdbcType=INTEGER},
       </if>
       <if test="attrValues != null">
         attr_values = #{attrValues,jdbcType=LONGVARCHAR},
@@ -286,10 +284,10 @@
     update goods_attribute
     set attr_name = #{attrName,jdbcType=VARCHAR},
       type_id = #{typeId,jdbcType=SMALLINT},
-      attr_index = #{attrIndex,jdbcType=BIT},
-      attr_type = #{attrType,jdbcType=BIT},
-      attr_input_type = #{attrInputType,jdbcType=BIT},
-      order = #{order,jdbcType=TINYINT},
+      attr_index = #{attrIndex,jdbcType=INTEGER},
+      attr_type = #{attrType,jdbcType=INTEGER},
+      attr_input_type = #{attrInputType,jdbcType=INTEGER},
+      goods_attribute.order = #{order,jdbcType=INTEGER},
       attr_values = #{attrValues,jdbcType=LONGVARCHAR}
     where attr_id = #{attrId,jdbcType=INTEGER}
   </update>
@@ -297,10 +295,10 @@
     update goods_attribute
     set attr_name = #{attrName,jdbcType=VARCHAR},
       type_id = #{typeId,jdbcType=SMALLINT},
-      attr_index = #{attrIndex,jdbcType=BIT},
-      attr_type = #{attrType,jdbcType=BIT},
-      attr_input_type = #{attrInputType,jdbcType=BIT},
-      order = #{order,jdbcType=TINYINT}
+      attr_index = #{attrIndex,jdbcType=INTEGER},
+      attr_type = #{attrType,jdbcType=INTEGER},
+      attr_input_type = #{attrInputType,jdbcType=INTEGER},
+      goods_attribute.order = #{order,jdbcType=INTEGER}
     where attr_id = #{attrId,jdbcType=INTEGER}
   </update>
 </mapper>

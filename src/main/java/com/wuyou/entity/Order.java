@@ -1,6 +1,7 @@
 package com.wuyou.entity;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class Order {
     private Integer orderId;
@@ -9,7 +10,7 @@ public class Order {
 
     private Integer userId;
 
-    private Boolean orderStatus;
+    private Integer orderStatus;
 
     private Boolean shippingStatus;
 
@@ -61,17 +62,17 @@ public class Order {
 
     private BigDecimal totalAmount;
 
-    private Integer addTime;
+    private Date addTime;
 
-    private Integer shippingTime;
+    private Date shippingTime;
 
-    private Integer confirmTime;
+    private Date confirmTime;
 
-    private Integer payTime;
+    private Date payTime;
 
     private String transactionId;
 
-    private Byte orderPromType;
+    private Integer orderPromType;
 
     private Short orderPromId;
 
@@ -115,11 +116,11 @@ public class Order {
         this.userId = userId;
     }
 
-    public Boolean getOrderStatus() {
+    public Integer getOrderStatus() {
         return orderStatus;
     }
 
-    public void setOrderStatus(Boolean orderStatus) {
+    public void setOrderStatus(Integer orderStatus) {
         this.orderStatus = orderStatus;
     }
 
@@ -323,35 +324,35 @@ public class Order {
         this.totalAmount = totalAmount;
     }
 
-    public Integer getAddTime() {
+    public Date getAddTime() {
         return addTime;
     }
 
-    public void setAddTime(Integer addTime) {
+    public void setAddTime(Date addTime) {
         this.addTime = addTime;
     }
 
-    public Integer getShippingTime() {
+    public Date getShippingTime() {
         return shippingTime;
     }
 
-    public void setShippingTime(Integer shippingTime) {
+    public void setShippingTime(Date shippingTime) {
         this.shippingTime = shippingTime;
     }
 
-    public Integer getConfirmTime() {
+    public Date getConfirmTime() {
         return confirmTime;
     }
 
-    public void setConfirmTime(Integer confirmTime) {
+    public void setConfirmTime(Date confirmTime) {
         this.confirmTime = confirmTime;
     }
 
-    public Integer getPayTime() {
+    public Date getPayTime() {
         return payTime;
     }
 
-    public void setPayTime(Integer payTime) {
+    public void setPayTime(Date payTime) {
         this.payTime = payTime;
     }
 
@@ -363,11 +364,11 @@ public class Order {
         this.transactionId = transactionId;
     }
 
-    public Byte getOrderPromType() {
+    public Integer getOrderPromType() {
         return orderPromType;
     }
 
-    public void setOrderPromType(Byte orderPromType) {
+    public void setOrderPromType(Integer orderPromType) {
         this.orderPromType = orderPromType;
     }
 

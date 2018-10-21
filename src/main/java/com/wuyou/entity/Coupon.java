@@ -1,13 +1,14 @@
 package com.wuyou.entity;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class Coupon {
     private Integer id;
 
     private String name;
 
-    private Boolean type;
+    private Integer type;
 
     private BigDecimal money;
 
@@ -19,19 +20,19 @@ public class Coupon {
 
     private Integer useNum;
 
-    private Integer sendStartTime;
+    private Date sendStartTime;
 
-    private Integer sendEndTime;
+    private Date sendEndTime;
 
-    private Integer useStartTime;
+    private Date useStartTime;
 
-    private Integer useEndTime;
+    private Date useEndTime;
 
-    private Integer addTime;
+    private Date addTime;
 
     private Integer status;
 
-    private Boolean useType;
+    private Integer useType;
 
     public Integer getId() {
         return id;
@@ -49,11 +50,11 @@ public class Coupon {
         this.name = name;
     }
 
-    public Boolean getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(Boolean type) {
+    public void setType(Integer type) {
         this.type = type;
     }
 
@@ -97,43 +98,43 @@ public class Coupon {
         this.useNum = useNum;
     }
 
-    public Integer getSendStartTime() {
+    public Date getSendStartTime() {
         return sendStartTime;
     }
 
-    public void setSendStartTime(Integer sendStartTime) {
+    public void setSendStartTime(Date sendStartTime) {
         this.sendStartTime = sendStartTime;
     }
 
-    public Integer getSendEndTime() {
+    public Date getSendEndTime() {
         return sendEndTime;
     }
 
-    public void setSendEndTime(Integer sendEndTime) {
+    public void setSendEndTime(Date sendEndTime) {
         this.sendEndTime = sendEndTime;
     }
 
-    public Integer getUseStartTime() {
+    public Date getUseStartTime() {
         return useStartTime;
     }
 
-    public void setUseStartTime(Integer useStartTime) {
+    public void setUseStartTime(Date useStartTime) {
         this.useStartTime = useStartTime;
     }
 
-    public Integer getUseEndTime() {
+    public Date getUseEndTime() {
         return useEndTime;
     }
 
-    public void setUseEndTime(Integer useEndTime) {
+    public void setUseEndTime(Date useEndTime) {
         this.useEndTime = useEndTime;
     }
 
-    public Integer getAddTime() {
+    public Date getAddTime() {
         return addTime;
     }
 
-    public void setAddTime(Integer addTime) {
+    public void setAddTime(Date addTime) {
         this.addTime = addTime;
     }
 
@@ -145,11 +146,11 @@ public class Coupon {
         this.status = status;
     }
 
-    public Boolean getUseType() {
+    public Integer getUseType() {
         return useType;
     }
 
-    public void setUseType(Boolean useType) {
+    public void setUseType(Integer useType) {
         this.useType = useType;
     }
 }

@@ -1,5 +1,7 @@
 package com.wuyou.entity;
 
+import java.util.Date;
+
 public class GoodsActivity {
     private Integer actId;
 
@@ -13,9 +15,9 @@ public class GoodsActivity {
 
     private String goodsName;
 
-    private Integer startTime;
+    private Date startTime;
 
-    private Integer endTime;
+    private Date endTime;
 
     private Byte isFinished;
 
@@ -69,19 +71,19 @@ public class GoodsActivity {
         this.goodsName = goodsName;
     }
 
-    public Integer getStartTime() {
+    public Date getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(Date startTime) {
         this.startTime = startTime;
     }
 
-    public Integer getEndTime() {
+    public Date getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
 

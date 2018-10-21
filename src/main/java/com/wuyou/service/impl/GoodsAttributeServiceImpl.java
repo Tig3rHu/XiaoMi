@@ -7,6 +7,8 @@
 */
 package com.wuyou.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -62,6 +64,25 @@ public class GoodsAttributeServiceImpl implements GoodAttributeService {
 	public GoodsAttribute selectByPrimaryKey(Integer attrId) {
 		// TODO Auto-generated method stub
 		return goodsAttributeMapper.selectByPrimaryKey(attrId);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.GoodAttributeService#selectByExampleWithBLOBs(com.wuyou.entity.GoodsAttributeExample)
+	 */
+	@Override
+	public List<GoodsAttribute> selectByExampleWithBLOBs(
+			GoodsAttributeExample example) {
+		// TODO Auto-generated method stub
+		return goodsAttributeMapper.selectByExampleWithBLOBs(example);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.GoodAttributeService#updateByPrimaryKey(com.wuyou.entity.GoodsAttribute)
+	 */
+	@Override
+	public int updateByPrimaryKey(GoodsAttribute record) {
+		// TODO Auto-generated method stub
+		return goodsAttributeMapper.updateByPrimaryKey(record);
 	}
 
 }

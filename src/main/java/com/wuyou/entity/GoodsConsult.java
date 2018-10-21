@@ -1,5 +1,7 @@
 package com.wuyou.entity;
 
+import java.util.Date;
+
 public class GoodsConsult {
     private Integer id;
 
@@ -7,9 +9,9 @@ public class GoodsConsult {
 
     private String username;
 
-    private Integer addTime;
+    private Date addTime;
 
-    private Boolean consultType;
+    private Integer consultType;
 
     private String content;
 
@@ -43,19 +45,19 @@ public class GoodsConsult {
         this.username = username;
     }
 
-    public Integer getAddTime() {
+    public Date getAddTime() {
         return addTime;
     }
 
-    public void setAddTime(Integer addTime) {
+    public void setAddTime(Date addTime) {
         this.addTime = addTime;
     }
 
-    public Boolean getConsultType() {
+    public Integer getConsultType() {
         return consultType;
     }
 
-    public void setConsultType(Boolean consultType) {
+    public void setConsultType(Integer consultType) {
         this.consultType = consultType;
     }
 

@@ -2,6 +2,7 @@ package com.wuyou.entity;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class OrderExample {
@@ -305,52 +306,52 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andOrderStatusEqualTo(Boolean value) {
+        public Criteria andOrderStatusEqualTo(Integer value) {
             addCriterion("order_status =", value, "orderStatus");
             return (Criteria) this;
         }
 
-        public Criteria andOrderStatusNotEqualTo(Boolean value) {
+        public Criteria andOrderStatusNotEqualTo(Integer value) {
             addCriterion("order_status <>", value, "orderStatus");
             return (Criteria) this;
         }
 
-        public Criteria andOrderStatusGreaterThan(Boolean value) {
+        public Criteria andOrderStatusGreaterThan(Integer value) {
             addCriterion("order_status >", value, "orderStatus");
             return (Criteria) this;
         }
 
-        public Criteria andOrderStatusGreaterThanOrEqualTo(Boolean value) {
+        public Criteria andOrderStatusGreaterThanOrEqualTo(Integer value) {
             addCriterion("order_status >=", value, "orderStatus");
             return (Criteria) this;
         }
 
-        public Criteria andOrderStatusLessThan(Boolean value) {
+        public Criteria andOrderStatusLessThan(Integer value) {
             addCriterion("order_status <", value, "orderStatus");
             return (Criteria) this;
         }
 
-        public Criteria andOrderStatusLessThanOrEqualTo(Boolean value) {
+        public Criteria andOrderStatusLessThanOrEqualTo(Integer value) {
             addCriterion("order_status <=", value, "orderStatus");
             return (Criteria) this;
         }
 
-        public Criteria andOrderStatusIn(List<Boolean> values) {
+        public Criteria andOrderStatusIn(List<Integer> values) {
             addCriterion("order_status in", values, "orderStatus");
             return (Criteria) this;
         }
 
-        public Criteria andOrderStatusNotIn(List<Boolean> values) {
+        public Criteria andOrderStatusNotIn(List<Integer> values) {
             addCriterion("order_status not in", values, "orderStatus");
             return (Criteria) this;
         }
 
-        public Criteria andOrderStatusBetween(Boolean value1, Boolean value2) {
+        public Criteria andOrderStatusBetween(Integer value1, Integer value2) {
             addCriterion("order_status between", value1, value2, "orderStatus");
             return (Criteria) this;
         }
 
-        public Criteria andOrderStatusNotBetween(Boolean value1, Boolean value2) {
+        public Criteria andOrderStatusNotBetween(Integer value1, Integer value2) {
             addCriterion("order_status not between", value1, value2, "orderStatus");
             return (Criteria) this;
         }
@@ -1965,52 +1966,52 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeEqualTo(Integer value) {
+        public Criteria andAddTimeEqualTo(Date value) {
             addCriterion("add_time =", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotEqualTo(Integer value) {
+        public Criteria andAddTimeNotEqualTo(Date value) {
             addCriterion("add_time <>", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeGreaterThan(Integer value) {
+        public Criteria andAddTimeGreaterThan(Date value) {
             addCriterion("add_time >", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeGreaterThanOrEqualTo(Integer value) {
+        public Criteria andAddTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("add_time >=", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeLessThan(Integer value) {
+        public Criteria andAddTimeLessThan(Date value) {
             addCriterion("add_time <", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeLessThanOrEqualTo(Integer value) {
+        public Criteria andAddTimeLessThanOrEqualTo(Date value) {
             addCriterion("add_time <=", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeIn(List<Integer> values) {
+        public Criteria andAddTimeIn(List<Date> values) {
             addCriterion("add_time in", values, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotIn(List<Integer> values) {
+        public Criteria andAddTimeNotIn(List<Date> values) {
             addCriterion("add_time not in", values, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeBetween(Integer value1, Integer value2) {
+        public Criteria andAddTimeBetween(Date value1, Date value2) {
             addCriterion("add_time between", value1, value2, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotBetween(Integer value1, Integer value2) {
+        public Criteria andAddTimeNotBetween(Date value1, Date value2) {
             addCriterion("add_time not between", value1, value2, "addTime");
             return (Criteria) this;
         }
@@ -2025,52 +2026,52 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andShippingTimeEqualTo(Integer value) {
+        public Criteria andShippingTimeEqualTo(Date value) {
             addCriterion("shipping_time =", value, "shippingTime");
             return (Criteria) this;
         }
 
-        public Criteria andShippingTimeNotEqualTo(Integer value) {
+        public Criteria andShippingTimeNotEqualTo(Date value) {
             addCriterion("shipping_time <>", value, "shippingTime");
             return (Criteria) this;
         }
 
-        public Criteria andShippingTimeGreaterThan(Integer value) {
+        public Criteria andShippingTimeGreaterThan(Date value) {
             addCriterion("shipping_time >", value, "shippingTime");
             return (Criteria) this;
         }
 
-        public Criteria andShippingTimeGreaterThanOrEqualTo(Integer value) {
+        public Criteria andShippingTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("shipping_time >=", value, "shippingTime");
             return (Criteria) this;
         }
 
-        public Criteria andShippingTimeLessThan(Integer value) {
+        public Criteria andShippingTimeLessThan(Date value) {
             addCriterion("shipping_time <", value, "shippingTime");
             return (Criteria) this;
         }
 
-        public Criteria andShippingTimeLessThanOrEqualTo(Integer value) {
+        public Criteria andShippingTimeLessThanOrEqualTo(Date value) {
             addCriterion("shipping_time <=", value, "shippingTime");
             return (Criteria) this;
         }
 
-        public Criteria andShippingTimeIn(List<Integer> values) {
+        public Criteria andShippingTimeIn(List<Date> values) {
             addCriterion("shipping_time in", values, "shippingTime");
             return (Criteria) this;
         }
 
-        public Criteria andShippingTimeNotIn(List<Integer> values) {
+        public Criteria andShippingTimeNotIn(List<Date> values) {
             addCriterion("shipping_time not in", values, "shippingTime");
             return (Criteria) this;
         }
 
-        public Criteria andShippingTimeBetween(Integer value1, Integer value2) {
+        public Criteria andShippingTimeBetween(Date value1, Date value2) {
             addCriterion("shipping_time between", value1, value2, "shippingTime");
             return (Criteria) this;
         }
 
-        public Criteria andShippingTimeNotBetween(Integer value1, Integer value2) {
+        public Criteria andShippingTimeNotBetween(Date value1, Date value2) {
             addCriterion("shipping_time not between", value1, value2, "shippingTime");
             return (Criteria) this;
         }
@@ -2085,52 +2086,52 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andConfirmTimeEqualTo(Integer value) {
+        public Criteria andConfirmTimeEqualTo(Date value) {
             addCriterion("confirm_time =", value, "confirmTime");
             return (Criteria) this;
         }
 
-        public Criteria andConfirmTimeNotEqualTo(Integer value) {
+        public Criteria andConfirmTimeNotEqualTo(Date value) {
             addCriterion("confirm_time <>", value, "confirmTime");
             return (Criteria) this;
         }
 
-        public Criteria andConfirmTimeGreaterThan(Integer value) {
+        public Criteria andConfirmTimeGreaterThan(Date value) {
             addCriterion("confirm_time >", value, "confirmTime");
             return (Criteria) this;
         }
 
-        public Criteria andConfirmTimeGreaterThanOrEqualTo(Integer value) {
+        public Criteria andConfirmTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("confirm_time >=", value, "confirmTime");
             return (Criteria) this;
         }
 
-        public Criteria andConfirmTimeLessThan(Integer value) {
+        public Criteria andConfirmTimeLessThan(Date value) {
             addCriterion("confirm_time <", value, "confirmTime");
             return (Criteria) this;
         }
 
-        public Criteria andConfirmTimeLessThanOrEqualTo(Integer value) {
+        public Criteria andConfirmTimeLessThanOrEqualTo(Date value) {
             addCriterion("confirm_time <=", value, "confirmTime");
             return (Criteria) this;
         }
 
-        public Criteria andConfirmTimeIn(List<Integer> values) {
+        public Criteria andConfirmTimeIn(List<Date> values) {
             addCriterion("confirm_time in", values, "confirmTime");
             return (Criteria) this;
         }
 
-        public Criteria andConfirmTimeNotIn(List<Integer> values) {
+        public Criteria andConfirmTimeNotIn(List<Date> values) {
             addCriterion("confirm_time not in", values, "confirmTime");
             return (Criteria) this;
         }
 
-        public Criteria andConfirmTimeBetween(Integer value1, Integer value2) {
+        public Criteria andConfirmTimeBetween(Date value1, Date value2) {
             addCriterion("confirm_time between", value1, value2, "confirmTime");
             return (Criteria) this;
         }
 
-        public Criteria andConfirmTimeNotBetween(Integer value1, Integer value2) {
+        public Criteria andConfirmTimeNotBetween(Date value1, Date value2) {
             addCriterion("confirm_time not between", value1, value2, "confirmTime");
             return (Criteria) this;
         }
@@ -2145,52 +2146,52 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andPayTimeEqualTo(Integer value) {
+        public Criteria andPayTimeEqualTo(Date value) {
             addCriterion("pay_time =", value, "payTime");
             return (Criteria) this;
         }
 
-        public Criteria andPayTimeNotEqualTo(Integer value) {
+        public Criteria andPayTimeNotEqualTo(Date value) {
             addCriterion("pay_time <>", value, "payTime");
             return (Criteria) this;
         }
 
-        public Criteria andPayTimeGreaterThan(Integer value) {
+        public Criteria andPayTimeGreaterThan(Date value) {
             addCriterion("pay_time >", value, "payTime");
             return (Criteria) this;
         }
 
-        public Criteria andPayTimeGreaterThanOrEqualTo(Integer value) {
+        public Criteria andPayTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("pay_time >=", value, "payTime");
             return (Criteria) this;
         }
 
-        public Criteria andPayTimeLessThan(Integer value) {
+        public Criteria andPayTimeLessThan(Date value) {
             addCriterion("pay_time <", value, "payTime");
             return (Criteria) this;
         }
 
-        public Criteria andPayTimeLessThanOrEqualTo(Integer value) {
+        public Criteria andPayTimeLessThanOrEqualTo(Date value) {
             addCriterion("pay_time <=", value, "payTime");
             return (Criteria) this;
         }
 
-        public Criteria andPayTimeIn(List<Integer> values) {
+        public Criteria andPayTimeIn(List<Date> values) {
             addCriterion("pay_time in", values, "payTime");
             return (Criteria) this;
         }
 
-        public Criteria andPayTimeNotIn(List<Integer> values) {
+        public Criteria andPayTimeNotIn(List<Date> values) {
             addCriterion("pay_time not in", values, "payTime");
             return (Criteria) this;
         }
 
-        public Criteria andPayTimeBetween(Integer value1, Integer value2) {
+        public Criteria andPayTimeBetween(Date value1, Date value2) {
             addCriterion("pay_time between", value1, value2, "payTime");
             return (Criteria) this;
         }
 
-        public Criteria andPayTimeNotBetween(Integer value1, Integer value2) {
+        public Criteria andPayTimeNotBetween(Date value1, Date value2) {
             addCriterion("pay_time not between", value1, value2, "payTime");
             return (Criteria) this;
         }
@@ -2275,52 +2276,52 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andOrderPromTypeEqualTo(Byte value) {
+        public Criteria andOrderPromTypeEqualTo(Integer value) {
             addCriterion("order_prom_type =", value, "orderPromType");
             return (Criteria) this;
         }
 
-        public Criteria andOrderPromTypeNotEqualTo(Byte value) {
+        public Criteria andOrderPromTypeNotEqualTo(Integer value) {
             addCriterion("order_prom_type <>", value, "orderPromType");
             return (Criteria) this;
         }
 
-        public Criteria andOrderPromTypeGreaterThan(Byte value) {
+        public Criteria andOrderPromTypeGreaterThan(Integer value) {
             addCriterion("order_prom_type >", value, "orderPromType");
             return (Criteria) this;
         }
 
-        public Criteria andOrderPromTypeGreaterThanOrEqualTo(Byte value) {
+        public Criteria andOrderPromTypeGreaterThanOrEqualTo(Integer value) {
             addCriterion("order_prom_type >=", value, "orderPromType");
             return (Criteria) this;
         }
 
-        public Criteria andOrderPromTypeLessThan(Byte value) {
+        public Criteria andOrderPromTypeLessThan(Integer value) {
             addCriterion("order_prom_type <", value, "orderPromType");
             return (Criteria) this;
         }
 
-        public Criteria andOrderPromTypeLessThanOrEqualTo(Byte value) {
+        public Criteria andOrderPromTypeLessThanOrEqualTo(Integer value) {
             addCriterion("order_prom_type <=", value, "orderPromType");
             return (Criteria) this;
         }
 
-        public Criteria andOrderPromTypeIn(List<Byte> values) {
+        public Criteria andOrderPromTypeIn(List<Integer> values) {
             addCriterion("order_prom_type in", values, "orderPromType");
             return (Criteria) this;
         }
 
-        public Criteria andOrderPromTypeNotIn(List<Byte> values) {
+        public Criteria andOrderPromTypeNotIn(List<Integer> values) {
             addCriterion("order_prom_type not in", values, "orderPromType");
             return (Criteria) this;
         }
 
-        public Criteria andOrderPromTypeBetween(Byte value1, Byte value2) {
+        public Criteria andOrderPromTypeBetween(Integer value1, Integer value2) {
             addCriterion("order_prom_type between", value1, value2, "orderPromType");
             return (Criteria) this;
         }
 
-        public Criteria andOrderPromTypeNotBetween(Byte value1, Byte value2) {
+        public Criteria andOrderPromTypeNotBetween(Integer value1, Integer value2) {
             addCriterion("order_prom_type not between", value1, value2, "orderPromType");
             return (Criteria) this;
         }

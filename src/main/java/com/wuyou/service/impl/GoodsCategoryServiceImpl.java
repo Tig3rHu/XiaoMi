@@ -75,4 +75,13 @@ public class GoodsCategoryServiceImpl implements GoodsCategoryService {
 		return goodsCategoryMapper.selectByPrimaryKey(id);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.GoodsCategoryService#updateByPrimaryKey(com.wuyou.entity.GoodsCategory)
+	 */
+	@Override
+	public int updateByPrimaryKey(GoodsCategory record) {
+		// TODO Auto-generated method stub
+		return goodsCategoryMapper.updateByPrimaryKey(record);
+	}
+
 }

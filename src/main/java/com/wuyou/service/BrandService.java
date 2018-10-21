@@ -10,6 +10,7 @@ package com.wuyou.service;
 import java.util.List;
 
 import com.wuyou.entity.Brand;
+import com.wuyou.entity.BrandAndArticleCat;
 import com.wuyou.entity.BrandExample;
 
 /**
@@ -31,14 +32,15 @@ public interface BrandService {
 	 * @return
 	 */
     public int deleteByExample(BrandExample example);
-	public  int deleteByPrimaryKey(Short id);
+    
+	public int deleteByPrimaryKey(Short id);
 	/**
 	 * 更新/修改
 	 * @param brand
 	 * @param id
 	 * @return
 	 */
-	public int updateBrandById(Brand brand,Short id);
+	int updateByPrimaryKey(Brand record);
     /**
      * 查询
      * @param id
@@ -46,4 +48,6 @@ public interface BrandService {
      */
     public Brand findBrandById(Short id);
     List<Brand> selectByExample(BrandExample example);
+    
+    List<BrandAndArticleCat> selectBrandAndArticleCatInCatId();
 }

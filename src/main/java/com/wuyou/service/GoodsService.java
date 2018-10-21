@@ -13,6 +13,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.wuyou.entity.Goods;
 import com.wuyou.entity.GoodsExample;
+import com.wuyou.entity.GoodsVo;
 import com.wuyou.entity.GoodsWithBLOBs;
 
 /**
@@ -26,10 +27,10 @@ public interface GoodsService {
 	public int insert(GoodsWithBLOBs record);
 	
 	int deleteByPrimaryKey(Integer goodsId);
-	
-	int updateByExample(@Param("record") Goods record, @Param("example") GoodsExample example);
-	
+	int updateByPrimaryKeySelective(GoodsWithBLOBs record);
+	int updateByPrimaryKey(Goods record);	
 	public  List<Goods> selectByExample(GoodsExample example);
-
-    GoodsWithBLOBs selectByPrimaryKey(Integer goodsId);
+	 List<GoodsWithBLOBs> selectByExampleWithBLOBs(GoodsExample example);
+	 List<GoodsVo> goodsVoSelect();
+	 GoodsVo selectByPrimaryKey(Integer goodsId);
 }

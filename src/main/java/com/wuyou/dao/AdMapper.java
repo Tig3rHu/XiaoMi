@@ -1,6 +1,7 @@
 package com.wuyou.dao;
 
 import com.wuyou.entity.Ad;
+import com.wuyou.entity.AdAndAdPosition;
 import com.wuyou.entity.AdExample;
 
 import java.util.List;
@@ -25,7 +26,9 @@ public interface AdMapper {
     List<Ad> selectByExample(AdExample example);
 
     Ad selectByPrimaryKey(Integer adId);
-
+    
+    public List<AdAndAdPosition> selectAdpositionNameFromAdAndAdPosition();
+    
     int updateByExampleSelective(@Param("record") Ad record, @Param("example") AdExample example);
 
     int updateByExampleWithBLOBs(@Param("record") Ad record, @Param("example") AdExample example);

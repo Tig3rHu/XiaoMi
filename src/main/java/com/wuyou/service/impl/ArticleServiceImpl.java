@@ -70,4 +70,31 @@ public class ArticleServiceImpl implements ArticleService {
 		return articleMapper.selectByExample(example);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.ArticleService#deleteByPrimaryKey(java.lang.Integer)
+	 */
+	@Override
+	public int deleteByPrimaryKey(Integer articleId) {
+		// TODO Auto-generated method stub
+		return articleMapper.deleteByPrimaryKey(articleId);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.ArticleService#updateByPrimaryKey(com.wuyou.entity.Article)
+	 */
+	@Override
+	public int updateByPrimaryKey(Article record) {
+		// TODO Auto-generated method stub
+		return articleMapper.updateByPrimaryKey(record);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.ArticleService#insert(com.wuyou.entity.ArticleWithBLOBs)
+	 */
+	@Override
+	public int insert(ArticleWithBLOBs record) {
+		// TODO Auto-generated method stub
+		return articleMapper.insert(record);
+	}
+
 }

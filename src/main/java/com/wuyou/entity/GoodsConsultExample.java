@@ -1,6 +1,7 @@
 package com.wuyou.entity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class GoodsConsultExample {
@@ -304,52 +305,52 @@ public class GoodsConsultExample {
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeEqualTo(Integer value) {
+        public Criteria andAddTimeEqualTo(Date value) {
             addCriterion("add_time =", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotEqualTo(Integer value) {
+        public Criteria andAddTimeNotEqualTo(Date value) {
             addCriterion("add_time <>", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeGreaterThan(Integer value) {
+        public Criteria andAddTimeGreaterThan(Date value) {
             addCriterion("add_time >", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeGreaterThanOrEqualTo(Integer value) {
+        public Criteria andAddTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("add_time >=", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeLessThan(Integer value) {
+        public Criteria andAddTimeLessThan(Date value) {
             addCriterion("add_time <", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeLessThanOrEqualTo(Integer value) {
+        public Criteria andAddTimeLessThanOrEqualTo(Date value) {
             addCriterion("add_time <=", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeIn(List<Integer> values) {
+        public Criteria andAddTimeIn(List<Date> values) {
             addCriterion("add_time in", values, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotIn(List<Integer> values) {
+        public Criteria andAddTimeNotIn(List<Date> values) {
             addCriterion("add_time not in", values, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeBetween(Integer value1, Integer value2) {
+        public Criteria andAddTimeBetween(Date value1, Date value2) {
             addCriterion("add_time between", value1, value2, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotBetween(Integer value1, Integer value2) {
+        public Criteria andAddTimeNotBetween(Date value1, Date value2) {
             addCriterion("add_time not between", value1, value2, "addTime");
             return (Criteria) this;
         }
@@ -364,52 +365,52 @@ public class GoodsConsultExample {
             return (Criteria) this;
         }
 
-        public Criteria andConsultTypeEqualTo(Boolean value) {
+        public Criteria andConsultTypeEqualTo(Integer value) {
             addCriterion("consult_type =", value, "consultType");
             return (Criteria) this;
         }
 
-        public Criteria andConsultTypeNotEqualTo(Boolean value) {
+        public Criteria andConsultTypeNotEqualTo(Integer value) {
             addCriterion("consult_type <>", value, "consultType");
             return (Criteria) this;
         }
 
-        public Criteria andConsultTypeGreaterThan(Boolean value) {
+        public Criteria andConsultTypeGreaterThan(Integer value) {
             addCriterion("consult_type >", value, "consultType");
             return (Criteria) this;
         }
 
-        public Criteria andConsultTypeGreaterThanOrEqualTo(Boolean value) {
+        public Criteria andConsultTypeGreaterThanOrEqualTo(Integer value) {
             addCriterion("consult_type >=", value, "consultType");
             return (Criteria) this;
         }
 
-        public Criteria andConsultTypeLessThan(Boolean value) {
+        public Criteria andConsultTypeLessThan(Integer value) {
             addCriterion("consult_type <", value, "consultType");
             return (Criteria) this;
         }
 
-        public Criteria andConsultTypeLessThanOrEqualTo(Boolean value) {
+        public Criteria andConsultTypeLessThanOrEqualTo(Integer value) {
             addCriterion("consult_type <=", value, "consultType");
             return (Criteria) this;
         }
 
-        public Criteria andConsultTypeIn(List<Boolean> values) {
+        public Criteria andConsultTypeIn(List<Integer> values) {
             addCriterion("consult_type in", values, "consultType");
             return (Criteria) this;
         }
 
-        public Criteria andConsultTypeNotIn(List<Boolean> values) {
+        public Criteria andConsultTypeNotIn(List<Integer> values) {
             addCriterion("consult_type not in", values, "consultType");
             return (Criteria) this;
         }
 
-        public Criteria andConsultTypeBetween(Boolean value1, Boolean value2) {
+        public Criteria andConsultTypeBetween(Integer value1, Integer value2) {
             addCriterion("consult_type between", value1, value2, "consultType");
             return (Criteria) this;
         }
 
-        public Criteria andConsultTypeNotBetween(Boolean value1, Boolean value2) {
+        public Criteria andConsultTypeNotBetween(Integer value1, Integer value2) {
             addCriterion("consult_type not between", value1, value2, "consultType");
             return (Criteria) this;
         }

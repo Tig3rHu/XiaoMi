@@ -64,4 +64,13 @@ public class CouponServiceImpl implements CouponService {
 		return couponMapper.selectByPrimaryKey(id);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.CouponService#updateByPrimaryKey(com.wuyou.entity.Coupon)
+	 */
+	@Override
+	public int updateByPrimaryKey(Coupon record) {
+		// TODO Auto-generated method stub
+		return couponMapper.updateByPrimaryKey(record);
+	}
+
 }

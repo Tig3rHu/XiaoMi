@@ -24,7 +24,7 @@ public interface FeedbackService {
 	
 	public int deleteByPrimaryKey(Integer msgId);
 	
-	public int updateById(Integer msgId,Feedback record);
+	int updateByPrimaryKey(Feedback record);
 	
 	public List<Feedback> selectByExample(FeedbackExample example);
 

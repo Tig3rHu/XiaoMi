@@ -1,5 +1,7 @@
 package com.wuyou.entity;
 
+import java.util.Date;
+
 public class Article {
     private Integer articleId;
 
@@ -13,11 +15,11 @@ public class Article {
 
     private String keywords;
 
-    private Boolean articleType;
+    private Integer articleType;
 
     private Boolean isOpen;
 
-    private Integer addTime;
+    private Date addTime;
 
     private String fileUrl;
 
@@ -27,7 +29,7 @@ public class Article {
 
     private Integer click;
 
-    private Integer publishTime;
+    private Date publishTime;
 
     private String thumb;
 
@@ -79,11 +81,11 @@ public class Article {
         this.keywords = keywords;
     }
 
-    public Boolean getArticleType() {
+    public Integer getArticleType() {
         return articleType;
     }
 
-    public void setArticleType(Boolean articleType) {
+    public void setArticleType(Integer articleType) {
         this.articleType = articleType;
     }
 
@@ -95,11 +97,11 @@ public class Article {
         this.isOpen = isOpen;
     }
 
-    public Integer getAddTime() {
+    public Date getAddTime() {
         return addTime;
     }
 
-    public void setAddTime(Integer addTime) {
+    public void setAddTime(Date addTime) {
         this.addTime = addTime;
     }
 
@@ -135,11 +137,11 @@ public class Article {
         this.click = click;
     }
 
-    public Integer getPublishTime() {
+    public Date getPublishTime() {
         return publishTime;
     }
 
-    public void setPublishTime(Integer publishTime) {
+    public void setPublishTime(Date publishTime) {
         this.publishTime = publishTime;
     }
 

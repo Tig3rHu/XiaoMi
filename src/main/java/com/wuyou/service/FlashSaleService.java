@@ -27,6 +27,8 @@ public interface FlashSaleService {
     public int update(Long id,FlashSale record);
 	
     List<FlashSale> selectByExample(FlashSaleExample example);
+    
+    List<FlashSale> selectByExampleWithBLOBs(FlashSaleExample example);
 
     FlashSale selectByPrimaryKey(Long id);
 	

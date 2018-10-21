@@ -13,6 +13,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.wuyou.entity.GoodsConsult;
 import com.wuyou.entity.GoodsConsultExample;
+import com.wuyou.entity.GoodsConsultVo;
 
 /**
  * @author 吴优
@@ -32,6 +33,8 @@ public interface GoodsConsultService {
 
 	    GoodsConsult selectByPrimaryKey(Integer id);
 
-	
+	    int updateByPrimaryKey(GoodsConsultVo record);
+  
+	    List<GoodsConsultVo> goodsConsultAndgoods();
 	
 }

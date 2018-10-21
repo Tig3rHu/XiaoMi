@@ -36,14 +36,6 @@ public class DelivertDocServiceImpl implements DeliveryDocService {
 		return delivertDocMapper.insert(record);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.wuyou.service.DeliveryDocService#update(com.wuyou.entity.DeliveryDoc, java.lang.Integer)
-	 */
-	@Override
-	public int update(DeliveryDoc record, Integer id) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	/* (non-Javadoc)
 	 * @see com.wuyou.service.DeliveryDocService#selectByExample(com.wuyou.entity.DeliveryDocExample)
@@ -61,6 +53,24 @@ public class DelivertDocServiceImpl implements DeliveryDocService {
 	public DeliveryDoc selectByPrimaryKey(Integer id) {
 		// TODO Auto-generated method stub
 		return delivertDocMapper.selectByPrimaryKey(id);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.DeliveryDocService#updateByPrimaryKey(com.wuyou.entity.DeliveryDoc)
+	 */
+	@Override
+	public int updateByPrimaryKey(DeliveryDoc record) {
+		// TODO Auto-generated method stub
+		return delivertDocMapper.updateByPrimaryKey(record);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.DeliveryDocService#deleteByPrimaryKey(java.lang.Integer)
+	 */
+	@Override
+	public int deleteByPrimaryKey(Integer id) {
+		// TODO Auto-generated method stub
+		return delivertDocMapper.deleteByPrimaryKey(id);
 	}
 
 }

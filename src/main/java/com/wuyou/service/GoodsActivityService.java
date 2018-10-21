@@ -38,7 +38,12 @@ public interface GoodsActivityService {
 	public int deleteByactName(String actName);
 	
 	public  int updateByExampleSelective(@Param("record") GoodsActivityWithBLOBs record, @Param("example") GoodsActivityExample example);
+    
+    int updateByPrimaryKey(GoodsActivity record);
+    int updateByPrimaryKeyWithBLOBs(GoodsActivityWithBLOBs record);
 
+    List<GoodsActivityWithBLOBs> selectByExampleWithBLOBs(GoodsActivityExample example);
+	
 	public List<GoodsActivity> selectByExample(GoodsActivityExample example);
 
     public GoodsActivityWithBLOBs selectByPrimaryKey(Integer actId);

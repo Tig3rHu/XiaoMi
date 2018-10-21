@@ -15,6 +15,9 @@
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.Brand">
     <result column="desc" jdbcType="LONGVARCHAR" property="desc" />
   </resultMap>
+  <resultMap type="com.wuyou.entity.BrandAndArticleCat" id="resultMapBrandandArticleCat" extends="ResultMapWithBLOBs">
+     <result column="cat_name" jdbcType="VARCHAR" property="catName" />
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -118,6 +121,10 @@
     <include refid="Blob_Column_List" />
     from brand
     where id = #{id,jdbcType=SMALLINT}
+  </select>
+  <select id="selectBrandAndArticleCatInCatId" resultMap="resultMapBrandandArticleCat">
+     select brand.*,article_cat.cat_name from brand 
+     inner join article_cat on brand.cat_id=article_cat.cat_id;
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
     delete from brand

@@ -17,7 +17,7 @@ import com.wuyou.service.AdminService;
 /**
  * @author 吴优
  * desciption:
- * other:
+ * other:择日不如撞日
  * @date 2018年9月28日 
  */
 @Controller
@@ -26,12 +26,20 @@ public class AdminController {
 	
 	@Autowired
 	private AdminService adminService;
+	
+	
+	
 	@RequestMapping("/login")
 	public String adminLogin(){
 		
 		return "admin/login";
 	}
-	
+	@RequestMapping("/index")
+	public  String indexSystem(){
+		
+		
+		return "admin/index";
+	}
 	
 	
 

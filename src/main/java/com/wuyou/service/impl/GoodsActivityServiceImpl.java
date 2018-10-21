@@ -89,4 +89,32 @@ public class GoodsActivityServiceImpl implements GoodsActivityService {
 		return goodsActivityMapper.selectByPrimaryKey(actId);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.GoodsActivityService#updateByPrimaryKey(com.wuyou.entity.GoodsActivity)
+	 */
+	@Override
+	public int updateByPrimaryKey(GoodsActivity record) {
+		// TODO Auto-generated method stub
+		return goodsActivityMapper.updateByPrimaryKey(record);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.GoodsActivityService#selectByExampleWithBLOBs(com.wuyou.entity.GoodsActivityExample)
+	 */
+	@Override
+	public List<GoodsActivityWithBLOBs> selectByExampleWithBLOBs(
+			GoodsActivityExample example) {
+		// TODO Auto-generated method stub
+		return goodsActivityMapper.selectByExampleWithBLOBs(example);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.GoodsActivityService#updateByPrimaryKeyWithBLOBs(com.wuyou.entity.GoodsActivityWithBLOBs)
+	 */
+	@Override
+	public int updateByPrimaryKeyWithBLOBs(GoodsActivityWithBLOBs record) {
+		// TODO Auto-generated method stub
+		return goodsActivityMapper.updateByPrimaryKeyWithBLOBs(record);
+	}
+
 }

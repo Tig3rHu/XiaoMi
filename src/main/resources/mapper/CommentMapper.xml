@@ -22,6 +22,7 @@
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.CommentWithBLOBs">
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
     <result column="img" jdbcType="LONGVARCHAR" property="img" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -121,12 +122,15 @@
     </if>
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    select 
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from comment
-    where comment_id = #{commentId,jdbcType=INTEGER}
+    select comment.*,goods.goods_name 
+    from comment 
+    inner join goods on comment.goods_id=goods.goods_id 
+    where comment_id=#{commentId,jdbcType=INTEGER}
+  </select>
+  <select id="selectcommentAndGoods" resultMap="ResultMapWithBLOBs">  
+     select comment.*,goods.goods_name 
+     from comment 
+     inner join goods on comment.goods_id=goods.goods_id;
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from comment

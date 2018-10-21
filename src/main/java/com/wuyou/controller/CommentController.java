@@ -7,9 +7,15 @@
 */
 package com.wuyou.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wuyou.entity.CommentWithBLOBs;
 import com.wuyou.service.CommentService;
 
 /**
@@ -18,10 +24,53 @@ import com.wuyou.service.CommentService;
  * other:
  * @date 2018年9月28日 
  */
-@RestController
+@Controller
+@RequestMapping("/comment")
 public class CommentController {
     
 	@Autowired
 	private CommentService commentService;
+	
+
+	@RequestMapping("/index")
+    public String queryList(Model model){
+		
+		List<CommentWithBLOBs> comment=commentService.selectcommentAndGoods();
+	    model.addAttribute("comments", comment);
+		
+		
+    	return "comment/list";
+    }
+	@RequestMapping("/toedit")
+	public String toedit(Model model,CommentWithBLOBs comment){
+		if(comment.getCommentId()!=null&&comment.getCommentId()>0){
+			comment=commentService.selectByPrimaryKey(comment.getCommentId());
+		    model.addAttribute("comments", comment);
+		}else{
+			comment=new CommentWithBLOBs();
+			model.addAttribute("comments", comment);
+		}
+		
+		
+		return "/comment/edit";
+	}
+	@RequestMapping("/edit")
+	public String edit(CommentWithBLOBs comment){
+		if(comment.getCommentId()!=null&&comment.getCommentId()>0){
+			commentService.updateByPrimaryKeyWithBLOBs(comment);
+		}else{
+			comment=new CommentWithBLOBs();
+			commentService.insert(comment);
+		}
+		
+		
+		return "redirect:index";
+	}
+	@RequestMapping("/delete")
+	public String delete(Integer commentId){
+		commentService.deleteByPrimaryKey(commentId);
+		return "redirect:index";
+	}
+	
 	
 }

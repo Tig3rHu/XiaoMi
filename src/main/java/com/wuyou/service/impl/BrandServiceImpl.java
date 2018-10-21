@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import com.wuyou.dao.BrandMapper;
 import com.wuyou.entity.Brand;
+import com.wuyou.entity.BrandAndArticleCat;
 import com.wuyou.entity.BrandExample;
 import com.wuyou.service.BrandService;
 
@@ -56,15 +57,7 @@ public class BrandServiceImpl implements BrandService {
 		return brandMapper.deleteByPrimaryKey(id);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.wuyou.service.BrandService#updateBrandById(com.wuyou.entity.Brand, java.lang.Short)
-	 */
-	@Override
-	public int updateBrandById(Brand brand, Short id) {
-		// TODO Auto-generated method stub
-		brand.setId(id);
-		return brandMapper.updateByPrimaryKey(brand);
-	}
+	
 
 	/* (non-Javadoc)
 	 * @see com.wuyou.service.BrandService#findBrandById(java.lang.Short)
@@ -82,6 +75,24 @@ public class BrandServiceImpl implements BrandService {
 	public List<Brand> selectByExample(BrandExample example) {
 		// TODO Auto-generated method stub
 		return brandMapper.selectByExample(example);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.BrandService#selectBrandAndArticleCatInCatId()
+	 */
+	@Override
+	public List<BrandAndArticleCat> selectBrandAndArticleCatInCatId() {
+		// TODO Auto-generated method stub
+		return brandMapper.selectBrandAndArticleCatInCatId();
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.BrandService#updateByPrimaryKey(com.wuyou.entity.Brand)
+	 */
+	@Override
+	public int updateByPrimaryKey(Brand record) {
+		// TODO Auto-generated method stub
+		return brandMapper.updateByPrimaryKey(record);
 	}
 
 }

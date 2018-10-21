@@ -26,6 +26,8 @@ public interface CommentMapper {
     List<Comment> selectByExample(CommentExample example);
 
     CommentWithBLOBs selectByPrimaryKey(Integer commentId);
+    
+    List<CommentWithBLOBs> selectcommentAndGoods();
 
     int updateByExampleSelective(@Param("record") CommentWithBLOBs record, @Param("example") CommentExample example);
 

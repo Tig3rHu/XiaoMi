@@ -2,6 +2,7 @@ package com.wuyou.entity;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class CouponExample {
@@ -245,52 +246,52 @@ public class CouponExample {
             return (Criteria) this;
         }
 
-        public Criteria andTypeEqualTo(Boolean value) {
+        public Criteria andTypeEqualTo(Integer value) {
             addCriterion("type =", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotEqualTo(Boolean value) {
+        public Criteria andTypeNotEqualTo(Integer value) {
             addCriterion("type <>", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThan(Boolean value) {
+        public Criteria andTypeGreaterThan(Integer value) {
             addCriterion("type >", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeGreaterThanOrEqualTo(Boolean value) {
+        public Criteria andTypeGreaterThanOrEqualTo(Integer value) {
             addCriterion("type >=", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThan(Boolean value) {
+        public Criteria andTypeLessThan(Integer value) {
             addCriterion("type <", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeLessThanOrEqualTo(Boolean value) {
+        public Criteria andTypeLessThanOrEqualTo(Integer value) {
             addCriterion("type <=", value, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeIn(List<Boolean> values) {
+        public Criteria andTypeIn(List<Integer> values) {
             addCriterion("type in", values, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotIn(List<Boolean> values) {
+        public Criteria andTypeNotIn(List<Integer> values) {
             addCriterion("type not in", values, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeBetween(Boolean value1, Boolean value2) {
+        public Criteria andTypeBetween(Integer value1, Integer value2) {
             addCriterion("type between", value1, value2, "type");
             return (Criteria) this;
         }
 
-        public Criteria andTypeNotBetween(Boolean value1, Boolean value2) {
+        public Criteria andTypeNotBetween(Integer value1, Integer value2) {
             addCriterion("type not between", value1, value2, "type");
             return (Criteria) this;
         }
@@ -605,52 +606,52 @@ public class CouponExample {
             return (Criteria) this;
         }
 
-        public Criteria andSendStartTimeEqualTo(Integer value) {
+        public Criteria andSendStartTimeEqualTo(Date value) {
             addCriterion("send_start_time =", value, "sendStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendStartTimeNotEqualTo(Integer value) {
+        public Criteria andSendStartTimeNotEqualTo(Date value) {
             addCriterion("send_start_time <>", value, "sendStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendStartTimeGreaterThan(Integer value) {
+        public Criteria andSendStartTimeGreaterThan(Date value) {
             addCriterion("send_start_time >", value, "sendStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendStartTimeGreaterThanOrEqualTo(Integer value) {
+        public Criteria andSendStartTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("send_start_time >=", value, "sendStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendStartTimeLessThan(Integer value) {
+        public Criteria andSendStartTimeLessThan(Date value) {
             addCriterion("send_start_time <", value, "sendStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendStartTimeLessThanOrEqualTo(Integer value) {
+        public Criteria andSendStartTimeLessThanOrEqualTo(Date value) {
             addCriterion("send_start_time <=", value, "sendStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendStartTimeIn(List<Integer> values) {
+        public Criteria andSendStartTimeIn(List<Date> values) {
             addCriterion("send_start_time in", values, "sendStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendStartTimeNotIn(List<Integer> values) {
+        public Criteria andSendStartTimeNotIn(List<Date> values) {
             addCriterion("send_start_time not in", values, "sendStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendStartTimeBetween(Integer value1, Integer value2) {
+        public Criteria andSendStartTimeBetween(Date value1, Date value2) {
             addCriterion("send_start_time between", value1, value2, "sendStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendStartTimeNotBetween(Integer value1, Integer value2) {
+        public Criteria andSendStartTimeNotBetween(Date value1, Date value2) {
             addCriterion("send_start_time not between", value1, value2, "sendStartTime");
             return (Criteria) this;
         }
@@ -665,52 +666,52 @@ public class CouponExample {
             return (Criteria) this;
         }
 
-        public Criteria andSendEndTimeEqualTo(Integer value) {
+        public Criteria andSendEndTimeEqualTo(Date value) {
             addCriterion("send_end_time =", value, "sendEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendEndTimeNotEqualTo(Integer value) {
+        public Criteria andSendEndTimeNotEqualTo(Date value) {
             addCriterion("send_end_time <>", value, "sendEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendEndTimeGreaterThan(Integer value) {
+        public Criteria andSendEndTimeGreaterThan(Date value) {
             addCriterion("send_end_time >", value, "sendEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendEndTimeGreaterThanOrEqualTo(Integer value) {
+        public Criteria andSendEndTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("send_end_time >=", value, "sendEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendEndTimeLessThan(Integer value) {
+        public Criteria andSendEndTimeLessThan(Date value) {
             addCriterion("send_end_time <", value, "sendEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendEndTimeLessThanOrEqualTo(Integer value) {
+        public Criteria andSendEndTimeLessThanOrEqualTo(Date value) {
             addCriterion("send_end_time <=", value, "sendEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendEndTimeIn(List<Integer> values) {
+        public Criteria andSendEndTimeIn(List<Date> values) {
             addCriterion("send_end_time in", values, "sendEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendEndTimeNotIn(List<Integer> values) {
+        public Criteria andSendEndTimeNotIn(List<Date> values) {
             addCriterion("send_end_time not in", values, "sendEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendEndTimeBetween(Integer value1, Integer value2) {
+        public Criteria andSendEndTimeBetween(Date value1, Date value2) {
             addCriterion("send_end_time between", value1, value2, "sendEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andSendEndTimeNotBetween(Integer value1, Integer value2) {
+        public Criteria andSendEndTimeNotBetween(Date value1, Date value2) {
             addCriterion("send_end_time not between", value1, value2, "sendEndTime");
             return (Criteria) this;
         }
@@ -725,52 +726,52 @@ public class CouponExample {
             return (Criteria) this;
         }
 
-        public Criteria andUseStartTimeEqualTo(Integer value) {
+        public Criteria andUseStartTimeEqualTo(Date value) {
             addCriterion("use_start_time =", value, "useStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseStartTimeNotEqualTo(Integer value) {
+        public Criteria andUseStartTimeNotEqualTo(Date value) {
             addCriterion("use_start_time <>", value, "useStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseStartTimeGreaterThan(Integer value) {
+        public Criteria andUseStartTimeGreaterThan(Date value) {
             addCriterion("use_start_time >", value, "useStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseStartTimeGreaterThanOrEqualTo(Integer value) {
+        public Criteria andUseStartTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("use_start_time >=", value, "useStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseStartTimeLessThan(Integer value) {
+        public Criteria andUseStartTimeLessThan(Date value) {
             addCriterion("use_start_time <", value, "useStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseStartTimeLessThanOrEqualTo(Integer value) {
+        public Criteria andUseStartTimeLessThanOrEqualTo(Date value) {
             addCriterion("use_start_time <=", value, "useStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseStartTimeIn(List<Integer> values) {
+        public Criteria andUseStartTimeIn(List<Date> values) {
             addCriterion("use_start_time in", values, "useStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseStartTimeNotIn(List<Integer> values) {
+        public Criteria andUseStartTimeNotIn(List<Date> values) {
             addCriterion("use_start_time not in", values, "useStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseStartTimeBetween(Integer value1, Integer value2) {
+        public Criteria andUseStartTimeBetween(Date value1, Date value2) {
             addCriterion("use_start_time between", value1, value2, "useStartTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseStartTimeNotBetween(Integer value1, Integer value2) {
+        public Criteria andUseStartTimeNotBetween(Date value1, Date value2) {
             addCriterion("use_start_time not between", value1, value2, "useStartTime");
             return (Criteria) this;
         }
@@ -785,52 +786,52 @@ public class CouponExample {
             return (Criteria) this;
         }
 
-        public Criteria andUseEndTimeEqualTo(Integer value) {
+        public Criteria andUseEndTimeEqualTo(Date value) {
             addCriterion("use_end_time =", value, "useEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseEndTimeNotEqualTo(Integer value) {
+        public Criteria andUseEndTimeNotEqualTo(Date value) {
             addCriterion("use_end_time <>", value, "useEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseEndTimeGreaterThan(Integer value) {
+        public Criteria andUseEndTimeGreaterThan(Date value) {
             addCriterion("use_end_time >", value, "useEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseEndTimeGreaterThanOrEqualTo(Integer value) {
+        public Criteria andUseEndTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("use_end_time >=", value, "useEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseEndTimeLessThan(Integer value) {
+        public Criteria andUseEndTimeLessThan(Date value) {
             addCriterion("use_end_time <", value, "useEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseEndTimeLessThanOrEqualTo(Integer value) {
+        public Criteria andUseEndTimeLessThanOrEqualTo(Date value) {
             addCriterion("use_end_time <=", value, "useEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseEndTimeIn(List<Integer> values) {
+        public Criteria andUseEndTimeIn(List<Date> values) {
             addCriterion("use_end_time in", values, "useEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseEndTimeNotIn(List<Integer> values) {
+        public Criteria andUseEndTimeNotIn(List<Date> values) {
             addCriterion("use_end_time not in", values, "useEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseEndTimeBetween(Integer value1, Integer value2) {
+        public Criteria andUseEndTimeBetween(Date value1, Date value2) {
             addCriterion("use_end_time between", value1, value2, "useEndTime");
             return (Criteria) this;
         }
 
-        public Criteria andUseEndTimeNotBetween(Integer value1, Integer value2) {
+        public Criteria andUseEndTimeNotBetween(Date value1, Date value2) {
             addCriterion("use_end_time not between", value1, value2, "useEndTime");
             return (Criteria) this;
         }
@@ -845,52 +846,52 @@ public class CouponExample {
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeEqualTo(Integer value) {
+        public Criteria andAddTimeEqualTo(Date value) {
             addCriterion("add_time =", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotEqualTo(Integer value) {
+        public Criteria andAddTimeNotEqualTo(Date value) {
             addCriterion("add_time <>", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeGreaterThan(Integer value) {
+        public Criteria andAddTimeGreaterThan(Date value) {
             addCriterion("add_time >", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeGreaterThanOrEqualTo(Integer value) {
+        public Criteria andAddTimeGreaterThanOrEqualTo(Date value) {
             addCriterion("add_time >=", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeLessThan(Integer value) {
+        public Criteria andAddTimeLessThan(Date value) {
             addCriterion("add_time <", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeLessThanOrEqualTo(Integer value) {
+        public Criteria andAddTimeLessThanOrEqualTo(Date value) {
             addCriterion("add_time <=", value, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeIn(List<Integer> values) {
+        public Criteria andAddTimeIn(List<Date> values) {
             addCriterion("add_time in", values, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotIn(List<Integer> values) {
+        public Criteria andAddTimeNotIn(List<Date> values) {
             addCriterion("add_time not in", values, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeBetween(Integer value1, Integer value2) {
+        public Criteria andAddTimeBetween(Date value1, Date value2) {
             addCriterion("add_time between", value1, value2, "addTime");
             return (Criteria) this;
         }
 
-        public Criteria andAddTimeNotBetween(Integer value1, Integer value2) {
+        public Criteria andAddTimeNotBetween(Date value1, Date value2) {
             addCriterion("add_time not between", value1, value2, "addTime");
             return (Criteria) this;
         }
@@ -965,52 +966,52 @@ public class CouponExample {
             return (Criteria) this;
         }
 
-        public Criteria andUseTypeEqualTo(Boolean value) {
+        public Criteria andUseTypeEqualTo(Integer value) {
             addCriterion("use_type =", value, "useType");
             return (Criteria) this;
         }
 
-        public Criteria andUseTypeNotEqualTo(Boolean value) {
+        public Criteria andUseTypeNotEqualTo(Integer value) {
             addCriterion("use_type <>", value, "useType");
             return (Criteria) this;
         }
 
-        public Criteria andUseTypeGreaterThan(Boolean value) {
+        public Criteria andUseTypeGreaterThan(Integer value) {
             addCriterion("use_type >", value, "useType");
             return (Criteria) this;
         }
 
-        public Criteria andUseTypeGreaterThanOrEqualTo(Boolean value) {
+        public Criteria andUseTypeGreaterThanOrEqualTo(Integer value) {
             addCriterion("use_type >=", value, "useType");
             return (Criteria) this;
         }
 
-        public Criteria andUseTypeLessThan(Boolean value) {
+        public Criteria andUseTypeLessThan(Integer value) {
             addCriterion("use_type <", value, "useType");
             return (Criteria) this;
         }
 
-        public Criteria andUseTypeLessThanOrEqualTo(Boolean value) {
+        public Criteria andUseTypeLessThanOrEqualTo(Integer value) {
             addCriterion("use_type <=", value, "useType");
             return (Criteria) this;
         }
 
-        public Criteria andUseTypeIn(List<Boolean> values) {
+        public Criteria andUseTypeIn(List<Integer> values) {
             addCriterion("use_type in", values, "useType");
             return (Criteria) this;
         }
 
-        public Criteria andUseTypeNotIn(List<Boolean> values) {
+        public Criteria andUseTypeNotIn(List<Integer> values) {
             addCriterion("use_type not in", values, "useType");
             return (Criteria) this;
         }
 
-        public Criteria andUseTypeBetween(Boolean value1, Boolean value2) {
+        public Criteria andUseTypeBetween(Integer value1, Integer value2) {
             addCriterion("use_type between", value1, value2, "useType");
             return (Criteria) this;
         }
 
-        public Criteria andUseTypeNotBetween(Boolean value1, Boolean value2) {
+        public Criteria andUseTypeNotBetween(Integer value1, Integer value2) {
             addCriterion("use_type not between", value1, value2, "useType");
             return (Criteria) this;
         }

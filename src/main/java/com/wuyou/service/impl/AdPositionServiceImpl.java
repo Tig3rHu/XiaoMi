@@ -49,10 +49,10 @@ public class AdPositionServiceImpl implements AdPositionService {
 	 * @see com.wuyou.service.AdPositionService#updateAdPostionByPositionId(java.lang.Integer, com.wuyou.entity.AdPosition)
 	 */
 	@Override
-	public int updateAdPostionByPositionId(Integer positionId, AdPosition record)
+	public int updateAdPostionByPositionId(AdPosition record)
 			throws Exception {
 		// TODO Auto-generated method stub
-		record.setPositionId(positionId);
+	
 		return adPostionMapper.updateByPrimaryKey(record);
 	}
 

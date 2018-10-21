@@ -3,7 +3,7 @@
 <mapper namespace="com.wuyou.dao.GoodsMapper">
   <resultMap id="BaseResultMap" type="com.wuyou.entity.Goods">
     <id column="goods_id" jdbcType="INTEGER" property="goodsId" />
-    <result column="cat_id" jdbcType="INTEGER" property="catId" />
+    <result column="cat_name" jdbcType="VARCHAR" property="catName" />
     <result column="extend_cat_id" jdbcType="INTEGER" property="extendCatId" />
     <result column="goods_sn" jdbcType="VARCHAR" property="goodsSn" />
     <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
@@ -19,24 +19,24 @@
     <result column="goods_remark" jdbcType="VARCHAR" property="goodsRemark" />
     <result column="original_img" jdbcType="VARCHAR" property="originalImg" />
     <result column="is_virtual" jdbcType="TINYINT" property="isVirtual" />
-    <result column="virtual_indate" jdbcType="INTEGER" property="virtualIndate" />
+    <result column="virtual_indate" jdbcType="TIMESTAMP" property="virtualIndate" />
     <result column="virtual_limit" jdbcType="SMALLINT" property="virtualLimit" />
     <result column="virtual_refund" jdbcType="BIT" property="virtualRefund" />
     <result column="is_on_sale" jdbcType="BIT" property="isOnSale" />
     <result column="is_free_shipping" jdbcType="BIT" property="isFreeShipping" />
-    <result column="on_time" jdbcType="INTEGER" property="onTime" />
+    <result column="on_time" jdbcType="TIMESTAMP" property="onTime" />
     <result column="sort" jdbcType="SMALLINT" property="sort" />
     <result column="is_recommend" jdbcType="BIT" property="isRecommend" />
     <result column="is_new" jdbcType="BIT" property="isNew" />
     <result column="is_hot" jdbcType="BIT" property="isHot" />
-    <result column="last_update" jdbcType="INTEGER" property="lastUpdate" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="goods_type" jdbcType="SMALLINT" property="goodsType" />
     <result column="spec_type" jdbcType="SMALLINT" property="specType" />
     <result column="give_integral" jdbcType="INTEGER" property="giveIntegral" />
     <result column="exchange_integral" jdbcType="INTEGER" property="exchangeIntegral" />
     <result column="suppliers_id" jdbcType="SMALLINT" property="suppliersId" />
     <result column="sales_sum" jdbcType="INTEGER" property="salesSum" />
-    <result column="prom_type" jdbcType="BIT" property="promType" />
+    <result column="prom_type" jdbcType="INTEGER" property="promType" />
     <result column="prom_id" jdbcType="INTEGER" property="promId" />
     <result column="commission" jdbcType="DECIMAL" property="commission" />
     <result column="spu" jdbcType="VARCHAR" property="spu" />
@@ -46,6 +46,9 @@
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.GoodsWithBLOBs">
     <result column="price_ladder" jdbcType="LONGVARCHAR" property="priceLadder" />
     <result column="goods_content" jdbcType="LONGVARCHAR" property="goodsContent" />
+  </resultMap>
+  <resultMap type="com.wuyou.entity.GoodsVo" id="GoodsVoResultMap" extends="ResultMapWithBLOBs">
+       <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -106,10 +109,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    goods_id, cat_id, extend_cat_id, goods_sn, goods_name, click_count, brand_id, store_count, 
+    goods_id, cat_name, extend_cat_id, goods_sn, goods_name, click_count, brand_id, store_count, 
     comment_count, weight, market_price, shop_price, cost_price, keywords, goods_remark, 
     original_img, is_virtual, virtual_indate, virtual_limit, virtual_refund, is_on_sale, 
-    is_free_shipping, on_time, sort, is_recommend, is_new, is_hot, last_update, goods_type, 
+    is_free_shipping, on_time, sort, is_recommend, is_new, is_hot, update_time, goods_type, 
     spec_type, give_integral, exchange_integral, suppliers_id, sales_sum, prom_type, 
     prom_id, commission, spu, sku, shipping_area_ids
   </sql>
@@ -121,7 +124,6 @@
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
@@ -138,7 +140,6 @@
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     from goods
     <if test="_parameter != null">
@@ -148,14 +149,26 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="GoodsVoResultMap">
     select 
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
+    ,goods_type.name
     from goods
+    inner join goods_type 
+    on goods.goods_type=goods_type.id
     where goods_id = #{goodsId,jdbcType=INTEGER}
   </select>
+  <select id="goodsVoSelect" resultMap="GoodsVoResultMap">
+  select goods.*,goods_type.name 
+  from goods 
+  inner join goods_type on goods.goods_type=goods_type.id;
+  </select>
+  
+  
+  
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from goods
     where goods_id = #{goodsId,jdbcType=INTEGER}
@@ -167,7 +180,7 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.wuyou.entity.GoodsWithBLOBs">
-    insert into goods (goods_id, cat_id, extend_cat_id, 
+    insert into goods (goods_id, cat_name, extend_cat_id, 
       goods_sn, goods_name, click_count, 
       brand_id, store_count, comment_count, 
       weight, market_price, shop_price, 
@@ -175,24 +188,24 @@
       original_img, is_virtual, virtual_indate, 
       virtual_limit, virtual_refund, is_on_sale, 
       is_free_shipping, on_time, sort, 
-      is_recommend, is_new, is_hot, last_update, 
+      is_recommend, is_new, is_hot, update_time, 
       goods_type, spec_type, give_integral, 
       exchange_integral, suppliers_id, sales_sum, 
       prom_type, prom_id, commission, 
       spu, sku, shipping_area_ids, 
       price_ladder, goods_content)
-    values (#{goodsId,jdbcType=INTEGER}, #{catId,jdbcType=INTEGER}, #{extendCatId,jdbcType=INTEGER}, 
+    values (#{goodsId,jdbcType=INTEGER}, #{catName,jdbcType=VARCHAR}, #{extendCatId,jdbcType=INTEGER}, 
       #{goodsSn,jdbcType=VARCHAR}, #{goodsName,jdbcType=VARCHAR}, #{clickCount,jdbcType=INTEGER}, 
       #{brandId,jdbcType=SMALLINT}, #{storeCount,jdbcType=SMALLINT}, #{commentCount,jdbcType=SMALLINT}, 
       #{weight,jdbcType=INTEGER}, #{marketPrice,jdbcType=DECIMAL}, #{shopPrice,jdbcType=DECIMAL}, 
       #{costPrice,jdbcType=DECIMAL}, #{keywords,jdbcType=VARCHAR}, #{goodsRemark,jdbcType=VARCHAR}, 
-      #{originalImg,jdbcType=VARCHAR}, #{isVirtual,jdbcType=TINYINT}, #{virtualIndate,jdbcType=INTEGER}, 
+      #{originalImg,jdbcType=VARCHAR}, #{isVirtual,jdbcType=TINYINT}, #{virtualIndate,jdbcType=TIMESTAMP}, 
       #{virtualLimit,jdbcType=SMALLINT}, #{virtualRefund,jdbcType=BIT}, #{isOnSale,jdbcType=BIT}, 
-      #{isFreeShipping,jdbcType=BIT}, #{onTime,jdbcType=INTEGER}, #{sort,jdbcType=SMALLINT}, 
-      #{isRecommend,jdbcType=BIT}, #{isNew,jdbcType=BIT}, #{isHot,jdbcType=BIT}, #{lastUpdate,jdbcType=INTEGER}, 
+      #{isFreeShipping,jdbcType=BIT}, #{onTime,jdbcType=TIMESTAMP}, #{sort,jdbcType=SMALLINT}, 
+      #{isRecommend,jdbcType=BIT}, #{isNew,jdbcType=BIT}, #{isHot,jdbcType=BIT}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{goodsType,jdbcType=SMALLINT}, #{specType,jdbcType=SMALLINT}, #{giveIntegral,jdbcType=INTEGER}, 
       #{exchangeIntegral,jdbcType=INTEGER}, #{suppliersId,jdbcType=SMALLINT}, #{salesSum,jdbcType=INTEGER}, 
-      #{promType,jdbcType=BIT}, #{promId,jdbcType=INTEGER}, #{commission,jdbcType=DECIMAL}, 
+      #{promType,jdbcType=INTEGER}, #{promId,jdbcType=INTEGER}, #{commission,jdbcType=DECIMAL}, 
       #{spu,jdbcType=VARCHAR}, #{sku,jdbcType=VARCHAR}, #{shippingAreaIds,jdbcType=VARCHAR}, 
       #{priceLadder,jdbcType=LONGVARCHAR}, #{goodsContent,jdbcType=LONGVARCHAR})
   </insert>
@@ -202,8 +215,8 @@
       <if test="goodsId != null">
         goods_id,
       </if>
-      <if test="catId != null">
-        cat_id,
+      <if test="catName != null">
+        cat_name,
       </if>
       <if test="extendCatId != null">
         extend_cat_id,
@@ -280,8 +293,8 @@
       <if test="isHot != null">
         is_hot,
       </if>
-      <if test="lastUpdate != null">
-        last_update,
+      <if test="updateTime != null">
+        update_time,
       </if>
       <if test="goodsType != null">
         goods_type,
@@ -330,8 +343,8 @@
       <if test="goodsId != null">
         #{goodsId,jdbcType=INTEGER},
       </if>
-      <if test="catId != null">
-        #{catId,jdbcType=INTEGER},
+      <if test="catName != null">
+        #{catName,jdbcType=VARCHAR},
       </if>
       <if test="extendCatId != null">
         #{extendCatId,jdbcType=INTEGER},
@@ -379,7 +392,7 @@
         #{isVirtual,jdbcType=TINYINT},
       </if>
       <if test="virtualIndate != null">
-        #{virtualIndate,jdbcType=INTEGER},
+        #{virtualIndate,jdbcType=TIMESTAMP},
       </if>
       <if test="virtualLimit != null">
         #{virtualLimit,jdbcType=SMALLINT},
@@ -394,7 +407,7 @@
         #{isFreeShipping,jdbcType=BIT},
       </if>
       <if test="onTime != null">
-        #{onTime,jdbcType=INTEGER},
+        #{onTime,jdbcType=TIMESTAMP},
       </if>
       <if test="sort != null">
         #{sort,jdbcType=SMALLINT},
@@ -408,8 +421,8 @@
       <if test="isHot != null">
         #{isHot,jdbcType=BIT},
       </if>
-      <if test="lastUpdate != null">
-        #{lastUpdate,jdbcType=INTEGER},
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="goodsType != null">
         #{goodsType,jdbcType=SMALLINT},
@@ -430,7 +443,7 @@
         #{salesSum,jdbcType=INTEGER},
       </if>
       <if test="promType != null">
-        #{promType,jdbcType=BIT},
+        #{promType,jdbcType=INTEGER},
       </if>
       <if test="promId != null">
         #{promId,jdbcType=INTEGER},
@@ -467,8 +480,8 @@
       <if test="record.goodsId != null">
         goods_id = #{record.goodsId,jdbcType=INTEGER},
       </if>
-      <if test="record.catId != null">
-        cat_id = #{record.catId,jdbcType=INTEGER},
+      <if test="record.catName != null">
+        cat_name = #{record.catName,jdbcType=VARCHAR},
       </if>
       <if test="record.extendCatId != null">
         extend_cat_id = #{record.extendCatId,jdbcType=INTEGER},
@@ -516,7 +529,7 @@
         is_virtual = #{record.isVirtual,jdbcType=TINYINT},
       </if>
       <if test="record.virtualIndate != null">
-        virtual_indate = #{record.virtualIndate,jdbcType=INTEGER},
+        virtual_indate = #{record.virtualIndate,jdbcType=TIMESTAMP},
       </if>
       <if test="record.virtualLimit != null">
         virtual_limit = #{record.virtualLimit,jdbcType=SMALLINT},
@@ -531,7 +544,7 @@
         is_free_shipping = #{record.isFreeShipping,jdbcType=BIT},
       </if>
       <if test="record.onTime != null">
-        on_time = #{record.onTime,jdbcType=INTEGER},
+        on_time = #{record.onTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.sort != null">
         sort = #{record.sort,jdbcType=SMALLINT},
@@ -545,8 +558,8 @@
       <if test="record.isHot != null">
         is_hot = #{record.isHot,jdbcType=BIT},
       </if>
-      <if test="record.lastUpdate != null">
-        last_update = #{record.lastUpdate,jdbcType=INTEGER},
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.goodsType != null">
         goods_type = #{record.goodsType,jdbcType=SMALLINT},
@@ -567,7 +580,7 @@
         sales_sum = #{record.salesSum,jdbcType=INTEGER},
       </if>
       <if test="record.promType != null">
-        prom_type = #{record.promType,jdbcType=BIT},
+        prom_type = #{record.promType,jdbcType=INTEGER},
       </if>
       <if test="record.promId != null">
         prom_id = #{record.promId,jdbcType=INTEGER},
@@ -598,7 +611,7 @@
   <update id="updateByExampleWithBLOBs" parameterType="map">
     update goods
     set goods_id = #{record.goodsId,jdbcType=INTEGER},
-      cat_id = #{record.catId,jdbcType=INTEGER},
+      cat_name = #{record.catName,jdbcType=VARCHAR},
       extend_cat_id = #{record.extendCatId,jdbcType=INTEGER},
       goods_sn = #{record.goodsSn,jdbcType=VARCHAR},
       goods_name = #{record.goodsName,jdbcType=VARCHAR},
@@ -614,24 +627,24 @@
       goods_remark = #{record.goodsRemark,jdbcType=VARCHAR},
       original_img = #{record.originalImg,jdbcType=VARCHAR},
       is_virtual = #{record.isVirtual,jdbcType=TINYINT},
-      virtual_indate = #{record.virtualIndate,jdbcType=INTEGER},
+      virtual_indate = #{record.virtualIndate,jdbcType=TIMESTAMP},
       virtual_limit = #{record.virtualLimit,jdbcType=SMALLINT},
       virtual_refund = #{record.virtualRefund,jdbcType=BIT},
       is_on_sale = #{record.isOnSale,jdbcType=BIT},
       is_free_shipping = #{record.isFreeShipping,jdbcType=BIT},
-      on_time = #{record.onTime,jdbcType=INTEGER},
+      on_time = #{record.onTime,jdbcType=TIMESTAMP},
       sort = #{record.sort,jdbcType=SMALLINT},
       is_recommend = #{record.isRecommend,jdbcType=BIT},
       is_new = #{record.isNew,jdbcType=BIT},
       is_hot = #{record.isHot,jdbcType=BIT},
-      last_update = #{record.lastUpdate,jdbcType=INTEGER},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       goods_type = #{record.goodsType,jdbcType=SMALLINT},
       spec_type = #{record.specType,jdbcType=SMALLINT},
       give_integral = #{record.giveIntegral,jdbcType=INTEGER},
       exchange_integral = #{record.exchangeIntegral,jdbcType=INTEGER},
       suppliers_id = #{record.suppliersId,jdbcType=SMALLINT},
       sales_sum = #{record.salesSum,jdbcType=INTEGER},
-      prom_type = #{record.promType,jdbcType=BIT},
+      prom_type = #{record.promType,jdbcType=INTEGER},
       prom_id = #{record.promId,jdbcType=INTEGER},
       commission = #{record.commission,jdbcType=DECIMAL},
       spu = #{record.spu,jdbcType=VARCHAR},
@@ -646,7 +659,7 @@
   <update id="updateByExample" parameterType="map">
     update goods
     set goods_id = #{record.goodsId,jdbcType=INTEGER},
-      cat_id = #{record.catId,jdbcType=INTEGER},
+      cat_name = #{record.catName,jdbcType=VARCHAR},
       extend_cat_id = #{record.extendCatId,jdbcType=INTEGER},
       goods_sn = #{record.goodsSn,jdbcType=VARCHAR},
       goods_name = #{record.goodsName,jdbcType=VARCHAR},
@@ -662,24 +675,24 @@
       goods_remark = #{record.goodsRemark,jdbcType=VARCHAR},
       original_img = #{record.originalImg,jdbcType=VARCHAR},
       is_virtual = #{record.isVirtual,jdbcType=TINYINT},
-      virtual_indate = #{record.virtualIndate,jdbcType=INTEGER},
+      virtual_indate = #{record.virtualIndate,jdbcType=TIMESTAMP},
       virtual_limit = #{record.virtualLimit,jdbcType=SMALLINT},
       virtual_refund = #{record.virtualRefund,jdbcType=BIT},
       is_on_sale = #{record.isOnSale,jdbcType=BIT},
       is_free_shipping = #{record.isFreeShipping,jdbcType=BIT},
-      on_time = #{record.onTime,jdbcType=INTEGER},
+      on_time = #{record.onTime,jdbcType=TIMESTAMP},
       sort = #{record.sort,jdbcType=SMALLINT},
       is_recommend = #{record.isRecommend,jdbcType=BIT},
       is_new = #{record.isNew,jdbcType=BIT},
       is_hot = #{record.isHot,jdbcType=BIT},
-      last_update = #{record.lastUpdate,jdbcType=INTEGER},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       goods_type = #{record.goodsType,jdbcType=SMALLINT},
       spec_type = #{record.specType,jdbcType=SMALLINT},
       give_integral = #{record.giveIntegral,jdbcType=INTEGER},
       exchange_integral = #{record.exchangeIntegral,jdbcType=INTEGER},
       suppliers_id = #{record.suppliersId,jdbcType=SMALLINT},
       sales_sum = #{record.salesSum,jdbcType=INTEGER},
-      prom_type = #{record.promType,jdbcType=BIT},
+      prom_type = #{record.promType,jdbcType=INTEGER},
       prom_id = #{record.promId,jdbcType=INTEGER},
       commission = #{record.commission,jdbcType=DECIMAL},
       spu = #{record.spu,jdbcType=VARCHAR},
@@ -692,8 +705,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.wuyou.entity.GoodsWithBLOBs">
     update goods
     <set>
-      <if test="catId != null">
-        cat_id = #{catId,jdbcType=INTEGER},
+      <if test="catName != null">
+        cat_name = #{catName,jdbcType=VARCHAR},
       </if>
       <if test="extendCatId != null">
         extend_cat_id = #{extendCatId,jdbcType=INTEGER},
@@ -741,7 +754,7 @@
         is_virtual = #{isVirtual,jdbcType=TINYINT},
       </if>
       <if test="virtualIndate != null">
-        virtual_indate = #{virtualIndate,jdbcType=INTEGER},
+        virtual_indate = #{virtualIndate,jdbcType=TIMESTAMP},
       </if>
       <if test="virtualLimit != null">
         virtual_limit = #{virtualLimit,jdbcType=SMALLINT},
@@ -756,7 +769,7 @@
         is_free_shipping = #{isFreeShipping,jdbcType=BIT},
       </if>
       <if test="onTime != null">
-        on_time = #{onTime,jdbcType=INTEGER},
+        on_time = #{onTime,jdbcType=TIMESTAMP},
       </if>
       <if test="sort != null">
         sort = #{sort,jdbcType=SMALLINT},
@@ -770,8 +783,8 @@
       <if test="isHot != null">
         is_hot = #{isHot,jdbcType=BIT},
       </if>
-      <if test="lastUpdate != null">
-        last_update = #{lastUpdate,jdbcType=INTEGER},
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="goodsType != null">
         goods_type = #{goodsType,jdbcType=SMALLINT},
@@ -792,7 +805,7 @@
         sales_sum = #{salesSum,jdbcType=INTEGER},
       </if>
       <if test="promType != null">
-        prom_type = #{promType,jdbcType=BIT},
+        prom_type = #{promType,jdbcType=INTEGER},
       </if>
       <if test="promId != null">
         prom_id = #{promId,jdbcType=INTEGER},
@@ -820,7 +833,7 @@
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.wuyou.entity.GoodsWithBLOBs">
     update goods
-    set cat_id = #{catId,jdbcType=INTEGER},
+    set cat_name = #{catName,jdbcType=VARCHAR},
       extend_cat_id = #{extendCatId,jdbcType=INTEGER},
       goods_sn = #{goodsSn,jdbcType=VARCHAR},
       goods_name = #{goodsName,jdbcType=VARCHAR},
@@ -836,24 +849,24 @@
       goods_remark = #{goodsRemark,jdbcType=VARCHAR},
       original_img = #{originalImg,jdbcType=VARCHAR},
       is_virtual = #{isVirtual,jdbcType=TINYINT},
-      virtual_indate = #{virtualIndate,jdbcType=INTEGER},
+      virtual_indate = #{virtualIndate,jdbcType=TIMESTAMP},
       virtual_limit = #{virtualLimit,jdbcType=SMALLINT},
       virtual_refund = #{virtualRefund,jdbcType=BIT},
       is_on_sale = #{isOnSale,jdbcType=BIT},
       is_free_shipping = #{isFreeShipping,jdbcType=BIT},
-      on_time = #{onTime,jdbcType=INTEGER},
+      on_time = #{onTime,jdbcType=TIMESTAMP},
       sort = #{sort,jdbcType=SMALLINT},
       is_recommend = #{isRecommend,jdbcType=BIT},
       is_new = #{isNew,jdbcType=BIT},
       is_hot = #{isHot,jdbcType=BIT},
-      last_update = #{lastUpdate,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
       goods_type = #{goodsType,jdbcType=SMALLINT},
       spec_type = #{specType,jdbcType=SMALLINT},
       give_integral = #{giveIntegral,jdbcType=INTEGER},
       exchange_integral = #{exchangeIntegral,jdbcType=INTEGER},
       suppliers_id = #{suppliersId,jdbcType=SMALLINT},
       sales_sum = #{salesSum,jdbcType=INTEGER},
-      prom_type = #{promType,jdbcType=BIT},
+      prom_type = #{promType,jdbcType=INTEGER},
       prom_id = #{promId,jdbcType=INTEGER},
       commission = #{commission,jdbcType=DECIMAL},
       spu = #{spu,jdbcType=VARCHAR},
@@ -865,7 +878,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.Goods">
     update goods
-    set cat_id = #{catId,jdbcType=INTEGER},
+    set cat_name = #{catName,jdbcType=VARCHAR},
       extend_cat_id = #{extendCatId,jdbcType=INTEGER},
       goods_sn = #{goodsSn,jdbcType=VARCHAR},
       goods_name = #{goodsName,jdbcType=VARCHAR},
@@ -881,24 +894,24 @@
       goods_remark = #{goodsRemark,jdbcType=VARCHAR},
       original_img = #{originalImg,jdbcType=VARCHAR},
       is_virtual = #{isVirtual,jdbcType=TINYINT},
-      virtual_indate = #{virtualIndate,jdbcType=INTEGER},
+      virtual_indate = #{virtualIndate,jdbcType=TIMESTAMP},
       virtual_limit = #{virtualLimit,jdbcType=SMALLINT},
       virtual_refund = #{virtualRefund,jdbcType=BIT},
       is_on_sale = #{isOnSale,jdbcType=BIT},
       is_free_shipping = #{isFreeShipping,jdbcType=BIT},
-      on_time = #{onTime,jdbcType=INTEGER},
+      on_time = #{onTime,jdbcType=TIMESTAMP},
       sort = #{sort,jdbcType=SMALLINT},
       is_recommend = #{isRecommend,jdbcType=BIT},
       is_new = #{isNew,jdbcType=BIT},
       is_hot = #{isHot,jdbcType=BIT},
-      last_update = #{lastUpdate,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
       goods_type = #{goodsType,jdbcType=SMALLINT},
       spec_type = #{specType,jdbcType=SMALLINT},
       give_integral = #{giveIntegral,jdbcType=INTEGER},
       exchange_integral = #{exchangeIntegral,jdbcType=INTEGER},
       suppliers_id = #{suppliersId,jdbcType=SMALLINT},
       sales_sum = #{salesSum,jdbcType=INTEGER},
-      prom_type = #{promType,jdbcType=BIT},
+      prom_type = #{promType,jdbcType=INTEGER},
       prom_id = #{promId,jdbcType=INTEGER},
       commission = #{commission,jdbcType=DECIMAL},
       spu = #{spu,jdbcType=VARCHAR},

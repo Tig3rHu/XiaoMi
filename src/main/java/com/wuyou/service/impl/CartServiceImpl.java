@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.wuyou.dao.CartMapper;
 import com.wuyou.entity.Cart;
 import com.wuyou.entity.CartExample;
+import com.wuyou.entity.CartVo;
 import com.wuyou.service.CartService;
 
 /**
@@ -66,6 +67,24 @@ public class CartServiceImpl implements CartService {
 	public List<Cart> findCart(CartExample example) {
 		// TODO Auto-generated method stub
 		return cartMapper.selectByExample(example);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.CartService#deleteByPrimaryKey(java.lang.Integer)
+	 */
+	@Override
+	public int deleteByPrimaryKey(Integer id) {
+		// TODO Auto-generated method stub
+		return cartMapper.deleteByPrimaryKey(id);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.CartService#selectfromCartAndPromOrder()
+	 */
+	@Override
+	public List<CartVo> selectfromCartAndPromOrder() {
+		// TODO Auto-generated method stub
+		return cartMapper.selectfromCartAndPromOrder();
 	}
 
 }

@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.wuyou.dao.GoodsMapper;
 import com.wuyou.entity.Goods;
 import com.wuyou.entity.GoodsExample;
+import com.wuyou.entity.GoodsVo;
 import com.wuyou.entity.GoodsWithBLOBs;
 import com.wuyou.service.GoodsService;
 
@@ -49,15 +50,6 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.wuyou.service.GoodsService#updateByExample(com.wuyou.entity.Goods, com.wuyou.entity.GoodsExample)
-	 */
-	@Override
-	public int updateByExample(Goods record, GoodsExample example) {
-		// TODO Auto-generated method stub
-		return goddsMapper.updateByExample(record, example);
-	}
-
-	/* (non-Javadoc)
 	 * @see com.wuyou.service.GoodsService#selectByExample(com.wuyou.entity.GoodsExample)
 	 */
 	@Override
@@ -70,9 +62,45 @@ public class GoodsServiceImpl implements GoodsService {
 	 * @see com.wuyou.service.GoodsService#selectByPrimaryKey(java.lang.Integer)
 	 */
 	@Override
-	public GoodsWithBLOBs selectByPrimaryKey(Integer goodsId) {
+	public GoodsVo selectByPrimaryKey(Integer goodsId) {
 		// TODO Auto-generated method stub
 		return goddsMapper.selectByPrimaryKey(goodsId);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.GoodsService#updateByPrimaryKey(com.wuyou.entity.Goods)
+	 */
+	@Override
+	public int updateByPrimaryKey(Goods record) {
+		// TODO Auto-generated method stub
+		return goddsMapper.updateByPrimaryKey(record);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.GoodsService#selectByExampleWithBLOBs(com.wuyou.entity.GoodsExample)
+	 */
+	@Override
+	public List<GoodsWithBLOBs> selectByExampleWithBLOBs(GoodsExample example) {
+		// TODO Auto-generated method stub
+		return goddsMapper.selectByExampleWithBLOBs(null);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.GoodsService#updateByPrimaryKeySelective(com.wuyou.entity.GoodsWithBLOBs)
+	 */
+	@Override
+	public int updateByPrimaryKeySelective(GoodsWithBLOBs record) {
+		// TODO Auto-generated method stub
+		return goddsMapper.updateByPrimaryKeySelective(record);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.GoodsService#goodsVoSelect()
+	 */
+	@Override
+	public List<GoodsVo> goodsVoSelect() {
+		// TODO Auto-generated method stub
+		return goddsMapper.goodsVoSelect();
 	}
 
 }

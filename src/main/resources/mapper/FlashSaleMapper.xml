@@ -11,8 +11,8 @@
     <result column="buy_limit" jdbcType="INTEGER" property="buyLimit" />
     <result column="buy_num" jdbcType="INTEGER" property="buyNum" />
     <result column="order_num" jdbcType="INTEGER" property="orderNum" />
-    <result column="start_time" jdbcType="INTEGER" property="startTime" />
-    <result column="end_time" jdbcType="INTEGER" property="endTime" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
     <result column="is_end" jdbcType="BIT" property="isEnd" />
     <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
   </resultMap>
@@ -89,7 +89,6 @@
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
@@ -106,7 +105,6 @@
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     from flash_sale
     <if test="_parameter != null">
@@ -135,26 +133,23 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.wuyou.entity.FlashSale">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into flash_sale (title, goods_id, item_id, 
-      price, goods_num, buy_limit, 
-      buy_num, order_num, start_time, 
-      end_time, is_end, goods_name, 
-      description)
-    values (#{title,jdbcType=VARCHAR}, #{goodsId,jdbcType=INTEGER}, #{itemId,jdbcType=BIGINT}, 
-      #{price,jdbcType=REAL}, #{goodsNum,jdbcType=INTEGER}, #{buyLimit,jdbcType=INTEGER}, 
-      #{buyNum,jdbcType=INTEGER}, #{orderNum,jdbcType=INTEGER}, #{startTime,jdbcType=INTEGER}, 
-      #{endTime,jdbcType=INTEGER}, #{isEnd,jdbcType=BIT}, #{goodsName,jdbcType=VARCHAR}, 
-      #{description,jdbcType=LONGVARCHAR})
+    insert into flash_sale (id, title, goods_id, 
+      item_id, price, goods_num, 
+      buy_limit, buy_num, order_num, 
+      start_time, end_time, is_end, 
+      goods_name, description)
+    values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{goodsId,jdbcType=INTEGER}, 
+      #{itemId,jdbcType=BIGINT}, #{price,jdbcType=REAL}, #{goodsNum,jdbcType=INTEGER}, 
+      #{buyLimit,jdbcType=INTEGER}, #{buyNum,jdbcType=INTEGER}, #{orderNum,jdbcType=INTEGER}, 
+      #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{isEnd,jdbcType=BIT}, 
+      #{goodsName,jdbcType=VARCHAR}, #{description,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.wuyou.entity.FlashSale">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
     insert into flash_sale
     <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
       <if test="title != null">
         title,
       </if>
@@ -196,6 +191,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
       <if test="title != null">
         #{title,jdbcType=VARCHAR},
       </if>
@@ -221,10 +219,10 @@
         #{orderNum,jdbcType=INTEGER},
       </if>
       <if test="startTime != null">
-        #{startTime,jdbcType=INTEGER},
+        #{startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="endTime != null">
-        #{endTime,jdbcType=INTEGER},
+        #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="isEnd != null">
         #{isEnd,jdbcType=BIT},
@@ -274,10 +272,10 @@
         order_num = #{record.orderNum,jdbcType=INTEGER},
       </if>
       <if test="record.startTime != null">
-        start_time = #{record.startTime,jdbcType=INTEGER},
+        start_time = #{record.startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.endTime != null">
-        end_time = #{record.endTime,jdbcType=INTEGER},
+        end_time = #{record.endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.isEnd != null">
         is_end = #{record.isEnd,jdbcType=BIT},
@@ -304,8 +302,8 @@
       buy_limit = #{record.buyLimit,jdbcType=INTEGER},
       buy_num = #{record.buyNum,jdbcType=INTEGER},
       order_num = #{record.orderNum,jdbcType=INTEGER},
-      start_time = #{record.startTime,jdbcType=INTEGER},
-      end_time = #{record.endTime,jdbcType=INTEGER},
+      start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      end_time = #{record.endTime,jdbcType=TIMESTAMP},
       is_end = #{record.isEnd,jdbcType=BIT},
       goods_name = #{record.goodsName,jdbcType=VARCHAR},
       description = #{record.description,jdbcType=LONGVARCHAR}
@@ -324,8 +322,8 @@
       buy_limit = #{record.buyLimit,jdbcType=INTEGER},
       buy_num = #{record.buyNum,jdbcType=INTEGER},
       order_num = #{record.orderNum,jdbcType=INTEGER},
-      start_time = #{record.startTime,jdbcType=INTEGER},
-      end_time = #{record.endTime,jdbcType=INTEGER},
+      start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      end_time = #{record.endTime,jdbcType=TIMESTAMP},
       is_end = #{record.isEnd,jdbcType=BIT},
       goods_name = #{record.goodsName,jdbcType=VARCHAR}
     <if test="_parameter != null">
@@ -360,10 +358,10 @@
         order_num = #{orderNum,jdbcType=INTEGER},
       </if>
       <if test="startTime != null">
-        start_time = #{startTime,jdbcType=INTEGER},
+        start_time = #{startTime,jdbcType=TIMESTAMP},
       </if>
       <if test="endTime != null">
-        end_time = #{endTime,jdbcType=INTEGER},
+        end_time = #{endTime,jdbcType=TIMESTAMP},
       </if>
       <if test="isEnd != null">
         is_end = #{isEnd,jdbcType=BIT},
@@ -387,8 +385,8 @@
       buy_limit = #{buyLimit,jdbcType=INTEGER},
       buy_num = #{buyNum,jdbcType=INTEGER},
       order_num = #{orderNum,jdbcType=INTEGER},
-      start_time = #{startTime,jdbcType=INTEGER},
-      end_time = #{endTime,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
       is_end = #{isEnd,jdbcType=BIT},
       goods_name = #{goodsName,jdbcType=VARCHAR},
       description = #{description,jdbcType=LONGVARCHAR}
@@ -404,8 +402,8 @@
       buy_limit = #{buyLimit,jdbcType=INTEGER},
       buy_num = #{buyNum,jdbcType=INTEGER},
       order_num = #{orderNum,jdbcType=INTEGER},
-      start_time = #{startTime,jdbcType=INTEGER},
-      end_time = #{endTime,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
       is_end = #{isEnd,jdbcType=BIT},
       goods_name = #{goodsName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}

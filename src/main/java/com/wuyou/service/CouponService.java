@@ -33,4 +33,5 @@ public interface CouponService {
 
     Coupon selectByPrimaryKey(Integer id);
 	
+    int updateByPrimaryKey(Coupon record);
 }

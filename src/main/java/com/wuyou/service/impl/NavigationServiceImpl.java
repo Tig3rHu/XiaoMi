@@ -7,11 +7,14 @@
 */
 package com.wuyou.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.wuyou.dao.NavigationMapper;
 import com.wuyou.entity.Navigation;
+import com.wuyou.entity.NavigationExample;
 import com.wuyou.service.NavigationService;
 
 /**
@@ -51,6 +54,24 @@ public class NavigationServiceImpl implements NavigationService {
 	public Navigation findNavigationById(Integer id) {
 		// TODO Auto-generated method stub
 		return navigationMapper.selectByPrimaryKey(id);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.NavigationService#selectByExample(com.wuyou.entity.NavigationExample)
+	 */
+	@Override
+	public List<Navigation> selectByExample(NavigationExample example) {
+		// TODO Auto-generated method stub
+		return navigationMapper.selectByExample(null);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.NavigationService#updateByPrimaryKey(com.wuyou.entity.Navigation)
+	 */
+	@Override
+	public int updateByPrimaryKey(Navigation record) {
+		// TODO Auto-generated method stub
+		return navigationMapper.updateByPrimaryKey(record);
 	}
 
 }

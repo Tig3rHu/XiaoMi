@@ -20,8 +20,8 @@
     <result column="shipping_price" jdbcType="DECIMAL" property="shippingPrice" />
     <result column="invoice_no" jdbcType="VARCHAR" property="invoiceNo" />
     <result column="tel" jdbcType="VARCHAR" property="tel" />
-    <result column="best_time" jdbcType="INTEGER" property="bestTime" />
-    <result column="create_time" jdbcType="INTEGER" property="createTime" />
+    <result column="best_time" jdbcType="TIMESTAMP" property="bestTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="is_del" jdbcType="BIT" property="isDel" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.DeliveryDoc">
@@ -160,8 +160,8 @@
       #{mobile,jdbcType=VARCHAR}, #{country,jdbcType=INTEGER}, #{province,jdbcType=INTEGER}, 
       #{city,jdbcType=INTEGER}, #{district,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, 
       #{shippingCode,jdbcType=VARCHAR}, #{shippingName,jdbcType=VARCHAR}, #{shippingPrice,jdbcType=DECIMAL}, 
-      #{invoiceNo,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{bestTime,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=INTEGER}, #{isDel,jdbcType=BIT}, #{note,jdbcType=LONGVARCHAR}
+      #{invoiceNo,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{bestTime,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{isDel,jdbcType=BIT}, #{note,jdbcType=LONGVARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.wuyou.entity.DeliveryDoc">
@@ -287,10 +287,10 @@
         #{tel,jdbcType=VARCHAR},
       </if>
       <if test="bestTime != null">
-        #{bestTime,jdbcType=INTEGER},
+        #{bestTime,jdbcType=TIMESTAMP},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=INTEGER},
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="isDel != null">
         #{isDel,jdbcType=BIT},
@@ -428,8 +428,8 @@
       shipping_price = #{record.shippingPrice,jdbcType=DECIMAL},
       invoice_no = #{record.invoiceNo,jdbcType=VARCHAR},
       tel = #{record.tel,jdbcType=VARCHAR},
-      best_time = #{record.bestTime,jdbcType=INTEGER},
-      create_time = #{record.createTime,jdbcType=INTEGER},
+      best_time = #{record.bestTime,jdbcType=TIMESTAMP},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
       is_del = #{record.isDel,jdbcType=BIT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -490,10 +490,10 @@
         tel = #{tel,jdbcType=VARCHAR},
       </if>
       <if test="bestTime != null">
-        best_time = #{bestTime,jdbcType=INTEGER},
+        best_time = #{bestTime,jdbcType=TIMESTAMP},
       </if>
       <if test="createTime != null">
-        create_time = #{createTime,jdbcType=INTEGER},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="isDel != null">
         is_del = #{isDel,jdbcType=BIT},
@@ -523,8 +523,8 @@
       shipping_price = #{shippingPrice,jdbcType=DECIMAL},
       invoice_no = #{invoiceNo,jdbcType=VARCHAR},
       tel = #{tel,jdbcType=VARCHAR},
-      best_time = #{bestTime,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=INTEGER},
+      best_time = #{bestTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
       is_del = #{isDel,jdbcType=BIT},
       note = #{note,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
@@ -548,8 +548,8 @@
       shipping_price = #{shippingPrice,jdbcType=DECIMAL},
       invoice_no = #{invoiceNo,jdbcType=VARCHAR},
       tel = #{tel,jdbcType=VARCHAR},
-      best_time = #{bestTime,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=INTEGER},
+      best_time = #{bestTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
       is_del = #{isDel,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>

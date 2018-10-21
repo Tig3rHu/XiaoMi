@@ -11,19 +11,19 @@ public class GoodsCategory {
 
     private String parentIdPath;
 
-    private Boolean level;
+    private Integer level;
 
-    private Boolean sortOrder;
+    private Integer sortOrder;
 
-    private Boolean isShow;
+    private Integer isShow;
 
     private String image;
 
-    private Boolean isHot;
+    private Integer isHot;
 
-    private Boolean catGroup;
+    private Integer catGroup;
 
-    private Boolean commissionRate;
+    private Integer commissionRate;
 
     public Short getId() {
         return id;
@@ -65,27 +65,27 @@ public class GoodsCategory {
         this.parentIdPath = parentIdPath;
     }
 
-    public Boolean getLevel() {
+    public Integer getLevel() {
         return level;
     }
 
-    public void setLevel(Boolean level) {
+    public void setLevel(Integer level) {
         this.level = level;
     }
 
-    public Boolean getSortOrder() {
+    public Integer getSortOrder() {
         return sortOrder;
     }
 
-    public void setSortOrder(Boolean sortOrder) {
+    public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;
     }
 
-    public Boolean getIsShow() {
+    public Integer getIsShow() {
         return isShow;
     }
 
-    public void setIsShow(Boolean isShow) {
+    public void setIsShow(Integer isShow) {
         this.isShow = isShow;
     }
 
@@ -97,27 +97,27 @@ public class GoodsCategory {
         this.image = image;
     }
 
-    public Boolean getIsHot() {
+    public Integer getIsHot() {
         return isHot;
     }
 
-    public void setIsHot(Boolean isHot) {
+    public void setIsHot(Integer isHot) {
         this.isHot = isHot;
     }
 
-    public Boolean getCatGroup() {
+    public Integer getCatGroup() {
         return catGroup;
     }
 
-    public void setCatGroup(Boolean catGroup) {
+    public void setCatGroup(Integer catGroup) {
         this.catGroup = catGroup;
     }
 
-    public Boolean getCommissionRate() {
+    public Integer getCommissionRate() {
         return commissionRate;
     }
 
-    public void setCommissionRate(Boolean commissionRate) {
+    public void setCommissionRate(Integer commissionRate) {
         this.commissionRate = commissionRate;
     }
 }

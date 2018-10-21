@@ -21,6 +21,9 @@
     <result column="prom_id" jdbcType="INTEGER" property="promId" />
     <result column="sku" jdbcType="VARCHAR" property="sku" />
   </resultMap>
+  <resultMap type="com.wuyou.entity.CartVo" id="resultMapPromOrder" extends="BaseResultMap">
+      <result column="name" jdbcType="VARCHAR" property="name" />
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -104,6 +107,10 @@
     <include refid="Base_Column_List" />
     from cart
     where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectfromCartAndPromOrder" resultMap="resultMapPromOrder">
+    select cart.*,prom_order.name from cart inner join prom_order
+     on cart.prom_id=prom_order.id;
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from cart

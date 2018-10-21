@@ -7,6 +7,8 @@
 */
 package com.wuyou.service;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 import com.wuyou.entity.GoodsAttribute;
@@ -25,8 +27,10 @@ public interface GoodAttributeService {
 	int deleteByPrimaryKey(Integer attrId);
 	
 	 int updateByExample(@Param("record") GoodsAttribute record, @Param("example") GoodsAttributeExample example);
-
+ 
 	 GoodsAttribute selectByPrimaryKey(Integer attrId);
 
-	
+	 List<GoodsAttribute> selectByExampleWithBLOBs(GoodsAttributeExample example);
+	 
+	 int updateByPrimaryKey(GoodsAttribute record);
 }

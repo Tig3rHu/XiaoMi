@@ -19,7 +19,7 @@ import com.wuyou.service.FlashSaleService;
 
 /**
  * @author 吴优
- * desciption:
+ * desciption:闪购信息
  * other:
  * @date 2018年9月21日 
  */
@@ -74,6 +74,15 @@ public class FlashSaleServiceImpl implements FlashSaleService {
 	public FlashSale selectByPrimaryKey(Long id) {
 		// TODO Auto-generated method stub
 		return flashSaleMapper.selectByPrimaryKey(id);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.FlashSaleService#selectByExampleWithBLOBs(com.wuyou.entity.FlashSaleExample)
+	 */
+	@Override
+	public List<FlashSale> selectByExampleWithBLOBs(FlashSaleExample example) {
+		// TODO Auto-generated method stub
+		return flashSaleMapper.selectByExampleWithBLOBs(example);
 	}
 
 }

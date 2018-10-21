@@ -11,6 +11,7 @@ import java.util.List;
 
 import com.wuyou.entity.Cart;
 import com.wuyou.entity.CartExample;
+import com.wuyou.entity.CartVo;
 
 /**
  * @author 吴优
@@ -31,6 +32,9 @@ public interface CartService {
 	 * @return
 	 */
 	public int deleteBygoodId(Integer goodsId);
+	
+	int deleteByPrimaryKey(Integer id);
+	
 	/**
 	 * 查询购物车信息
 	 * @param id
@@ -39,5 +43,7 @@ public interface CartService {
 	public Cart selectByPrimaryKey(Integer id);
 
     public List<Cart> findCart(CartExample example);
+    
+    List<CartVo> selectfromCartAndPromOrder();
 	
 }

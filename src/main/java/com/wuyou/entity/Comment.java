@@ -1,5 +1,7 @@
 package com.wuyou.entity;
 
+import java.util.Date;
+
 public class Comment {
     private Integer commentId;
 
@@ -9,7 +11,7 @@ public class Comment {
 
     private String username;
 
-    private Integer addTime;
+    private Date addTime;
 
     private String ipAddress;
 
@@ -65,11 +67,11 @@ public class Comment {
         this.username = username;
     }
 
-    public Integer getAddTime() {
+    public Date getAddTime() {
         return addTime;
     }
 
-    public void setAddTime(Integer addTime) {
+    public void setAddTime(Date addTime) {
         this.addTime = addTime;
     }
 

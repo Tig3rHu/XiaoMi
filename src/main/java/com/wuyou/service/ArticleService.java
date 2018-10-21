@@ -32,5 +32,10 @@ public interface ArticleService {
 	public List<ArticleWithBLOBs> selectByExampleWithBLOBs(ArticleExample example);
 
 	public List<Article> selectByExample(ArticleExample example);
-
+	
+	public  int deleteByPrimaryKey(Integer articleId);
+    
+	int updateByPrimaryKey(Article record);
+	
+	int insert(ArticleWithBLOBs record);
 }

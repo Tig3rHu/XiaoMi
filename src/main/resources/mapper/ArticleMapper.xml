@@ -8,14 +8,14 @@
     <result column="author" jdbcType="VARCHAR" property="author" />
     <result column="author_email" jdbcType="VARCHAR" property="authorEmail" />
     <result column="keywords" jdbcType="VARCHAR" property="keywords" />
-    <result column="article_type" jdbcType="BIT" property="articleType" />
+    <result column="article_type" jdbcType="INTEGER" property="articleType" />
     <result column="is_open" jdbcType="BIT" property="isOpen" />
-    <result column="add_time" jdbcType="INTEGER" property="addTime" />
+    <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
     <result column="file_url" jdbcType="VARCHAR" property="fileUrl" />
     <result column="open_type" jdbcType="BIT" property="openType" />
     <result column="link" jdbcType="VARCHAR" property="link" />
     <result column="click" jdbcType="INTEGER" property="click" />
-    <result column="publish_time" jdbcType="INTEGER" property="publishTime" />
+    <result column="publish_time" jdbcType="TIMESTAMP" property="publishTime" />
     <result column="thumb" jdbcType="VARCHAR" property="thumb" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.wuyou.entity.ArticleWithBLOBs">

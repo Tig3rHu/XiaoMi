@@ -1,11 +1,12 @@
 package com.wuyou.entity;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class Goods {
     private Integer goodsId;
 
-    private Integer catId;
+    private String catName;
 
     private Integer extendCatId;
 
@@ -37,7 +38,7 @@ public class Goods {
 
     private Byte isVirtual;
 
-    private Integer virtualIndate;
+    private Date virtualIndate;
 
     private Short virtualLimit;
 
@@ -47,7 +48,7 @@ public class Goods {
 
     private Boolean isFreeShipping;
 
-    private Integer onTime;
+    private Date onTime;
 
     private Short sort;
 
@@ -57,7 +58,7 @@ public class Goods {
 
     private Boolean isHot;
 
-    private Integer lastUpdate;
+    private Date updateTime;
 
     private Short goodsType;
 
@@ -71,7 +72,7 @@ public class Goods {
 
     private Integer salesSum;
 
-    private Boolean promType;
+    private Integer promType;
 
     private Integer promId;
 
@@ -91,12 +92,12 @@ public class Goods {
         this.goodsId = goodsId;
     }
 
-    public Integer getCatId() {
-        return catId;
+    public String getCatName() {
+        return catName;
     }
 
-    public void setCatId(Integer catId) {
-        this.catId = catId;
+    public void setCatName(String catName) {
+        this.catName = catName;
     }
 
     public Integer getExtendCatId() {
@@ -219,11 +220,11 @@ public class Goods {
         this.isVirtual = isVirtual;
     }
 
-    public Integer getVirtualIndate() {
+    public Date getVirtualIndate() {
         return virtualIndate;
     }
 
-    public void setVirtualIndate(Integer virtualIndate) {
+    public void setVirtualIndate(Date virtualIndate) {
         this.virtualIndate = virtualIndate;
     }
 
@@ -259,11 +260,11 @@ public class Goods {
         this.isFreeShipping = isFreeShipping;
     }
 
-    public Integer getOnTime() {
+    public Date getOnTime() {
         return onTime;
     }
 
-    public void setOnTime(Integer onTime) {
+    public void setOnTime(Date onTime) {
         this.onTime = onTime;
     }
 
@@ -299,12 +300,12 @@ public class Goods {
         this.isHot = isHot;
     }
 
-    public Integer getLastUpdate() {
-        return lastUpdate;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setLastUpdate(Integer lastUpdate) {
-        this.lastUpdate = lastUpdate;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 
     public Short getGoodsType() {
@@ -355,11 +356,11 @@ public class Goods {
         this.salesSum = salesSum;
     }
 
-    public Boolean getPromType() {
+    public Integer getPromType() {
         return promType;
     }
 
-    public void setPromType(Boolean promType) {
+    public void setPromType(Integer promType) {
         this.promType = promType;
     }
 

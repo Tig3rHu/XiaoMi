@@ -1,5 +1,7 @@
 package com.wuyou.entity;
 
+import java.util.Date;
+
 public class Ad {
     private Integer adId;
 
@@ -11,9 +13,9 @@ public class Ad {
 
     private String adLink;
 
-    private Integer startTime;
+    private Date startTime;
 
-    private Integer endTime;
+    private Date endTime;
 
     private String linkMan;
 
@@ -73,19 +75,19 @@ public class Ad {
         this.adLink = adLink;
     }
 
-    public Integer getStartTime() {
+    public Date getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Integer startTime) {
+    public void setStartTime(Date startTime) {
         this.startTime = startTime;
     }
 
-    public Integer getEndTime() {
+    public Date getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
 

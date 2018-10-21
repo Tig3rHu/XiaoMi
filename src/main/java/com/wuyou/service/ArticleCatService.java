@@ -7,7 +7,10 @@
 */
 package com.wuyou.service;
 
+import java.util.List;
+
 import com.wuyou.entity.ArticleCat;
+import com.wuyou.entity.ArticleCatExample;
 
 /**
  * @author 吴优
@@ -24,4 +27,11 @@ public interface ArticleCatService {
 	public ArticleCat selectByPrimaryKey(Integer catId);
 	
 	
+	List<ArticleCat> selectByExample(ArticleCatExample example);
+	
+	int updateByPrimaryKey(ArticleCat record);
+	
+	 int insert(ArticleCat record);
+	
+	 int deleteByPrimaryKey(Integer catId);
 }

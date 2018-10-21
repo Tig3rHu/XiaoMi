@@ -10,6 +10,7 @@ package com.wuyou.service;
 import java.util.List;
 
 import com.wuyou.entity.Order;
+import com.wuyou.entity.OrderExample;
 
 /**
  * @author 吴优
@@ -51,6 +52,8 @@ public interface OrderService {
 	 */
 	public List<Order> findOrderByUserId(Integer userId);
 	
+	 List<Order> selectByExample(OrderExample example);
+
     
 
 }

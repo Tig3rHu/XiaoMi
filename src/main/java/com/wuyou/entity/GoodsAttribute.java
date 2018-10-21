@@ -7,13 +7,13 @@ public class GoodsAttribute {
 
     private Short typeId;
 
-    private Boolean attrIndex;
+    private Integer attrIndex;
 
-    private Boolean attrType;
+    private Integer attrType;
 
-    private Boolean attrInputType;
+    private Integer attrInputType;
 
-    private Byte order;
+    private Integer order;
 
     private String attrValues;
 
@@ -41,35 +41,35 @@ public class GoodsAttribute {
         this.typeId = typeId;
     }
 
-    public Boolean getAttrIndex() {
+    public Integer getAttrIndex() {
         return attrIndex;
     }
 
-    public void setAttrIndex(Boolean attrIndex) {
+    public void setAttrIndex(Integer attrIndex) {
         this.attrIndex = attrIndex;
     }
 
-    public Boolean getAttrType() {
+    public Integer getAttrType() {
         return attrType;
     }
 
-    public void setAttrType(Boolean attrType) {
+    public void setAttrType(Integer attrType) {
         this.attrType = attrType;
     }
 
-    public Boolean getAttrInputType() {
+    public Integer getAttrInputType() {
         return attrInputType;
     }
 
-    public void setAttrInputType(Boolean attrInputType) {
+    public void setAttrInputType(Integer attrInputType) {
         this.attrInputType = attrInputType;
     }
 
-    public Byte getOrder() {
+    public Integer getOrder() {
         return order;
     }
 
-    public void setOrder(Byte order) {
+    public void setOrder(Integer order) {
         this.order = order;
     }
 

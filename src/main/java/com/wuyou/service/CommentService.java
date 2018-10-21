@@ -31,14 +31,14 @@ public interface CommentService {
 	 * @param commentId
 	 * @return
 	 */
-	public int deleteCommentByCommentId(Integer commentId);
+	public int deleteByPrimaryKey(Integer commentId);
     /**
      * 更新评论
      * @param record
      * @param commentId
      * @return
      */
-    public int updateCommentByCommentId(Comment record,Integer commentId);
+    public int updateByPrimaryKeyWithBLOBs(CommentWithBLOBs record);
     /**
      * 查找
      * @param example
@@ -46,6 +46,8 @@ public interface CommentService {
      */
     List<Comment> selectByExample(CommentExample example);
     CommentWithBLOBs selectByPrimaryKey(Integer commentId);
+    
+    List<CommentWithBLOBs> selectByExampleWithBLOBs(CommentExample example);
 
-
+    List<CommentWithBLOBs> selectcommentAndGoods();
 }

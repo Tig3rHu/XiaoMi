@@ -20,11 +20,13 @@ import com.wuyou.entity.DeliveryDocExample;
  */
 public interface DeliveryDocService {
    
-	public int insert(DeliveryDoc record);
+	 public int insert(DeliveryDoc record);
 	
-	public int update(DeliveryDoc record,Integer id);
+	 int updateByPrimaryKey(DeliveryDoc record);
 	
 	 List<DeliveryDoc> selectByExample(DeliveryDocExample example);
 
 	 DeliveryDoc selectByPrimaryKey(Integer id);
+	 
+	 int deleteByPrimaryKey(Integer id);
 }

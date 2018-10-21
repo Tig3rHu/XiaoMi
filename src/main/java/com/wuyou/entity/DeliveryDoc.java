@@ -1,6 +1,7 @@
 package com.wuyou.entity;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class DeliveryDoc {
     private Integer id;
@@ -39,9 +40,9 @@ public class DeliveryDoc {
 
     private String tel;
 
-    private Integer bestTime;
+    private Date bestTime;
 
-    private Integer createTime;
+    private Date createTime;
 
     private Boolean isDel;
 
@@ -191,19 +192,19 @@ public class DeliveryDoc {
         this.tel = tel;
     }
 
-    public Integer getBestTime() {
+    public Date getBestTime() {
         return bestTime;
     }
 
-    public void setBestTime(Integer bestTime) {
+    public void setBestTime(Date bestTime) {
         this.bestTime = bestTime;
     }
 
-    public Integer getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Integer createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
