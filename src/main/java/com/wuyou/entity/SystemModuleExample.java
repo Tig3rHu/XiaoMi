@@ -294,143 +294,143 @@ public class SystemModuleExample {
             return (Criteria) this;
         }
 
-        public Criteria andCtlIsNull() {
-            addCriterion("ctl is null");
+        public Criteria andControllerIsNull() {
+            addCriterion("controller is null");
             return (Criteria) this;
         }
 
-        public Criteria andCtlIsNotNull() {
-            addCriterion("ctl is not null");
+        public Criteria andControllerIsNotNull() {
+            addCriterion("controller is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCtlEqualTo(String value) {
-            addCriterion("ctl =", value, "ctl");
+        public Criteria andControllerEqualTo(String value) {
+            addCriterion("controller =", value, "controller");
             return (Criteria) this;
         }
 
-        public Criteria andCtlNotEqualTo(String value) {
-            addCriterion("ctl <>", value, "ctl");
+        public Criteria andControllerNotEqualTo(String value) {
+            addCriterion("controller <>", value, "controller");
             return (Criteria) this;
         }
 
-        public Criteria andCtlGreaterThan(String value) {
-            addCriterion("ctl >", value, "ctl");
+        public Criteria andControllerGreaterThan(String value) {
+            addCriterion("controller >", value, "controller");
             return (Criteria) this;
         }
 
-        public Criteria andCtlGreaterThanOrEqualTo(String value) {
-            addCriterion("ctl >=", value, "ctl");
+        public Criteria andControllerGreaterThanOrEqualTo(String value) {
+            addCriterion("controller >=", value, "controller");
             return (Criteria) this;
         }
 
-        public Criteria andCtlLessThan(String value) {
-            addCriterion("ctl <", value, "ctl");
+        public Criteria andControllerLessThan(String value) {
+            addCriterion("controller <", value, "controller");
             return (Criteria) this;
         }
 
-        public Criteria andCtlLessThanOrEqualTo(String value) {
-            addCriterion("ctl <=", value, "ctl");
+        public Criteria andControllerLessThanOrEqualTo(String value) {
+            addCriterion("controller <=", value, "controller");
             return (Criteria) this;
         }
 
-        public Criteria andCtlLike(String value) {
-            addCriterion("ctl like", value, "ctl");
+        public Criteria andControllerLike(String value) {
+            addCriterion("controller like", value, "controller");
             return (Criteria) this;
         }
 
-        public Criteria andCtlNotLike(String value) {
-            addCriterion("ctl not like", value, "ctl");
+        public Criteria andControllerNotLike(String value) {
+            addCriterion("controller not like", value, "controller");
             return (Criteria) this;
         }
 
-        public Criteria andCtlIn(List<String> values) {
-            addCriterion("ctl in", values, "ctl");
+        public Criteria andControllerIn(List<String> values) {
+            addCriterion("controller in", values, "controller");
             return (Criteria) this;
         }
 
-        public Criteria andCtlNotIn(List<String> values) {
-            addCriterion("ctl not in", values, "ctl");
+        public Criteria andControllerNotIn(List<String> values) {
+            addCriterion("controller not in", values, "controller");
             return (Criteria) this;
         }
 
-        public Criteria andCtlBetween(String value1, String value2) {
-            addCriterion("ctl between", value1, value2, "ctl");
+        public Criteria andControllerBetween(String value1, String value2) {
+            addCriterion("controller between", value1, value2, "controller");
             return (Criteria) this;
         }
 
-        public Criteria andCtlNotBetween(String value1, String value2) {
-            addCriterion("ctl not between", value1, value2, "ctl");
+        public Criteria andControllerNotBetween(String value1, String value2) {
+            addCriterion("controller not between", value1, value2, "controller");
             return (Criteria) this;
         }
 
-        public Criteria andActIsNull() {
-            addCriterion("act is null");
+        public Criteria andActionIsNull() {
+            addCriterion("action is null");
             return (Criteria) this;
         }
 
-        public Criteria andActIsNotNull() {
-            addCriterion("act is not null");
+        public Criteria andActionIsNotNull() {
+            addCriterion("action is not null");
             return (Criteria) this;
         }
 
-        public Criteria andActEqualTo(String value) {
-            addCriterion("act =", value, "act");
+        public Criteria andActionEqualTo(String value) {
+            addCriterion("action =", value, "action");
             return (Criteria) this;
         }
 
-        public Criteria andActNotEqualTo(String value) {
-            addCriterion("act <>", value, "act");
+        public Criteria andActionNotEqualTo(String value) {
+            addCriterion("action <>", value, "action");
             return (Criteria) this;
         }
 
-        public Criteria andActGreaterThan(String value) {
-            addCriterion("act >", value, "act");
+        public Criteria andActionGreaterThan(String value) {
+            addCriterion("action >", value, "action");
             return (Criteria) this;
         }
 
-        public Criteria andActGreaterThanOrEqualTo(String value) {
-            addCriterion("act >=", value, "act");
+        public Criteria andActionGreaterThanOrEqualTo(String value) {
+            addCriterion("action >=", value, "action");
             return (Criteria) this;
         }
 
-        public Criteria andActLessThan(String value) {
-            addCriterion("act <", value, "act");
+        public Criteria andActionLessThan(String value) {
+            addCriterion("action <", value, "action");
             return (Criteria) this;
         }
 
-        public Criteria andActLessThanOrEqualTo(String value) {
-            addCriterion("act <=", value, "act");
+        public Criteria andActionLessThanOrEqualTo(String value) {
+            addCriterion("action <=", value, "action");
             return (Criteria) this;
         }
 
-        public Criteria andActLike(String value) {
-            addCriterion("act like", value, "act");
+        public Criteria andActionLike(String value) {
+            addCriterion("action like", value, "action");
             return (Criteria) this;
         }
 
-        public Criteria andActNotLike(String value) {
-            addCriterion("act not like", value, "act");
+        public Criteria andActionNotLike(String value) {
+            addCriterion("action not like", value, "action");
             return (Criteria) this;
         }
 
-        public Criteria andActIn(List<String> values) {
-            addCriterion("act in", values, "act");
+        public Criteria andActionIn(List<String> values) {
+            addCriterion("action in", values, "action");
             return (Criteria) this;
         }
 
-        public Criteria andActNotIn(List<String> values) {
-            addCriterion("act not in", values, "act");
+        public Criteria andActionNotIn(List<String> values) {
+            addCriterion("action not in", values, "action");
             return (Criteria) this;
         }
 
-        public Criteria andActBetween(String value1, String value2) {
-            addCriterion("act between", value1, value2, "act");
+        public Criteria andActionBetween(String value1, String value2) {
+            addCriterion("action between", value1, value2, "action");
             return (Criteria) this;
         }
 
-        public Criteria andActNotBetween(String value1, String value2) {
-            addCriterion("act not between", value1, value2, "act");
+        public Criteria andActionNotBetween(String value1, String value2) {
+            addCriterion("action not between", value1, value2, "action");
             return (Criteria) this;
         }
 

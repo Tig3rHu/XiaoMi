@@ -13,6 +13,8 @@
 <body class="layui-layout-body">
     <table class="layui-table" lay-filter="demo">
                 <thead>
+                 <tr><th colspan="26"><h3>订单管理</h3></th></tr>
+              
                 <tr>
                     <th lay-data="{checkbox:true}"></th>
                     <th lay-data="{field:'1', width:100}">订单ID</th>
@@ -44,8 +46,9 @@
                 </tr>
                 
                 </thead>
-                 <a id="add" class="layui-btn layui-btn-xs" href="${base}/order/toedit">添加文章</a>
-                         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">选中删除</a>
+                 <a id="add" class="layui-btn layui-btn-radius" href="${base}/order/toedit"><i class="layui-icon">&#xe608;</i>
+                                                             添加文章</a>
+                         <a class="layui-btn layui-btn-danger layui-btn-radius layui-btn-xs" lay-event="del">选中删除</a>
             
                 <tbody>                 
                 <#list orders as order>

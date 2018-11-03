@@ -5,8 +5,8 @@
     <id column="mod_id" jdbcType="SMALLINT" property="modId" />
     <result column="module" jdbcType="CHAR" property="module" />
     <result column="level" jdbcType="BIT" property="level" />
-    <result column="ctl" jdbcType="VARCHAR" property="ctl" />
-    <result column="act" jdbcType="VARCHAR" property="act" />
+    <result column="controller" jdbcType="VARCHAR" property="controller" />
+    <result column="action" jdbcType="VARCHAR" property="action" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="visible" jdbcType="BIT" property="visible" />
     <result column="parent_id" jdbcType="SMALLINT" property="parentId" />
@@ -72,14 +72,13 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    mod_id, module, level, ctl, act, title, visible, parent_id, orderby, icon
+    mod_id, module, level, controller, action, title, visible, parent_id, orderby, icon
   </sql>
   <select id="selectByExample" parameterType="com.wuyou.entity.SystemModuleExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     from system_module
     <if test="_parameter != null">
@@ -107,13 +106,13 @@
   </delete>
   <insert id="insert" parameterType="com.wuyou.entity.SystemModule">
     insert into system_module (mod_id, module, level, 
-      ctl, act, title, visible, 
-      parent_id, orderby, icon
-      )
+      controller, action, title, 
+      visible, parent_id, orderby, 
+      icon)
     values (#{modId,jdbcType=SMALLINT}, #{module,jdbcType=CHAR}, #{level,jdbcType=BIT}, 
-      #{ctl,jdbcType=VARCHAR}, #{act,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{visible,jdbcType=BIT}, 
-      #{parentId,jdbcType=SMALLINT}, #{orderby,jdbcType=SMALLINT}, #{icon,jdbcType=VARCHAR}
-      )
+      #{controller,jdbcType=VARCHAR}, #{action,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{visible,jdbcType=BIT}, #{parentId,jdbcType=SMALLINT}, #{orderby,jdbcType=SMALLINT}, 
+      #{icon,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.wuyou.entity.SystemModule">
     insert into system_module
@@ -127,11 +126,11 @@
       <if test="level != null">
         level,
       </if>
-      <if test="ctl != null">
-        ctl,
+      <if test="controller != null">
+        controller,
       </if>
-      <if test="act != null">
-        act,
+      <if test="action != null">
+        action,
       </if>
       <if test="title != null">
         title,
@@ -159,11 +158,11 @@
       <if test="level != null">
         #{level,jdbcType=BIT},
       </if>
-      <if test="ctl != null">
-        #{ctl,jdbcType=VARCHAR},
+      <if test="controller != null">
+        #{controller,jdbcType=VARCHAR},
       </if>
-      <if test="act != null">
-        #{act,jdbcType=VARCHAR},
+      <if test="action != null">
+        #{action,jdbcType=VARCHAR},
       </if>
       <if test="title != null">
         #{title,jdbcType=VARCHAR},
@@ -200,11 +199,11 @@
       <if test="record.level != null">
         level = #{record.level,jdbcType=BIT},
       </if>
-      <if test="record.ctl != null">
-        ctl = #{record.ctl,jdbcType=VARCHAR},
+      <if test="record.controller != null">
+        controller = #{record.controller,jdbcType=VARCHAR},
       </if>
-      <if test="record.act != null">
-        act = #{record.act,jdbcType=VARCHAR},
+      <if test="record.action != null">
+        action = #{record.action,jdbcType=VARCHAR},
       </if>
       <if test="record.title != null">
         title = #{record.title,jdbcType=VARCHAR},
@@ -231,8 +230,8 @@
     set mod_id = #{record.modId,jdbcType=SMALLINT},
       module = #{record.module,jdbcType=CHAR},
       level = #{record.level,jdbcType=BIT},
-      ctl = #{record.ctl,jdbcType=VARCHAR},
-      act = #{record.act,jdbcType=VARCHAR},
+      controller = #{record.controller,jdbcType=VARCHAR},
+      action = #{record.action,jdbcType=VARCHAR},
       title = #{record.title,jdbcType=VARCHAR},
       visible = #{record.visible,jdbcType=BIT},
       parent_id = #{record.parentId,jdbcType=SMALLINT},
@@ -251,11 +250,11 @@
       <if test="level != null">
         level = #{level,jdbcType=BIT},
       </if>
-      <if test="ctl != null">
-        ctl = #{ctl,jdbcType=VARCHAR},
+      <if test="controller != null">
+        controller = #{controller,jdbcType=VARCHAR},
       </if>
-      <if test="act != null">
-        act = #{act,jdbcType=VARCHAR},
+      <if test="action != null">
+        action = #{action,jdbcType=VARCHAR},
       </if>
       <if test="title != null">
         title = #{title,jdbcType=VARCHAR},
@@ -279,8 +278,8 @@
     update system_module
     set module = #{module,jdbcType=CHAR},
       level = #{level,jdbcType=BIT},
-      ctl = #{ctl,jdbcType=VARCHAR},
-      act = #{act,jdbcType=VARCHAR},
+      controller = #{controller,jdbcType=VARCHAR},
+      action = #{action,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
       visible = #{visible,jdbcType=BIT},
       parent_id = #{parentId,jdbcType=SMALLINT},

@@ -28,35 +28,35 @@
 <div class="layui-form-item">
     <label class="layui-form-label">作者</label>
     <div class="layui-input-inline">
-      <input type="text" name="author" value="${article.author!}" placeholder="请输入广告名称"  autocomplete="off" class="layui-input">
+      <input type="text" name="author" value="${article.author!}" placeholder="请输入作者姓名"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
 <div class="layui-form-item">
     <label class="layui-form-label">作者Eamil</label>
     <div class="layui-input-inline">
-      <input type="text" name="authorEmail" value="${article.authorEmail!}" required lay-verify="required" placeholder="请输入访问路径"  autocomplete="off" class="layui-input">
+      <input type="text" name="authorEmail" value="${article.authorEmail!}" required lay-verify="required" placeholder="请输入作者Email"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">关键字</label>
     <div class="layui-input-inline">
-      <input type="text" name="keywords" value="${article.keywords!}" placeholder="请输入投放时间"  autocomplete="off" class="layui-input">
+      <input type="text" name="keywords" value="${article.keywords!}" placeholder="请输入文章关键字"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">添加时间</label>
     <div class="layui-input-inline">
-      <input type="text" name="addTime" value="${article.addTime?string('yyyy.MM.dd HH:mm:ss')}" placeholder="请输入结束时间"  autocomplete="off" class="layui-input">
+      <input type="text" name="addTime" value="${article.addTime?string('yyyy.MM.dd HH:mm:ss')}" placeholder="请输入添加时间"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">发行时间</label>
     <div class="layui-input-inline">
-      <input type="text" name="publishTime" value="${article.publishTime?string('yyyy.MM.dd HH:mm:ss')}" placeholder="请输入结束时间"  autocomplete="off" class="layui-input">
+      <input type="text" name="publishTime" value="${article.publishTime?string('yyyy.MM.dd HH:mm:ss')}" placeholder="请输入发布时间"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>

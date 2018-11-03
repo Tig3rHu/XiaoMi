@@ -11,6 +11,8 @@
   <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
 <body class="layui-layout-body">
+     <h1 align="center">商品活动管理</h1>
+    <hr class="layui-bg-green">
     <table class="layui-table" lay-filter="demo">
                 <thead>
                 <tr>
@@ -30,8 +32,8 @@
                 </tr>
                 
                 </thead>
-                 <a id="add" class="layui-btn layui-btn-xs" href="${base}/goodsActivity/toedit">添加文章</a>
-                         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">选中删除</a>
+                 <a id="add" class="layui-btn layui-btn-radius" href="${base}/goodsActivity/toedit"><i class="layui-icon">&#xe608;</i>新增活动</a>
+                         <a class="layui-btn layui-btn-xs layui-btn-danger layui-btn-radius" lay-event="del">选中删除</a>
             
                 <tbody>                 
                 <#list goodsActivitys as goodsActivitys>

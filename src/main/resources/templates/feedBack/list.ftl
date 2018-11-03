@@ -28,8 +28,8 @@
                 </tr>
                 
                 </thead>
-                 <a id="add" class="layui-btn layui-btn-xs" href="${base}/feedBack/toedit">添加文章</a>
-                         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">选中删除</a>
+                 <a id="add" class="layui-btn layui-btn-radius" href="${base}/feedBack/toedit"><i class="layui-icon">&#xe608;</i>添加留言</a>
+                         <a class="layui-btn layui-btn-xs layui-btn-danger layui-btn-radius" lay-event="del">选中删除</a>
             
                 <tbody>                 
                 <#list feedBacks as feedBack>

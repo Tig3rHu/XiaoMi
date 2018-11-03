@@ -13,6 +13,7 @@
 <body class="layui-layout-body">
     <table class="layui-table" lay-filter="demo">
                 <thead>
+                <tr><th colspan="12"><h3>文章管理</h3></th></tr>
                 <tr>
                     <th lay-data="{checkbox:true}"></th>
                     <th lay-data="{field:'1', width:100}">文章id</th>
@@ -30,8 +31,8 @@
                 </tr>
                 
                 </thead>
-                 <a id="add" class="layui-btn layui-btn-xs" href="${base}/article/toedit">添加文章</a>
-                         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">选中删除</a>
+                 <a id="add" class="layui-btn layui-btn-radius" href="${base}/article/toedit"><i class="layui-icon">&#xe608;</i>添加文章</a>
+                         <a class="layui-btn layui-btn-danger layui-btn-radius" lay-event="del">选中删除</a>
             
                 <tbody>
                   

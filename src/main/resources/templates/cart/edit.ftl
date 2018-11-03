@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="${base}/static/js/layui/css/layui.css">
 </head>
 <body class="layui-layout-body">
-<form action="${base}/ad/edit" class="layui-form" method="post">
+<form action="${base}/cart/edit" class="layui-form" method="post">
      
        <input type="hidden" name="adId" value="${adById.adId!}">  
     

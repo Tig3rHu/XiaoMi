@@ -56,7 +56,9 @@ dependencies {
     compile group: 'com.github.pagehelper', name: 'pagehelper', version: '4.1.6'   
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-freemarker
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version: '2.0.1.RELEASE'
-    
+    compile group: 'org.apache.shiro', name: 'shiro-spring', version: '1.4.0'
+	compile group: 'org.apache.shiro', name: 'shiro-ehcache', version: '1.3.2'
+	
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
     

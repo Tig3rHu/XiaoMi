@@ -7,14 +7,18 @@
 */
 package com.wuyou.entity;
 
+import java.util.List;
+
 /**
  * @author 吴优
  * desciption:
- * other:
+ * other:购物车包装类
  * @date 2018年10月15日 
  */
 public class CartVo extends Cart{
-   
+    //商品
+	private List<Goods> goods;
+	
 	private String name;
 
 	public String getName() {

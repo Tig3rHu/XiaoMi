@@ -13,6 +13,7 @@
 <body class="layui-layout-body">
     <table class="layui-table" lay-filter="demo">
                 <thead>
+                <tr><th colspan="26"><h3>商品管理</h3></th></tr>
                 <tr>
                     <th lay-data="{checkbox:true}"></th>
                     <th lay-data="{field:'1', width:100}">商品ID</th>
@@ -29,26 +30,30 @@
                     <th lay-data="{field:'13', width:180}">本店价</th>
                     <th lay-data="{field:'14', width:180}">商品成本价</th>
                     <th lay-data="{field:'15', width:180}">价格阶梯</th>
-                    <th lay-data="{field:'15', width:180}">商品关键词</th>
-                    <th lay-data="{field:'15', width:180}">商品简单描述</th>
-                    <th lay-data="{field:'15', width:180}">商品详细描述</th>
-                    <th lay-data="{field:'15', width:180}">商品上传原始图</th>
-                   <th lay-data="{field:'15', width:180}">是否上架</th>
-                   <th lay-data="{field:'15', width:180}">是否包邮</th>
-                   <th lay-data="{field:'15', width:180}">上架时间</th>
-                   <th lay-data="{field:'15', width:180}">是否新品</th>
-                   <th lay-data="{field:'15', width:180}">是否热卖</th>
-                   <th lay-data="{field:'15', width:180}">最后更新时间</th>
-                    <th lay-data="{field:'16', width:130}">
+                    <th lay-data="{field:'16', width:180}">商品关键词</th>
+                    <th lay-data="{field:'17', width:180}">商品简单描述</th>
+                    <th lay-data="{field:'18', width:180}">商品详细描述</th>
+                    <th lay-data="{field:'19', width:180}">商品上传原始图</th>
+                   <th lay-data="{field:'20', width:180}">是否上架</th>
+                   <th lay-data="{field:'21', width:180}">是否包邮</th>
+                   <th lay-data="{field:'22', width:180}">上架时间</th>
+                   <th lay-data="{field:'23', width:180}">是否新品</th>
+                   <th lay-data="{field:'24', width:180}">是否热卖</th>
+                   <th lay-data="{field:'25', width:180}">最后更新时间</th>
+                    <th lay-data="{field:'26', width:130}">
                         </th>
                 </tr>
                 
                 </thead>
-                 <a id="add" class="layui-btn layui-btn-xs" href="${base}/goods/toedit">添加商品</a>
-                         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">选中删除</a>
+                 <a id="add" class="layui-btn layui-btn-radius" href="${base}/goods/toedit">
+                                <i class="layui-icon">&#xe608;</i> 添加添加商品
+                 </a>
+                         <a class="layui-btn layui-btn-radius layui-btn-xs layui-btn-danger" lay-event="del">选中删除</a>
             
-                <tbody>                 
+                <tbody>  
+                              
                 <#list goods as good>
+                    
                    <tr>
                       <td lay-data="{checkbox:true}"></td>
                       <td>${good.goodsId!}</td>

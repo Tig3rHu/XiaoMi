@@ -105,7 +105,7 @@
       distinct
     </if>
     'true' as QUERYID,
-    <include refid="Base_Column_List" />
+    id, name, logo, url, sort, cat_name, parent_cat_id, cat_id, is_hot
     from brand
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -116,9 +116,7 @@
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="ResultMapWithBLOBs">
     select 
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
+    id, name, logo, url, sort, cat_name, parent_cat_id, cat_id, is_hot
     from brand
     where id = #{id,jdbcType=SMALLINT}
   </select>

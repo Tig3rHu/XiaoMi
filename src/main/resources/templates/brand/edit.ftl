@@ -53,13 +53,7 @@
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
-    <div class="layui-form-item">
-    <label class="layui-form-label">是否推荐</label>
-    <div class="layui-input-inline">
-      <input type="text" name="isHot" value="${brands.isHot?string("yes","no")}"  placeholder="true为推荐"  autocomplete="off" class="layui-input">
-    </div>
-    <div class="layui-form-mid layui-word-aux"></div>
-  </div>
+   
   <div class="layui-form-item">
     <div class="layui-input-block">
       <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>

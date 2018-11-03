@@ -24,6 +24,8 @@ public interface AdminMapper {
     List<AdminWithBLOBs> selectByExampleWithBLOBs(AdminExample example);
 
     List<Admin> selectByExample(AdminExample example);
+    
+    Admin findAdminByUserName(String userName);
 
     AdminWithBLOBs selectByPrimaryKey(Short adminId);
 

@@ -88,20 +88,7 @@
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">是否推荐</label>
-    <div class="layui-input-inline">
-        <input type="text" name="recommended" value="${groupBuy.recommended?string("true","false")!}"  placeholder="是否推荐 0.未推荐 1.已推荐"  autocomplete="off" class="layui-input">
-    </div>
-    <div class="layui-form-mid layui-word-aux"></div>
-  </div>
-  <div class="layui-form-item">
-    <label class="layui-form-label">是否结束</label>
-    <div class="layui-input-inline">
-        <input type="text" name="isEnd" value="${groupBuy.isEnd?string("true","false")!}"  placeholder="是否结束 1 结束  0 没结束"  autocomplete="off" class="layui-input">
-    </div>
-    <div class="layui-form-mid layui-word-aux"></div>
-  </div>
+  
   <div class="layui-form-item">
     <div class="layui-input-block">
       <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>

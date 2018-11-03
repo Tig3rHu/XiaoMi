@@ -15,20 +15,20 @@
     <div class="layui-form-item">
     <label class="layui-form-label">商品名称</label>
     <div class="layui-input-inline">
-      <input type="text" name="goodsName" value="${goods.goodsName!}" required  lay-verify="required" placeholder="优惠券名称" autocomplete="off" class="layui-input">
+      <input type="text" name="goodsName" value="${goods.goodsName!}" required  lay-verify="required" placeholder="商品名称" autocomplete="off" class="layui-input">
     </div>    
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">商品分类名称</label>
     <div class="layui-input-inline">
-      <input type="text" name="catName" value="${goods.catName!}"  required lay-verify="required" placeholder="发放类型 0下单赠送1 指定发放 2 免费领取 3线下发放" autocomplete="off" class="layui-input">
+      <input type="text" name="catName" value="${goods.catName!}"  required lay-verify="required" placeholder="商品分类名称" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
 <div class="layui-form-item">
     <label class="layui-form-label">商品编号</label>
     <div class="layui-input-inline">
-      <input type="text" name="goodsSn" value="${goods.goodsSn!}" required lay-verify="required" placeholder="0.00"  autocomplete="off" class="layui-input">
+      <input type="text" name="goodsSn" value="${goods.goodsSn!}" required lay-verify="required" placeholder="商品编号"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
@@ -42,87 +42,87 @@
   <div class="layui-form-item">
     <label class="layui-form-label">品牌ID</label>
     <div class="layui-input-inline">
-      <input type="text" name="brandId" value="${goods.brandId!}" placeholder="发放数量"  autocomplete="off" class="layui-input">
+      <input type="text" name="brandId" value="${goods.brandId!}" placeholder="品牌ID"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">库存数量</label>
     <div class="layui-input-inline">
-      <input type="text" name="storeCount" value="${goods.storeCount!}" placeholder="已领取数量"  autocomplete="off" class="layui-input">
+      <input type="text" name="storeCount" value="${goods.storeCount!}" placeholder="库存数量"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">商品评论数</label>
     <div class="layui-input-inline">
-      <input type="text" name="commentCount" value="${goods.commentCount!}"  placeholder="已使用数量"  autocomplete="off" class="layui-input">
+      <input type="text" name="commentCount" value="${goods.commentCount!}"  placeholder="商品评论数"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">商品重量</label>
     <div class="layui-input-inline">
-      <input type="text" name="weight" value="${goods.weight!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+      <input type="text" name="weight" value="${goods.weight!}"  placeholder="商品重量"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">市场价</label>
     <div class="layui-input-inline">
-      <input type="text" name="marketPrice" value="${goods.marketPrice!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+      <input type="text" name="marketPrice" value="${goods.marketPrice!}"  placeholder="市场价"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
    <div class="layui-form-item">
     <label class="layui-form-label">本店价</label>
     <div class="layui-input-inline">
-      <input type="text" name="shopPrice" value="${goods.shopPrice!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+      <input type="text" name="shopPrice" value="${goods.shopPrice!}"  placeholder="本店价"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
    <div class="layui-form-item">
     <label class="layui-form-label">商品成本价</label>
     <div class="layui-input-inline">
-      <input type="text" name="costPrice" value="${goods.costPrice!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+      <input type="text" name="costPrice" value="${goods.costPrice!}"  placeholder="商品成本价"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
    <div class="layui-form-item">
     <label class="layui-form-label">价格阶梯</label>
     <div class="layui-input-inline">
-        <input type="text" name="priceLadder" value="${goods.priceLadder!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+        <input type="text" name="priceLadder" value="${goods.priceLadder!}"  placeholder="价格阶梯"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
    <div class="layui-form-item">
     <label class="layui-form-label">商品关键词</label>
     <div class="layui-input-inline">
-        <input type="text" name="keyWords" value="${goods.keyWords!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+        <input type="text" name="keyWords" value="${goods.keyWords!}"  placeholder="商品关键词"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
    <div class="layui-form-item">
     <label class="layui-form-label">商品简单描述</label>
     <div class="layui-input-inline">
-        <input type="text" name="goodsRemark" value="${goods.goodsRemark!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+        <input type="text" name="goodsRemark" value="${goods.goodsRemark!}"  placeholder="商品简单描述"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
    <div class="layui-form-item">
     <label class="layui-form-label">商品上传图像</label>
     <div class="layui-input-inline">
-        <input type="text" name="originalImg" value="${goods.originalImg!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+        <input type="text" name="originalImg" value="${goods.originalImg!}"  placeholder="商品上传图像"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
-   <div class="layui-form-item">
+  <!--  <div class="layui-form-item">
     <label class="layui-form-label">是否上架</label>
     <div class="layui-input-inline">
         <input type="text" name="isOnSale" value="${goods.isOnSale?string("true","false")!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
-  </div>
+  </div> -->
    <div class="layui-form-item">
     <label class="layui-form-label">是否包邮</label>
     <div class="layui-input-inline">

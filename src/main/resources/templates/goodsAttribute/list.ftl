@@ -27,8 +27,8 @@
                 </tr>
                 
                 </thead>
-                 <a id="add" class="layui-btn layui-btn-xs" href="${base}/goodsAttribute/toedit">添加商品属性</a>
-                         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">选中删除</a>
+                 <a id="add" class="layui-btn layui-btn-radius" href="${base}/goodsAttribute/toedit"><i class="layui-icon">&#xe608;</i>添加商品属性</a>
+                         <a class="layui-btn layui-btn-danger layui-btn-radius layui-btn-xslayui-btn-xs" lay-event="del">选中删除</a>
             
                 <tbody>                 
                 <#list goodAttributes as goodAttribute>

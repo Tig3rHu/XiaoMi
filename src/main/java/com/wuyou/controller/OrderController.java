@@ -53,6 +53,8 @@ public class OrderController {
 			order.setConfirmTime(new Date());
 			order.setPayTime(new Date());
 			order.setShippingTime(new Date());
+			order.setShippingStatus(true);
+			order.setPayStatus(true);
 		}
 		model.addAttribute("order", order);
 		return "/order/edit";

@@ -127,6 +127,11 @@
     from admin
     where admin_id = #{adminId,jdbcType=SMALLINT}
   </select>
+  <select id="findAdminByUserName" parameterType="string" resultMap="BaseResultMap">
+  select * from admin where user_name=#{userName,jdbcType=VARCHAR};
+  
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
     delete from admin
     where admin_id = #{adminId,jdbcType=SMALLINT}

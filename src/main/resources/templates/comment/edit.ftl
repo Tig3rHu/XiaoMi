@@ -15,41 +15,41 @@
     <div class="layui-form-item">
     <label class="layui-form-label">商品名称</label>
     <div class="layui-input-inline">
-      <input type="text" name="goodsName" value="${comments.goodsName!}" required  lay-verify="required" placeholder="请输入菜单名称" autocomplete="off" class="layui-input">
+      <input type="text" name="goodsName" value="${comments.goodsName!}" required  lay-verify="required" placeholder="商品名称" autocomplete="off" class="layui-input">
     </div>    
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">邮箱</label>
     <div class="layui-input-inline">
-      <input type="text" name="email" value="${comments.email!}"  required lay-verify="required" placeholder="请输入父编号" autocomplete="off" class="layui-input">
+      <input type="text" name="email" value="${comments.email!}"  required lay-verify="required" placeholder="请输入邮箱" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
 <div class="layui-form-item">
     <label class="layui-form-label">用户名</label>
     <div class="layui-input-inline">
-      <input type="text" name="username" value="${comments.username!}" placeholder="请输入广告名称"  autocomplete="off" class="layui-input">
+      <input type="text" name="username" value="${comments.username!}" placeholder="请输入用户名"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
 <div class="layui-form-item">
     <label class="layui-form-label">评论内容</label>
     <div class="layui-input-inline">
-      <input type="text" name="content" value="${comments.content!}" required lay-verify="required" placeholder="请输入访问路径"  autocomplete="off" class="layui-input">
+      <input type="text" name="content" value="${comments.content!}" required lay-verify="required" placeholder="请输入评论内容"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">评论时间</label>
     <div class="layui-input-inline">
-      <input type="text" name="addTime" value="${comments.addTime?string('yyyy.MM.dd HH:mm:ss')}" placeholder="请输入投放时间"  autocomplete="off" class="layui-input">
+      <input type="text" name="addTime" value="${comments.addTime?string('yyyy.MM.dd HH:mm:ss')}" placeholder="请输入评论时间"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">订单编号</label>
     <div class="layui-input-inline">
-      <input type="text" name="orderId" value="${comments.orderId!}" placeholder="请输入结束时间"  autocomplete="off" class="layui-input">
+      <input type="text" name="orderId" value="${comments.orderId!}" placeholder="请输入订单编号"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>

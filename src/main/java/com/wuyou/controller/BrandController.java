@@ -42,8 +42,8 @@ public class BrandController {
     	return "brand/list";
     }
 	@RequestMapping("/toedit")
-	public String toedit(Model model,Brand brand){
-		if(brand.getId()!=null&&brand.getId()>0){
+	public String toedit(Model model,Brand brand,Short id){
+		if(id!=null&&id>0){
 			brand=brandService.findBrandById(brand.getId());
 		    model.addAttribute("brands", brand);
 		}else{

@@ -15,48 +15,41 @@
     <div class="layui-form-item">
     <label class="layui-form-label">类别名称</label>
     <div class="layui-input-inline">
-      <input type="text" name="catName" value="${articleCats.catName!}" required  lay-verify="required" placeholder="请输入菜单名称" autocomplete="off" class="layui-input">
+      <input type="text" name="catName" value="${articleCats.catName!}" required  lay-verify="required" placeholder="请输入类别名称" autocomplete="off" class="layui-input">
     </div>    
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">类别类型</label>
     <div class="layui-input-inline">
-      <input type="text" name="catType" value="${articleCats.catType!}"  required lay-verify="required" placeholder="请输入父编号" autocomplete="off" class="layui-input">
+      <input type="text" name="catType" value="${articleCats.catType!}"  required lay-verify="required" placeholder="请输入类型" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
 <div class="layui-form-item">
     <label class="layui-form-label">父级ID</label>
     <div class="layui-input-inline">
-      <input type="text" name="parentId" value="${articleCats.parentId!}" placeholder="请输入广告名称"  autocomplete="off" class="layui-input">
-    </div>
-    <div class="layui-form-mid layui-word-aux"></div>
-  </div>
-<div class="layui-form-item">
-    <label class="layui-form-label">是否导航显示</label>
-    <div class="layui-input-inline">
-      <input type="text" name="showInNav" value="${articleCats.showInNav?string("true","false")}" lay-verify="required" placeholder="请输入访问路径"  autocomplete="off" class="layui-input">
+      <input type="text" name="parentId" value="${articleCats.parentId!}" placeholder="请输入父级ID"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">关键字</label>
     <div class="layui-input-inline">
-      <input type="text" name="keywords" value="${articleCats.keywords!}" placeholder="请输入投放时间"  autocomplete="off" class="layui-input">
+      <input type="text" name="keywords" value="${articleCats.keywords!}" placeholder="请输入关键字"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">排序</label>
     <div class="layui-input-inline">
-      <input type="text" name="sortOrder" value="${articleCats.sortOrder!}" placeholder="请输入结束时间"  autocomplete="off" class="layui-input">
+      <input type="text" name="sortOrder" value="${articleCats.sortOrder!}" placeholder="请输入排序"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">分类描述</label>
     <div class="layui-input-inline">
-      <input type="text" name="catDesc" value="${articleCats.catDesc!}" placeholder="请输入结束时间"  autocomplete="off" class="layui-input">
+      <input type="text" name="catDesc" value="${articleCats.catDesc!}" placeholder="请输入分类描述"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>

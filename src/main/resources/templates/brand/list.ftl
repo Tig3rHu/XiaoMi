@@ -14,6 +14,7 @@
     <table class="layui-table" lay-filter="demo">
                 <thead>
                 <tr>
+                    <tr><th colspan="26"><h3>品牌管理</h3></th></tr>
                     <th lay-data="{checkbox:true}"></th>
                     <th lay-data="{field:'1', width:100}">ID</th>
                     <th lay-data="{field:'2', width:150}">品牌名称</th>
@@ -29,8 +30,8 @@
                 </tr>
                 
                 </thead>
-                 <a id="add" class="layui-btn layui-btn-xs" href="${base}/brand/toedit">添加文章</a>
-                         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">选中删除</a>
+                 <a id="add" class="layui-btn layui-btn-radius" href="${base}/brand/toedit"><i class="layui-icon">&#xe608;</i>添加品牌</a>
+                         <a class="layui-btn layui-btn-danger layui-btn-radius" lay-event="del">选中删除</a>
             
                 <tbody>                 
                 <#list brands as brand>

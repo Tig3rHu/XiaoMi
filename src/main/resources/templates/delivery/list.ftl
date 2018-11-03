@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>优惠券管理</title>
+  <title>发货单管理</title>
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -37,8 +37,8 @@
                 </tr>
                 
                 </thead>
-                 <a id="add" class="layui-btn layui-btn-xs" href="${base}/delivery/toedit">添加文章</a>
-                         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">选中删除</a>
+                 <a id="add" class="layui-btn layui-btn-radius" href="${base}/delivery/toedit"><i class="layui-icon">&#xe608;</i>增加发货单</a>
+                         <a class="layui-btn layui-btn-danger layui-btn-radius" lay-event="del">选中删除</a>
             
                 <tbody>                 
                 <#list deliverys as deliverys>

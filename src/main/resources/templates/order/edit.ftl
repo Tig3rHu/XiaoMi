@@ -15,20 +15,20 @@
     <div class="layui-form-item">
     <label class="layui-form-label">订单编号</label>
     <div class="layui-input-inline">
-      <input type="text" name="orderSn" value="${order.orderSn!}" required  lay-verify="required" placeholder="优惠券名称" autocomplete="off" class="layui-input">
+      <input type="text" name="orderSn" value="${order.orderSn!}" required  lay-verify="required" placeholder="订单编号" autocomplete="off" class="layui-input">
     </div>    
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">订单状态</label>
     <div class="layui-input-inline">
-      <input type="text" name="orderStatus" value="${order.orderStatus!}"  required lay-verify="required" placeholder="发放类型 0下单赠送1 指定发放 2 免费领取 3线下发放" autocomplete="off" class="layui-input">
+      <input type="text" name="orderStatus" value="${order.orderStatus!}"  required lay-verify="required" placeholder="订单状态true发货false未发货" autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
 <div class="layui-form-item">
     <label class="layui-form-label">发货状态</label>
     <div class="layui-input-inline">
-      <input type="text" name="shippingStatus" value="${order.shippingStatus?string("true","false")!}" required lay-verify="required" placeholder="0.00"  autocomplete="off" class="layui-input">
+      <input type="text" name="shippingStatus" value="${order.shippingStatus?string("true","false")!}" required lay-verify="required" placeholder="发货状态"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
@@ -56,70 +56,70 @@
   <div class="layui-form-item">
     <label class="layui-form-label">邮政编码</label>
     <div class="layui-input-inline">
-      <input type="text" name="zipcode" value="${order.zipcode!}"  placeholder="已使用数量"  autocomplete="off" class="layui-input">
+      <input type="text" name="zipcode" value="${order.zipcode!}"  placeholder="邮政编码"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">手机</label>
     <div class="layui-input-inline">
-      <input type="text" name="mobile" value="${order.mobile!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+      <input type="text" name="mobile" value="${order.mobile!}"  placeholder="手机号"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">邮箱</label>
     <div class="layui-input-inline">
-      <input type="text" name="email" value="${order.email!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+      <input type="text" name="email" value="${order.email!}"  placeholder="邮箱"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
    <div class="layui-form-item">
     <label class="layui-form-label">物流code</label>
     <div class="layui-input-inline">
-      <input type="text" name="shippingCode" value="${order.shippingCode!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+      <input type="text" name="shippingCode" value="${order.shippingCode!}"  placeholder="物流代码"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
    <div class="layui-form-item">
     <label class="layui-form-label">物流名称</label>
     <div class="layui-input-inline">
-      <input type="text" name="shippingName" value="${order.shippingName!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+      <input type="text" name="shippingName" value="${order.shippingName!}"  placeholder="物流名称"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
    <div class="layui-form-item">
     <label class="layui-form-label">发票抬头</label>
     <div class="layui-input-inline">
-        <input type="text" name="invoiceTitle" value="${order.invoiceTitle!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+        <input type="text" name="invoiceTitle" value="${order.invoiceTitle!}"  placeholder="发票抬头"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">商品总价</label>
     <div class="layui-input-inline">
-        <input type="text" name="goodsPrice" value="${order.goodsPrice!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+        <input type="text" name="goodsPrice" value="${order.goodsPrice!}"  placeholder="商品总价"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">邮费</label>
     <div class="layui-input-inline">
-        <input type="text" name="shippingPrice" value="${order.shippingPrice!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+        <input type="text" name="shippingPrice" value="${order.shippingPrice!}"  placeholder="邮费0.00"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">优惠券抵扣</label>
     <div class="layui-input-inline">
-        <input type="text" name="couponPrice" value="${order.couponPrice!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+        <input type="text" name="couponPrice" value="${order.couponPrice!}"  placeholder="优惠券抵扣"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">使用积分</label>
     <div class="layui-input-inline">
-        <input type="text" name="integral" value="${order.integral!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+        <input type="text" name="integral" value="${order.integral!}"  placeholder="使用积分"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
@@ -127,21 +127,21 @@
   <div class="layui-form-item">
     <label class="layui-form-label">积分抵用现金</label>
     <div class="layui-input-inline">
-        <input type="text" name="integralMoney" value="${order.integralMoney!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+        <input type="text" name="integralMoney" value="${order.integralMoney!}"  placeholder=""  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">应付款金额</label>
     <div class="layui-input-inline">
-        <input type="text" name="orderAmount" value="${order.orderAmount!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+        <input type="text" name="orderAmount" value="${order.orderAmount!}"  placeholder=""  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">订单总价</label>
     <div class="layui-input-inline">
-        <input type="text" name="totalAmount" value="${order.totalAmount!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+        <input type="text" name="totalAmount" value="${order.totalAmount!}"  placeholder=""  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>

@@ -33,8 +33,8 @@
                 </tr>
                 
                 </thead>
-                 <a id="add" class="layui-btn layui-btn-xs" href="${base}/coupon/toedit">添加文章</a>
-                         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">选中删除</a>
+                 <a id="add" class="layui-btn layui-btn-radius" href="${base}/coupon/toedit">添加文章</a>
+                         <a class="layui-btn layui-btn-danger layui-btn-radius layui-btn-xs" lay-event="del">选中删除</a>
             
                 <tbody>                 
                 <#list coupons as coupon>

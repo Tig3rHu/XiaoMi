@@ -90,11 +90,11 @@ body {
 		<div class="layui-container layui-main">
 			<div class="layui-main-login">
 				
-				<form class="layui-form" action="${base}/XiaoMi/admin/login"
+				<form class="layui-form" action="${base}/admin/loginin"
 					method="post">
 					<div class="layui-form-item">
 
-						<input type="text" name="loginname" required lay-verify="required"
+						<input type="text" name="userName" required lay-verify="required"
 							placeholder="请输入登录名称" autocomplete="off" class="layui-input">
 
 					</div>

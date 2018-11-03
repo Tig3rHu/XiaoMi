@@ -7,6 +7,8 @@
 */
 package com.wuyou.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+
 
 
 
@@ -67,6 +71,8 @@ public class AdController {
 			model.addAttribute("adById", ad);
 		}else{
 			ad=new Ad();
+			ad.setStartTime(new Date());
+			ad.setEndTime(new Date());
 			model.addAttribute("adById", ad);
 		}
 				
@@ -74,7 +80,15 @@ public class AdController {
 		return "/ad/edit";
 	}
 	@RequestMapping("/edit")
-	public String edit(Ad adById,BindingResult bindingResult,Integer adId) throws Exception{		
+	public String edit(Ad adById,BindingResult bindingResult,Integer adId
+			,String startTime,String endTime
+			) throws Exception{		
+		if(startTime!=null&&endTime!=null){
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			adById.setStartTime(sdf.parse(startTime));
+			adById.setEndTime(sdf.parse(endTime));
+		}
+		
 		if(adById.getAdId()!=null&&adById.getAdId()>0){			
 			adService.updateAdById(adById);
 		}

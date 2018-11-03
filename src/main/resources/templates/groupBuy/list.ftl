@@ -9,6 +9,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="${base}/static/js/layui/css/layui.css">
   <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
+  <style type="text/css">
+     body{
+       padding-topping:2px;
+     }
+  </style>
 </head>
 <body class="layui-layout-body">
     <table class="layui-table" lay-filter="demo">
@@ -34,8 +39,9 @@
                 </tr>
                 
                 </thead>
-                 <a id="add" class="layui-btn layui-btn-xs" href="${base}/groupBuy/toedit">添加文章</a>
-                         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">选中删除</a>
+                 <a id="add" class="layui-btn layui-btn-radius" href="${base}/groupBuy/toedit"><i class="layui-icon">&#xe608;</i>
+                                           新增团购</a>
+                         <a class="layui-btn layui-btn-danger layui-btn-radius" lay-event="del">选中删除</a>
             
                 <tbody>                 
                 <#list groupBuys as groupBuy>

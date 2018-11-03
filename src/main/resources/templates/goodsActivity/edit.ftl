@@ -49,14 +49,14 @@
   <div class="layui-form-item">
     <label class="layui-form-label">活动开始时间</label>
     <div class="layui-input-inline">
-      <input type="text" name="startTime" value="${goodsActivitys.startTime?string('yyyy-MM-dd HH:mm:ss')!}" placeholder="时间yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+      <input id="startTime" type="text" name="startTime" value="${goodsActivitys.startTime?string('yyyy-MM-dd HH:mm:ss')!}" placeholder="时间yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input time">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">活动结束时间</label>
     <div class="layui-input-inline">
-      <input type="text" name="endTime" value="${goodsActivitys.endTime?string('yyyy-MM-dd HH:mm:ss')}"  placeholder="时间yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+      <input id="endTime" type="text" name="endTime" value="${goodsActivitys.endTime?string('yyyy-MM-dd HH:mm:ss')}"  placeholder="时间yyyy-MM-dd HH:mm:ss" class="layui-input time">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>
@@ -86,10 +86,27 @@
 <script src="${base}/static/js/layui/layui.js"></script>
 <script>
 //JavaScript代码区域
-layui.use(['element','form'], function(){
+layui.use(['element','form','laydate','jquery'], function(){
   var element = layui.element;
   var form=layui.form;
-  
+  var laydate=layui.laydate;
+  var $=layui.$;
+  $(".time").each(function(){
+      laydate.render({
+        elem: this, //指定元素  表示当前的元素
+        type: 'datetime', //date日期  time时间  year年  month月份  
+        theme: '#009688'  //主题  颜色改变
+      });
+  })
+ /*  laydate.render({
+	  elem:'#startTime',
+      type:'datetime'
+	  })
+   laydate.render({
+	  elem:'#endTime',
+      type:'datetime'
+	  }) */
+	  
 }); 
 </script>
 </body>

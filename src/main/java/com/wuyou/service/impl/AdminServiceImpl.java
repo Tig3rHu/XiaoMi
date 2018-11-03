@@ -104,4 +104,19 @@ public class AdminServiceImpl implements AdminService {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.AdminService#findAdminByUserName(java.lang.String)
+	 */
+	@Override
+	public Admin findAdminByUserName(String userName) {
+		// TODO Auto-generated method stub
+		AdminExample adminExample=new AdminExample();
+		AdminExample.Criteria criteria=adminExample.createCriteria();
+		criteria.andUserNameEqualTo(userName);
+		Admin adminMessage=adminMapper.findAdminByUserName(userName);
+		
+		
+		return adminMessage;
+	}
+
 }

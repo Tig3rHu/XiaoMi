@@ -7,6 +7,9 @@
 */
 package com.wuyou.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +55,8 @@ public class ArticleController{
 		    model.addAttribute("article", article);
 		}else{
 			article=new Article();
+			article.setAddTime(new Date());
+			article.setPublishTime(new Date());
 			model.addAttribute("article", article);
 		}
 		
@@ -59,8 +64,16 @@ public class ArticleController{
 		return "/article/edit";
 	}
 
-	@RequestMapping()
-	public String edit(ArticleWithBLOBs article,BindingResult bindingResult,Integer articleId) {
+	@RequestMapping("/edit")
+	public String edit(ArticleWithBLOBs article,BindingResult bindingResult,Integer articleId,
+			String addTime,String publishTime
+			) throws ParseException {
+		if(addTime!=null&&publishTime!=null){
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			article.setAddTime(sdf.parse(addTime));
+			article.setPublishTime(sdf.parse(publishTime));
+		}
+		
 		// TODO Auto-generated method stub
 		if(article.getArticleId()!=null&&article.getArticleId()>0){
 			articleService.updateByPrimaryKey(article);

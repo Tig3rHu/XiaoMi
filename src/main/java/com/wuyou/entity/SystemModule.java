@@ -7,9 +7,9 @@ public class SystemModule {
 
     private Boolean level;
 
-    private String ctl;
+    private String controller;
 
-    private String act;
+    private String action;
 
     private String title;
 
@@ -45,20 +45,20 @@ public class SystemModule {
         this.level = level;
     }
 
-    public String getCtl() {
-        return ctl;
+    public String getController() {
+        return controller;
     }
 
-    public void setCtl(String ctl) {
-        this.ctl = ctl;
+    public void setController(String controller) {
+        this.controller = controller;
     }
 
-    public String getAct() {
-        return act;
+    public String getAction() {
+        return action;
     }
 
-    public void setAct(String act) {
-        this.act = act;
+    public void setAction(String action) {
+        this.action = action;
     }
 
     public String getTitle() {

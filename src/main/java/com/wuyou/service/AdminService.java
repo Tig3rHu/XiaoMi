@@ -81,4 +81,8 @@ public interface AdminService {
      * @throws Exception
      */
 	public Admin login(String userName ,String password) throws Exception;
+	
+	public Admin findAdminByUserName(String userName);
+	
+	
 }

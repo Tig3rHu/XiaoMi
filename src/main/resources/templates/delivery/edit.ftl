@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>优惠券编辑</title>
+  <title>发货单编辑</title>
   <link rel="stylesheet" href="${base}/static/js/layui/css/layui.css">
 </head>
 <body >
