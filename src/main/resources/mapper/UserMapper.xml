@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
     <!-- 根据id查找用户信息 -->
    <select id="findById" parameterType="java.lang.Integer" resultType="com.wuyou.entity.User">
-     select * from Users where id=#{id}  
+     select * from Users where user_id=#{id}  
    </select>
 
 
