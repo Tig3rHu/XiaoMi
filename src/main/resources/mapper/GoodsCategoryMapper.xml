@@ -97,6 +97,9 @@
     from goods_category
     where id = #{id,jdbcType=SMALLINT}
   </select>
+  <select id="selectNameBymobileName" parameterType="String"  resultMap="BaseResultMap">
+      select goods_category.name from goods_category where mobile_name=#{mobileName,jdbcType=VARCHAR};
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
     delete from goods_category
     where id = #{id,jdbcType=SMALLINT}

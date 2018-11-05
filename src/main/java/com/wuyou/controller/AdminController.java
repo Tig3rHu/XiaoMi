@@ -38,7 +38,7 @@ import com.wuyou.service.UserService;
  * other:择日不如撞日
  * @date 2018年9月28日 
  */
-@RestController
+@Controller
 @RequestMapping("/admin")
 public class AdminController {
 	

@@ -5,21 +5,22 @@
  * For more details take a look at the Java Libraries chapter in the Gradle
  * user guide available at https://docs.gradle.org/4.3/userguide/java_library_plugin.html
  */
-buildscript {
-  repositories {
-    mavenCentral()
-  }
+		buildscript {
+		  repositories {
+		    mavenCentral()
+		  }
+		
+		  dependencies {
+		    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE")
+		  }
+		}						
 
-  dependencies {
-    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE")
-  }
-}
-
-
-// Apply the java-library plugin to add support for Java Library
-apply plugin: 'java'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'war'
+		
+		// Apply the java-library plugin to add support for Java Library
+		apply plugin: 'java'
+		apply plugin: 'org.springframework.boot'
+		apply plugin: 'war'
+		
 //apply plugin: 'java'
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -31,33 +32,35 @@ repositories {
 dependencies {
     
      
-    compile 'org.slf4j:slf4j-api:1.7.21'
-    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
-    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.38'  
+   // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+		compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+
+    // mpile 'org.slf4j:slf4j-api:1.7.21'https://mvnrepository.com/artifact/mysql/mysql-connector-java
+   compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.38'  
     // https://mvnrepository.com/artifact/com.alibaba/fastjson
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.47'
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.0.4.RELEASE'
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-tomcat
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.0.4.RELEASE'
+   compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.0.4.RELEASE'
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
-  //  compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.0.4.RELEASE'
+  // compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.0.4.RELEASE'
     // https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
-    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.10'   
+   compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.10'   
     // https://mvnrepository.com/artifact/javax.servlet/jstl
-    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+   compile group: 'javax.servlet', name: 'jstl', version: '1.2'
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.0.4.RELEASE'      
+  compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.0.4.RELEASE'      
     // https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
-    compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.3.2'  
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
-    compile group: 'org.springframework', name: 'spring-jdbc', version: '4.2.3.RELEASE'
+compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.3.2'  
+  compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+  compile group: 'org.springframework', name: 'spring-jdbc', version: '4.2.3.RELEASE'
     // https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper
     compile group: 'com.github.pagehelper', name: 'pagehelper', version: '4.1.6'   
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-freemarker
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-freemarker', version: '2.0.1.RELEASE'
     compile group: 'org.apache.shiro', name: 'shiro-spring', version: '1.4.0'
-	compile group: 'org.apache.shiro', name: 'shiro-ehcache', version: '1.3.2'
+    compile group: 'org.apache.shiro', name: 'shiro-ehcache', version: '1.3.2'
 	
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'

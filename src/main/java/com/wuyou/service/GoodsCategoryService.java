@@ -29,6 +29,8 @@ public interface GoodsCategoryService {
 	int updateByExample(@Param("record") GoodsCategory record, @Param("example") GoodsCategoryExample example);
 
 	List<GoodsCategory> selectByExample(GoodsCategoryExample example);
+	
+	List<GoodsCategory> selectNameBymobileName(String mobileName);
 
     GoodsCategory selectByPrimaryKey(Short id);
     

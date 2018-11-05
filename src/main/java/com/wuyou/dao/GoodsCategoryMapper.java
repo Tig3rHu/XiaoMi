@@ -19,6 +19,8 @@ public interface GoodsCategoryMapper {
     List<GoodsCategory> selectByExample(GoodsCategoryExample example);
 
     GoodsCategory selectByPrimaryKey(Short id);
+    
+    List<GoodsCategory> selectNameBymobileName(String mobileName);
 
     int updateByExampleSelective(@Param("record") GoodsCategory record, @Param("example") GoodsCategoryExample example);
 

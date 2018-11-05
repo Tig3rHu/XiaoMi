@@ -1,0 +1,3012 @@
+卷 software 的文件夹 PATH 列表
+卷序列号为 F44C-2B89
+H:.
+│  .classpath
+│  .gitignore
+│  .project
+│  build.gradle
+│  gradlew
+│  gradlew.bat
+│  list.txt
+│  README.md
+│  settings.gradle
+│  
+├─.git
+│  │  COMMIT_EDITMSG
+│  │  config
+│  │  description
+│  │  FETCH_HEAD
+│  │  GITGUI_MSG
+│  │  HEAD
+│  │  index
+│  │  ORIG_HEAD
+│  │  packed-refs
+│  │  
+│  ├─branches
+│  ├─hooks
+│  │      applypatch-msg.sample
+│  │      commit-msg.sample
+│  │      fsmonitor-watchman.sample
+│  │      post-update.sample
+│  │      pre-applypatch.sample
+│  │      pre-commit.sample
+│  │      pre-push.sample
+│  │      pre-rebase.sample
+│  │      pre-receive.sample
+│  │      prepare-commit-msg.sample
+│  │      update.sample
+│  │      
+│  ├─info
+│  │      exclude
+│  │      refs
+│  │      
+│  ├─logs
+│  │  │  HEAD
+│  │  │  
+│  │  └─refs
+│  │      ├─heads
+│  │      │      master
+│  │      │      
+│  │      └─remotes
+│  │          └─origin
+│  │                  master
+│  │                  
+│  ├─objects
+│  │  ├─00
+│  │  │      58349b2f2eae546a2d3850bedd0dc0df6b5471
+│  │  │      5f7e2dea1ca02a382635c4d75c07829039a4a9
+│  │  │      6d9bad2dd77df01fefc7661c6ae7151c5fd82c
+│  │  │      7b732235ef17dff87d5f099436a4d1334425d7
+│  │  │      
+│  │  ├─01
+│  │  │      89daddc285296b1fa71e1e8757cd0ffe7ab10d
+│  │  │      8b8464bd82de9b57fb57ca0f3e62e8fb6ff28b
+│  │  │      b0ad5890422dcc24be65ae77cf16b94501dadd
+│  │  │      
+│  │  ├─03
+│  │  │      09878784baaa04864949587a2b5fd0e61f14aa
+│  │  │      655fce14bb3a1fe7415b8f656774ae20c56e50
+│  │  │      
+│  │  ├─04
+│  │  │      3a40d8b44be16bfc49f27f35aae40a7e3cecea
+│  │  │      616665fd68f4b33d9c9abef0e124e715bd58f2
+│  │  │      61a22cd2863d0858881239cbf3bdc46c314073
+│  │  │      
+│  │  ├─05
+│  │  │      02d0a5f93d78cb3b8f4ede64702750285bf6f3
+│  │  │      887aae1cb2794f1573dabad7a7745fdc53caaf
+│  │  │      
+│  │  ├─06
+│  │  │      287e8d50d625016adaef761457621c158a21ef
+│  │  │      96053ba389cce538fc38a518fb808bd39e5f5c
+│  │  │      ad1fec511c5b48a78a062c9f9d6f1b1fc88e8e
+│  │  │      d59085232133553f2b138a90d40e85faf68267
+│  │  │      
+│  │  ├─08
+│  │  │      362f651c77f05112063bde7b04197e2853733b
+│  │  │      a590a6ea4b8ae7ff22265e18f74743b1bbe4ef
+│  │  │      c81ab5638068512d6ac211f648c004b9627f92
+│  │  │      
+│  │  ├─09
+│  │  │      f6e454ed65d91d5bb751d667017dbc2eb1ed0b
+│  │  │      
+│  │  ├─0a
+│  │  │      c3ca4bff5e17f58b6b3dd1d54b78734cc0792e
+│  │  │      d74294de30d50fa93334f6a84400deb63142e8
+│  │  │      
+│  │  ├─0b
+│  │  │      4a88322946c1b65e9236657d6f42c71e412a94
+│  │  │      f130f0d930a1fb72ca83265bb504304cb08090
+│  │  │      
+│  │  ├─0c
+│  │  │      49dd0a4810b727b87f948fc2b6fee76403bbf9
+│  │  │      7736b359c489824161417f28410848c88972e3
+│  │  │      8b0a50f686021dd59dbd6c61d212406a8ad3ef
+│  │  │      
+│  │  ├─0d
+│  │  │      176067f7af3b8efa5c77c8e3a654e881effa5b
+│  │  │      22538b1ed680d2aafc3aae0a6e78383d69408d
+│  │  │      7242ebe4cc1e749feff259460468d298bddb0e
+│  │  │      
+│  │  ├─0e
+│  │  │      b1434b4e81d4437098efe06cb4e1ab44a86211
+│  │  │      
+│  │  ├─0f
+│  │  │      065087d4720326776b26c7b9d2482c9e467bca
+│  │  │      48e5dd364aea4bf0f90866cbd1837c76aa3bf7
+│  │  │      98e37305bb3254fda8c9060942ea34844f8792
+│  │  │      
+│  │  ├─10
+│  │  │      2194d3877c15a23ec84266ea58ae14718a2bae
+│  │  │      791617ee305d3f7f2c6fb9372e2d49fef8d562
+│  │  │      d072dbc8e70a0e7984075ebcafc6df1b296b20
+│  │  │      f96b0fa4a65100d2130df2e3c2258f152f2548
+│  │  │      
+│  │  ├─11
+│  │  │      19631c8e565d4e27a145f78156af1a8dda09fe
+│  │  │      89790237fbc12dce06258a61db89c5e04ee601
+│  │  │      
+│  │  ├─12
+│  │  │      29aee9fe5f1e243e4ba699e310dae3f99f82e2
+│  │  │      6bebe2643d491ba384fce09b8b3776a42e94d3
+│  │  │      6c0d71e01df93c3fd7e215830e47b6bbdcf0c2
+│  │  │      
+│  │  ├─13
+│  │  │      154607ca0ba5a513f93d8624c58b1aaec4cf1d
+│  │  │      42b7bd6e61ad033b5655191f7e944f1c023996
+│  │  │      af9a4ce5c3eb89705ef2c975d20294d6242861
+│  │  │      c70b6bf69eb91d649a50ad6797d23fb0d46ab4
+│  │  │      c7e52ba216c1e870f82500a8e9f77e37b928f9
+│  │  │      
+│  │  ├─14
+│  │  │      50a7f34eb07c762ef7471ab33ecb27f7dfab88
+│  │  │      a548ded71da4d914670f25e954e9d9db67c399
+│  │  │      
+│  │  ├─15
+│  │  │      4c4aae377630ba9bac649a46cbec86b79bbb23
+│  │  │      8d35a5e0ad890893d2a2d348e103b55e1f46b2
+│  │  │      b42be0400a401eec38f48d19667c857e0eb711
+│  │  │      
+│  │  ├─16
+│  │  │      0c1e0be86f183c7e8fd756254a59365b8e28c8
+│  │  │      528ffe8c07af811a60f35d2db75b954cd48e08
+│  │  │      a1b6d806f0fb45cc5b0cb6b7c77198b871570a
+│  │  │      ca9703680037ab40cb97bf7fffa7938c34fc9a
+│  │  │      d854f93586b02a9aa27741e6a74b0d9238dc0b
+│  │  │      e5f5c4024167fec690f05c6ef22e0c9e6aa1ca
+│  │  │      
+│  │  ├─17
+│  │  │      c2a86a32609fc55a019e4ef39bd0c3173ae431
+│  │  │      
+│  │  ├─18
+│  │  │      21156af6df8ffb4ca2264991a706f7f489381f
+│  │  │      9ccd73fe0a59afa1136040b8981c4e8d4edf50
+│  │  │      a39c35307a7905ce4f672ce50d85f5f5770dd8
+│  │  │      eaacbb63ba439542b9dc948552f69c14dac938
+│  │  │      
+│  │  ├─19
+│  │  │      1134b053ed5063f9e1458d7f5268d2ca1abac2
+│  │  │      1547fcc2b4ddea82552a6f151204c2826de8f8
+│  │  │      26e5a59787ba29d2c231e8b000ff35ee1279cf
+│  │  │      77fc41161a4cb39bc457735e388b6e63ec829c
+│  │  │      
+│  │  ├─1a
+│  │  │      0a64497aa20416d7c59284a8915e7b7e331678
+│  │  │      203c06c0bc2193cd21ce75063264a12a57a156
+│  │  │      3b1b02f33eea1b8ca344e65a2c0c6510535fd1
+│  │  │      6c400d2aee3c2bf384ea98105ea143a7be97a9
+│  │  │      ebaaeb4464c60325cfe64ed94420d23b3442f1
+│  │  │      
+│  │  ├─1b
+│  │  │      c2bb0f09256ab7f65dfd3257d65d390af5b5d3
+│  │  │      
+│  │  ├─1c
+│  │  │      321c7eb0e5b5bdbdd10b93907b8eaeb3bf11bf
+│  │  │      4a812c66815d0f60422f10b178426f0228bc8e
+│  │  │      7ffe97ad28a7972e9ea6236f0c5450b4b80281
+│  │  │      83f39ff04272e13ced6584762955c440e5a72f
+│  │  │      
+│  │  ├─1d
+│  │  │      1fca97d7b95bf6782911bd6a84282ca6cf6b42
+│  │  │      585a41464f764cb5b29c7192b4dbc457bd17ea
+│  │  │      64e8cdd53029e66449a5d47ace1c3acb84d9ff
+│  │  │      
+│  │  ├─1e
+│  │  │      6c02a4a14f47d290d31fcde3dd0adc3b6120a1
+│  │  │      817e66302b8d5f42a61582819794933e6c5b63
+│  │  │      c2902c6b4ec765375e65c5b7acb7efb649bd92
+│  │  │      de8d638cea6817a6f568ad8efcca2ea488f427
+│  │  │      
+│  │  ├─1f
+│  │  │      0bd8b0023c25e74fac444bfecd6c5d7a0dc448
+│  │  │      1b230f2ff3cc32984c517d09017ac6a53c521f
+│  │  │      a83ea1a7195bbf15bda3b05ea8756e93dcbee6
+│  │  │      
+│  │  ├─20
+│  │  │      486fd65f67ded737833eba0e4f9701e1b5c67d
+│  │  │      a8f451ac4a200c5169ea659c120f44872aed4e
+│  │  │      
+│  │  ├─21
+│  │  │      4694418fcb5d2bc6ca22299dfd7d7a5192bed8
+│  │  │      6885a7b4724ebe485d700888ea52ee60b4531b
+│  │  │      70e04d94c05edae5c3acddfc6c5e6d2de8f857
+│  │  │      
+│  │  ├─22
+│  │  │      347d3ba8ea0c3d7e5d5986c437450eda631173
+│  │  │      f2d275ec02af79bb47ac9cfdab9d4d83af3852
+│  │  │      
+│  │  ├─23
+│  │  │      df46bbb88c3cac9294f19fdecdb6a3f85e75e1
+│  │  │      
+│  │  ├─24
+│  │  │      6168853ad02b01b450122f735c8569d981bbc1
+│  │  │      b55c55c8d990cc0ac99c916972ad9b80a8c180
+│  │  │      
+│  │  ├─25
+│  │  │      91adfb935975f4d96abf4bc5c5ea5d19035c44
+│  │  │      
+│  │  ├─26
+│  │  │      061a43c358109d0500a124a55f7d08e06689ca
+│  │  │      42f45adcc8871cb7294a0a9b25b9a4eb98666a
+│  │  │      d6cb0ea2ff97aead70e13f01318fbebea7223c
+│  │  │      
+│  │  ├─27
+│  │  │      4ad3570e7c3896bdbfdd003a386c25f8787d24
+│  │  │      7d8bcb2ab238c16e6ad8c5dd81af793ba1e75b
+│  │  │      b7bca12a6b85586863334783c79ad9201c6f45
+│  │  │      
+│  │  ├─28
+│  │  │      4c6156d146a7180df5485dc93492f4b7407c19
+│  │  │      
+│  │  ├─29
+│  │  │      0b009c73cdb936716e15724850bf7d5d90fe47
+│  │  │      a3ca95f875bca3612119498710b880a6734b18
+│  │  │      
+│  │  ├─2a
+│  │  │      b8205d5cc4423ff6a7df620df622a0d756a6fd
+│  │  │      
+│  │  ├─2b
+│  │  │      6490d39d1cf4f510a49d62546dabf868883693
+│  │  │      fc58be8c70d512f4371b50b2b98c7b8adbe719
+│  │  │      
+│  │  ├─2c
+│  │  │      b41d68eab05685d0afff3f9b257aafb4119c05
+│  │  │      f2f655bb0232dfe228b23d621f3183ddac06f9
+│  │  │      
+│  │  ├─2d
+│  │  │      cc0f358a8d785a37f7e37a53595af96ad51111
+│  │  │      ebbd9e588d0e524e6baca1239aa23d426eb0b7
+│  │  │      
+│  │  ├─2f
+│  │  │      8cec4e371f6dcaa74e5a6469a627b6e09c1b3b
+│  │  │      923fe422273e56f7371c8b96b9dacd717e41cd
+│  │  │      e720c6fed61e2ff47b9afef4660f86f8230b77
+│  │  │      
+│  │  ├─30
+│  │  │      0bbc2a0384e5654525e7581017364dd9ceb59c
+│  │  │      28e8ebd27bfd89f809c69580b161d113a145d8
+│  │  │      723cab0f80eeb11039026fbf05482dd970ab8b
+│  │  │      d226adea76492f8aeebcb4bf93d1579945e498
+│  │  │      e50283adc894fd680f154acf3a02155d2833d5
+│  │  │      
+│  │  ├─31
+│  │  │      8ca6f167aa421cfa5ffa5b42028ed2d513b455
+│  │  │      c102e16339d10f431cbfa7ed68e7b95bf7df31
+│  │  │      fcccb3b625b6697e72d7ada38ce01bd7759e42
+│  │  │      
+│  │  ├─32
+│  │  │      1d003a561649176a36115525703cd1207cee16
+│  │  │      a035ddbf5cadfabda4b64e552bc08a8dcc312c
+│  │  │      
+│  │  ├─33
+│  │  │      d64d987150d0a9fe8aba9a9fbd5cb906602aa8
+│  │  │      
+│  │  ├─34
+│  │  │      9445579a9a2cab1d33ce40ad6cbaadadd1359b
+│  │  │      b73ec52ae2962b4d6fd9e39ef4bf874e3dba6f
+│  │  │      f28e4cde0cd13acdbbd7482282eb306f5b21e5
+│  │  │      fc4cd3503c174044f7ca11f5e44a860e7aca0c
+│  │  │      
+│  │  ├─35
+│  │  │      40711bd8d09efff4c6aa4b58a8adb43253600e
+│  │  │      f77edbef7fec02f0130d1dc312d3fadfaabe34
+│  │  │      
+│  │  ├─36
+│  │  │      43615d6488b4643e34ba8afefb4850dcc81569
+│  │  │      5eea074520056289eeb64a117e0a84ce766ae8
+│  │  │      80ba97cc9465160973c831beb57cf45f420fe7
+│  │  │      948155e38b1ae3745ebfa96c290bf26a404005
+│  │  │      
+│  │  ├─37
+│  │  │      c6acd01fd459daa2f9db24449bb1d275357c97
+│  │  │      
+│  │  ├─38
+│  │  │      97c9d757acdf225c94fad38b96e63093507f41
+│  │  │      b84a51394e20ac33ae5c9b6fdbc66f90f94a0d
+│  │  │      
+│  │  ├─39
+│  │  │      08b27de79d5bafe104e0afa26957df4b8bc122
+│  │  │      19ef3c39c6b352555d6cc9be20de8d5c44db9f
+│  │  │      cd03538a5bc595fbc46c97cf2b06c8bd8dadd1
+│  │  │      e620edba147673eb002408b4c61497720814e0
+│  │  │      f8a22846945358446ed010e2b9bd50dfcc7a25
+│  │  │      
+│  │  ├─3a
+│  │  │      15f7a8268530eb36c60aec1c69225ab42d3aec
+│  │  │      241a8c595d6dc40c7e12712200e43b7b76f313
+│  │  │      6958e0388e1430cf393efd81078adf60027ff1
+│  │  │      dc6b549c07a3e1cb53fd1225ee566b95d7dcbd
+│  │  │      
+│  │  ├─3b
+│  │  │      606d275231951ebc94cbd1db51e35448d66823
+│  │  │      b77d5aabf7c21712f1bada99ebcff2ba4814e2
+│  │  │      cad84ee60d6c9e0e9b17e520ed04ca76aff12a
+│  │  │      
+│  │  ├─3c
+│  │  │      012fb5c4d0541b2da82b2d805ef249f18a0686
+│  │  │      431dcde1e98675404785e412160a4451589aa8
+│  │  │      
+│  │  ├─3d
+│  │  │      120e3586ff6a84593c6c2a08ac0af534cdb8e8
+│  │  │      76202f8ac021094be20391ca2b797007ef903f
+│  │  │      f71da02147e26e55d68b759afcf8060da456cd
+│  │  │      
+│  │  ├─3e
+│  │  │      17da8b1aaae2935e19ac97d9015f0fe24e8770
+│  │  │      
+│  │  ├─40
+│  │  │      55ccf6e99dc96ccdf6cfa019acfe94a5b78e46
+│  │  │      
+│  │  ├─41
+│  │  │      6c5c14a19fbdaf8fb8d6baf5cf7e31e54f751a
+│  │  │      9aca64f03ad5c3f241b2bc4c4215c668bcc977
+│  │  │      a64640954130df618e4ce877543a1cfed80d9e
+│  │  │      b5510c5c1241d594bc3de504621a8abbe7faa5
+│  │  │      
+│  │  ├─42
+│  │  │      6ac726da34b7af7ca4263509ecfd70de7fbbd5
+│  │  │      
+│  │  ├─43
+│  │  │      51083ac8e0e65a64ff362cbd480f2c86eab4fb
+│  │  │      5f86a8a70c81506b78dd08659596b76bbc3000
+│  │  │      b6d0a43857dc0990728155ed120c8eb66a5b81
+│  │  │      
+│  │  ├─44
+│  │  │      42286e9ef95516297c3c09c678a1dd18822acd
+│  │  │      830f1d42720139719297a609a998e6e9a8f456
+│  │  │      a859d50261ef9af5db61d6bcbf2bca4c0d140b
+│  │  │      fe7f32b45fa14677579d804d47cc337732e7b4
+│  │  │      
+│  │  ├─45
+│  │  │      8b1f587c59560027e29c9ce0a1e94cd58ef46d
+│  │  │      c4fb5563081d684f00cc3560df41b803cf7bbf
+│  │  │      f0dc29b1407ab50174999d7aba596d2ee6450f
+│  │  │      
+│  │  ├─47
+│  │  │      33e08343d6ad89767e9ef6feca2b2f8c986648
+│  │  │      34c55aff07021d6398b9f3e0a0daea91ad39d2
+│  │  │      b639c5581984da541df08bd8050cb1d971375a
+│  │  │      
+│  │  ├─48
+│  │  │      4d568fb3a63130681a1ae52f566305c9ca29a9
+│  │  │      
+│  │  ├─4a
+│  │  │      0eb3114ad804ee7483fe173565056e2bd13ed1
+│  │  │      5da9cdceb22be804f8e09baf2544e548fc907f
+│  │  │      79b843e65b425505f93d3b47e16fbd762f9ca4
+│  │  │      a67118734bef47e8d73fd7feb4dbad900b4da5
+│  │  │      
+│  │  ├─4b
+│  │  │      8685866763690248bd15936721de141fafce03
+│  │  │      9f0517b6d87f35e925b4c30ec3bec4f65de09d
+│  │  │      c80caeb84b8d175ce36a4150045f321cd84bcb
+│  │  │      fdebc453a85edad9f98f66cd8a7f05e22b7754
+│  │  │      
+│  │  ├─4c
+│  │  │      2ef9f4ea3812edc4b47803689f40265f9b6de9
+│  │  │      79df2e893683f1e5259109ab0316b69df459ff
+│  │  │      9985535b7685ee0820c69376d7de091f1dcb9b
+│  │  │      99bb50576d9063cfed54fc61e4ef82e9a66b49
+│  │  │      b5f515896357c01c34177f341233ece445ff63
+│  │  │      e2e241eb55116a4279872b60eab134532bf4ef
+│  │  │      
+│  │  ├─4e
+│  │  │      19c4e2944b984dff2b100a2914a8a13240f490
+│  │  │      8b09f15101f3e3fad0777ad068fb559ed483a9
+│  │  │      
+│  │  ├─4f
+│  │  │      098d5217b5a2888b617a3b4ccf5ad0d28a68d0
+│  │  │      57259684a6af4d46e38297b79f8cc09b209335
+│  │  │      70f886288c81cd01e6e03a67f58aa346c0aa9a
+│  │  │      fe3d91eeaca197464247425deb4335be5f515a
+│  │  │      
+│  │  ├─50
+│  │  │      6198c636b6b2be3a3025a1b9060be907c62a38
+│  │  │      631a6e314179d0761b4ee664616ad2162ba147
+│  │  │      a756fdc92f5039e10a0f3cbd35a16e0bdb3f7c
+│  │  │      
+│  │  ├─51
+│  │  │      17119f8a1e085bf2793a2680efd71fb7904312
+│  │  │      54912e3db7df16865bb3d8e9f49c838b80ea13
+│  │  │      b970a1f7a13456bf5f92c813eecd445aafd038
+│  │  │      
+│  │  ├─52
+│  │  │      393c9f81f70934414b7e6a80bedd68f3259053
+│  │  │      4f7f80c86031a0e25db0630cecb6f9bc507265
+│  │  │      55b86fb73ed5888a777b696729e14204a5f9cb
+│  │  │      85f03fcd0c0c9b7d529c2fcaf2073ff17cdb1d
+│  │  │      e56d4dc28fad35cfd5a15872cd4235005eeff3
+│  │  │      
+│  │  ├─53
+│  │  │      dc1cbfb43525b9695d4c3cb81129ae8be6d700
+│  │  │      ff9847cbf9f82f57c80c2b95127d9f0034c8c1
+│  │  │      
+│  │  ├─55
+│  │  │      6c7e326801a0ea090bd693ca43807925d3cbc2
+│  │  │      6cfda065ea4e7c3b73e7b7546b293310d8e139
+│  │  │      
+│  │  ├─56
+│  │  │      544a6fd0e08165be15ed7891d7faddd852f6a9
+│  │  │      775d2cbd295dd96b843f0852979611fd7ff655
+│  │  │      84bd9e045976c6f7fce766f217e0578938c859
+│  │  │      
+│  │  ├─57
+│  │  │      27094e0fe52a828af02e91abf712f4e64ba556
+│  │  │      f6eeb940a0c020e301b205480e693c1804d9f1
+│  │  │      
+│  │  ├─58
+│  │  │      a083611d7c1afd95d136e3a7fa798c86d0c2ef
+│  │  │      fbe9b5fb5fce97e513c13aabc2105e5e03fd3e
+│  │  │      
+│  │  ├─59
+│  │  │      111a38c849fa06175a318fa98625c38d717398
+│  │  │      36d0d6ae139d430b6c4a96f828db82d1196733
+│  │  │      d3d98250c661a694994d99ee64200d3532571a
+│  │  │      
+│  │  ├─5b
+│  │  │      16b11562b25db98feaf8bd579fbe0a3f6100ce
+│  │  │      b90fd6a49107a321c35b9cee4a7b810314b51f
+│  │  │      d5e0f190e4ebae5e85209be1123f04e16189ce
+│  │  │      e606d65b70f5e05edefd00ece3a644224c4446
+│  │  │      
+│  │  ├─5c
+│  │  │      40e82e3ff6d194b62cc0aa1431ebea5b3963ee
+│  │  │      a9058172f864e7e4c39374c83ddd44beeee00a
+│  │  │      feff8c9784acd52e8a8cf5945b74f832c7964a
+│  │  │      
+│  │  ├─5d
+│  │  │      2b7b5e0864d70deed9fa8efa98c2428c00b64a
+│  │  │      553812a7013de3e83d6a1f776969fdfedd127b
+│  │  │      d7442b164b2ea32b5ae97da71073a31a699c83
+│  │  │      
+│  │  ├─5e
+│  │  │      4313bf1e8e28a65a15da18f41cc500716c01ac
+│  │  │      
+│  │  ├─5f
+│  │  │      742fa67be1fb42ac97fa1b5359a1bbb0629a0e
+│  │  │      
+│  │  ├─60
+│  │  │      02c9d8027219d2e932734c35f5046b66b275f7
+│  │  │      3ff8bf3f469d771d5a257e09917c982b7ae766
+│  │  │      447400d31b035f56554b29af1aefc76bda1698
+│  │  │      
+│  │  ├─61
+│  │  │      4f14ec750d57939b25eb6cb1bb37577081550d
+│  │  │      d9340abd16b064d20c272367ea35660e423987
+│  │  │      
+│  │  ├─62
+│  │  │      5d7d9a6763069b1c8b81cbcf6e5b48177deccb
+│  │  │      e99ae327d16f5338064fb1def91fadf30f686a
+│  │  │      
+│  │  ├─63
+│  │  │      b7bda8db1d4da9719b0e5c9b3fb248f75b7623
+│  │  │      dc6b752f671e3bf90d22c18b9e4e3ff600dc90
+│  │  │      
+│  │  ├─64
+│  │  │      becd07f380f86deac28c7fb3df9dfe2febb17e
+│  │  │      
+│  │  ├─65
+│  │  │      71a1c68a510cbd7309680bc6375bfeec5345f7
+│  │  │      
+│  │  ├─66
+│  │  │      338b803f6e057f7cfc751dcad7f8d82fac008c
+│  │  │      60a8233ba38a13875b811e0339076046a46775
+│  │  │      90a49991d477865233fba7274b5ebdf6a771e4
+│  │  │      abd54c135159e06fd70f3f53651f4a431ac054
+│  │  │      f967b48da173b68cbfc92986e4426ea35ade74
+│  │  │      
+│  │  ├─67
+│  │  │      6901c1e44835eac27589a4cf41d298e1b112fd
+│  │  │      
+│  │  ├─68
+│  │  │      37fcaf214a394d8efb68f5d48c9ec6f9ea1fa3
+│  │  │      832c8f644770c016ece7a22ba9db023703b680
+│  │  │      e0e4bf78fde1b15af2d7040a78f0e48b478c26
+│  │  │      
+│  │  ├─69
+│  │  │      07e72d2c2ea45232043ffa1f6be79237924a1a
+│  │  │      626964d68784517a523d1b2ef8c93b7b8fb4fe
+│  │  │      68cc422839e463c5d273576bcbd38e34cac4fd
+│  │  │      75351b553dec525fe01bc5977c70bb06493928
+│  │  │      
+│  │  ├─6b
+│  │  │      0a5b9c7a726734f0577f626de15b9478588b25
+│  │  │      
+│  │  ├─6c
+│  │  │      781df545aba9ea14b6f417b04d904c328c227a
+│  │  │      790fe36b06f64799e80c8a8cbe5c49e1ce2cf5
+│  │  │      eb266898a1fcef04e70da212e46ed5b137871c
+│  │  │      
+│  │  ├─6d
+│  │  │      0acf6d57ba2fc3e6efa9dae5966385987df48f
+│  │  │      459837090e8bc3ec4a9f9bb76c4b347c37e2a6
+│  │  │      65ba7885d82f4f4911c1cfc8e5d9be8b1f0e4f
+│  │  │      8a36adeb3b7e0b76d65692f6aed83753384330
+│  │  │      e432ae96ee120b440c2448e3977587f789a410
+│  │  │      
+│  │  ├─6e
+│  │  │      15f89d79ed82cdb1f53aed2378d887915528f3
+│  │  │      19c3c48c9875681760a05358cba32e6153eb99
+│  │  │      22e7ff12a215188dfc4d0314e91cee7526e739
+│  │  │      33f7c4f762b5c4eda2a630793d681345423734
+│  │  │      
+│  │  ├─6f
+│  │  │      3c9539a22171cc2f12639492e346d97a9078e8
+│  │  │      9ce097ed04ab3bdbee8c60339b7b8bb5373073
+│  │  │      
+│  │  ├─70
+│  │  │      523328e6aace16cd0270c058b7a34997a51526
+│  │  │      54aff056d724475fe584b12ee5571633d3d708
+│  │  │      6dca3a690a2e1fa457deb235de3d556a570c14
+│  │  │      81e4f023999fe813726fc83f39d169dedd7ecb
+│  │  │      92e9da6c612e2e60eb661f365402b9e1588376
+│  │  │      
+│  │  ├─71
+│  │  │      89aecaba243b73cd3badbd4814c3e49c40293b
+│  │  │      974058de816f9386873f59344b218095a867d2
+│  │  │      
+│  │  ├─72
+│  │  │      8134c8e1bf7f8dbcfd0a36ba109028de9ff00d
+│  │  │      d30c7183c7d932a42ad5ef0d509389fc163fd7
+│  │  │      e2d0e81e2ecbcfb510a329e9c8b0ee9733fa2f
+│  │  │      e843d03fdd63c82aad0ee3eb2a6990f42c462c
+│  │  │      
+│  │  ├─73
+│  │  │      12a7d14370d40bf7ce411301774ede56c5aaf4
+│  │  │      62d0af015037d1ec5c94d4a2bf2a48a4620776
+│  │  │      
+│  │  ├─76
+│  │  │      4d9ae5326414d3831f4af6318224cf31023a8b
+│  │  │      6e2e5d54933146021e24e51a6f93b8ce54fd40
+│  │  │      92792fd1f71ecae9f2f9894b26ff6f2754b091
+│  │  │      
+│  │  ├─77
+│  │  │      2667e629b436f759b0ef5ffba0f9bfa790475c
+│  │  │      43cd7f27f362a58ec6598aa36b39ae23664033
+│  │  │      
+│  │  ├─78
+│  │  │      4e9299451906dfc91e143e586d8ef48e0cd818
+│  │  │      6bb2a8c4d1aaa7d3d80b3692b27d013815eae1
+│  │  │      ec5395f2393d811ae374f98137ff027c2870ae
+│  │  │      
+│  │  ├─79
+│  │  │      00ddade5e4abebed00a83eda8c3473d9eae12c
+│  │  │      3b831e4d75af493f08fbf7cd5edf5d9022e9f7
+│  │  │      6714fd6b5befba8aac81a3a80e21bc27fac446
+│  │  │      
+│  │  ├─7a
+│  │  │      4c0131dc926ee932804276038bf053a5cc1634
+│  │  │      6e6a92f5ca3ccf02c0461841b7b846b1ab49a9
+│  │  │      860d8d026e97c14d9c0e80ec5997eb6637dc58
+│  │  │      
+│  │  ├─7b
+│  │  │      7182f7c2f633a3ff5c6e57be5d6afa85cb2e9f
+│  │  │      b98f2d8a2502888a61e885d0853d3d3b0661ec
+│  │  │      ce2997f86e477a6008fb1cae8dd03cda10abf6
+│  │  │      
+│  │  ├─7c
+│  │  │      07938f691b120c84b2e9ddb9e4281bcf033318
+│  │  │      2e44bae29bc836e5c31b5f0204b8018c8acb0e
+│  │  │      87bd0a153c0a9790ced6aa0616e370fa873d72
+│  │  │      
+│  │  ├─7d
+│  │  │      d0cba010e22bbf5210b3d9adefccd82b574f56
+│  │  │      
+│  │  ├─7e
+│  │  │      62c50f553bf3650b71786ab7712589a8174415
+│  │  │      c7717b89cde874f556271d4e93ad7c94109634
+│  │  │      dbb58a843cec27a1641a5c9b6d30b8fc1f8c26
+│  │  │      
+│  │  ├─7f
+│  │  │      8e06a5f6b689d7c543650b59a96d8e14dcd07d
+│  │  │      e49840bf69219fa40585741f901fa0b187c044
+│  │  │      fd1613b5fa36c3ffa7daca94e7e8cd6f8d82ef
+│  │  │      
+│  │  ├─80
+│  │  │      1213edc5fbdd18f943903e53d537ba92516219
+│  │  │      a1ab1e828470c71de1609a387125bf582b46a0
+│  │  │      
+│  │  ├─82
+│  │  │      fb96de597d42bb6b3af672b7ac5fabc2830b01
+│  │  │      
+│  │  ├─83
+│  │  │      39ffc04587959cbedc1b58fe2ef11d6288be4b
+│  │  │      7cf3c3e4101a6737b1bbf981640a685a20bb51
+│  │  │      bb63491b6bc16e5a6b22bdf428c88a41968338
+│  │  │      
+│  │  ├─84
+│  │  │      0055ceae2b179a0619854d2a49e39306f6739f
+│  │  │      13725f5c1e6e877cd81d710c646a7ff039e4f4
+│  │  │      b3cd4ea76325090c3fbf5624ae1cfa9a12ba2c
+│  │  │      d910a56d23dd85225af1b47be259025944418d
+│  │  │      
+│  │  ├─85
+│  │  │      6ec77943a2593aac9dfe1d4a1e9e5f2fb05530
+│  │  │      996b31fe0d3a47ceb0e8429fee1967586052e4
+│  │  │      af921715716bade717f57c504d37382d2a0628
+│  │  │      e69799d0da811f92181265112bac371bdc71dc
+│  │  │      eb38b54c5bd58b25039284753c557dcee7f00e
+│  │  │      
+│  │  ├─86
+│  │  │      194e273742b82f4c48caf982d3dce883c21dc1
+│  │  │      2a13fdf7fac9a42312b274d8c16667be8adf08
+│  │  │      70c553bc86e3cc9015665d02b11f4dd699e8de
+│  │  │      df67b7aad1ac80079562c74945d9c4ced3c397
+│  │  │      
+│  │  ├─87
+│  │  │      56d0887fb43182576e89b83b95718a44399d94
+│  │  │      c149d94e063baa123cdad3e8477bcc754a66e9
+│  │  │      d78c5e53611a55a23e360739812fc8dde21722
+│  │  │      
+│  │  ├─88
+│  │  │      009d20d5c055d5b18fb863a3191bcff997392b
+│  │  │      698c0704f0182558ab6485935d925f8bbd3a3f
+│  │  │      b02d2e9703add362f4ec39827278513f5c0162
+│  │  │      
+│  │  ├─89
+│  │  │      05bd75dbda0f4b08b6e6d8cbe4adb8216b321a
+│  │  │      21a6abe8888c6b939dd374a114edc30e952ade
+│  │  │      
+│  │  ├─8b
+│  │  │      1c88a3e8658cde7b25b6e063d23d010f7ed86a
+│  │  │      8486ea2368194cc29556530c928f1c992d4ec8
+│  │  │      d4ee9afa0d5f56c2c90fbf4f7421f00a975271
+│  │  │      
+│  │  ├─8e
+│  │  │      5f45ee0de70d2b1739e8465687709a46bb7c40
+│  │  │      88a75fbd315e2f665b6b7309a8ae9698e34d4d
+│  │  │      9502bd76e71d230b1e35f02383b07f6d5ecd6f
+│  │  │      b692fc18878390c26f70241d47a85fc72f0eca
+│  │  │      
+│  │  ├─8f
+│  │  │      5eca74ca6f57b11278497cb38f0f5f40b5eea6
+│  │  │      
+│  │  ├─90
+│  │  │      38145ab63ffea1572f5ab9a273851d0026c82d
+│  │  │      594bfce2312bc2253056aa24c6ece56802ac32
+│  │  │      
+│  │  ├─91
+│  │  │      24732ec09bf5b626a6ce1564903e9f92c5ac54
+│  │  │      4d1a069e9cf130805a40fdaaf389ef1f688c50
+│  │  │      9a2ccffe602ce1c5fec62bd871013ae49f4d3f
+│  │  │      
+│  │  ├─92
+│  │  │      ded7160333bf39356144ce90a89f3840d54d20
+│  │  │      
+│  │  ├─93
+│  │  │      b3d5abc04e87eac6643c7ba27d62f94cdce4c6
+│  │  │      
+│  │  ├─94
+│  │  │      28856217e3438b2ffe68eaa055705c9b47ed46
+│  │  │      75e40067253e8c65e471d09a18b60d8656f177
+│  │  │      
+│  │  ├─95
+│  │  │      75ae102694f4124c63642d7add4a4df620466a
+│  │  │      9b99296b323c0f9c6dc35e14c9f28cc66eec04
+│  │  │      
+│  │  ├─97
+│  │  │      1140a4f9493332ff356369c1a8ad07ba4234b9
+│  │  │      408022d80d8e85da5255124af394efaca1bf34
+│  │  │      e4e4ed927e1eec3dfbb01cf3606ca7a2cf2a91
+│  │  │      
+│  │  ├─98
+│  │  │      690ac6e311ac80e2f632878d38161c7ff95760
+│  │  │      71cc2ce367feb98383a5312a026038b2cf9649
+│  │  │      78f3276179e84f95dacf6f6f6d21c941c0d57f
+│  │  │      8dbfe6c043b55b49727ff6cffb35f23617e684
+│  │  │      a949057a59aaafd1360c6d96236302eccc0a59
+│  │  │      
+│  │  ├─99
+│  │  │      31b0636bc8f30b2172b608a44a90119b29ced6
+│  │  │      d5d9e5865dbca430898758aeeeea40eca1120c
+│  │  │      dd8c9834f4198fed1cea80962b329225b28eef
+│  │  │      
+│  │  ├─9b
+│  │  │      465189ddfa7506e11bca7af0b5f3cfc5a0d111
+│  │  │      cc11409ebf9988c0758b9ee891658cc21f7d37
+│  │  │      
+│  │  ├─9c
+│  │  │      366bd9f87fb5fddb0ab6f88b33ecd8b934767b
+│  │  │      489924378d7501223af4ef2cb30b14d1a0e611
+│  │  │      
+│  │  ├─9d
+│  │  │      7d83a42bddcb958ae3e610c261df33d126b156
+│  │  │      9bd3d597450caf734b5c0c486f24170bbc3b2d
+│  │  │      
+│  │  ├─9f
+│  │  │      04294b6df3a9e267ec1a3e5d90aa6503414e73
+│  │  │      1f8defc5f106a2a686e3230ad82a8542b3f8d7
+│  │  │      24af2cb85bcb3a151a432f265272d60d23f96c
+│  │  │      6a1db362d9be47e575f66e255fea854fe58c5a
+│  │  │      8df64de1118c20e7bbe66dffa2827d59c7ab07
+│  │  │      8f44d3d0044213035823aa12c78b383e2e244c
+│  │  │      c0c32e22ca08e8b5df60936063b6c00eab54a3
+│  │  │      
+│  │  ├─a0
+│  │  │      2f0b2234a9c03bbfb9578056143ef4516bd965
+│  │  │      
+│  │  ├─a1
+│  │  │      81ee77882f8249f4551516085e1c2e7cf0cfec
+│  │  │      99e53d6033b1e2b239835ffe932382e570fa67
+│  │  │      
+│  │  ├─a2
+│  │  │      5328bd9b635f8898c6d0ba534253e226bcca70
+│  │  │      64391d9eb34d63dfbe24b7ba40d3c583fd34d2
+│  │  │      8d2e483ddb69d689cc5c43b321c72fe105247b
+│  │  │      
+│  │  ├─a3
+│  │  │      0db80a9805b42ada38991042c94235258e6558
+│  │  │      34548e8780d66ccd2de35bb2475db92c7e0489
+│  │  │      7444103c974c6f797afedc2971cbabbd5d7642
+│  │  │      
+│  │  ├─a4
+│  │  │      70922cbcbc28593802c83d21f4500e4417e710
+│  │  │      a978a5e7864f791a995647d033b912d71c1976
+│  │  │      
+│  │  ├─a5
+│  │  │      e6463901856fd293db38401bf1327572095ea0
+│  │  │      
+│  │  ├─a6
+│  │  │      3f0d523561c523476e5330a0d67eb7318cb187
+│  │  │      8be655650e3b943a1169584bb1cc0290f9e42f
+│  │  │      e3fe152339734b80926a51ed4b7aca35cbab06
+│  │  │      
+│  │  ├─a7
+│  │  │      2e96972fb7bedca14ebae667de442db3b7fa76
+│  │  │      55348e79417cb3cd84fc9f007a463bd4df505d
+│  │  │      797198af0f3bb98361b1b8737784d0a8c2cba0
+│  │  │      f51642f1c689220c3b08102602db615c54a9b6
+│  │  │      
+│  │  ├─a8
+│  │  │      1b0a9746a08c50354a08a557da8d010a06b7ff
+│  │  │      4baa507d4ee0754a907c0492a800694c842ed6
+│  │  │      c7c83dbf713a87950848eb2bd8795b1a28e1b0
+│  │  │      
+│  │  ├─a9
+│  │  │      322643dae616390d8263e8cf1bc4d9fdfa03ec
+│  │  │      35d73fbcd072868bae3ce4abbcdb16cf969212
+│  │  │      4af0a2279707a78b2434f7d319548c1ff056b0
+│  │  │      ccd35d765a8e8f00edc741e339957f648e55b9
+│  │  │      
+│  │  ├─aa
+│  │  │      27b9adce9b4822637c79c75c7b4ab61e778d30
+│  │  │      
+│  │  ├─ac
+│  │  │      060f373a07e57fd719a76c1a5580b4e752f70b
+│  │  │      0b700850553a3d7be8d33cf6622c5a832cb1f0
+│  │  │      15b5cb2000e3dee641ae8a144e5b96566e96b0
+│  │  │      161e7780ab5ee66ac79afc523e604f7b38be85
+│  │  │      
+│  │  ├─ad
+│  │  │      3f4d3a8158106dbfa48e521084e6c56fc6406f
+│  │  │      44497691d150ea5d02a900231e48ff519d9616
+│  │  │      ac542fd33e152fc08baf165d1c5a467f0c2747
+│  │  │      b33bbedbca2d603bb22d586579cf1cdeff5e74
+│  │  │      b9645a120938c266b9b820d233ab9728126598
+│  │  │      
+│  │  ├─ae
+│  │  │      429912d6d6f74dfffd19376ec1fdee426d8036
+│  │  │      
+│  │  ├─af
+│  │  │      2cd65bbc302f700cd605ab16e1f790cc354c38
+│  │  │      96d6c603c12f5af24b52ef31d97a6d5a88f753
+│  │  │      9ca31595c9c5a0c89e54cdfcc180857dc0cd07
+│  │  │      
+│  │  ├─b0
+│  │  │      b8facf53d314b8f106dbd5aa021aa4873d48d4
+│  │  │      
+│  │  ├─b1
+│  │  │      0ae09ac9ca5c86a1a472610420c01c96fa41f7
+│  │  │      57a460641625235fd0891439f7749bc205b308
+│  │  │      b5aa035c0c6c0b9462b8478e38f9d313decc73
+│  │  │      cebf93492b7eaabd8a9df822771bcf9abb854c
+│  │  │      
+│  │  ├─b2
+│  │  │      065c50a13addc4a6c46bc304cc21f5cfe02fdd
+│  │  │      5fb5a7160492c874b64f7c6977202e5fcb4d5e
+│  │  │      8a131e643d203113e4a311b5595bc4b3ed42f3
+│  │  │      b78b218996f70773540d0d3a8649d3c2d199a2
+│  │  │      
+│  │  ├─b3
+│  │  │      d414d6438ebbb01aa6e6a93b89a86d3fc16688
+│  │  │      dda37ae0c34cca4883df037d911c0eba213366
+│  │  │      
+│  │  ├─b4
+│  │  │      201c528b3d54cfdfeb8f85a15353712d4db2ac
+│  │  │      433eb4ace462bceb2460ba62508438fc4001da
+│  │  │      93c1b6672eced53d05f2c382912fecde5cfa64
+│  │  │      d11a8fec4b0e6dc56daa821327b61d8f51216c
+│  │  │      f5f2af3856f690091996a062f6f510de0e406e
+│  │  │      
+│  │  ├─b5
+│  │  │      13a64184420b16e2b99b58c5d0f6abbef437bd
+│  │  │      1c1f992755407501db75b72792b0750b0d9962
+│  │  │      88a6903070d0c9004df4ecafcde23cd39bfbe1
+│  │  │      
+│  │  ├─b7
+│  │  │      3f96e8a3defaf6e5db10b2e9b586d70513069a
+│  │  │      51f98abcf8173ae3c08402c99ae885a0dfe162
+│  │  │      c2e669e146c765a452697125e848538c266927
+│  │  │      
+│  │  ├─b8
+│  │  │      e7fded19f986476509973d811257ce634446fc
+│  │  │      
+│  │  ├─b9
+│  │  │      8421282467fb377dced2eabd72bcc5525f3e8e
+│  │  │      a344375f96a6ab013ff5442c34c80f40cad6c2
+│  │  │      c715c5208044db4a057583efdf2bc12f099cd1
+│  │  │      d1cfdfd9975389a81131c6647737cd6f8168d9
+│  │  │      fbfbf3a35addd0a50d5e476728212295036c27
+│  │  │      
+│  │  ├─ba
+│  │  │      f8c15d34c7cbf0a049fb854541bbedf5bbacc0
+│  │  │      
+│  │  ├─bb
+│  │  │      6d077504e3b39871f72150c1f5fa43d4e18bfe
+│  │  │      774037e1ade7cc89592b839f8832653aaad073
+│  │  │      bb669bb311514baa5db3a6a00b4644d0e280f1
+│  │  │      da1abba6705e6f1a9d2b38f96c95a7898940eb
+│  │  │      
+│  │  ├─bc
+│  │  │      ca94e425f2e9b99f3781893160d45ed1888771
+│  │  │      
+│  │  ├─bd
+│  │  │      38e575b86ee50a11fde8190e6c0d6b2c5ce7fa
+│  │  │      
+│  │  ├─be
+│  │  │      18bc965790d3931fda4507ecdfef2e8c5cc0d8
+│  │  │      
+│  │  ├─bf
+│  │  │      73842961e458cfa82adac6d78e0dcd36259be7
+│  │  │      a56ac2e5713dbe9ceb61a1ec3d76b251c2b65a
+│  │  │      bcc39a55e1ca0fbcea87d3fb4ca4f13e657f9f
+│  │  │      caed636ef2430b82781b81251bef1cf5e7dff3
+│  │  │      
+│  │  ├─c0
+│  │  │      d3f923aa814a235b9ca86152f2347469373a62
+│  │  │      
+│  │  ├─c1
+│  │  │      6b2326948d82184d02cdccd9d65e8a4a6e13e9
+│  │  │      6fc462a04a47ff2c9aeccf9f1f9d2276faa56e
+│  │  │      7d60cbd15e80d83629b2220b562a224eec5554
+│  │  │      
+│  │  ├─c2
+│  │  │      ca326dc9d242e4da2afbe101b94bf1fe0161c5
+│  │  │      
+│  │  ├─c3
+│  │  │      4fd10240b1ff9c04aea0881066758662d72eec
+│  │  │      6c1b0b5d4036b646cb9d964c79ecd07784b328
+│  │  │      
+│  │  ├─c4
+│  │  │      2004e8a1369645ee000f8409a6f41aaa7cb445
+│  │  │      
+│  │  ├─c6
+│  │  │      4cea0887ca48082ef5c138fd247ed42e560eac
+│  │  │      5dce5e9831f4112add34ffa466ec320039f9c4
+│  │  │      
+│  │  ├─c7
+│  │  │      11dd7f4ac4fc9c7fb9db5905d8b97fe0a3068c
+│  │  │      a1cd2ed023896183bd7809db28f13cca9b16bc
+│  │  │      f59e168abb6c0a1dd17aec40ca2540ab5a0447
+│  │  │      
+│  │  ├─c9
+│  │  │      476d79608dacdc613410702804e5ce7483cb67
+│  │  │      cec8f48e6c565aa71cf9c109ca38c2682193f5
+│  │  │      f076d4cea5fa037f275dde816010f8858e16e2
+│  │  │      f25fa1d25412e2e929347c0db0878b0b641d58
+│  │  │      
+│  │  ├─ca
+│  │  │      ff5ae9f256a78cafb64fb9791cba7d3ffd0a1b
+│  │  │      
+│  │  ├─cc
+│  │  │      0dca2b92fb807b128f63f1248641ada910f82d
+│  │  │      27d02db5b3ff696b63f9e97323f4890594b4f4
+│  │  │      eaa4696478ca11556fac919703b8c33192640f
+│  │  │      
+│  │  ├─cd
+│  │  │      eeb2ee945f634c321e638975dd5f66413cf71e
+│  │  │      
+│  │  ├─ce
+│  │  │      997c1acc87c0e4679085a8a7dcc436107323b3
+│  │  │      fa6d224b85d7f59ea73142e1fa658093a613fd
+│  │  │      
+│  │  ├─cf
+│  │  │      5352fbc531de96f4c715d2be954a661a2c2c79
+│  │  │      87374b7acbcd5c55cb2becc5d2bab9ff74aecf
+│  │  │      8a566bb56c8a55157042f5c470648166dd01b4
+│  │  │      8e23e5b2e83bf4f383cd994510a7a04a74f57c
+│  │  │      
+│  │  ├─d0
+│  │  │      5f2da45500eb37e7f723e9ddddcfd4e901d90e
+│  │  │      8e8aacaf1e30b21b76b6baf241b606cb5ea3ee
+│  │  │      
+│  │  ├─d1
+│  │  │      a357afb0aed0b9abf68b89b81eeaedeaddd110
+│  │  │      c4507bbfe7de58522422a58e7ba9ce1d347bcb
+│  │  │      
+│  │  ├─d2
+│  │  │      0b9342b963f28afe3bb754842410c9ee886ac5
+│  │  │      819e13908760c101111a34ed95442283c5ba41
+│  │  │      82ffc905ef4f9bb63b4cbc5fb79242c5fda584
+│  │  │      f044521cc375d465b039074510d2fffa2aaab4
+│  │  │      
+│  │  ├─d3
+│  │  │      c5c9572991cb0f9a49c9510e72e664049fc307
+│  │  │      f56bdc7ad8b21591ca2615789095019a70e2a9
+│  │  │      
+│  │  ├─d4
+│  │  │      6143d53f4ed1b170e263087f24b4facee1be4c
+│  │  │      98f17fae6e955d6b72878e2ea0038a95465db4
+│  │  │      
+│  │  ├─d5
+│  │  │      2200c51ee924f0b91132e5cd3737fadcf40ef8
+│  │  │      7529d2b20154d3518fccc95ce784223de23d94
+│  │  │      
+│  │  ├─d6
+│  │  │      0ef1c2073f76cb972c145bf143001bf6380fcb
+│  │  │      2916d4031609830f26ef77c17ad26906ac9717
+│  │  │      3e364222351ac7fb399afd93857bd98a7dd8a1
+│  │  │      ab314461d2f77f28294bb3a5125375f45a5c4d
+│  │  │      
+│  │  ├─d8
+│  │  │      e08ccba1463a2590e990879ad5024a353e04ca
+│  │  │      e6b2da286381a80e7e4dd2f12e6a2dba9b1505
+│  │  │      
+│  │  ├─d9
+│  │  │      a4346bde9ea0e0855235909cee6f49d54026d0
+│  │  │      a96771cd6fd654490e35ff6e7b7e1eafaee3b8
+│  │  │      
+│  │  ├─da
+│  │  │      9707dbdf40dceef3043c233b3c759cd1f5c98c
+│  │  │      
+│  │  ├─db
+│  │  │      3a483e4b74971fbfb1cc0fb6499852cedfe650
+│  │  │      8bdfa91a4d2f898c26ee821e5709ff1617b128
+│  │  │      95888304d89c8a80c083a4f6ad0ef2c55f1087
+│  │  │      baba3cfebea5c6c6883f40cfa9fd39e1e1659c
+│  │  │      
+│  │  ├─dc
+│  │  │      51687f92056d9f7c84e8a4720d1693a6573edc
+│  │  │      
+│  │  ├─dd
+│  │  │      452dd5579be3b825c9157e67df08d69450a32f
+│  │  │      ab0fcc0cf4a8bee924321bbc8580ee14cf0c60
+│  │  │      c1c6294381c6253b19453733fd52af7734516c
+│  │  │      
+│  │  ├─de
+│  │  │      984d6925a2291b62023c482415d9f2d082d83b
+│  │  │      
+│  │  ├─df
+│  │  │      ef741713e1a6223f1e9badffacd2477f364172
+│  │  │      
+│  │  ├─e0
+│  │  │      5e0f97a3674d02e0f160c5193f54f6b3a30fdc
+│  │  │      dfab3d13fc73ae2851dab2c4e42350b81da164
+│  │  │      eff222ba83ddcd3c2212e9336fb143e72204bf
+│  │  │      
+│  │  ├─e1
+│  │  │      2c0e0ed7c2f2de559f7eaccb93ccf5d5b2ba01
+│  │  │      2e068d8749054dda4793ae9425df87230f1906
+│  │  │      
+│  │  ├─e2
+│  │  │      434a9298a9754c54c163a8aa3c8797d0c6a236
+│  │  │      89d929b9552beb7be70329b7cbefb1d0618008
+│  │  │      
+│  │  ├─e3
+│  │  │      2d6ef70610b72b424cdd20365433e31006f671
+│  │  │      84ddfe9f5ea35e5797bb2ea6f9628b445e210c
+│  │  │      e4b18835a5f91e7696e98251bb3d216e67b9e5
+│  │  │      f1447db8256b0a17a53b20821c6e2f93cb0078
+│  │  │      
+│  │  ├─e4
+│  │  │      63eab615a5bd3b913e9b160085ad089679ea7c
+│  │  │      
+│  │  ├─e5
+│  │  │      5ed8728d35c33c89fb541e42e34cf16b4d5d33
+│  │  │      ace116b6f53cfec96eb5175ecd36f727ad4047
+│  │  │      
+│  │  ├─e6
+│  │  │      316a5a15feb994c419d351c304303f6e57992c
+│  │  │      553c22c0f585ffadb805a96fc62176219276cd
+│  │  │      d4db80572a8321fa233d7efd82636fd896bf49
+│  │  │      
+│  │  ├─e7
+│  │  │      590a45011ae559ded61d2cc715fddcc7c99079
+│  │  │      bc0b1cc805def42f0093fd56af93e60f253411
+│  │  │      
+│  │  ├─e8
+│  │  │      d03ca47883016f220b45ea0af1fa3591a9d05b
+│  │  │      
+│  │  ├─ea
+│  │  │      04126e111b6a8e75540cb12c073c5336e92b23
+│  │  │      b88b72fc88d3ac37e1e6333133513bb1b63878
+│  │  │      
+│  │  ├─eb
+│  │  │      4240bec3352fcf71a5373f31f2ba60026daf5f
+│  │  │      
+│  │  ├─ec
+│  │  │      a5c7b47ef81e58081fa0e3ac19255ba334a521
+│  │  │      
+│  │  ├─ed
+│  │  │      f171b7988c706c1b1c02103f8997a89adfb2ab
+│  │  │      
+│  │  ├─ee
+│  │  │      0ed5da5d58a5c35e8690fa69372184eed1caa2
+│  │  │      
+│  │  ├─ef
+│  │  │      2796dcfa0acad44fbf4e6bfb6537ac871177ba
+│  │  │      651bd852fe99da370c3ec62f21e60e169139d8
+│  │  │      
+│  │  ├─f0
+│  │  │      064be6ec9a9118c136ef00a4cb57df7844c25e
+│  │  │      8d13140e3bfb2287c2e9d38647899ceac77add
+│  │  │      92d7e351cb195eaf707dbec74d32ced42f432f
+│  │  │      ab1c9a231d5edf9197ed8562ff754080731e6b
+│  │  │      bf4d2ccc77dab4149a8b400c4c7a680c7c5158
+│  │  │      bf53b68f16b04c1bc56d66b6930cb275d9ed1f
+│  │  │      
+│  │  ├─f1
+│  │  │      b6a9d667db98800639fa0f45f4bdd5a582bdba
+│  │  │      
+│  │  ├─f2
+│  │  │      0d82846f1a90fba9f0a44923938d6adce8357a
+│  │  │      
+│  │  ├─f3
+│  │  │      2ae03e60528a48432907a662cba40edcbfad14
+│  │  │      5577572b64743b050e46f08711bcff0039ace4
+│  │  │      5928a264bd981595dce02cf48c1776e2b5770a
+│  │  │      
+│  │  ├─f4
+│  │  │      4f1c695a2bc7e1138400a7aebc6b6a67683a14
+│  │  │      790e799f4fbdf98aef715556b834bd16099569
+│  │  │      cd3573deb154b22067e77d6138949f8607da75
+│  │  │      da6164adf9a8b80777a57022f5912f8104dd85
+│  │  │      
+│  │  ├─f5
+│  │  │      342767d5db8a93c88edad62d14f3ac738d99e6
+│  │  │      88932cde3e0a927c6332c47b6525f2cc0210ea
+│  │  │      
+│  │  ├─f6
+│  │  │      ba376301c266cda881a438314aaa96cfc90e7e
+│  │  │      d3e6d8ed75de1a2f1956b671c131388a84d2e9
+│  │  │      
+│  │  ├─f7
+│  │  │      715bf52817bc577c0d33cd0cbd17da898848a1
+│  │  │      73d1b8e120041d9148858357f4c4d63c29fb74
+│  │  │      
+│  │  ├─f8
+│  │  │      33f698429360ac19d00b27571cab699f1dc031
+│  │  │      c2b58203ee509e39c471b7e5e27658c3d1b941
+│  │  │      
+│  │  ├─f9
+│  │  │      c12df42884248537dda072f284ae15f6149b61
+│  │  │      c602e8c9a2d170a958de7682c0f3043a7e83ab
+│  │  │      
+│  │  ├─fa
+│  │  │      329520342aa0087fb9ba7914000fd1573c9080
+│  │  │      c667d9c65f943bd235c73f29d889b7b8eb2214
+│  │  │      e6a045d67ce756f6c44c8a801717d860d520e0
+│  │  │      
+│  │  ├─fb
+│  │  │      0150bb7af66c3fdc981ad3217e2d9d7aee01db
+│  │  │      4db04e6822a6555619a4add0c1f69ff7bcce9e
+│  │  │      6da7edace016633acbf78d38efccaa087ec833
+│  │  │      7fd06e1766ffe0b86a06a02c41a5498b52dc5b
+│  │  │      f2662702aab503b00bbc11f6ffe9ad7e91fee4
+│  │  │      
+│  │  ├─fc
+│  │  │      1427d9187c66340fd8daed7299a8a471829d0f
+│  │  │      422a0e175b3e9671c897459b2574b073460bbf
+│  │  │      5a0cfafa213e9861135c8ced7b87ebea74c269
+│  │  │      efd4ddd389a2d402b443a6d3ea8366cdc1d41c
+│  │  │      
+│  │  ├─fd
+│  │  │      677218fc5d3e6dd5ac55064b60444c617ed72d
+│  │  │      
+│  │  ├─fe
+│  │  │      cae0902e539b4e81888b1a98660ad86ddb9fbc
+│  │  │      
+│  │  ├─ff
+│  │  │      6374f9af30212efe3fcc7b8a14c02034b8a5a0
+│  │  │      6f0f0993aa2d6c1d52bf2f7142cf17371d348d
+│  │  │      a96d8343accebbd41d3fb7d8c4e9cebdc510ff
+│  │  │      
+│  │  ├─info
+│  │  │      packs
+│  │  │      
+│  │  └─pack
+│  │          pack-9ef4520c4aa971f453acb8b26a67ad6ef133358e.idx
+│  │          pack-9ef4520c4aa971f453acb8b26a67ad6ef133358e.pack
+│  │          pack-d4b41710b7420cac0552468611d8f813cbf0c5a9.idx
+│  │          pack-d4b41710b7420cac0552468611d8f813cbf0c5a9.pack
+│  │          
+│  └─refs
+│      ├─heads
+│      │      master
+│      │      
+│      ├─remotes
+│      │  └─origin
+│      │          master
+│      │          
+│      └─tags
+├─.gradle
+│  ├─4.10.1
+│  │  │  gc.properties
+│  │  │  
+│  │  ├─fileChanges
+│  │  │      last-build.bin
+│  │  │      
+│  │  ├─fileHashes
+│  │  │      fileHashes.bin
+│  │  │      fileHashes.lock
+│  │  │      
+│  │  └─vcsMetadata-1
+│  ├─4.3
+│  │  ├─fileChanges
+│  │  │      last-build.bin
+│  │  │      
+│  │  ├─fileContent
+│  │  │      annotation-processors.bin
+│  │  │      fileContent.lock
+│  │  │      
+│  │  ├─fileHashes
+│  │  │      fileHashes.bin
+│  │  │      fileHashes.lock
+│  │  │      resourceHashesCache.bin
+│  │  │      
+│  │  └─taskHistory
+│  │          taskHistory.bin
+│  │          taskHistory.lock
+│  │          
+│  ├─buildOutputCleanup
+│  │      buildOutputCleanup.lock
+│  │      cache.properties
+│  │      outputFiles.bin
+│  │      
+│  └─vcs-1
+│          gc.properties
+│          
+├─.settings
+│      org.eclipse.buildship.core.prefs
+│      org.eclipse.core.resources.prefs
+│      
+├─bin
+│  │  application.properties
+│  │  banner.txt
+│  │  edit.ftl
+│  │  list.ftl
+│  │  XiaoMi.xmind
+│  │  
+│  ├─com
+│  │  └─wuyou
+│  │      │  Application.class
+│  │      │  ServletInitializer.class
+│  │      │  
+│  │      ├─controller
+│  │      │      AccountLogController.class
+│  │      │      AdController.class
+│  │      │      AdminController.class
+│  │      │      AdminLogController.class
+│  │      │      AdPostionController.class
+│  │      │      ArticleCat2Controller.class
+│  │      │      ArticleCatController.class
+│  │      │      ArticleController.class
+│  │      │      BaseController.class
+│  │      │      BrandController.class
+│  │      │      CartController.class
+│  │      │      CommentController.class
+│  │      │      ConfigController.class
+│  │      │      CouponController.class
+│  │      │      DeliveryDocController.class
+│  │      │      DemoController.class
+│  │      │      DistributeGoodsController.class
+│  │      │      DistributeLevelController.class
+│  │      │      ExpenseLogController.class
+│  │      │      FeedBackController.class
+│  │      │      FlashSaleController.class
+│  │      │      GoodsActivityController.class
+│  │      │      GoodsAttrController.class
+│  │      │      GoodsAttributeController.class
+│  │      │      GoodsCategoryController.class
+│  │      │      GoodsConsultController.class
+│  │      │      GoodsController.class
+│  │      │      GoodsImagesController.class
+│  │      │      GoodsTypeController.class
+│  │      │      GroupBuyController.class
+│  │      │      InvoiceController.class
+│  │      │      MessageController.class
+│  │      │      NavigationController.class
+│  │      │      OauthUserController.class
+│  │      │      OrderActionController.class
+│  │      │      OrderController.class
+│  │      │      OrderGoodsController.class
+│  │      │      PaymentController.class
+│  │      │      PickUpController.class
+│  │      │      PromGoodsController.class
+│  │      │      PromOrderController.class
+│  │      │      UserController.class
+│  │      │      
+│  │      ├─dao
+│  │      │      AccountLogMapper.class
+│  │      │      AdMapper.class
+│  │      │      AdminLogMapper.class
+│  │      │      AdminMapper.class
+│  │      │      AdminRoleMapper.class
+│  │      │      AdPositionMapper.class
+│  │      │      AreaRegionMapper.class
+│  │      │      ArticleCat2Mapper.class
+│  │      │      ArticleCatMapper.class
+│  │      │      ArticleMapper.class
+│  │      │      BrandMapper.class
+│  │      │      CartMapper.class
+│  │      │      CommentMapper.class
+│  │      │      ConfigMapper.class
+│  │      │      CouponExample$Criteria.class
+│  │      │      CouponExample$Criterion.class
+│  │      │      CouponExample$GeneratedCriteria.class
+│  │      │      CouponExample.class
+│  │      │      CouponListMapper.class
+│  │      │      CouponMapper.class
+│  │      │      DeliveryDocMapper.class
+│  │      │      DistributGoodsMapper.class
+│  │      │      DistributLevelMapper.class
+│  │      │      ExpenseLogMapper.class
+│  │      │      FeedbackMapper.class
+│  │      │      FlashSaleMapper.class
+│  │      │      FriendLinkMapper.class
+│  │      │      generatorConfig.xml
+│  │      │      GoodsActivityMapper.class
+│  │      │      GoodsAttributeMapper.class
+│  │      │      GoodsAttrMapper.class
+│  │      │      GoodsCategoryMapper.class
+│  │      │      GoodsCollectMapper.class
+│  │      │      GoodsConsultMapper.class
+│  │      │      GoodsCouponMapper.class
+│  │      │      GoodsImagesMapper.class
+│  │      │      GoodsMapper.class
+│  │      │      GoodsTypeMapper.class
+│  │      │      GoodsVisitMapper.class
+│  │      │      GroupBuyMapper.class
+│  │      │      InvoiceMapper.class
+│  │      │      MessageMapper.class
+│  │      │      NavigationMapper.class
+│  │      │      OauthUsersMapper.class
+│  │      │      OrderActionMapper.class
+│  │      │      OrderGoodsMapper.class
+│  │      │      OrderMapper.class
+│  │      │      PaymentMapper.class
+│  │      │      PickUpMapper.class
+│  │      │      PromGoodsMapper.class
+│  │      │      PromOrderMapper.class
+│  │      │      RebateLogMapper.class
+│  │      │      RechargeMapper.class
+│  │      │      Region2Mapper.class
+│  │      │      RegionMapper.class
+│  │      │      ReturnGoodsMapper.class
+│  │      │      SearchWordMapper.class
+│  │      │      ShippingAreaMapper.class
+│  │      │      ShippingMapper.class
+│  │      │      SmsLogMapper.class
+│  │      │      SmsTemplateMapper.class
+│  │      │      SpecGoodsPriceMapper.class
+│  │      │      SpecImageMapper.class
+│  │      │      SpecItemMapper.class
+│  │      │      SpecMapper.class
+│  │      │      StockLogMapper.class
+│  │      │      SuppliersMapper.class
+│  │      │      SystemMenuMapper.class
+│  │      │      SystemModuleMapper.class
+│  │      │      TeamActivityMapper.class
+│  │      │      TeamFollowMapper.class
+│  │      │      TeamFoundMapper.class
+│  │      │      TeamLotteryMapper.class
+│  │      │      TopicMapper.class
+│  │      │      UserAddressMapper.class
+│  │      │      UserCollectionMapper.class
+│  │      │      UserDistributionMapper.class
+│  │      │      UserExtendMapper.class
+│  │      │      UserLevelMapper.class
+│  │      │      UserMapper.class
+│  │      │      UserMessageMapper.class
+│  │      │      UserSignMapper.class
+│  │      │      UsersMapper.class
+│  │      │      UserStoreMapper.class
+│  │      │      VirtualShopMapper.class
+│  │      │      VrOrderCodeMapper.class
+│  │      │      WithdrawalsMapper.class
+│  │      │      WxImgMapper.class
+│  │      │      WxKeywordMapper.class
+│  │      │      WxMenuMapper.class
+│  │      │      WxMsgMapper.class
+│  │      │      WxNewsMapper.class
+│  │      │      WxTextMapper.class
+│  │      │      WxUserMapper.class
+│  │      │      
+│  │      ├─entity
+│  │      │      AccountLog.class
+│  │      │      AccountLogExample$Criteria.class
+│  │      │      AccountLogExample$Criterion.class
+│  │      │      AccountLogExample$GeneratedCriteria.class
+│  │      │      AccountLogExample.class
+│  │      │      Ad.class
+│  │      │      AdAndAdPosition.class
+│  │      │      AdExample$Criteria.class
+│  │      │      AdExample$Criterion.class
+│  │      │      AdExample$GeneratedCriteria.class
+│  │      │      AdExample.class
+│  │      │      Admin.class
+│  │      │      AdminExample$Criteria.class
+│  │      │      AdminExample$Criterion.class
+│  │      │      AdminExample$GeneratedCriteria.class
+│  │      │      AdminExample.class
+│  │      │      AdminLog.class
+│  │      │      AdminLogExample$Criteria.class
+│  │      │      AdminLogExample$Criterion.class
+│  │      │      AdminLogExample$GeneratedCriteria.class
+│  │      │      AdminLogExample.class
+│  │      │      AdminRole.class
+│  │      │      AdminRoleExample$Criteria.class
+│  │      │      AdminRoleExample$Criterion.class
+│  │      │      AdminRoleExample$GeneratedCriteria.class
+│  │      │      AdminRoleExample.class
+│  │      │      AdminWithBLOBs.class
+│  │      │      AdPosition.class
+│  │      │      AdPositionExample$Criteria.class
+│  │      │      AdPositionExample$Criterion.class
+│  │      │      AdPositionExample$GeneratedCriteria.class
+│  │      │      AdPositionExample.class
+│  │      │      AreaRegion.class
+│  │      │      AreaRegionExample$Criteria.class
+│  │      │      AreaRegionExample$Criterion.class
+│  │      │      AreaRegionExample$GeneratedCriteria.class
+│  │      │      AreaRegionExample.class
+│  │      │      Article.class
+│  │      │      ArticleCat.class
+│  │      │      ArticleCat2.class
+│  │      │      ArticleCat2Example$Criteria.class
+│  │      │      ArticleCat2Example$Criterion.class
+│  │      │      ArticleCat2Example$GeneratedCriteria.class
+│  │      │      ArticleCat2Example.class
+│  │      │      ArticleCatExample$Criteria.class
+│  │      │      ArticleCatExample$Criterion.class
+│  │      │      ArticleCatExample$GeneratedCriteria.class
+│  │      │      ArticleCatExample.class
+│  │      │      ArticleExample$Criteria.class
+│  │      │      ArticleExample$Criterion.class
+│  │      │      ArticleExample$GeneratedCriteria.class
+│  │      │      ArticleExample.class
+│  │      │      ArticleWithBLOBs.class
+│  │      │      Brand.class
+│  │      │      BrandAndArticleCat.class
+│  │      │      BrandExample$Criteria.class
+│  │      │      BrandExample$Criterion.class
+│  │      │      BrandExample$GeneratedCriteria.class
+│  │      │      BrandExample.class
+│  │      │      Cart.class
+│  │      │      CartExample$Criteria.class
+│  │      │      CartExample$Criterion.class
+│  │      │      CartExample$GeneratedCriteria.class
+│  │      │      CartExample.class
+│  │      │      CartVo.class
+│  │      │      Comment.class
+│  │      │      CommentExample$Criteria.class
+│  │      │      CommentExample$Criterion.class
+│  │      │      CommentExample$GeneratedCriteria.class
+│  │      │      CommentExample.class
+│  │      │      CommentWithBLOBs.class
+│  │      │      Config.class
+│  │      │      ConfigExample$Criteria.class
+│  │      │      ConfigExample$Criterion.class
+│  │      │      ConfigExample$GeneratedCriteria.class
+│  │      │      ConfigExample.class
+│  │      │      Coupon.class
+│  │      │      CouponExample$Criteria.class
+│  │      │      CouponExample$Criterion.class
+│  │      │      CouponExample$GeneratedCriteria.class
+│  │      │      CouponExample.class
+│  │      │      CouponList.class
+│  │      │      CouponListExample$Criteria.class
+│  │      │      CouponListExample$Criterion.class
+│  │      │      CouponListExample$GeneratedCriteria.class
+│  │      │      CouponListExample.class
+│  │      │      CouponMapper.class
+│  │      │      DeliveryDoc.class
+│  │      │      DeliveryDocExample$Criteria.class
+│  │      │      DeliveryDocExample$Criterion.class
+│  │      │      DeliveryDocExample$GeneratedCriteria.class
+│  │      │      DeliveryDocExample.class
+│  │      │      DistributGoods.class
+│  │      │      DistributGoodsExample$Criteria.class
+│  │      │      DistributGoodsExample$Criterion.class
+│  │      │      DistributGoodsExample$GeneratedCriteria.class
+│  │      │      DistributGoodsExample.class
+│  │      │      DistributLevel.class
+│  │      │      DistributLevelExample$Criteria.class
+│  │      │      DistributLevelExample$Criterion.class
+│  │      │      DistributLevelExample$GeneratedCriteria.class
+│  │      │      DistributLevelExample.class
+│  │      │      ExpenseLog.class
+│  │      │      ExpenseLogExample$Criteria.class
+│  │      │      ExpenseLogExample$Criterion.class
+│  │      │      ExpenseLogExample$GeneratedCriteria.class
+│  │      │      ExpenseLogExample.class
+│  │      │      Feedback.class
+│  │      │      FeedbackExample$Criteria.class
+│  │      │      FeedbackExample$Criterion.class
+│  │      │      FeedbackExample$GeneratedCriteria.class
+│  │      │      FeedbackExample.class
+│  │      │      FlashSale.class
+│  │      │      FlashSaleExample$Criteria.class
+│  │      │      FlashSaleExample$Criterion.class
+│  │      │      FlashSaleExample$GeneratedCriteria.class
+│  │      │      FlashSaleExample.class
+│  │      │      FriendLink.class
+│  │      │      FriendLinkExample$Criteria.class
+│  │      │      FriendLinkExample$Criterion.class
+│  │      │      FriendLinkExample$GeneratedCriteria.class
+│  │      │      FriendLinkExample.class
+│  │      │      Goods.class
+│  │      │      GoodsActivity.class
+│  │      │      GoodsActivityExample$Criteria.class
+│  │      │      GoodsActivityExample$Criterion.class
+│  │      │      GoodsActivityExample$GeneratedCriteria.class
+│  │      │      GoodsActivityExample.class
+│  │      │      GoodsActivityWithBLOBs.class
+│  │      │      GoodsAttr.class
+│  │      │      GoodsAttrExample$Criteria.class
+│  │      │      GoodsAttrExample$Criterion.class
+│  │      │      GoodsAttrExample$GeneratedCriteria.class
+│  │      │      GoodsAttrExample.class
+│  │      │      GoodsAttribute.class
+│  │      │      GoodsAttributeExample$Criteria.class
+│  │      │      GoodsAttributeExample$Criterion.class
+│  │      │      GoodsAttributeExample$GeneratedCriteria.class
+│  │      │      GoodsAttributeExample.class
+│  │      │      GoodsCategory.class
+│  │      │      GoodsCategoryExample$Criteria.class
+│  │      │      GoodsCategoryExample$Criterion.class
+│  │      │      GoodsCategoryExample$GeneratedCriteria.class
+│  │      │      GoodsCategoryExample.class
+│  │      │      GoodsCollect.class
+│  │      │      GoodsCollectExample$Criteria.class
+│  │      │      GoodsCollectExample$Criterion.class
+│  │      │      GoodsCollectExample$GeneratedCriteria.class
+│  │      │      GoodsCollectExample.class
+│  │      │      GoodsConsult.class
+│  │      │      GoodsConsultExample$Criteria.class
+│  │      │      GoodsConsultExample$Criterion.class
+│  │      │      GoodsConsultExample$GeneratedCriteria.class
+│  │      │      GoodsConsultExample.class
+│  │      │      GoodsConsultVo.class
+│  │      │      GoodsCouponExample$Criteria.class
+│  │      │      GoodsCouponExample$Criterion.class
+│  │      │      GoodsCouponExample$GeneratedCriteria.class
+│  │      │      GoodsCouponExample.class
+│  │      │      GoodsCouponKey.class
+│  │      │      GoodsExample$Criteria.class
+│  │      │      GoodsExample$Criterion.class
+│  │      │      GoodsExample$GeneratedCriteria.class
+│  │      │      GoodsExample.class
+│  │      │      GoodsImages.class
+│  │      │      GoodsImagesExample$Criteria.class
+│  │      │      GoodsImagesExample$Criterion.class
+│  │      │      GoodsImagesExample$GeneratedCriteria.class
+│  │      │      GoodsImagesExample.class
+│  │      │      GoodsType.class
+│  │      │      GoodsTypeExample$Criteria.class
+│  │      │      GoodsTypeExample$Criterion.class
+│  │      │      GoodsTypeExample$GeneratedCriteria.class
+│  │      │      GoodsTypeExample.class
+│  │      │      GoodsVisit.class
+│  │      │      GoodsVisitExample$Criteria.class
+│  │      │      GoodsVisitExample$Criterion.class
+│  │      │      GoodsVisitExample$GeneratedCriteria.class
+│  │      │      GoodsVisitExample.class
+│  │      │      GoodsVisitKey.class
+│  │      │      GoodsVo.class
+│  │      │      GoodsWithBLOBs.class
+│  │      │      GroupBuy.class
+│  │      │      GroupBuyExample$Criteria.class
+│  │      │      GroupBuyExample$Criterion.class
+│  │      │      GroupBuyExample$GeneratedCriteria.class
+│  │      │      GroupBuyExample.class
+│  │      │      Invoice.class
+│  │      │      InvoiceExample$Criteria.class
+│  │      │      InvoiceExample$Criterion.class
+│  │      │      InvoiceExample$GeneratedCriteria.class
+│  │      │      InvoiceExample.class
+│  │      │      Message.class
+│  │      │      MessageExample$Criteria.class
+│  │      │      MessageExample$Criterion.class
+│  │      │      MessageExample$GeneratedCriteria.class
+│  │      │      MessageExample.class
+│  │      │      MessageWithBLOBs.class
+│  │      │      Navigation.class
+│  │      │      NavigationExample$Criteria.class
+│  │      │      NavigationExample$Criterion.class
+│  │      │      NavigationExample$GeneratedCriteria.class
+│  │      │      NavigationExample.class
+│  │      │      OauthUsers.class
+│  │      │      OauthUsersExample$Criteria.class
+│  │      │      OauthUsersExample$Criterion.class
+│  │      │      OauthUsersExample$GeneratedCriteria.class
+│  │      │      OauthUsersExample.class
+│  │      │      Order.class
+│  │      │      OrderAction.class
+│  │      │      OrderActionExample$Criteria.class
+│  │      │      OrderActionExample$Criterion.class
+│  │      │      OrderActionExample$GeneratedCriteria.class
+│  │      │      OrderActionExample.class
+│  │      │      OrderExample$Criteria.class
+│  │      │      OrderExample$Criterion.class
+│  │      │      OrderExample$GeneratedCriteria.class
+│  │      │      OrderExample.class
+│  │      │      OrderGoods.class
+│  │      │      OrderGoodsExample$Criteria.class
+│  │      │      OrderGoodsExample$Criterion.class
+│  │      │      OrderGoodsExample$GeneratedCriteria.class
+│  │      │      OrderGoodsExample.class
+│  │      │      Payment.class
+│  │      │      PaymentExample$Criteria.class
+│  │      │      PaymentExample$Criterion.class
+│  │      │      PaymentExample$GeneratedCriteria.class
+│  │      │      PaymentExample.class
+│  │      │      PaymentWithBLOBs.class
+│  │      │      PickUp.class
+│  │      │      PickUpExample$Criteria.class
+│  │      │      PickUpExample$Criterion.class
+│  │      │      PickUpExample$GeneratedCriteria.class
+│  │      │      PickUpExample.class
+│  │      │      PromGoods.class
+│  │      │      PromGoodsExample$Criteria.class
+│  │      │      PromGoodsExample$Criterion.class
+│  │      │      PromGoodsExample$GeneratedCriteria.class
+│  │      │      PromGoodsExample.class
+│  │      │      PromOrder.class
+│  │      │      PromOrderExample$Criteria.class
+│  │      │      PromOrderExample$Criterion.class
+│  │      │      PromOrderExample$GeneratedCriteria.class
+│  │      │      PromOrderExample.class
+│  │      │      RebateLog.class
+│  │      │      RebateLogExample$Criteria.class
+│  │      │      RebateLogExample$Criterion.class
+│  │      │      RebateLogExample$GeneratedCriteria.class
+│  │      │      RebateLogExample.class
+│  │      │      Recharge.class
+│  │      │      RechargeExample$Criteria.class
+│  │      │      RechargeExample$Criterion.class
+│  │      │      RechargeExample$GeneratedCriteria.class
+│  │      │      RechargeExample.class
+│  │      │      Region.class
+│  │      │      Region2.class
+│  │      │      Region2Example$Criteria.class
+│  │      │      Region2Example$Criterion.class
+│  │      │      Region2Example$GeneratedCriteria.class
+│  │      │      Region2Example.class
+│  │      │      RegionExample$Criteria.class
+│  │      │      RegionExample$Criterion.class
+│  │      │      RegionExample$GeneratedCriteria.class
+│  │      │      RegionExample.class
+│  │      │      ReturnGoods.class
+│  │      │      ReturnGoodsExample$Criteria.class
+│  │      │      ReturnGoodsExample$Criterion.class
+│  │      │      ReturnGoodsExample$GeneratedCriteria.class
+│  │      │      ReturnGoodsExample.class
+│  │      │      SearchWord.class
+│  │      │      SearchWordExample$Criteria.class
+│  │      │      SearchWordExample$Criterion.class
+│  │      │      SearchWordExample$GeneratedCriteria.class
+│  │      │      SearchWordExample.class
+│  │      │      Shipping.class
+│  │      │      ShippingArea.class
+│  │      │      ShippingAreaExample$Criteria.class
+│  │      │      ShippingAreaExample$Criterion.class
+│  │      │      ShippingAreaExample$GeneratedCriteria.class
+│  │      │      ShippingAreaExample.class
+│  │      │      ShippingExample$Criteria.class
+│  │      │      ShippingExample$Criterion.class
+│  │      │      ShippingExample$GeneratedCriteria.class
+│  │      │      ShippingExample.class
+│  │      │      SmsLog.class
+│  │      │      SmsLogExample$Criteria.class
+│  │      │      SmsLogExample$Criterion.class
+│  │      │      SmsLogExample$GeneratedCriteria.class
+│  │      │      SmsLogExample.class
+│  │      │      SmsTemplate.class
+│  │      │      SmsTemplateExample$Criteria.class
+│  │      │      SmsTemplateExample$Criterion.class
+│  │      │      SmsTemplateExample$GeneratedCriteria.class
+│  │      │      SmsTemplateExample.class
+│  │      │      Spec.class
+│  │      │      SpecExample$Criteria.class
+│  │      │      SpecExample$Criterion.class
+│  │      │      SpecExample$GeneratedCriteria.class
+│  │      │      SpecExample.class
+│  │      │      SpecGoodsPrice.class
+│  │      │      SpecGoodsPriceExample$Criteria.class
+│  │      │      SpecGoodsPriceExample$Criterion.class
+│  │      │      SpecGoodsPriceExample$GeneratedCriteria.class
+│  │      │      SpecGoodsPriceExample.class
+│  │      │      SpecImage.class
+│  │      │      SpecImageExample$Criteria.class
+│  │      │      SpecImageExample$Criterion.class
+│  │      │      SpecImageExample$GeneratedCriteria.class
+│  │      │      SpecImageExample.class
+│  │      │      SpecItem.class
+│  │      │      SpecItemExample$Criteria.class
+│  │      │      SpecItemExample$Criterion.class
+│  │      │      SpecItemExample$GeneratedCriteria.class
+│  │      │      SpecItemExample.class
+│  │      │      StockLog.class
+│  │      │      StockLogExample$Criteria.class
+│  │      │      StockLogExample$Criterion.class
+│  │      │      StockLogExample$GeneratedCriteria.class
+│  │      │      StockLogExample.class
+│  │      │      Suppliers.class
+│  │      │      SuppliersExample$Criteria.class
+│  │      │      SuppliersExample$Criterion.class
+│  │      │      SuppliersExample$GeneratedCriteria.class
+│  │      │      SuppliersExample.class
+│  │      │      SystemMenu.class
+│  │      │      SystemMenuExample$Criteria.class
+│  │      │      SystemMenuExample$Criterion.class
+│  │      │      SystemMenuExample$GeneratedCriteria.class
+│  │      │      SystemMenuExample.class
+│  │      │      SystemModule.class
+│  │      │      SystemModuleExample$Criteria.class
+│  │      │      SystemModuleExample$Criterion.class
+│  │      │      SystemModuleExample$GeneratedCriteria.class
+│  │      │      SystemModuleExample.class
+│  │      │      TeamActivity.class
+│  │      │      TeamActivityExample$Criteria.class
+│  │      │      TeamActivityExample$Criterion.class
+│  │      │      TeamActivityExample$GeneratedCriteria.class
+│  │      │      TeamActivityExample.class
+│  │      │      TeamFollow.class
+│  │      │      TeamFollowExample$Criteria.class
+│  │      │      TeamFollowExample$Criterion.class
+│  │      │      TeamFollowExample$GeneratedCriteria.class
+│  │      │      TeamFollowExample.class
+│  │      │      TeamFound.class
+│  │      │      TeamFoundExample$Criteria.class
+│  │      │      TeamFoundExample$Criterion.class
+│  │      │      TeamFoundExample$GeneratedCriteria.class
+│  │      │      TeamFoundExample.class
+│  │      │      TeamLottery.class
+│  │      │      TeamLotteryExample$Criteria.class
+│  │      │      TeamLotteryExample$Criterion.class
+│  │      │      TeamLotteryExample$GeneratedCriteria.class
+│  │      │      TeamLotteryExample.class
+│  │      │      Topic.class
+│  │      │      TopicExample$Criteria.class
+│  │      │      TopicExample$Criterion.class
+│  │      │      TopicExample$GeneratedCriteria.class
+│  │      │      TopicExample.class
+│  │      │      User.class
+│  │      │      UserAddress.class
+│  │      │      UserAddressExample$Criteria.class
+│  │      │      UserAddressExample$Criterion.class
+│  │      │      UserAddressExample$GeneratedCriteria.class
+│  │      │      UserAddressExample.class
+│  │      │      UserCollection.class
+│  │      │      UserCollectionExample$Criteria.class
+│  │      │      UserCollectionExample$Criterion.class
+│  │      │      UserCollectionExample$GeneratedCriteria.class
+│  │      │      UserCollectionExample.class
+│  │      │      UserDistribution.class
+│  │      │      UserDistributionExample$Criteria.class
+│  │      │      UserDistributionExample$Criterion.class
+│  │      │      UserDistributionExample$GeneratedCriteria.class
+│  │      │      UserDistributionExample.class
+│  │      │      UserExtend.class
+│  │      │      UserExtendExample$Criteria.class
+│  │      │      UserExtendExample$Criterion.class
+│  │      │      UserExtendExample$GeneratedCriteria.class
+│  │      │      UserExtendExample.class
+│  │      │      UserLevel.class
+│  │      │      UserLevelExample$Criteria.class
+│  │      │      UserLevelExample$Criterion.class
+│  │      │      UserLevelExample$GeneratedCriteria.class
+│  │      │      UserLevelExample.class
+│  │      │      UserMessage.class
+│  │      │      UserMessageExample$Criteria.class
+│  │      │      UserMessageExample$Criterion.class
+│  │      │      UserMessageExample$GeneratedCriteria.class
+│  │      │      UserMessageExample.class
+│  │      │      Users.class
+│  │      │      UsersExample$Criteria.class
+│  │      │      UsersExample$Criterion.class
+│  │      │      UsersExample$GeneratedCriteria.class
+│  │      │      UsersExample.class
+│  │      │      UserSign.class
+│  │      │      UserSignExample$Criteria.class
+│  │      │      UserSignExample$Criterion.class
+│  │      │      UserSignExample$GeneratedCriteria.class
+│  │      │      UserSignExample.class
+│  │      │      UserStore.class
+│  │      │      UserStoreExample$Criteria.class
+│  │      │      UserStoreExample$Criterion.class
+│  │      │      UserStoreExample$GeneratedCriteria.class
+│  │      │      UserStoreExample.class
+│  │      │      VirtualShop.class
+│  │      │      VirtualShopExample$Criteria.class
+│  │      │      VirtualShopExample$Criterion.class
+│  │      │      VirtualShopExample$GeneratedCriteria.class
+│  │      │      VirtualShopExample.class
+│  │      │      VrOrderCode.class
+│  │      │      VrOrderCodeExample$Criteria.class
+│  │      │      VrOrderCodeExample$Criterion.class
+│  │      │      VrOrderCodeExample$GeneratedCriteria.class
+│  │      │      VrOrderCodeExample.class
+│  │      │      Withdrawals.class
+│  │      │      WithdrawalsExample$Criteria.class
+│  │      │      WithdrawalsExample$Criterion.class
+│  │      │      WithdrawalsExample$GeneratedCriteria.class
+│  │      │      WithdrawalsExample.class
+│  │      │      WxImg.class
+│  │      │      WxImgExample$Criteria.class
+│  │      │      WxImgExample$Criterion.class
+│  │      │      WxImgExample$GeneratedCriteria.class
+│  │      │      WxImgExample.class
+│  │      │      WxKeyword.class
+│  │      │      WxKeywordExample$Criteria.class
+│  │      │      WxKeywordExample$Criterion.class
+│  │      │      WxKeywordExample$GeneratedCriteria.class
+│  │      │      WxKeywordExample.class
+│  │      │      WxMenu.class
+│  │      │      WxMenuExample$Criteria.class
+│  │      │      WxMenuExample$Criterion.class
+│  │      │      WxMenuExample$GeneratedCriteria.class
+│  │      │      WxMenuExample.class
+│  │      │      WxMsg.class
+│  │      │      WxMsgExample$Criteria.class
+│  │      │      WxMsgExample$Criterion.class
+│  │      │      WxMsgExample$GeneratedCriteria.class
+│  │      │      WxMsgExample.class
+│  │      │      WxNews.class
+│  │      │      WxNewsExample$Criteria.class
+│  │      │      WxNewsExample$Criterion.class
+│  │      │      WxNewsExample$GeneratedCriteria.class
+│  │      │      WxNewsExample.class
+│  │      │      WxText.class
+│  │      │      WxTextExample$Criteria.class
+│  │      │      WxTextExample$Criterion.class
+│  │      │      WxTextExample$GeneratedCriteria.class
+│  │      │      WxTextExample.class
+│  │      │      WxUser.class
+│  │      │      WxUserExample$Criteria.class
+│  │      │      WxUserExample$Criterion.class
+│  │      │      WxUserExample$GeneratedCriteria.class
+│  │      │      WxUserExample.class
+│  │      │      
+│  │      ├─hellogradle
+│  │      │      CheckNumeric.class
+│  │      │      package-info.class
+│  │      │      
+│  │      └─service
+│  │          │  AccountlogService.class
+│  │          │  AdminLogService.class
+│  │          │  AdminService.class
+│  │          │  AdPositionService.class
+│  │          │  AdService.class
+│  │          │  ArticleCat2Service.class
+│  │          │  ArticleCatService.class
+│  │          │  ArticleService.class
+│  │          │  BrandService.class
+│  │          │  CartService.class
+│  │          │  CommentService.class
+│  │          │  ConfigService.class
+│  │          │  CouponService.class
+│  │          │  DeliveryDocService.class
+│  │          │  DistributGoodsService.class
+│  │          │  DistributLevelService.class
+│  │          │  ExpenseLogService.class
+│  │          │  FeedbackService.class
+│  │          │  FlashSaleService.class
+│  │          │  GoodAttributeService.class
+│  │          │  GoodsActivityService.class
+│  │          │  GoodsAttrService.class
+│  │          │  GoodsCategoryService.class
+│  │          │  GoodsConsultService.class
+│  │          │  GoodsImagesService.class
+│  │          │  GoodsService.class
+│  │          │  GoodsTypeService.class
+│  │          │  GroupBuyService.class
+│  │          │  InvoiceService.class
+│  │          │  MessageService.class
+│  │          │  NavigationService.class
+│  │          │  OauthUsersService.class
+│  │          │  OrderActionService.class
+│  │          │  OrderGoodsService.class
+│  │          │  OrderService.class
+│  │          │  PaymentService.class
+│  │          │  PickUpService.class
+│  │          │  PromGoodService.class
+│  │          │  PromOrderService.class
+│  │          │  UserService.class
+│  │          │  
+│  │          └─impl
+│  │                  AccountlogServiceImpl.class
+│  │                  AdminLogServiceImpl.class
+│  │                  AdminServiceImpl.class
+│  │                  AdPositionServiceImpl.class
+│  │                  AdServiceImpl.class
+│  │                  ArticleCat2ServiceImpl.class
+│  │                  ArticleCatServiceImpl.class
+│  │                  ArticleServiceImpl.class
+│  │                  BrandServiceImpl.class
+│  │                  CartServiceImpl.class
+│  │                  CommentServiceImpl.class
+│  │                  ConfigServiceImpl.class
+│  │                  CouponServiceImpl.class
+│  │                  DelivertDocServiceImpl.class
+│  │                  ExpenseLogServiceImpl.class
+│  │                  FeedBackServiceImpl.class
+│  │                  FlashSaleServiceImpl.class
+│  │                  GoodsActivityServiceImpl.class
+│  │                  GoodsAttributeServiceImpl.class
+│  │                  GoodsAttrServiceImpl.class
+│  │                  GoodsCategoryServiceImpl.class
+│  │                  GoodsConsultServiceImpl.class
+│  │                  GoodsImagesServiceImpl.class
+│  │                  GoodsServiceImpl.class
+│  │                  GoodsTypeServiceImpl.class
+│  │                  GroupBuyServiceImpl.class
+│  │                  InvoiceServiceImpl.class
+│  │                  MessageServiceImpl.class
+│  │                  NavigationServiceImpl.class
+│  │                  OauthUsersServiceImpl.class
+│  │                  OrderActionServiceImpl.class
+│  │                  OrderGoodsServiceImpl.class
+│  │                  OrderServiceImpl.class
+│  │                  PaymentServiceImpl.class
+│  │                  PickUpServiceImpl.class
+│  │                  PromGoodsServiceImpl.class
+│  │                  PromOrderServiceImpl.class
+│  │                  UserServiceImpl.class
+│  │                  
+│  ├─mapper
+│  │      AccountLogMapper.xml
+│  │      AdMapper.xml
+│  │      AdminLogMapper.xml
+│  │      AdminMapper.xml
+│  │      AdminRoleMapper.xml
+│  │      AdPositionMapper.xml
+│  │      AreaRegionMapper.xml
+│  │      ArticleCat2Mapper.xml
+│  │      ArticleCatMapper.xml
+│  │      ArticleMapper.xml
+│  │      BrandMapper.xml
+│  │      CartMapper.xml
+│  │      CommentMapper.xml
+│  │      ConfigMapper.xml
+│  │      CouponListMapper.xml
+│  │      CouponMapper.xml
+│  │      DeliveryDocMapper.xml
+│  │      DistributGoodsMapper.xml
+│  │      DistributLevelMapper.xml
+│  │      ExpenseLogMapper.xml
+│  │      FeedbackMapper.xml
+│  │      FlashSaleMapper.xml
+│  │      FriendLinkMapper.xml
+│  │      GoodsActivityMapper.xml
+│  │      GoodsAttributeMapper.xml
+│  │      GoodsAttrMapper.xml
+│  │      GoodsCategoryMapper.xml
+│  │      GoodsCollectMapper.xml
+│  │      GoodsConsultMapper.xml
+│  │      GoodsCouponMapper.xml
+│  │      GoodsImagesMapper.xml
+│  │      GoodsMapper.xml
+│  │      GoodsTypeMapper.xml
+│  │      GoodsVisitMapper.xml
+│  │      GroupBuyMapper.xml
+│  │      InvoiceMapper.xml
+│  │      MessageMapper.xml
+│  │      NavigationMapper.xml
+│  │      OauthUsersMapper.xml
+│  │      OrderActionMapper.xml
+│  │      OrderGoodsMapper.xml
+│  │      OrderMapper.xml
+│  │      PaymentMapper.xml
+│  │      PickUpMapper.xml
+│  │      PromGoodsMapper.xml
+│  │      PromOrderMapper.xml
+│  │      RebateLogMapper.xml
+│  │      RechargeMapper.xml
+│  │      Region2Mapper.xml
+│  │      RegionMapper.xml
+│  │      ReturnGoodsMapper.xml
+│  │      SearchWordMapper.xml
+│  │      ShippingAreaMapper.xml
+│  │      ShippingMapper.xml
+│  │      SmsLogMapper.xml
+│  │      SmsTemplateMapper.xml
+│  │      SpecGoodsPriceMapper.xml
+│  │      SpecImageMapper.xml
+│  │      SpecItemMapper.xml
+│  │      SpecMapper.xml
+│  │      StockLogMapper.xml
+│  │      SuppliersMapper.xml
+│  │      SystemMenuMapper.xml
+│  │      SystemModuleMapper.xml
+│  │      TeamActivityMapper.xml
+│  │      TeamFollowMapper.xml
+│  │      TeamFoundMapper.xml
+│  │      TeamLotteryMapper.xml
+│  │      TopicMapper.xml
+│  │      UserAddressMapper.xml
+│  │      UserCollectionMapper.xml
+│  │      UserDistributionMapper.xml
+│  │      UserExtendMapper.xml
+│  │      UserLevelMapper.xml
+│  │      UserMapper.xml
+│  │      UserMessageMapper.xml
+│  │      UserSignMapper.xml
+│  │      UsersMapper.xml
+│  │      UserStoreMapper.xml
+│  │      VirtualShopMapper.xml
+│  │      VrOrderCodeMapper.xml
+│  │      WithdrawalsMapper.xml
+│  │      WxImgMapper.xml
+│  │      WxKeywordMapper.xml
+│  │      WxMenuMapper.xml
+│  │      WxMsgMapper.xml
+│  │      WxNewsMapper.xml
+│  │      WxTextMapper.xml
+│  │      WxUserMapper.xml
+│  │      
+│  ├─public
+│  │  └─ssss
+│  │          404.html
+│  │          5XX.html
+│  │          
+│  ├─static
+│  │  │  404.html
+│  │  │  
+│  │  ├─css
+│  │  │      login.css
+│  │  │      
+│  │  ├─images
+│  │  └─js
+│  │      │  h5-bg-index.js
+│  │      │  h5-bg-login.js
+│  │      │  jquery-2.1.1.min.js
+│  │      │  
+│  │      └─layui
+│  │          │  layui.all.js
+│  │          │  layui.js
+│  │          │  
+│  │          ├─css
+│  │          │  │  layui.css
+│  │          │  │  layui.mobile.css
+│  │          │  │  
+│  │          │  └─modules
+│  │          │      │  code.css
+│  │          │      │  
+│  │          │      ├─laydate
+│  │          │      │  └─default
+│  │          │      │          laydate.css
+│  │          │      │          
+│  │          │      └─layer
+│  │          │          └─default
+│  │          │                  icon-ext.png
+│  │          │                  icon.png
+│  │          │                  layer.css
+│  │          │                  loading-0.gif
+│  │          │                  loading-1.gif
+│  │          │                  loading-2.gif
+│  │          │                  
+│  │          ├─font
+│  │          │      iconfont.eot
+│  │          │      iconfont.svg
+│  │          │      iconfont.ttf
+│  │          │      iconfont.woff
+│  │          │      
+│  │          ├─images
+│  │          │  └─face
+│  │          │          0.gif
+│  │          │          1.gif
+│  │          │          10.gif
+│  │          │          11.gif
+│  │          │          12.gif
+│  │          │          13.gif
+│  │          │          14.gif
+│  │          │          15.gif
+│  │          │          16.gif
+│  │          │          17.gif
+│  │          │          18.gif
+│  │          │          19.gif
+│  │          │          2.gif
+│  │          │          20.gif
+│  │          │          21.gif
+│  │          │          22.gif
+│  │          │          23.gif
+│  │          │          24.gif
+│  │          │          25.gif
+│  │          │          26.gif
+│  │          │          27.gif
+│  │          │          28.gif
+│  │          │          29.gif
+│  │          │          3.gif
+│  │          │          30.gif
+│  │          │          31.gif
+│  │          │          32.gif
+│  │          │          33.gif
+│  │          │          34.gif
+│  │          │          35.gif
+│  │          │          36.gif
+│  │          │          37.gif
+│  │          │          38.gif
+│  │          │          39.gif
+│  │          │          4.gif
+│  │          │          40.gif
+│  │          │          41.gif
+│  │          │          42.gif
+│  │          │          43.gif
+│  │          │          44.gif
+│  │          │          45.gif
+│  │          │          46.gif
+│  │          │          47.gif
+│  │          │          48.gif
+│  │          │          49.gif
+│  │          │          5.gif
+│  │          │          50.gif
+│  │          │          51.gif
+│  │          │          52.gif
+│  │          │          53.gif
+│  │          │          54.gif
+│  │          │          55.gif
+│  │          │          56.gif
+│  │          │          57.gif
+│  │          │          58.gif
+│  │          │          59.gif
+│  │          │          6.gif
+│  │          │          60.gif
+│  │          │          61.gif
+│  │          │          62.gif
+│  │          │          63.gif
+│  │          │          64.gif
+│  │          │          65.gif
+│  │          │          66.gif
+│  │          │          67.gif
+│  │          │          68.gif
+│  │          │          69.gif
+│  │          │          7.gif
+│  │          │          70.gif
+│  │          │          71.gif
+│  │          │          8.gif
+│  │          │          9.gif
+│  │          │          
+│  │          └─lay
+│  │              └─modules
+│  │                      carousel.js
+│  │                      code.js
+│  │                      colorpicker.js
+│  │                      element.js
+│  │                      flow.js
+│  │                      form.js
+│  │                      jquery.js
+│  │                      laydate.js
+│  │                      layedit.js
+│  │                      layer.js
+│  │                      laypage.js
+│  │                      laytpl.js
+│  │                      mobile.js
+│  │                      rate.js
+│  │                      slider.js
+│  │                      table.js
+│  │                      tree.js
+│  │                      upload.js
+│  │                      util.js
+│  │                      
+│  └─templates
+│      ├─ad
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─admin
+│      │      index.ftl
+│      │      login.ftl
+│      │      
+│      ├─article
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─articleCat
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─brand
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─cart
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─comment
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─coupon
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─delivery
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─demo
+│      │      demo.html
+│      │      
+│      ├─feedBack
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─flashSale
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─goods
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─goodsActivity
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─goodsAttribute
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─goodsCategory
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─goodsConsult
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─groupBuy
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─navigation
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      ├─order
+│      │      edit.ftl
+│      │      list.ftl
+│      │      
+│      └─page
+│              edit.ftl
+│              freemarker.ftl
+│              list.ftl
+│              
+├─build
+│  ├─classes
+│  │  └─java
+│  │      ├─main
+│  │      │  │  Library.class
+│  │      │  │  
+│  │      │  └─com
+│  │      │      └─wuyou
+│  │      │          │  Application.class
+│  │      │          │  ServletInitializer.class
+│  │      │          │  
+│  │      │          ├─controller
+│  │      │          │      DemoController.class
+│  │      │          │      UserController.class
+│  │      │          │      
+│  │      │          ├─dao
+│  │      │          │      UserMapper.class
+│  │      │          │      
+│  │      │          ├─entity
+│  │      │          │      User.class
+│  │      │          │      
+│  │      │          ├─hellogradle
+│  │      │          │      CheckNumeric.class
+│  │      │          │      
+│  │      │          └─service
+│  │      │              │  UserService.class
+│  │      │              │  
+│  │      │              └─impl
+│  │      │                      UserServiceImpl.class
+│  │      │                      
+│  │      └─test
+│  │              LibraryTest.class
+│  │              
+│  ├─reports
+│  │  └─tests
+│  │      └─test
+│  │          │  index.html
+│  │          │  
+│  │          ├─css
+│  │          │      base-style.css
+│  │          │      style.css
+│  │          │      
+│  │          └─js
+│  │                  report.js
+│  │                  
+│  ├─resources
+│  │  └─main
+│  │      │  application.properties
+│  │      │  
+│  │      └─mapper
+│  │              UserMapper.xml
+│  │              
+│  ├─test-results
+│  │  └─test
+│  │      └─binary
+│  │              output.bin
+│  │              output.bin.idx
+│  │              results.bin
+│  │              
+│  └─tmp
+│      ├─compileJava
+│      └─compileTestJava
+├─gradle
+│  └─wrapper
+│          gradle-wrapper.jar
+│          gradle-wrapper.properties
+│          
+└─src
+    ├─main
+    │  ├─java
+    │  │  └─com
+    │  │      └─wuyou
+    │  │          │  Application.java
+    │  │          │  ServletInitializer.java
+    │  │          │  
+    │  │          ├─controller
+    │  │          │      AccountLogController.java
+    │  │          │      AdController.java
+    │  │          │      AdminController.java
+    │  │          │      AdminLogController.java
+    │  │          │      AdPostionController.java
+    │  │          │      ArticleCat2Controller.java
+    │  │          │      ArticleCatController.java
+    │  │          │      ArticleController.java
+    │  │          │      BaseController.java
+    │  │          │      BrandController.java
+    │  │          │      CartController.java
+    │  │          │      CommentController.java
+    │  │          │      ConfigController.java
+    │  │          │      CouponController.java
+    │  │          │      DeliveryDocController.java
+    │  │          │      DemoController.java
+    │  │          │      DistributeGoodsController.java
+    │  │          │      DistributeLevelController.java
+    │  │          │      ExpenseLogController.java
+    │  │          │      FeedBackController.java
+    │  │          │      FlashSaleController.java
+    │  │          │      GoodsActivityController.java
+    │  │          │      GoodsAttrController.java
+    │  │          │      GoodsAttributeController.java
+    │  │          │      GoodsCategoryController.java
+    │  │          │      GoodsConsultController.java
+    │  │          │      GoodsController.java
+    │  │          │      GoodsImagesController.java
+    │  │          │      GoodsTypeController.java
+    │  │          │      GroupBuyController.java
+    │  │          │      InvoiceController.java
+    │  │          │      MessageController.java
+    │  │          │      NavigationController.java
+    │  │          │      OauthUserController.java
+    │  │          │      OrderActionController.java
+    │  │          │      OrderController.java
+    │  │          │      OrderGoodsController.java
+    │  │          │      PaymentController.java
+    │  │          │      PickUpController.java
+    │  │          │      PromGoodsController.java
+    │  │          │      PromOrderController.java
+    │  │          │      UserController.java
+    │  │          │      
+    │  │          ├─dao
+    │  │          │      AccountLogMapper.java
+    │  │          │      AdMapper.java
+    │  │          │      AdminLogMapper.java
+    │  │          │      AdminMapper.java
+    │  │          │      AdminRoleMapper.java
+    │  │          │      AdPositionMapper.java
+    │  │          │      AreaRegionMapper.java
+    │  │          │      ArticleCat2Mapper.java
+    │  │          │      ArticleCatMapper.java
+    │  │          │      ArticleMapper.java
+    │  │          │      BrandMapper.java
+    │  │          │      CartMapper.java
+    │  │          │      CommentMapper.java
+    │  │          │      ConfigMapper.java
+    │  │          │      CouponExample.java
+    │  │          │      CouponListMapper.java
+    │  │          │      CouponMapper.java
+    │  │          │      DeliveryDocMapper.java
+    │  │          │      DistributGoodsMapper.java
+    │  │          │      DistributLevelMapper.java
+    │  │          │      ExpenseLogMapper.java
+    │  │          │      FeedbackMapper.java
+    │  │          │      FlashSaleMapper.java
+    │  │          │      FriendLinkMapper.java
+    │  │          │      generatorConfig.xml
+    │  │          │      GoodsActivityMapper.java
+    │  │          │      GoodsAttributeMapper.java
+    │  │          │      GoodsAttrMapper.java
+    │  │          │      GoodsCategoryMapper.java
+    │  │          │      GoodsCollectMapper.java
+    │  │          │      GoodsConsultMapper.java
+    │  │          │      GoodsCouponMapper.java
+    │  │          │      GoodsImagesMapper.java
+    │  │          │      GoodsMapper.java
+    │  │          │      GoodsTypeMapper.java
+    │  │          │      GoodsVisitMapper.java
+    │  │          │      GroupBuyMapper.java
+    │  │          │      InvoiceMapper.java
+    │  │          │      MessageMapper.java
+    │  │          │      NavigationMapper.java
+    │  │          │      OauthUsersMapper.java
+    │  │          │      OrderActionMapper.java
+    │  │          │      OrderGoodsMapper.java
+    │  │          │      OrderMapper.java
+    │  │          │      PaymentMapper.java
+    │  │          │      PickUpMapper.java
+    │  │          │      PromGoodsMapper.java
+    │  │          │      PromOrderMapper.java
+    │  │          │      RebateLogMapper.java
+    │  │          │      RechargeMapper.java
+    │  │          │      Region2Mapper.java
+    │  │          │      RegionMapper.java
+    │  │          │      ReturnGoodsMapper.java
+    │  │          │      SearchWordMapper.java
+    │  │          │      ShippingAreaMapper.java
+    │  │          │      ShippingMapper.java
+    │  │          │      SmsLogMapper.java
+    │  │          │      SmsTemplateMapper.java
+    │  │          │      SpecGoodsPriceMapper.java
+    │  │          │      SpecImageMapper.java
+    │  │          │      SpecItemMapper.java
+    │  │          │      SpecMapper.java
+    │  │          │      StockLogMapper.java
+    │  │          │      SuppliersMapper.java
+    │  │          │      SystemMenuMapper.java
+    │  │          │      SystemModuleMapper.java
+    │  │          │      TeamActivityMapper.java
+    │  │          │      TeamFollowMapper.java
+    │  │          │      TeamFoundMapper.java
+    │  │          │      TeamLotteryMapper.java
+    │  │          │      TopicMapper.java
+    │  │          │      UserAddressMapper.java
+    │  │          │      UserCollectionMapper.java
+    │  │          │      UserDistributionMapper.java
+    │  │          │      UserExtendMapper.java
+    │  │          │      UserLevelMapper.java
+    │  │          │      UserMapper.java
+    │  │          │      UserMessageMapper.java
+    │  │          │      UserSignMapper.java
+    │  │          │      UsersMapper.java
+    │  │          │      UserStoreMapper.java
+    │  │          │      VirtualShopMapper.java
+    │  │          │      VrOrderCodeMapper.java
+    │  │          │      WithdrawalsMapper.java
+    │  │          │      WxImgMapper.java
+    │  │          │      WxKeywordMapper.java
+    │  │          │      WxMenuMapper.java
+    │  │          │      WxMsgMapper.java
+    │  │          │      WxNewsMapper.java
+    │  │          │      WxTextMapper.java
+    │  │          │      WxUserMapper.java
+    │  │          │      
+    │  │          ├─entity
+    │  │          │      AccountLog.java
+    │  │          │      AccountLogExample.java
+    │  │          │      Ad.java
+    │  │          │      AdAndAdPosition.java
+    │  │          │      AdExample.java
+    │  │          │      Admin.java
+    │  │          │      AdminExample.java
+    │  │          │      AdminLog.java
+    │  │          │      AdminLogExample.java
+    │  │          │      AdminRole.java
+    │  │          │      AdminRoleExample.java
+    │  │          │      AdminWithBLOBs.java
+    │  │          │      AdPosition.java
+    │  │          │      AdPositionExample.java
+    │  │          │      AreaRegion.java
+    │  │          │      AreaRegionExample.java
+    │  │          │      Article.java
+    │  │          │      ArticleCat.java
+    │  │          │      ArticleCat2.java
+    │  │          │      ArticleCat2Example.java
+    │  │          │      ArticleCatExample.java
+    │  │          │      ArticleExample.java
+    │  │          │      ArticleWithBLOBs.java
+    │  │          │      Brand.java
+    │  │          │      BrandAndArticleCat.java
+    │  │          │      BrandExample.java
+    │  │          │      Cart.java
+    │  │          │      CartExample.java
+    │  │          │      CartVo.java
+    │  │          │      Comment.java
+    │  │          │      CommentExample.java
+    │  │          │      CommentWithBLOBs.java
+    │  │          │      Config.java
+    │  │          │      ConfigExample.java
+    │  │          │      Coupon.java
+    │  │          │      CouponExample.java
+    │  │          │      CouponList.java
+    │  │          │      CouponListExample.java
+    │  │          │      CouponMapper.java
+    │  │          │      DeliveryDoc.java
+    │  │          │      DeliveryDocExample.java
+    │  │          │      DistributGoods.java
+    │  │          │      DistributGoodsExample.java
+    │  │          │      DistributLevel.java
+    │  │          │      DistributLevelExample.java
+    │  │          │      ExpenseLog.java
+    │  │          │      ExpenseLogExample.java
+    │  │          │      Feedback.java
+    │  │          │      FeedbackExample.java
+    │  │          │      FlashSale.java
+    │  │          │      FlashSaleExample.java
+    │  │          │      FriendLink.java
+    │  │          │      FriendLinkExample.java
+    │  │          │      Goods.java
+    │  │          │      GoodsActivity.java
+    │  │          │      GoodsActivityExample.java
+    │  │          │      GoodsActivityWithBLOBs.java
+    │  │          │      GoodsAttr.java
+    │  │          │      GoodsAttrExample.java
+    │  │          │      GoodsAttribute.java
+    │  │          │      GoodsAttributeExample.java
+    │  │          │      GoodsCategory.java
+    │  │          │      GoodsCategoryExample.java
+    │  │          │      GoodsCollect.java
+    │  │          │      GoodsCollectExample.java
+    │  │          │      GoodsConsult.java
+    │  │          │      GoodsConsultExample.java
+    │  │          │      GoodsConsultVo.java
+    │  │          │      GoodsCouponExample.java
+    │  │          │      GoodsCouponKey.java
+    │  │          │      GoodsExample.java
+    │  │          │      GoodsImages.java
+    │  │          │      GoodsImagesExample.java
+    │  │          │      GoodsType.java
+    │  │          │      GoodsTypeExample.java
+    │  │          │      GoodsVisit.java
+    │  │          │      GoodsVisitExample.java
+    │  │          │      GoodsVisitKey.java
+    │  │          │      GoodsVo.java
+    │  │          │      GoodsWithBLOBs.java
+    │  │          │      GroupBuy.java
+    │  │          │      GroupBuyExample.java
+    │  │          │      Invoice.java
+    │  │          │      InvoiceExample.java
+    │  │          │      Message.java
+    │  │          │      MessageExample.java
+    │  │          │      MessageWithBLOBs.java
+    │  │          │      Navigation.java
+    │  │          │      NavigationExample.java
+    │  │          │      OauthUsers.java
+    │  │          │      OauthUsersExample.java
+    │  │          │      Order.java
+    │  │          │      OrderAction.java
+    │  │          │      OrderActionExample.java
+    │  │          │      OrderExample.java
+    │  │          │      OrderGoods.java
+    │  │          │      OrderGoodsExample.java
+    │  │          │      Payment.java
+    │  │          │      PaymentExample.java
+    │  │          │      PaymentWithBLOBs.java
+    │  │          │      PickUp.java
+    │  │          │      PickUpExample.java
+    │  │          │      PromGoods.java
+    │  │          │      PromGoodsExample.java
+    │  │          │      PromOrder.java
+    │  │          │      PromOrderExample.java
+    │  │          │      RebateLog.java
+    │  │          │      RebateLogExample.java
+    │  │          │      Recharge.java
+    │  │          │      RechargeExample.java
+    │  │          │      Region.java
+    │  │          │      Region2.java
+    │  │          │      Region2Example.java
+    │  │          │      RegionExample.java
+    │  │          │      ReturnGoods.java
+    │  │          │      ReturnGoodsExample.java
+    │  │          │      SearchWord.java
+    │  │          │      SearchWordExample.java
+    │  │          │      Shipping.java
+    │  │          │      ShippingArea.java
+    │  │          │      ShippingAreaExample.java
+    │  │          │      ShippingExample.java
+    │  │          │      SmsLog.java
+    │  │          │      SmsLogExample.java
+    │  │          │      SmsTemplate.java
+    │  │          │      SmsTemplateExample.java
+    │  │          │      Spec.java
+    │  │          │      SpecExample.java
+    │  │          │      SpecGoodsPrice.java
+    │  │          │      SpecGoodsPriceExample.java
+    │  │          │      SpecImage.java
+    │  │          │      SpecImageExample.java
+    │  │          │      SpecItem.java
+    │  │          │      SpecItemExample.java
+    │  │          │      StockLog.java
+    │  │          │      StockLogExample.java
+    │  │          │      Suppliers.java
+    │  │          │      SuppliersExample.java
+    │  │          │      SystemMenu.java
+    │  │          │      SystemMenuExample.java
+    │  │          │      SystemModule.java
+    │  │          │      SystemModuleExample.java
+    │  │          │      TeamActivity.java
+    │  │          │      TeamActivityExample.java
+    │  │          │      TeamFollow.java
+    │  │          │      TeamFollowExample.java
+    │  │          │      TeamFound.java
+    │  │          │      TeamFoundExample.java
+    │  │          │      TeamLottery.java
+    │  │          │      TeamLotteryExample.java
+    │  │          │      Topic.java
+    │  │          │      TopicExample.java
+    │  │          │      User.java
+    │  │          │      UserAddress.java
+    │  │          │      UserAddressExample.java
+    │  │          │      UserCollection.java
+    │  │          │      UserCollectionExample.java
+    │  │          │      UserDistribution.java
+    │  │          │      UserDistributionExample.java
+    │  │          │      UserExtend.java
+    │  │          │      UserExtendExample.java
+    │  │          │      UserLevel.java
+    │  │          │      UserLevelExample.java
+    │  │          │      UserMessage.java
+    │  │          │      UserMessageExample.java
+    │  │          │      Users.java
+    │  │          │      UsersExample.java
+    │  │          │      UserSign.java
+    │  │          │      UserSignExample.java
+    │  │          │      UserStore.java
+    │  │          │      UserStoreExample.java
+    │  │          │      VirtualShop.java
+    │  │          │      VirtualShopExample.java
+    │  │          │      VrOrderCode.java
+    │  │          │      VrOrderCodeExample.java
+    │  │          │      Withdrawals.java
+    │  │          │      WithdrawalsExample.java
+    │  │          │      WxImg.java
+    │  │          │      WxImgExample.java
+    │  │          │      WxKeyword.java
+    │  │          │      WxKeywordExample.java
+    │  │          │      WxMenu.java
+    │  │          │      WxMenuExample.java
+    │  │          │      WxMsg.java
+    │  │          │      WxMsgExample.java
+    │  │          │      WxNews.java
+    │  │          │      WxNewsExample.java
+    │  │          │      WxText.java
+    │  │          │      WxTextExample.java
+    │  │          │      WxUser.java
+    │  │          │      WxUserExample.java
+    │  │          │      
+    │  │          ├─hellogradle
+    │  │          │      CheckNumeric.java
+    │  │          │      package-info.java
+    │  │          │      
+    │  │          └─service
+    │  │              │  AccountlogService.java
+    │  │              │  AdminLogService.java
+    │  │              │  AdminService.java
+    │  │              │  AdPositionService.java
+    │  │              │  AdService.java
+    │  │              │  ArticleCat2Service.java
+    │  │              │  ArticleCatService.java
+    │  │              │  ArticleService.java
+    │  │              │  BrandService.java
+    │  │              │  CartService.java
+    │  │              │  CommentService.java
+    │  │              │  ConfigService.java
+    │  │              │  CouponService.java
+    │  │              │  DeliveryDocService.java
+    │  │              │  DistributGoodsService.java
+    │  │              │  DistributLevelService.java
+    │  │              │  ExpenseLogService.java
+    │  │              │  FeedbackService.java
+    │  │              │  FlashSaleService.java
+    │  │              │  GoodAttributeService.java
+    │  │              │  GoodsActivityService.java
+    │  │              │  GoodsAttrService.java
+    │  │              │  GoodsCategoryService.java
+    │  │              │  GoodsConsultService.java
+    │  │              │  GoodsImagesService.java
+    │  │              │  GoodsService.java
+    │  │              │  GoodsTypeService.java
+    │  │              │  GroupBuyService.java
+    │  │              │  InvoiceService.java
+    │  │              │  MessageService.java
+    │  │              │  NavigationService.java
+    │  │              │  OauthUsersService.java
+    │  │              │  OrderActionService.java
+    │  │              │  OrderGoodsService.java
+    │  │              │  OrderService.java
+    │  │              │  PaymentService.java
+    │  │              │  PickUpService.java
+    │  │              │  PromGoodService.java
+    │  │              │  PromOrderService.java
+    │  │              │  UserService.java
+    │  │              │  
+    │  │              └─impl
+    │  │                      AccountlogServiceImpl.java
+    │  │                      AdminLogServiceImpl.java
+    │  │                      AdminServiceImpl.java
+    │  │                      AdPositionServiceImpl.java
+    │  │                      AdServiceImpl.java
+    │  │                      ArticleCat2ServiceImpl.java
+    │  │                      ArticleCatServiceImpl.java
+    │  │                      ArticleServiceImpl.java
+    │  │                      BrandServiceImpl.java
+    │  │                      CartServiceImpl.java
+    │  │                      CommentServiceImpl.java
+    │  │                      ConfigServiceImpl.java
+    │  │                      CouponServiceImpl.java
+    │  │                      DelivertDocServiceImpl.java
+    │  │                      ExpenseLogServiceImpl.java
+    │  │                      FeedBackServiceImpl.java
+    │  │                      FlashSaleServiceImpl.java
+    │  │                      GoodsActivityServiceImpl.java
+    │  │                      GoodsAttributeServiceImpl.java
+    │  │                      GoodsAttrServiceImpl.java
+    │  │                      GoodsCategoryServiceImpl.java
+    │  │                      GoodsConsultServiceImpl.java
+    │  │                      GoodsImagesServiceImpl.java
+    │  │                      GoodsServiceImpl.java
+    │  │                      GoodsTypeServiceImpl.java
+    │  │                      GroupBuyServiceImpl.java
+    │  │                      InvoiceServiceImpl.java
+    │  │                      MessageServiceImpl.java
+    │  │                      NavigationServiceImpl.java
+    │  │                      OauthUsersServiceImpl.java
+    │  │                      OrderActionServiceImpl.java
+    │  │                      OrderGoodsServiceImpl.java
+    │  │                      OrderServiceImpl.java
+    │  │                      PaymentServiceImpl.java
+    │  │                      PickUpServiceImpl.java
+    │  │                      PromGoodsServiceImpl.java
+    │  │                      PromOrderServiceImpl.java
+    │  │                      UserServiceImpl.java
+    │  │                      
+    │  ├─resources
+    │  │  │  application.properties
+    │  │  │  banner.txt
+    │  │  │  edit.ftl
+    │  │  │  list.ftl
+    │  │  │  XiaoMi.xmind
+    │  │  │  
+    │  │  ├─mapper
+    │  │  │      AccountLogMapper.xml
+    │  │  │      AdMapper.xml
+    │  │  │      AdminLogMapper.xml
+    │  │  │      AdminMapper.xml
+    │  │  │      AdminRoleMapper.xml
+    │  │  │      AdPositionMapper.xml
+    │  │  │      AreaRegionMapper.xml
+    │  │  │      ArticleCat2Mapper.xml
+    │  │  │      ArticleCatMapper.xml
+    │  │  │      ArticleMapper.xml
+    │  │  │      BrandMapper.xml
+    │  │  │      CartMapper.xml
+    │  │  │      CommentMapper.xml
+    │  │  │      ConfigMapper.xml
+    │  │  │      CouponListMapper.xml
+    │  │  │      CouponMapper.xml
+    │  │  │      DeliveryDocMapper.xml
+    │  │  │      DistributGoodsMapper.xml
+    │  │  │      DistributLevelMapper.xml
+    │  │  │      ExpenseLogMapper.xml
+    │  │  │      FeedbackMapper.xml
+    │  │  │      FlashSaleMapper.xml
+    │  │  │      FriendLinkMapper.xml
+    │  │  │      GoodsActivityMapper.xml
+    │  │  │      GoodsAttributeMapper.xml
+    │  │  │      GoodsAttrMapper.xml
+    │  │  │      GoodsCategoryMapper.xml
+    │  │  │      GoodsCollectMapper.xml
+    │  │  │      GoodsConsultMapper.xml
+    │  │  │      GoodsCouponMapper.xml
+    │  │  │      GoodsImagesMapper.xml
+    │  │  │      GoodsMapper.xml
+    │  │  │      GoodsTypeMapper.xml
+    │  │  │      GoodsVisitMapper.xml
+    │  │  │      GroupBuyMapper.xml
+    │  │  │      InvoiceMapper.xml
+    │  │  │      MessageMapper.xml
+    │  │  │      NavigationMapper.xml
+    │  │  │      OauthUsersMapper.xml
+    │  │  │      OrderActionMapper.xml
+    │  │  │      OrderGoodsMapper.xml
+    │  │  │      OrderMapper.xml
+    │  │  │      PaymentMapper.xml
+    │  │  │      PickUpMapper.xml
+    │  │  │      PromGoodsMapper.xml
+    │  │  │      PromOrderMapper.xml
+    │  │  │      RebateLogMapper.xml
+    │  │  │      RechargeMapper.xml
+    │  │  │      Region2Mapper.xml
+    │  │  │      RegionMapper.xml
+    │  │  │      ReturnGoodsMapper.xml
+    │  │  │      SearchWordMapper.xml
+    │  │  │      ShippingAreaMapper.xml
+    │  │  │      ShippingMapper.xml
+    │  │  │      SmsLogMapper.xml
+    │  │  │      SmsTemplateMapper.xml
+    │  │  │      SpecGoodsPriceMapper.xml
+    │  │  │      SpecImageMapper.xml
+    │  │  │      SpecItemMapper.xml
+    │  │  │      SpecMapper.xml
+    │  │  │      StockLogMapper.xml
+    │  │  │      SuppliersMapper.xml
+    │  │  │      SystemMenuMapper.xml
+    │  │  │      SystemModuleMapper.xml
+    │  │  │      TeamActivityMapper.xml
+    │  │  │      TeamFollowMapper.xml
+    │  │  │      TeamFoundMapper.xml
+    │  │  │      TeamLotteryMapper.xml
+    │  │  │      TopicMapper.xml
+    │  │  │      UserAddressMapper.xml
+    │  │  │      UserCollectionMapper.xml
+    │  │  │      UserDistributionMapper.xml
+    │  │  │      UserExtendMapper.xml
+    │  │  │      UserLevelMapper.xml
+    │  │  │      UserMapper.xml
+    │  │  │      UserMessageMapper.xml
+    │  │  │      UserSignMapper.xml
+    │  │  │      UsersMapper.xml
+    │  │  │      UserStoreMapper.xml
+    │  │  │      VirtualShopMapper.xml
+    │  │  │      VrOrderCodeMapper.xml
+    │  │  │      WithdrawalsMapper.xml
+    │  │  │      WxImgMapper.xml
+    │  │  │      WxKeywordMapper.xml
+    │  │  │      WxMenuMapper.xml
+    │  │  │      WxMsgMapper.xml
+    │  │  │      WxNewsMapper.xml
+    │  │  │      WxTextMapper.xml
+    │  │  │      WxUserMapper.xml
+    │  │  │      
+    │  │  ├─public
+    │  │  │  └─ssss
+    │  │  │          404.html
+    │  │  │          5XX.html
+    │  │  │          
+    │  │  ├─static
+    │  │  │  │  404.html
+    │  │  │  │  
+    │  │  │  ├─css
+    │  │  │  │      login.css
+    │  │  │  │      
+    │  │  │  ├─images
+    │  │  │  └─js
+    │  │  │      │  h5-bg-index.js
+    │  │  │      │  h5-bg-login.js
+    │  │  │      │  jquery-2.1.1.min.js
+    │  │  │      │  
+    │  │  │      └─layui
+    │  │  │          │  layui.all.js
+    │  │  │          │  layui.js
+    │  │  │          │  
+    │  │  │          ├─css
+    │  │  │          │  │  layui.css
+    │  │  │          │  │  layui.mobile.css
+    │  │  │          │  │  
+    │  │  │          │  └─modules
+    │  │  │          │      │  code.css
+    │  │  │          │      │  
+    │  │  │          │      ├─laydate
+    │  │  │          │      │  └─default
+    │  │  │          │      │          laydate.css
+    │  │  │          │      │          
+    │  │  │          │      └─layer
+    │  │  │          │          └─default
+    │  │  │          │                  icon-ext.png
+    │  │  │          │                  icon.png
+    │  │  │          │                  layer.css
+    │  │  │          │                  loading-0.gif
+    │  │  │          │                  loading-1.gif
+    │  │  │          │                  loading-2.gif
+    │  │  │          │                  
+    │  │  │          ├─font
+    │  │  │          │      iconfont.eot
+    │  │  │          │      iconfont.svg
+    │  │  │          │      iconfont.ttf
+    │  │  │          │      iconfont.woff
+    │  │  │          │      
+    │  │  │          ├─images
+    │  │  │          │  └─face
+    │  │  │          │          0.gif
+    │  │  │          │          1.gif
+    │  │  │          │          10.gif
+    │  │  │          │          11.gif
+    │  │  │          │          12.gif
+    │  │  │          │          13.gif
+    │  │  │          │          14.gif
+    │  │  │          │          15.gif
+    │  │  │          │          16.gif
+    │  │  │          │          17.gif
+    │  │  │          │          18.gif
+    │  │  │          │          19.gif
+    │  │  │          │          2.gif
+    │  │  │          │          20.gif
+    │  │  │          │          21.gif
+    │  │  │          │          22.gif
+    │  │  │          │          23.gif
+    │  │  │          │          24.gif
+    │  │  │          │          25.gif
+    │  │  │          │          26.gif
+    │  │  │          │          27.gif
+    │  │  │          │          28.gif
+    │  │  │          │          29.gif
+    │  │  │          │          3.gif
+    │  │  │          │          30.gif
+    │  │  │          │          31.gif
+    │  │  │          │          32.gif
+    │  │  │          │          33.gif
+    │  │  │          │          34.gif
+    │  │  │          │          35.gif
+    │  │  │          │          36.gif
+    │  │  │          │          37.gif
+    │  │  │          │          38.gif
+    │  │  │          │          39.gif
+    │  │  │          │          4.gif
+    │  │  │          │          40.gif
+    │  │  │          │          41.gif
+    │  │  │          │          42.gif
+    │  │  │          │          43.gif
+    │  │  │          │          44.gif
+    │  │  │          │          45.gif
+    │  │  │          │          46.gif
+    │  │  │          │          47.gif
+    │  │  │          │          48.gif
+    │  │  │          │          49.gif
+    │  │  │          │          5.gif
+    │  │  │          │          50.gif
+    │  │  │          │          51.gif
+    │  │  │          │          52.gif
+    │  │  │          │          53.gif
+    │  │  │          │          54.gif
+    │  │  │          │          55.gif
+    │  │  │          │          56.gif
+    │  │  │          │          57.gif
+    │  │  │          │          58.gif
+    │  │  │          │          59.gif
+    │  │  │          │          6.gif
+    │  │  │          │          60.gif
+    │  │  │          │          61.gif
+    │  │  │          │          62.gif
+    │  │  │          │          63.gif
+    │  │  │          │          64.gif
+    │  │  │          │          65.gif
+    │  │  │          │          66.gif
+    │  │  │          │          67.gif
+    │  │  │          │          68.gif
+    │  │  │          │          69.gif
+    │  │  │          │          7.gif
+    │  │  │          │          70.gif
+    │  │  │          │          71.gif
+    │  │  │          │          8.gif
+    │  │  │          │          9.gif
+    │  │  │          │          
+    │  │  │          └─lay
+    │  │  │              └─modules
+    │  │  │                      carousel.js
+    │  │  │                      code.js
+    │  │  │                      colorpicker.js
+    │  │  │                      element.js
+    │  │  │                      flow.js
+    │  │  │                      form.js
+    │  │  │                      jquery.js
+    │  │  │                      laydate.js
+    │  │  │                      layedit.js
+    │  │  │                      layer.js
+    │  │  │                      laypage.js
+    │  │  │                      laytpl.js
+    │  │  │                      mobile.js
+    │  │  │                      rate.js
+    │  │  │                      slider.js
+    │  │  │                      table.js
+    │  │  │                      tree.js
+    │  │  │                      upload.js
+    │  │  │                      util.js
+    │  │  │                      
+    │  │  └─templates
+    │  │      ├─ad
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─admin
+    │  │      │      index.ftl
+    │  │      │      login.ftl
+    │  │      │      
+    │  │      ├─article
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─articleCat
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─brand
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─cart
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─comment
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─coupon
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─delivery
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─demo
+    │  │      │      demo.html
+    │  │      │      
+    │  │      ├─feedBack
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─flashSale
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─goods
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─goodsActivity
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─goodsAttribute
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─goodsCategory
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─goodsConsult
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─groupBuy
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─navigation
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      ├─order
+    │  │      │      edit.ftl
+    │  │      │      list.ftl
+    │  │      │      
+    │  │      └─page
+    │  │              edit.ftl
+    │  │              freemarker.ftl
+    │  │              list.ftl
+    │  │              
+    │  └─webapp
+    │      ├─META-INF
+    │      └─WEB-INF
+    │          └─jsp
+    └─test
+        ├─java
+        └─resources

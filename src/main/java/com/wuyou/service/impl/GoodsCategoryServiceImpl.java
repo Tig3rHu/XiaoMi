@@ -84,4 +84,13 @@ public class GoodsCategoryServiceImpl implements GoodsCategoryService {
 		return goodsCategoryMapper.updateByPrimaryKey(record);
 	}
 
+	/* (non-Javadoc)
+	 * @see com.wuyou.service.GoodsCategoryService#selectNameBymobileName(java.lang.String)
+	 */
+	@Override
+	public List<GoodsCategory> selectNameBymobileName(String mobileName) {
+		// TODO Auto-generated method stub
+		return goodsCategoryMapper.selectNameBymobileName("分类");
+	}
+
 }

@@ -52,7 +52,7 @@ public class AdController {
 	@RequestMapping("/index")
 	public String queryAdList(Model model,@RequestParam(required = true, defaultValue = "1") Integer page){
 		int pageSize=20;
-		PageHelper.startPage(page, pageSize);
+		//PageHelper.startPage(page, pageSize);
 		List<AdAndAdPosition> ad=adService.selectAdpositionNameFromAdAndAdPosition();
 		//List<AdPosition> adp=adPositionService.selectByExample(null);
 		
