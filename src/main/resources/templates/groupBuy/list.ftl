@@ -16,6 +16,8 @@
   </style>
 </head>
 <body class="layui-layout-body">
+      <h1 align="center">团购管理</h1>
+    <hr class="layui-bg-green">
     <table class="layui-table" lay-filter="demo">
                 <thead>
                 <tr>

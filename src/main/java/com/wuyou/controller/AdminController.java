@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSONObject;
 import com.wuyou.entity.Admin;
+import com.wuyou.entity.Status;
 import com.wuyou.entity.SystemModule;
 import com.wuyou.entity.SystemModuleVo;
 import com.wuyou.entity.User;
@@ -79,7 +80,11 @@ public class AdminController {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			return "404";
+			Status s=new Status();
+			s.setMessage("密码或者账号错误");
+			model.addAttribute("s", s);
+			
+			return "admin/login";
 		}								
 	}
 	

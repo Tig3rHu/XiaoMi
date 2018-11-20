@@ -11,6 +11,8 @@
   <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
 <body class="layui-layout-body">
+      <h1 align="center">商品分类管理</h1>
+    <hr class="layui-bg-green">
     <table class="layui-table" lay-filter="demo">
                 <thead>
                 <tr>
@@ -31,7 +33,12 @@
                 </thead>
                  <a id="add" class="layui-btn layui-btn-radius" href="${base}/goodsCategory/toedit"><i class="layui-icon">&#xe608;</i>添加商品分类</a>
                          <a class="layui-btn layui-btn-danger layui-btn-xs layui-btn-radius" lay-event="del">选中删除</a>
-            
+                  <form action="${base}/goodsCategory/index" method="post">
+                
+				      <input type="text" name="name" lay-verify="required" placeholder="请根据活动名称查询" autocomplete="off" style="width:160px;height:26px;">
+				 
+                  <button class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe615;</i> 搜索</button>
+                  </form>
                 <tbody>                 
                 <#list goodsCategorys as goodsCategory>
                    <tr>

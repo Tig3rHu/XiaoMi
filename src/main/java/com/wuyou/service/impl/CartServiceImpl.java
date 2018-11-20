@@ -87,4 +87,10 @@ public class CartServiceImpl implements CartService {
 		return cartMapper.selectfromCartAndPromOrder();
 	}
 
+	@Override
+	public List<Cart> selectByExample(CartExample example) {
+		// TODO Auto-generated method stub
+		return cartMapper.selectByExample(example);
+	}
+
 }

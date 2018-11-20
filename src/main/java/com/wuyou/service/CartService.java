@@ -45,5 +45,5 @@ public interface CartService {
     public List<Cart> findCart(CartExample example);
     
     List<CartVo> selectfromCartAndPromOrder();
-	
+    List<Cart> selectByExample(CartExample example);
 }

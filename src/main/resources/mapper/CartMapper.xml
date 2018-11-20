@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.wuyou.entity.Cart">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
-    <result column="session_id" jdbcType="CHAR" property="sessionId" />
+    <result column="session_id" jdbcType="VARCHAR" property="sessionId" />
     <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
     <result column="goods_sn" jdbcType="VARCHAR" property="goodsSn" />
     <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
@@ -20,6 +20,7 @@
     <result column="prom_type" jdbcType="BIT" property="promType" />
     <result column="prom_id" jdbcType="INTEGER" property="promId" />
     <result column="sku" jdbcType="VARCHAR" property="sku" />
+    <result column="src" jdbcType="VARCHAR" property="src" />
   </resultMap>
   <resultMap type="com.wuyou.entity.CartVo" id="resultMapPromOrder" extends="BaseResultMap">
       <result column="name" jdbcType="VARCHAR" property="name" />
@@ -85,14 +86,13 @@
   <sql id="Base_Column_List">
     id, user_id, session_id, goods_id, goods_sn, goods_name, market_price, goods_price, 
     member_goods_price, goods_num, spec_key, spec_key_name, bar_code, selected, add_time, 
-    prom_type, prom_id, sku
+    prom_type, prom_id, sku, src
   </sql>
   <select id="selectByExample" parameterType="com.wuyou.entity.CartExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
-    'true' as QUERYID,
     <include refid="Base_Column_List" />
     from cart
     <if test="_parameter != null">
@@ -123,28 +123,27 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.wuyou.entity.Cart">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into cart (user_id, session_id, goods_id, 
-      goods_sn, goods_name, market_price, 
-      goods_price, member_goods_price, goods_num, 
-      spec_key, spec_key_name, bar_code, 
-      selected, add_time, prom_type, 
-      prom_id, sku)
-    values (#{userId,jdbcType=INTEGER}, #{sessionId,jdbcType=CHAR}, #{goodsId,jdbcType=INTEGER}, 
-      #{goodsSn,jdbcType=VARCHAR}, #{goodsName,jdbcType=VARCHAR}, #{marketPrice,jdbcType=DECIMAL}, 
-      #{goodsPrice,jdbcType=DECIMAL}, #{memberGoodsPrice,jdbcType=DECIMAL}, #{goodsNum,jdbcType=SMALLINT}, 
-      #{specKey,jdbcType=VARCHAR}, #{specKeyName,jdbcType=VARCHAR}, #{barCode,jdbcType=VARCHAR}, 
-      #{selected,jdbcType=BIT}, #{addTime,jdbcType=INTEGER}, #{promType,jdbcType=BIT}, 
-      #{promId,jdbcType=INTEGER}, #{sku,jdbcType=VARCHAR})
+    insert into cart (id, user_id, session_id, 
+      goods_id, goods_sn, goods_name, 
+      market_price, goods_price, member_goods_price, 
+      goods_num, spec_key, spec_key_name, 
+      bar_code, selected, add_time, 
+      prom_type, prom_id, sku, 
+      src)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{sessionId,jdbcType=VARCHAR}, 
+      #{goodsId,jdbcType=INTEGER}, #{goodsSn,jdbcType=VARCHAR}, #{goodsName,jdbcType=VARCHAR}, 
+      #{marketPrice,jdbcType=DECIMAL}, #{goodsPrice,jdbcType=DECIMAL}, #{memberGoodsPrice,jdbcType=DECIMAL}, 
+      #{goodsNum,jdbcType=SMALLINT}, #{specKey,jdbcType=VARCHAR}, #{specKeyName,jdbcType=VARCHAR}, 
+      #{barCode,jdbcType=VARCHAR}, #{selected,jdbcType=BIT}, #{addTime,jdbcType=INTEGER}, 
+      #{promType,jdbcType=BIT}, #{promId,jdbcType=INTEGER}, #{sku,jdbcType=VARCHAR}, 
+      #{src,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.wuyou.entity.Cart">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
     insert into cart
     <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
       <if test="userId != null">
         user_id,
       </if>
@@ -196,13 +195,19 @@
       <if test="sku != null">
         sku,
       </if>
+      <if test="src != null">
+        src,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
       <if test="userId != null">
         #{userId,jdbcType=INTEGER},
       </if>
       <if test="sessionId != null">
-        #{sessionId,jdbcType=CHAR},
+        #{sessionId,jdbcType=VARCHAR},
       </if>
       <if test="goodsId != null">
         #{goodsId,jdbcType=INTEGER},
@@ -249,6 +254,9 @@
       <if test="sku != null">
         #{sku,jdbcType=VARCHAR},
       </if>
+      <if test="src != null">
+        #{src,jdbcType=VARCHAR},
+      </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.wuyou.entity.CartExample" resultType="java.lang.Integer">
@@ -267,7 +275,7 @@
         user_id = #{record.userId,jdbcType=INTEGER},
       </if>
       <if test="record.sessionId != null">
-        session_id = #{record.sessionId,jdbcType=CHAR},
+        session_id = #{record.sessionId,jdbcType=VARCHAR},
       </if>
       <if test="record.goodsId != null">
         goods_id = #{record.goodsId,jdbcType=INTEGER},
@@ -314,6 +322,9 @@
       <if test="record.sku != null">
         sku = #{record.sku,jdbcType=VARCHAR},
       </if>
+      <if test="record.src != null">
+        src = #{record.src,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -323,7 +334,7 @@
     update cart
     set id = #{record.id,jdbcType=INTEGER},
       user_id = #{record.userId,jdbcType=INTEGER},
-      session_id = #{record.sessionId,jdbcType=CHAR},
+      session_id = #{record.sessionId,jdbcType=VARCHAR},
       goods_id = #{record.goodsId,jdbcType=INTEGER},
       goods_sn = #{record.goodsSn,jdbcType=VARCHAR},
       goods_name = #{record.goodsName,jdbcType=VARCHAR},
@@ -338,7 +349,8 @@
       add_time = #{record.addTime,jdbcType=INTEGER},
       prom_type = #{record.promType,jdbcType=BIT},
       prom_id = #{record.promId,jdbcType=INTEGER},
-      sku = #{record.sku,jdbcType=VARCHAR}
+      sku = #{record.sku,jdbcType=VARCHAR},
+      src = #{record.src,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -350,7 +362,7 @@
         user_id = #{userId,jdbcType=INTEGER},
       </if>
       <if test="sessionId != null">
-        session_id = #{sessionId,jdbcType=CHAR},
+        session_id = #{sessionId,jdbcType=VARCHAR},
       </if>
       <if test="goodsId != null">
         goods_id = #{goodsId,jdbcType=INTEGER},
@@ -397,13 +409,16 @@
       <if test="sku != null">
         sku = #{sku,jdbcType=VARCHAR},
       </if>
+      <if test="src != null">
+        src = #{src,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.wuyou.entity.Cart">
     update cart
     set user_id = #{userId,jdbcType=INTEGER},
-      session_id = #{sessionId,jdbcType=CHAR},
+      session_id = #{sessionId,jdbcType=VARCHAR},
       goods_id = #{goodsId,jdbcType=INTEGER},
       goods_sn = #{goodsSn,jdbcType=VARCHAR},
       goods_name = #{goodsName,jdbcType=VARCHAR},
@@ -418,7 +433,8 @@
       add_time = #{addTime,jdbcType=INTEGER},
       prom_type = #{promType,jdbcType=BIT},
       prom_id = #{promId,jdbcType=INTEGER},
-      sku = #{sku,jdbcType=VARCHAR}
+      sku = #{sku,jdbcType=VARCHAR},
+      src = #{src,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

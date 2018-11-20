@@ -13,6 +13,8 @@ public class Img {
 
     private String choose;
 
+    private String imgdescribe;
+
     public Integer getId() {
         return id;
     }
@@ -59,5 +61,13 @@ public class Img {
 
     public void setChoose(String choose) {
         this.choose = choose;
+    }
+
+    public String getImgdescribe() {
+        return imgdescribe;
+    }
+
+    public void setImgdescribe(String imgdescribe) {
+        this.imgdescribe = imgdescribe;
     }
 }

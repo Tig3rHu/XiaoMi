@@ -11,6 +11,8 @@
   <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
 <body class="layui-layout-body">
+     <h1 align="center">商品评论管理</h1>
+    <hr class="layui-bg-green">
     <table class="layui-table" lay-filter="demo">
                 <thead>
                 <tr>

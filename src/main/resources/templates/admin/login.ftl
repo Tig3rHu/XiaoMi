@@ -82,12 +82,14 @@ body {
 <body>
 
 	<div class="main">
+	    
 		<div class="layui-container layui-header">
 		
-
+        
 		<h1>TigerOrTiger系统后台</h1>
 		</div>
 		<div class="layui-container layui-main">
+		     
 			<div class="layui-main-login">
 				
 				<form class="layui-form" action="${base}/admin/loginin"
@@ -109,8 +111,11 @@ body {
 					<div class="layui-form-item">
 						<input type="submit" class="layui-btn layui-btn-fluid layui-btn-warm"  value="管理员登录" class="layui-input">
 					</div>
-
+                    <#if s??>
+				        <button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">${s.message }</button>
+			        </#if>
 				</form>
+				
 			</div>
 
 		</div>
@@ -122,7 +127,7 @@ body {
 	<script type="text/javascript">
 		layui.use('form', function() {
 			var form = layui.form;
-
+            
 			//各种基于事件的操作，下面会有进一步介绍
 		});
 		

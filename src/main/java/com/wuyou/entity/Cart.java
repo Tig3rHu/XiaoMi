@@ -39,6 +39,8 @@ public class Cart {
 
     private String sku;
 
+    private String src;
+
     public Integer getId() {
         return id;
     }
@@ -181,5 +183,13 @@ public class Cart {
 
     public void setSku(String sku) {
         this.sku = sku;
+    }
+
+    public String getSrc() {
+        return src;
+    }
+
+    public void setSrc(String src) {
+        this.src = src;
     }
 }

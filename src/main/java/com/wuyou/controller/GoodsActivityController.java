@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wuyou.entity.GoodsActivity;
+import com.wuyou.entity.GoodsActivityExample;
 import com.wuyou.entity.GoodsActivityWithBLOBs;
 import com.wuyou.service.GoodsActivityService;
 
@@ -37,8 +38,16 @@ public class GoodsActivityController {
 	private GoodsActivityService goodsActivityService;
 	
 	@RequestMapping("/index")
-    public String queryList(Model model){
-		List<GoodsActivityWithBLOBs> goodsActivity=goodsActivityService.selectByExampleWithBLOBs(null);
+    public String queryList(Model model,GoodsActivityWithBLOBs goods){
+		GoodsActivityExample goodsActivityExample=null;
+		if(goods.getActName()!=null){
+			goodsActivityExample=new GoodsActivityExample();
+			GoodsActivityExample.Criteria goodsCriteria=goodsActivityExample.createCriteria();
+			goodsCriteria.andActNameLike("%"+goods.getActName()+"%");
+		}
+		
+		
+		List<GoodsActivityWithBLOBs> goodsActivity=goodsActivityService.selectByExampleWithBLOBs(goodsActivityExample);
 		model.addAttribute("goodsActivitys", goodsActivity);
     	return "goodsActivity/list";
     }

@@ -11,6 +11,8 @@
   <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
 <body class="layui-layout-body">
+     <h1 align="center">商品咨询管理</h1>
+    <hr class="layui-bg-green">
     <table class="layui-table" lay-filter="demo">
                 <thead>
                 <tr>
@@ -30,7 +32,7 @@
                 </thead>
                  <a id="add" class="layui-btn layui-btn-radius" href="${base}/goodsConsult/toedit"><i class="layui-icon">&#xe608;</i>添加商品咨询</a>
                          <a class="layui-btn layui-btn-xs layui-btn-danger layui-btn-radius" lay-event="del">选中删除</a>
-            
+                      
                 <tbody>                 
                 <#list goodsConsults as goodsConsult>
                    <tr>

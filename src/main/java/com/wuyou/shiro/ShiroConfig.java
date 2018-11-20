@@ -79,9 +79,17 @@ public class ShiroConfig {
 		    filterChainDefinitionMap.put("/order/**", "anon");
 		    filterChainDefinitionMap.put("/api/**", "anon");
 		    filterChainDefinitionMap.put("/img/**", "anon");
+		    filterChainDefinitionMap.put("/qiqi/**", "anon");
+		    filterChainDefinitionMap.put("/useres/**", "anon");
+		    filterChainDefinitionMap.put("/users/**", "anon");
+		    filterChainDefinitionMap.put("/cartAPi/**", "anon");
+		    filterChainDefinitionMap.put("/xiaomiNav/**", "anon");
+		    filterChainDefinitionMap.put("/mail/**", "anon");
+		    filterChainDefinitionMap.put("/static/**", "anon");
+		  //  filterChainDefinitionMap.put("/static/pcPages/qiqi/**", "anon");
 		    filterChainDefinitionMap.put("/**", "authc"); 
 	       // 如果不设置默认会自动寻找Web工程根目录下的"/login.jsp"页面  
-	       shiroFilterFactoryBean.setLoginUrl("/admin/index");   
+	       shiroFilterFactoryBean.setLoginUrl("/admin/tologin");   
 	        // 登录成功后要跳转的链接  
 	        shiroFilterFactoryBean.setSuccessUrl("/admin/index");  
 	        //未授权界面;  

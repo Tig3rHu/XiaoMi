@@ -115,25 +115,18 @@
         <input type="text" name="originalImg" value="${goods.originalImg!}"  placeholder="商品上传图像"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
-  </div>
-  <!--  <div class="layui-form-item">
-    <label class="layui-form-label">是否上架</label>
-    <div class="layui-input-inline">
-        <input type="text" name="isOnSale" value="${goods.isOnSale?string("true","false")!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
-    </div>
-    <div class="layui-form-mid layui-word-aux"></div>
-  </div> -->
-   <div class="layui-form-item">
-    <label class="layui-form-label">是否包邮</label>
-    <div class="layui-input-inline">
-        <input type="text" name="isFreeShipping" value="${goods.isFreeShipping?string("true","false")!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
-    </div>
-    <div class="layui-form-mid layui-word-aux"></div>
-  </div>
+  </div>  
    <div class="layui-form-item">
     <label class="layui-form-label">上架时间</label>
     <div class="layui-input-inline">
         <input type="text" name="onTime" value="${goods.onTime?string('yyyy-MM-dd HH:mm:ss')!}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
+    </div>
+    <div class="layui-form-mid layui-word-aux"></div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">是否包邮</label>
+    <div class="layui-input-inline">
+        <input type="text" name="isFreeShipping" value="${goods.isFreeShipping?string("yes","no")}"  placeholder="yyyy-MM-dd HH:mm:ss"  autocomplete="off" class="layui-input">
     </div>
     <div class="layui-form-mid layui-word-aux"></div>
   </div>

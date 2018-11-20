@@ -6,10 +6,8 @@ import com.wuyou.entity.CartVo;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-@Mapper
 public interface CartMapper {
     int countByExample(CartExample example);
 
@@ -24,14 +22,12 @@ public interface CartMapper {
     List<Cart> selectByExample(CartExample example);
 
     Cart selectByPrimaryKey(Integer id);
-    
-    List<CartVo> selectfromCartAndPromOrder();
 
     int updateByExampleSelective(@Param("record") Cart record, @Param("example") CartExample example);
 
     int updateByExample(@Param("record") Cart record, @Param("example") CartExample example);
 
     int updateByPrimaryKeySelective(Cart record);
-
+    List<CartVo> selectfromCartAndPromOrder();
     int updateByPrimaryKey(Cart record);
 }

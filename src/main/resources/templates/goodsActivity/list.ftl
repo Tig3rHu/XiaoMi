@@ -33,8 +33,14 @@
                 
                 </thead>
                  <a id="add" class="layui-btn layui-btn-radius" href="${base}/goodsActivity/toedit"><i class="layui-icon">&#xe608;</i>新增活动</a>
-                         <a class="layui-btn layui-btn-xs layui-btn-danger layui-btn-radius" lay-event="del">选中删除</a>
-            
+                 <a class="layui-btn layui-btn-xs layui-btn-danger layui-btn-radius" lay-event="del">选中删除</a>
+                 <form action="${base}/goodsActivity/index" method="post">
+                
+				      <input type="text" name="actName" lay-verify="required" placeholder="请根据活动名称查询" autocomplete="off" style="width:160px;height:26px;">
+				 
+                  <button class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe615;</i> 搜索</button>
+                  </form>
+
                 <tbody>                 
                 <#list goodsActivitys as goodsActivitys>
                    <tr>

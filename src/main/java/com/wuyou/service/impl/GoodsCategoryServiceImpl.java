@@ -90,7 +90,7 @@ public class GoodsCategoryServiceImpl implements GoodsCategoryService {
 	@Override
 	public List<GoodsCategory> selectNameBymobileName(String mobileName) {
 		// TODO Auto-generated method stub
-		return goodsCategoryMapper.selectNameBymobileName("分类");
+		return goodsCategoryMapper.selectNameBymobileName(mobileName);
 	}
 
 }

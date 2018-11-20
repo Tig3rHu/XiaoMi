@@ -1254,6 +1254,76 @@ public class CartExample {
             addCriterion("sku not between", value1, value2, "sku");
             return (Criteria) this;
         }
+
+        public Criteria andSrcIsNull() {
+            addCriterion("src is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSrcIsNotNull() {
+            addCriterion("src is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSrcEqualTo(String value) {
+            addCriterion("src =", value, "src");
+            return (Criteria) this;
+        }
+
+        public Criteria andSrcNotEqualTo(String value) {
+            addCriterion("src <>", value, "src");
+            return (Criteria) this;
+        }
+
+        public Criteria andSrcGreaterThan(String value) {
+            addCriterion("src >", value, "src");
+            return (Criteria) this;
+        }
+
+        public Criteria andSrcGreaterThanOrEqualTo(String value) {
+            addCriterion("src >=", value, "src");
+            return (Criteria) this;
+        }
+
+        public Criteria andSrcLessThan(String value) {
+            addCriterion("src <", value, "src");
+            return (Criteria) this;
+        }
+
+        public Criteria andSrcLessThanOrEqualTo(String value) {
+            addCriterion("src <=", value, "src");
+            return (Criteria) this;
+        }
+
+        public Criteria andSrcLike(String value) {
+            addCriterion("src like", value, "src");
+            return (Criteria) this;
+        }
+
+        public Criteria andSrcNotLike(String value) {
+            addCriterion("src not like", value, "src");
+            return (Criteria) this;
+        }
+
+        public Criteria andSrcIn(List<String> values) {
+            addCriterion("src in", values, "src");
+            return (Criteria) this;
+        }
+
+        public Criteria andSrcNotIn(List<String> values) {
+            addCriterion("src not in", values, "src");
+            return (Criteria) this;
+        }
+
+        public Criteria andSrcBetween(String value1, String value2) {
+            addCriterion("src between", value1, value2, "src");
+            return (Criteria) this;
+        }
+
+        public Criteria andSrcNotBetween(String value1, String value2) {
+            addCriterion("src not between", value1, value2, "src");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

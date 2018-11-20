@@ -11,6 +11,8 @@
   <!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
 <body class="layui-layout-body">
+    <h1 align="center">商品管理</h1>
+    <hr class="layui-bg-green">
     <table class="layui-table" lay-filter="demo">
                 <thead>
                 <tr><th colspan="26"><h3>商品管理</h3></th></tr>
@@ -49,7 +51,12 @@
                                 <i class="layui-icon">&#xe608;</i> 添加添加商品
                  </a>
                          <a class="layui-btn layui-btn-radius layui-btn-xs layui-btn-danger" lay-event="del">选中删除</a>
-            
+                 <form action="${base}/goods/index" method="post">
+                
+				      <input type="text" name="goodsName" lay-verify="required" placeholder="请根据活动名称查询" autocomplete="off" style="width:160px;height:26px;">
+				 
+                  <button class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe615;</i> 搜索</button>
+                  </form>
                 <tbody>  
                               
                 <#list goods as good>

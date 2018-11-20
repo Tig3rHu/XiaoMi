@@ -503,6 +503,76 @@ public class ImgExample {
             addCriterion("choose not between", value1, value2, "choose");
             return (Criteria) this;
         }
+
+        public Criteria andImgdescribeIsNull() {
+            addCriterion("imgdescribe is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgdescribeIsNotNull() {
+            addCriterion("imgdescribe is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgdescribeEqualTo(String value) {
+            addCriterion("imgdescribe =", value, "imgdescribe");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgdescribeNotEqualTo(String value) {
+            addCriterion("imgdescribe <>", value, "imgdescribe");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgdescribeGreaterThan(String value) {
+            addCriterion("imgdescribe >", value, "imgdescribe");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgdescribeGreaterThanOrEqualTo(String value) {
+            addCriterion("imgdescribe >=", value, "imgdescribe");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgdescribeLessThan(String value) {
+            addCriterion("imgdescribe <", value, "imgdescribe");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgdescribeLessThanOrEqualTo(String value) {
+            addCriterion("imgdescribe <=", value, "imgdescribe");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgdescribeLike(String value) {
+            addCriterion("imgdescribe like", value, "imgdescribe");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgdescribeNotLike(String value) {
+            addCriterion("imgdescribe not like", value, "imgdescribe");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgdescribeIn(List<String> values) {
+            addCriterion("imgdescribe in", values, "imgdescribe");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgdescribeNotIn(List<String> values) {
+            addCriterion("imgdescribe not in", values, "imgdescribe");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgdescribeBetween(String value1, String value2) {
+            addCriterion("imgdescribe between", value1, value2, "imgdescribe");
+            return (Criteria) this;
+        }
+
+        public Criteria andImgdescribeNotBetween(String value1, String value2) {
+            addCriterion("imgdescribe not between", value1, value2, "imgdescribe");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

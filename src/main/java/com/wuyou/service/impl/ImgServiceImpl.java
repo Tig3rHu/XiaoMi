@@ -44,7 +44,7 @@ public class ImgServiceImpl implements ImgService {
 	@Override
 	public Img selectByPrimaryKey(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		return imgMapper.selectByPrimaryKey(id);
 	}
 
 }

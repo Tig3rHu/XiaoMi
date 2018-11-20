@@ -24,9 +24,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 
-
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import com.wuyou.entity.Ad;
 import com.wuyou.entity.AdAndAdPosition;
 import com.wuyou.entity.AdPosition;
@@ -50,15 +47,16 @@ public class AdController {
 	private AdPositionService adPositionService;
 	
 	@RequestMapping("/index")
-	public String queryAdList(Model model,@RequestParam(required = true, defaultValue = "1") Integer page){
-		int pageSize=20;
+	public String queryAdList(Model model
+			/*@RequestParam(required = true, defaultValue = "1") Integer page*/){
+	//	int pageSize=20;
 		//PageHelper.startPage(page, pageSize);
 		List<AdAndAdPosition> ad=adService.selectAdpositionNameFromAdAndAdPosition();
 		//List<AdPosition> adp=adPositionService.selectByExample(null);
 		
-		PageInfo<AdAndAdPosition> p = new PageInfo<AdAndAdPosition>(ad);
+		//PageInfo<AdAndAdPosition> p = new PageInfo<AdAndAdPosition>(ad);
 		
-		model.addAttribute("page", p);
+	//	model.addAttribute("page", p);
 		model.addAttribute("admenu", ad);
 		//model.addAttribute("adp", adp);
 		return "/ad/list";

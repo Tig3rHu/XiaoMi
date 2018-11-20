@@ -8,6 +8,7 @@
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="src" jdbcType="VARCHAR" property="src" />
     <result column="choose" jdbcType="VARCHAR" property="choose" />
+    <result column="imgdescribe" jdbcType="VARCHAR" property="imgdescribe" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -68,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, name, price, title, src, choose
+    id, name, price, title, src, choose, imgdescribe
   </sql>
   <select id="selectByExample" parameterType="com.wuyou.entity.ImgExample" resultMap="BaseResultMap">
     select
@@ -102,9 +103,11 @@
   </delete>
   <insert id="insert" parameterType="com.wuyou.entity.Img">
     insert into img (id, name, price, 
-      title, src, choose)
+      title, src, choose, 
+      imgdescribe)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, 
-      #{title,jdbcType=VARCHAR}, #{src,jdbcType=VARCHAR}, #{choose,jdbcType=VARCHAR})
+      #{title,jdbcType=VARCHAR}, #{src,jdbcType=VARCHAR}, #{choose,jdbcType=VARCHAR}, 
+      #{imgdescribe,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.wuyou.entity.Img">
     insert into img
@@ -127,6 +130,9 @@
       <if test="choose != null">
         choose,
       </if>
+      <if test="imgdescribe != null">
+        imgdescribe,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -146,6 +152,9 @@
       </if>
       <if test="choose != null">
         #{choose,jdbcType=VARCHAR},
+      </if>
+      <if test="imgdescribe != null">
+        #{imgdescribe,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -176,6 +185,9 @@
       <if test="record.choose != null">
         choose = #{record.choose,jdbcType=VARCHAR},
       </if>
+      <if test="record.imgdescribe != null">
+        imgdescribe = #{record.imgdescribe,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -188,7 +200,8 @@
       price = #{record.price,jdbcType=DOUBLE},
       title = #{record.title,jdbcType=VARCHAR},
       src = #{record.src,jdbcType=VARCHAR},
-      choose = #{record.choose,jdbcType=VARCHAR}
+      choose = #{record.choose,jdbcType=VARCHAR},
+      imgdescribe = #{record.imgdescribe,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -211,6 +224,9 @@
       <if test="choose != null">
         choose = #{choose,jdbcType=VARCHAR},
       </if>
+      <if test="imgdescribe != null">
+        imgdescribe = #{imgdescribe,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -220,7 +236,8 @@
       price = #{price,jdbcType=DOUBLE},
       title = #{title,jdbcType=VARCHAR},
       src = #{src,jdbcType=VARCHAR},
-      choose = #{choose,jdbcType=VARCHAR}
+      choose = #{choose,jdbcType=VARCHAR},
+      imgdescribe = #{imgdescribe,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

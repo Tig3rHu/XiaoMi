@@ -15,6 +15,6 @@
 </head>
 <body>
 
-<h1 align="center" style="margin-top: 200px;">欢迎来到仿XiaoMi后台管理系统</h1>
+<h1 align="center" style="margin-top: 200px;">欢迎来到tigerOrtiger后台管理系统</h1>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.wuyou.hellogradle;
+/*package com.wuyou.hellogradle;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -14,4 +14,4 @@ public class CheckNumeric {
         System.out.println(text1+"is a numer"+result1);
 	}
 
-}
+}*/
