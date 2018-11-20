@@ -1,0 +1,1396 @@
+@charset "UTF-8";
+body{
+   
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+}
+.section-items{
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 1349px;
+    float: left;
+
+}
+.container{
+    width: 1349px;
+    height: auto;
+    overflow: hidden;
+}
+.container-roomrobot01{
+    height: 778px;
+    background: url(../../images/xiaomi/roomrobot01.jpg) no-repeat center;
+    line-height: 50px;
+    overflow: hidden;
+}
+.roomrobot01-text{
+    width: 1240px;
+    height: 302px;
+    /* animation:linear .3s; */
+   /* display: none; */
+   /* animation: linear 3s; */
+   /* overflow: hidden; */
+   margin: 200px 0 0 60px;
+}
+
+
+.roomrobot01-text-moneyblack{
+    display: inline-block;
+    height: 72px;
+    width: 142.38px;
+    margin-top: 30px;
+}
+.roomrobot01-text-start{
+    display: block;
+    width:300px;
+    height: 35px;
+    font-size: 18px;
+    color: #fc4b1e;
+    margin: -368px 0 0 64px;
+}
+.start{
+    display: block;
+    float: left;
+    width: 25px;
+    height: 25px;
+    background: url(../../images/xiaomi/roomrobot-play-on.png) no-repeat left ;
+    background-size: cover;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.roomrobot01-text-start-text{
+    display: block;
+    float: left;
+    width: 180px;
+    height: 20px;
+
+}
+
+.roomrobot01-dirt{
+    position: absolute;
+    top: -26px;
+    right: 60px;
+    background: url(../../images/xiaomi/csystem01-dirt.png) no-repeat center;
+    background-size: cover;
+    width: 652px;
+    height: 457px;
+  
+
+}
+.roomrobot01-effect{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1349px;
+    height: 778px;
+}
+.roomrobot01-effect-shadow{
+    z-index: 2;
+    position: absolute;
+    right: -208px;
+    top: -530px;
+    width: 1195px;
+    height: 1291px;
+    background: url(../../images/xiaomi/csystem01-shadow.png) no-repeat center center;
+    background-size: cover;
+}
+.roomrobot01-effect-items{
+    position: relative;
+    width: 839px;
+    height: 839px;
+    z-index: 2;
+    /* animation: degree 8s ease-out forwards; */
+    /* margin:2px 0 0 508px; */
+    top: 2px;
+    left: 508px;
+    animation: a 4.5s linear;
+}
+.effect-items-body{
+    z-index: 3;
+    position: absolute;
+    width: 839px;
+    height: 839px;
+    background: url(../../images/xiaomi/csystem01-body.png) no-repeat center center;
+    background-size: cover;
+    /* background-position: 0 -380px; */
+    top: -380px;
+    right: 0;
+}
+@keyframes a {
+    /* 0% {
+        top: 1300px;
+        left: -1400px;
+    }
+    50% {
+        bottom:calc(40% -2200px);
+        left: calc(50% - 2200px);
+        /* top:-460;
+        left:0; }*/
+    
+    /* 100%{
+        top:-380px;
+        left: calc(100% - 100px);
+    } */ 
+    0% {
+        transform: rotate(-20deg);
+        top: 1200px;
+        left: -400px;
+    }
+    40%{
+        transform: rotate(-10deg);
+    }
+    45%{
+        transform: rotate(0deg);
+
+    }
+    80%{
+        transform: rotate(10deg);
+        top: -800px;
+        left:200px;
+    }
+    90%{
+        transform: rotate(20deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.effect-items-fan{
+    position: absolute;
+    z-index: 2;
+    width: 396px;
+    height: 396px;
+    background: url(../../images/xiaomi/csystem01-fan.png) no-repeat center;
+    background-size: cover;
+    background-position: 0 0;
+    animation: tran-rotate .6s linear infinite;
+    bottom: 258px;
+    left: 42px;
+    /* display: none; */
+    display: 2s;
+}
+.effect-items-fan1{
+    position: absolute;
+    z-index: 2;
+    width: 396px;
+    height: 396px;
+    background: url(../../images/xiaomi/csystem01-fan.png) no-repeat center;
+    background-size: cover;
+    background-position: 0 0;
+    bottom: 258px;
+    left: 42px;
+    animation: tran-rotate1 .6s linear infinite;
+}    
+.effect-items-fan2{
+animation: tran-rotate2 .6s linear infinite;
+}    
+@keyframes tran-rotate{
+    0%{
+        transform: rotate(0);
+        /* bottom: 400px;
+        right: 0; */
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+@keyframes tran-rotate1{
+    0%{
+        transform: rotate(0deg);
+        bottom: 490px;
+    left: 580px;
+    }
+    100%{
+        transform: rotate(-360deg);
+        bottom: 490px;
+    left: 580px;
+    }
+}
+@keyframes tran-rotate2{
+    0%{
+        transform: rotate(60deg);
+        /* bottom: 400px;
+        right: 0; */
+    }
+    100%{
+        transform: rotate(-400deg);
+    }
+}
+
+.container-roomrobot02{
+    overflow:visible;
+ 
+    position: relative;
+    height: 1150px;
+    background: #fff;
+}
+.roomrobot02-0img{
+
+    position: absolute;
+
+transition: 2s .5s;
+    /* 第一个数字动画运行时间 第二个数字延迟多久运行 */
+
+}
+
+/* 图片往下移动代码 */
+/* translate第一个数字左右移动 第二个上下移动 */
+.roomrobot02-01img{
+background: url(../../images/xiaomi/roomrobot02-01.png) no-repeat 0 0;
+width: 792px;
+height: 1090px;
+background-position: 130px 0;
+right: 0;
+transform: translate(0, -50px);
+}
+
+.roomrobot02-02img{
+    top: 450px;
+
+    background: url(../../images/xiaomi/roomrobot02-02.png) no-repeat 0 0;
+    background-position: -130px 0;
+    width: 738px;
+    height: 624px;
+    transform: translate(0, -80px);
+}
+.roomrobot02-01imgchange{
+    transform: translate(0, -10px);
+}
+/* 图片移动代码结束 */
+.roomrobot02-text{
+    position: absolute;
+    width: 460px;
+    height: 140px;
+    opacity: .7;
+    right: 175px;
+    bottom: 149px;
+}
+.roomrobot02-text-h{
+    font-size: 60px;
+
+    line-height: 60px;
+    color: #000;
+}
+.roomrobot02-text-word{
+    font-size: 45px;
+    color: #000;
+    line-height: 45px;
+}
+.container-roomrobot03{
+    height: 403px;
+}
+.roomrobot03-imgbox{
+    width: 449.61px;
+    height: 403px;
+    float: left;
+    overflow: hidden;
+}
+.roomrobot03-01{
+    background: url(../../images/xiaomi/roomrobot03-1.jpg) no-repeat center;
+    background-size: cover;
+    transform: scale(1.35);
+    background-position: -92px -22px;
+    transition: 1.5s ease;
+}
+.roomrobot03-01:hover,.roomrobot03-02:hover,.roomrobot03-03:hover{
+    transition: 1.5s ease;
+    transform: scale(1.4);
+    overflow: hidden;
+}
+.roomrobot03-02{
+    background: url(../../images/xiaomi/roomrobot03-2.jpg) no-repeat center;
+    background-size: cover;
+    transform: scale(1.35);
+    background-position: -92px -22px;
+    transition: 1.5s ease;
+}
+.roomrobot03-03{
+    background: url(../../images/xiaomi/roomrobot03-3.jpg) no-repeat center;
+    background-size: cover;
+    transform: scale(1.35);
+    background-position: -92px -22px;
+    transition: 1.5s ease;
+}
+
+.roomrobot03-01-text{
+    overflow: hidden;        /*隐藏溢出*/
+
+    position: absolute;
+    top: 25px;
+    left: 154px;
+    width: 200px;
+    height: 303px;
+    text-align: center;
+  color: #333;
+  margin-right: 0;
+ 
+}
+.roomrobot03-02-text{
+    overflow: hidden;        /*隐藏溢出*/
+
+    position: absolute;
+    top: 25px;
+    left: 600px;
+    width: 200px;
+    height: 303px;
+    text-align: center;
+  color: #333;
+  margin-right: 0;
+ 
+}
+.roomrobot03-03-text{
+    overflow: hidden;        /*隐藏溢出*/
+
+    position: absolute;
+    top: 25px;
+    left: 1068px;
+    width: 200px;
+    height: 303px;
+    text-align: center;
+  color: #333;
+  margin-right: 0;
+ 
+}
+
+.roomrobot03-01-text-img{
+    display: block;
+    width: 133px;
+    height: 133px;
+    background: url(../../images/xiaomi/roomrobot03-icon.png) no-repeat;
+
+}
+.roomrobot03-01-text-img-02{
+    background-position: -133px 0;
+}
+.roomrobot03-01-text-img-03{
+    background-position: -266px 0;
+}
+.roomrobot03-02-text-h{
+    display: block;
+    height: 30px;
+    margin:30px 0 0 -64px;
+}
+.roomrobot03-02-text-word{
+    display: block;
+    height: 100px;
+    margin:-6px 56px 0 0;
+}
+.container-textfirst{
+    height: 245px;
+    background: #eb582a url(../../images/xiaomi/roomrobot-sj.png) no-repeat center bottom;
+    text-align: center;
+}
+
+.container-roomrobot04{
+   overflow:visible;
+    height: 993px;
+    background: #000 url(../../images/xiaomi/roomrobot04.png) no-repeat center center;
+}
+.container-roomrobot04-text{
+    height: 500px;
+    width: 1240px;
+    margin: 120px auto;
+    text-align: center;
+}
+.roomrobot04-text-imgbox{
+    width: 800px;
+    height: 178px;
+    margin: 78px 0 0 160px;
+    text-align: left;
+}
+.roomrobot04-text-img{
+    display: block;
+    float: left;
+    width: 92px;
+    height: 92px;
+    background: url(../../images/xiaomi/roomrobot04-icon.png) no-repeat;
+    margin-left: 108px;
+}
+.roomrobot04-text-img1{
+    background-position: 0 0;
+}
+.roomrobot04-text-img2{
+    background-position: -92px 0;
+}
+.roomrobot04-text-img3{
+    background-position:-184px 0
+}
+.roomrobot04-text-img4{
+    background-position:-276px 0;
+}
+.roomrobot04-text-imgbox-key{
+    display: block;
+    float: left;
+    margin: 32px 0 0 132px;
+}
+.roomrobot04-text-imgbox-tail{
+    width: 1300px;
+    height: 20px;
+    text-align: center;
+    margin:  0 0 0 174px;
+}
+.roomrobot04-text-imgbox-worddisplay{
+    display: block;
+    float: left;
+    width: 147.57px;
+    height: 17px;
+    margin: 0 0 0 56px;
+    text-align: center;
+
+}
+.container-roomrobot04-img{
+    position: absolute;
+    z-index: 2;
+    width: 1241px;
+    height: 749px;
+    background: url(../../images/xiaomi/roomrobot04-02.png) no-repeat center;
+    bottom: -328px;
+    left: 54px;
+    transition: 2.5s .5s;
+    transform: translate(0, -70px);
+}
+.container-roomrobot04-imgchange{
+    transform: translate(0, 0);
+}
+.container-textsecond{
+    text-align: center;
+    margin: 290px 0 0 0;
+    overflow: visible;
+    height: 580px;
+    background: #fff;
+}
+.textsecond-text-word{
+    color: #7f8588 !important;
+  
+}
+.textsecond-text-img{
+
+    width: 688px;
+    height: 151px;
+    margin: 78px auto
+}
+.textsecond-text-imgbox{
+    width: auto;
+    height: 151px;
+    float: left;
+    margin-left: 44px;
+    text-align: center;
+}
+.textsecond-img{
+    text-align: center;
+    display: block;
+    width: 92px;
+    height: 92px;
+    margin: 0 auto;
+    background:url(../../images/xiaomi/roomrobot05-icon.png) no-repeat;
+}
+.textsecond-img1{
+    background-position: 0 0;
+}
+.textsecond-img2{
+    background-position: -92px 0;
+}
+.textsecond-img3{
+    background-position: -184px 0;
+}
+.textsecond-img4{
+    background-position: -276px 0;
+}
+.textsecond-imgtextdis{
+    position: relative;
+    display: block;
+    margin:4px 0 0 0;
+}
+.textsecond-text-tail{
+    height: 21px;
+    text-align: center;
+    margin-top: 4px;
+}
+.textsecond-text-tail span{
+    color: #7f8588;
+    font-size: 14px;
+}
+.container-roomrobot06{
+    height: 891px;
+    overflow: hidden;
+}
+.container-roomrobot06-bg{
+    height: 891px;
+    background: url(../../images/xiaomi/roomrobot06.jpg) no-repeat center center;
+    background-size: cover;
+    transition:10s .5s;
+    transform: scale(1);
+}
+.container-roomrobot06-text{
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    height: 758px;
+    width: 1240px;
+    text-align: center;
+}
+.container-roomrobot06-img{
+    position: absolute;
+    bottom: 60px;
+    left: 48px;
+    z-index: 3;
+    display: block;
+    width: 1085px;
+    height: 378px;
+
+}
+.container-roomrobot06-img-box{
+    display: block;
+    float: left;
+    width: 310px;
+    height: 378px;
+    margin-left: 50px;
+    text-align: center;
+    
+}
+.roomrobot06-img{
+    width: 310px;
+    height: 295px;
+    display: block;
+    margin: 0 auto;
+    background: url(../../images/xiaomi/roomrobot06-icon.png) no-repeat 0 0;
+}
+.roomrobot06-img1{
+    background-position: 0 0 ;
+}
+.roomrobot06-img2{
+    background-position: -406px -14px;
+}
+.roomrobot06-img3{
+    background-position: -776px -6px;
+}
+.container-roomrobot06-img-box span{
+    display:block;
+    width: 276.47px;
+    height: 55px;
+    margin: 0px 0 0 38px;
+}
+.roomrobot06-img-text{
+    margin: 0 0 0 22px !important;
+}
+.container-roomrobot07{
+    height: 1050px;
+    background: #fafafa url(../../images/xiaomi/roomrobot07-1.jpg) no-repeat center center;
+}
+.roomrobot07-text{
+    height: 169px;
+    text-align:center;
+    margin-top:130px;
+}
+.roomrobot07-tips span{
+    display: block;
+    width: auto;;
+    position: absolute;
+    height: 20px;
+    line-height: 20px;
+    top: 50%;
+    margin-top: -10px;
+}
+.roomrobot07-tips-1 span{
+    left: -322px;
+}
+.roomrobot07-tips-2 span{
+    left: -132px;
+}
+.roomrobot07-tips-3 span{
+    left: -324px;
+}
+.roomrobot07-tips-4 span{
+    left: -130px;
+}
+.roomrobot07-tips-5 span{
+    left: -262px;
+}
+.roomrobot07-tips-6 span{
+    right: -230px; 
+}
+.roomrobot07-tips-7 span{
+    right: -172px;
+}
+.roomrobot07-tips-8 span{
+    right: -356px;
+}
+.roomrobot07-tips-9 span{
+    right: -178px;
+}
+.roomrobot07-tips-10 span{
+    right: -116px;
+}
+.roomrobot07-tips-11 span{
+    right: -370px;
+}
+.roomrobot07-tips{
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    background: #bfbfc1;
+    border-radius: 50%;
+ 
+}
+.roomrobot07-tips::before{
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    content: " ";
+    border-radius: 50%;
+    background: #fff;
+    left: 2px;
+    top: 2px;
+    
+}
+.roomrobot07-tips::after{
+    content: "";
+    height: 1px;
+    background: #bfbfc1;
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+
+}
+.roomrobot07-tips-1{
+    top: 438px;
+    left: 432px;
+}
+.roomrobot07-tips-1::after{
+    width: 190px;
+    right:  10px;
+}
+.roomrobot07-tips-2{
+    top: 632px;
+    left: 224px;
+}
+.roomrobot07-tips-2::after{
+    width: 59px;
+    right:  10px;
+}
+.roomrobot07-tips-3{
+    top: 676px;
+    left: 432px;
+}
+.roomrobot07-tips-3::after{
+    width: 224px;
+    right:  10px;
+}
+.roomrobot07-tips-4{
+    top: 743px;
+    left: 276px;
+}
+.roomrobot07-tips-4::after{
+    width: 57px;
+    right:  10px;
+}
+.roomrobot07-tips-5{
+    top: 828px;
+    left: 430px;
+}
+.roomrobot07-tips-5::after{
+    width: 161px;
+    right:  10px;
+}
+.roomrobot07-tips-6{
+    top: 420px;
+    right: 424px;
+}
+.roomrobot07-tips-6::after{
+    width: 126px;
+    left:10px;
+}
+.roomrobot07-tips-7{
+    top: 438px;
+    right: 374px;
+}
+.roomrobot07-tips-7::after{
+    width: 99px;
+    left:10px;
+}
+.roomrobot07-tips-8{
+    top: 502px;
+    right: 432px;
+}
+.roomrobot07-tips-8::after{
+    width: 243px;
+    left:10px;
+}
+.roomrobot07-tips-9{
+    top: 600px;
+    right: 282px;
+}
+.roomrobot07-tips-9::after{
+    width: 105px;
+    left:10px;
+}
+
+.roomrobot07-tips-10{
+    top: 644px;
+    right: 260px;
+}
+.roomrobot07-tips-10::after{
+    width: 72px;
+    left:10px;
+}
+
+.roomrobot07-tips-11{
+    top: 771px;
+    right: 496px;
+}
+.roomrobot07-tips-11::after{
+    width: 269px;
+    left:10px;
+}
+.container-roomrobot08{
+    height: 1061px;
+    background: url(../../images/xiaomi/roomrobot08.jpg) no-repeat center center;
+    background-size: cover;
+    text-align: center;
+}
+.roomrobot08-text{
+    margin-top: 130px;
+}
+.container-roomrobot09{
+    height: 943px;
+    background: #333 url(../../images/xiaomi/roomrobot09.jpg) no-repeat center center;
+}
+.roomrobot09-text{
+    height: 199px;
+    text-align: center;
+    margin-top: 130px;
+}
+.roomrobot09-text .roomrobot01-text-start{
+    margin: 21px 0 0 564px;
+}
+.roomrobot09-text .start{
+    margin-top: 1px;
+    margin-right: 10px;
+}
+.roomrobot09-body{
+    position: absolute;
+    width: 207px;
+    height: 123px;
+    background: url(../../images/xiaomi/roomrobot09-1.png) no-repeat center center;
+    background-size: cover;
+    bottom: 138px;
+    left: 41.2%;
+    transform: translate(0,-40px);
+    transition: 2s .5s
+}
+.container-roomrobot10{
+    height: 718.2px;
+    background: url(../../images/xiaomi/roomrobot10.jpg) no-repeat center center;
+    background-size: cover;
+}
+.roomrobot10-content{
+    height: 803px;
+    margin-top: 130px;
+    margin-left: 50px;
+    color: #555c60;
+    text-align: left;
+    opacity: 1;
+}
+.roomrobot10-content .container-roomrobot04-text-h{
+    color: #555c60;
+}
+.roomrobot10-content .container-roomrobot04-text-word{
+    color: #7f8588;
+}
+.roomrobot10-content-imgcontent{
+    display: block;
+    width: 1035px;
+    height: 233px;
+    padding: 60px 0 40px 0;
+    text-align: center;
+}
+.roomrobot10-content-imgcontent li{
+    display:block;
+    float: left;
+    margin: 0 60px 0 0;
+    width: 93px;
+    height: 133px;
+}
+.roomrobot10-content-img{
+    float: left;
+    width: 93px;
+    height: 92px;
+    background: url(../../images/xiaomi/roomrobot10-icon.png) no-repeat;
+    margin-bottom: 16px;
+}
+.roomrobot10-content-img1{
+    background-position: 0 0;
+
+}
+.roomrobot10-content-img2{
+    background-position: -93px 0;
+
+}
+.roomrobot10-content-imgcontent span{
+    color: #fc4b1e;
+}
+.roomrobot10-content-imgtail{
+    position: absolute;
+    bottom: -20px;
+    height: 37px;
+    float: left;
+    left: -62px;
+}
+.roomrobot10-content-imgtail .roomrobot01-text-start{
+    width: 350px;
+}
+.roomrobot10-content-imgtail .roomrobot01-text-start-text{
+    width: 300px;
+    height: 30px;
+    margin: 10px 0 0 -14px;
+}
+.container-textthird{
+    height: 245px;
+    background: #eb582a url(../../images/xiaomi/roomrobot-sjb.png) no-repeat center bottom;
+    text-align: center;
+}
+.container-roomrobot11{
+    height: 2139px;
+    background: #fff url(../../images/xiaomi/roomrobot11.jpg) no-repeat center 490px;
+}
+.roomrobot11-textcontent{
+    height: 341px;
+    margin-top:130px;
+    color: #555c60;
+    text-align: center;
+}
+.roomrobot11-textcontent .container-roomrobot04-text-h{
+    color: #555c60;
+}
+.roomrobot11-textcontent .container-roomrobot04-text-word{
+    color: #9ca0a2;
+}
+.roomrobot11-img{
+    float: left;
+    width: 93px;
+    height: 92px;
+    background: url(../../images/xiaomi/roomrobot11-icon.png) no-repeat;
+    margin-bottom: 16px; 
+}
+.roomrobot11-textcontent .roomrobot10-content-imgcontent{
+    margin: -18px 0 0 35.4%;
+    text-align: center;
+}
+.roomrobot11-img1{
+    background-position: 0 0;
+}
+.roomrobot11-img2{
+    background-position: -186px 0;
+}
+.roomrobot11-img3{
+    background-position: right 0;
+}
+
+.roomrobot11-img-ba01{
+    position: absolute;
+    z-index: 3;
+    background: url(../../images/xiaomi/roomrobot11-1.png) no-repeat;
+    background-size: cover;
+    left: 1.4%;
+    top: 58%;
+    width: 1427px;
+    height: 523px;
+    animation: wind 4s infinite;
+}
+@keyframes wind{
+    0%{
+        opacity: 1;
+        transform: scale(1) translate(0,0);
+    }
+    20%{
+        opacity: .8;
+        transform: scale(0.99) translate(0,-20px);
+    }
+    50%{
+        opacity: 1;
+        transform: scale(1) translate(0,0);
+    }
+    70%{
+        opacity: .8;
+        transform: scale(0.99) translate(0,-20px);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1) translate(0,0);
+    }
+}
+.roomrobot11-img-ba02{
+    position: absolute;
+    width: 707px;
+    height: 244px;
+    background: url(../../images/xiaomi/video-png.png) no-repeat center center;
+    z-index: 2;
+    top: 50%;
+    left: 23.4%;
+}
+.roomrobot11-img-ba03{
+    z-index: 2;
+    position: absolute;
+    width: 351px;
+    height: 351px;
+    background: url(../../images/xiaomi/roomrobot11-2.png) no-repeat center center;
+    top: 59.6%;
+    left: 67.2%;
+}
+.roomrobot11-img-viedobox{
+    position: absolute;
+    z-index: 1;
+    width: 574px;
+    height: 119px;
+    left: 29.6%;
+    top: 55%;
+    overflow: hidden;
+
+}
+.roomrobot11-img-viedobox-video{
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+}
+.roomrobot11-texttail{
+    height: 280px;
+    text-align: center;
+    position: relative;
+    bottom: -1200px;
+
+}
+.roomrobot11-texttail .container-roomrobot04-text-h,.roomrobot012-text .container-roomrobot04-text-h{
+    color: #555c60;
+}
+.roomrobot11-texttail .container-roomrobot04-text-word{
+    color: #9ca0a2;
+}
+.roomrobot11-texttail-img{
+    height: 37px;
+    margin-top: 50px;
+}
+.roomrobot011-text-start{
+    display: block;
+    width:300px;
+    height: 35px;
+    font-size: 16px;
+    color: #fc4b1e;
+    margin:8px 0 0 592px;
+}
+.roomrobot011-start{
+    display: block;
+    float: left;
+    width: 25px;
+    height: 25px;
+    background: url(../../images/xiaomi/roomrobot-play-on.png) no-repeat left ;
+    background-size: cover;
+    margin-top: 0px;
+    margin-right: -14px;
+}
+.roomrobot011-text-start-text{
+    display: block;
+    float: left;
+    width: 180px;
+    height: 20px;
+
+}
+.roomrobot11-texttail .textsecond-text-tail{
+    margin-top: 40px;
+}
+.container-roomrobot012{
+    height: 808px;
+    background: url(../../images/xiaomi/roomrobot12.jpg) no-repeat center center;
+}
+.roomrobot012-text{
+    height: 336px;
+    margin-top: 120px;
+    margin-left: 4%;
+}
+.roomrobot012-text .container-roomrobot04-text-word{
+    color: #7f8588;
+}
+.roomrobot12-texttail-img{
+    height: 37px;
+    margin-top: 24px;
+}
+.roomrobot12-texttail-img .roomrobot011-text-start{
+    margin: 0 0 0 0 ;
+}
+.roomrobot12-texttail-img .roomrobot011-start{
+    margin-right: 4px;
+}
+.roomrobot12-texttail-tail{
+    width: 200px;
+    height: 24px;
+    color: #fc4b1e;
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 86px;
+}
+.roomrobot12-texttail-tail1{
+    display: block;
+    color: #fc4b1e;
+    text-decoration: none;
+    font-size: 16px;
+    width: 200px;
+    height: 24px;
+    margin-top: 80px;
+}
+.container-textfourth{
+    text-align: center;
+    height: 245px;
+    color: #fff;
+    background: #eb582a url(../../images/xiaomi/roomrobot-sjb.png) no-repeat center bottom;
+}
+.container-roomrobot13{
+    text-align: center;
+    height: 952.7px;
+    background: #fff url(../../images/xiaomi/roomrobot13.jpg) no-repeat center top;
+}
+.container-roomrobot13  .container-roomrobot04-text-word{
+    color: #9ca0a2;
+}
+.roomrobot012-text .roomrobot12-texttail-tail{
+    text-align: center;
+    margin: -6px 0 0 570px;
+}
+.container-roomrobot14{
+    height: 1140px;
+}
+.roomrobot14-img{
+    position: relative;
+    width: 535px;
+    height: 1140px;
+    float: left;
+}
+.roomrobot14-img1{
+    position: absolute;
+    z-index: 3;
+    background: url(../../images/xiaomi/roomrobot14.jpg) center bottom;
+    left: 0;
+}
+.roomrobot14-img2{
+    position: absolute;
+    z-index: 2;
+    background: url(../../images/xiaomi/roomrobot14-on.jpg) center bottom;
+    left: 0;
+
+}
+.roomrobot14-textcontent{
+    position: absolute;
+    right: 0;
+    float: left;
+    width: 520px;
+    height: 881px;
+    margin: 130px 220px 0 0;
+}
+.roomrobot14-textcontent .container-roomrobot04-text-h{
+    color: #555c60;
+}
+.roomrobot14-textcontent .container-roomrobot04-text-word{
+    color: #565656;
+}
+.roomrobot04-tail{
+    width: 575.59px;
+    float: left;
+    text-align:left;
+    margin-top: -8px;
+}
+.textsecond-text-img2{
+    width: 520px;
+    height: 45px;
+    margin: 146px 0 80px 0;
+    background: url(../../images/xiaomi/roomrobot14-03.png) no-repeat 0 0;
+}
+.roomrobot14-textcontent ul{
+    display:block;
+    width: 520px;
+    height: 183px;
+    margin:  0 0 0 -38px;
+}
+.roomrobot14-textcontent ul li{
+    display:block;
+    width: 57px;
+    height: 93px;
+    float: left;
+    margin-right: 20px;
+}
+.roomrobot14-textcontent ul li span{
+    display: block;
+    padding: 20px 0 0 0;
+    color: #fc4b1e;
+}
+.roomrobot14-textcontent .roomrobot04-tail{
+    margin-top: 54px;
+}
+.roomrobot14-tailimg{
+    width: 57px;
+    height: 57px;
+    margin: 0 auto;
+    background: url(../../images/xiaomi/roomrobot14-icon.png) no-repeat;
+}
+.roomrobot14-tailimg1{
+    background-position: 0 0;
+}
+.roomrobot14-tailimg2{
+    background-position: -92px 0;
+}
+.roomrobot14-tailimg3{
+    background-position: -185px 0;
+}
+.roomrobot14-tailimg4{
+    background-position: -277px 0;
+}
+.roomrobot14-tailimg5{
+    background-position: -370px 0;
+}
+.roomrobot14-tailimg6{
+    background-position: -462px 0;
+}
+.container-roomrobot15{
+    height: 974px;
+    background: url(../../images/xiaomi/roomrobot15.jpg) no-repeat center center;
+    overflow: hidden;
+}
+.roomrobot15-textcontent{
+    height: 531px;
+    width: 1240px;
+}
+.container-roomrobot15 .roomrobot14-textcontent{
+    left: 58px;
+}
+.container-roomrobot15 .roomrobot14-textcontent .container-roomrobot04-text-h{
+    font-size: 35px;
+    line-height: 45px;
+}
+.container-roomrobot15 .roomrobot14-textcontent .container-roomrobot04-text-word{
+    font-size: 16px;
+    line-height: 30px;
+    color: hsl(200, 4%, 52%);
+}
+.container-roomrobot15 ul{
+    display: block;
+    width: 1035px;
+    height: 220px;
+    margin: 26px 0 0 0;
+}
+.container-roomrobot15 ul li{
+    display: block;
+    width: 79px;
+    height: 120px;
+    float: left;
+    margin: 0px 82px 0 -28px;
+}
+.container-roomrobot15 .roomrobot14-textcontent ul span{
+    padding: 20px 0 0 0;
+    display: block;
+    color: #6a635d;
+    margin: 0 0 0 24px;
+}
+.container-roomrobot15 .roomrobot14-textcontent ul .textsecond-text-tail{
+    margin-top: 140px;
+    margin-left: -452px;
+}
+.roomrobot15-img{
+    width: 79px;
+    height: 79px;
+    background: url(../../images/xiaomi/roomrobot15-icon.png) no-repeat;
+}
+.roomrobot15-img1{
+    background-position: 0 0;
+}
+.roomrobot15-img2{
+    background-position: -130px 0;
+}
+.roomrobot15-img3{
+    background-position: -261px 0;
+}
+.container-roomrobot16{
+    text-align: center;
+    height: 732px;
+    background: #242425;
+}
+.roomrobot16-textcontent{
+    width: 1240px;
+    height: 556px;;
+    margin: 130px auto
+}
+.roomrobot16-textcontent .container-roomrobot04-text-h{
+    color: #fff;
+    font-size: 35px;
+    height: 40px;
+}
+.roomrobot16-textcontent ul{
+    width: 1240px;
+    height: 475px;
+    margin: 66px 0 0 100px;
+    list-style:none;
+}
+.roomrobot16-textcontent li{
+    text-align: left;
+    float: left;
+    width: 364.63px;
+    height: 60px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    
+}
+.roomrobot16-textcontent-img1{
+    background: url(../../images/xiaomi/roomrobot17-icon.png) no-repeat;
+    background-position: 0 3px;
+}
+.roomrobot16-textcontent-img2{
+    background: url(../../images/xiaomi/roomrobot17-icon.png) no-repeat;
+    background-position: 0 -304px;
+}
+.roomrobot16-textcontent-img3{
+    background: url(../../images/xiaomi/roomrobot17-icon.png) no-repeat;
+    background-position: 0 -611px;
+}
+.roomrobot16-textcontent-img4{
+    background: url(../../images/xiaomi/roomrobot17-icon.png) no-repeat;
+    background-position: 0 -100px;
+}
+.roomrobot16-textcontent-img5{
+    background: url(../../images/xiaomi/roomrobot17-icon.png) no-repeat;
+    background-position: 0 -406px;
+}
+.roomrobot16-textcontent-img6{
+    background: url(../../images/xiaomi/roomrobot17-icon.png) no-repeat;
+    background-position: 0 -714px;
+}
+.roomrobot16-textcontent-img7{
+    background: url(../../images/xiaomi/roomrobot17-icon.png) no-repeat;
+    background-position: 0 -201px;
+}
+.roomrobot16-textcontent-img8{
+    background: url(../../images/xiaomi/roomrobot17-icon.png) no-repeat;
+    background-position: 0 -509px;
+}
+.roomrobot16-textcontent-img9{
+    background: url(../../images/xiaomi/roomrobot17-icon.png) no-repeat;
+    background-position: 0 -817px;
+}
+
+.roomrobot16-textcontent .textsecond-text-tail{
+    text-align: center;
+    width: 1200px;
+    position: absolute;
+    text-align: center;
+    height: 16px;
+    bottom: 46px;
+}
+.container-roomrobot18{
+    height: 740px;
+    background: url(../../images/xiaomi/roomrobot18b.jpg) no-repeat center center;
+}
+.roomrobot18-textcontent{
+    margin: 76px 196px 0 0;
+    float: right;
+}
+.roomrobot18-textcontent .container-roomrobot04-text-h{
+    font-size: 35px;
+    line-height: 40px;
+    color: #555c60;
+}
+.roomrobot18-textcontent .container-roomrobot04-text-word{
+    font-size: 16px;
+    line-height: 30px;
+    color: #555c60;
+}
+.roomrobot18-textcontent a{
+    text-decoration: none;
+    color: #fc4b1e;
+    font-size: 16px;
+}
+.container-roomrobot19{
+    position: relative;
+    height: 1200px;
+}
+.container-roomrobot19-left{
+    width: 1280px;
+    height: 600px;
+    position: absolute;
+    right: 50%;
+    background: url(../../images/xiaomi/roomrobot19-a.jpg) no-repeat center center;
+
+    
+}
+.container-roomrobot19-right{
+    width: 1280px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    background: url(../../images/xiaomi/roomrobot19-b.jpg) no-repeat center center;
+    
+}
+.container-roomrobot19-c{
+    width: 1280px;
+    height: 600px;
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    background: url(../../images/xiaomi/roomrobot19-c.jpg) no-repeat center center;
+
+}
+.container-roomrobot19-d{
+    width: 1280px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    background: url(../../images/xiaomi/roomrobot19-d.jpg) no-repeat center center;
+    
+}
+.container-roomrobot19-left .roomrobot18-textcontent{
+    margin: 332px 314px 0 0px;
+}
+.container-roomrobot19-right .roomrobot18-textcontent{
+    margin: 122px 854px 0 0px;
+}
+.container-roomrobot19-c .roomrobot18-textcontent{
+    margin: 304px 90px 0 0px;
+}
+.container-roomrobot19-d .roomrobot18-textcontent{
+    margin: 96px 906px 0 0px;
+}
+.container-roomrobot-nex{
+    height: 348px;
+    background: url(../../images/xiaomi/roomrobot-next-01.jpg) no-repeat center center;
+}
+.roomrobot-nex-img{
+    display: block;
+    height: 348px;
+    width: 100%;
+}
+.footer{
+    position: relative;
+    bottom: 0;
+    float: left;
+    width: 1349px;
+    height: 196px;
+    background: rgb(250, 250, 250);
+}
+.footer-content{
+    width: 613px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 45px 0;
+}
+.footer-content-pic{
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+.footer-content-font{
+    width: 400px;
+    height: 72px;
+    float: left;
+    margin:15px 0 0 35px;
+}

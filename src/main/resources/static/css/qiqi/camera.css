@@ -1,0 +1,802 @@
+@charset "UTF-8";
+body{
+   
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    font: 14px/1.5;
+}
+.section-items{
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 1349px;
+    float: left;
+    
+}
+.container{
+    width: 1349px;
+    height: auto;
+    overflow: hidden;
+}
+.top{
+    height: 854px;
+    overflow: hidden;
+}
+.top-text{
+    position: absolute;
+    z-index: 2;
+    width: 570px;
+    left: 181px;
+    text-align: left;
+    top: 250px;
+    color: #000;
+}
+.top-video{
+    width:  2560px;
+    height: 854px;
+    /* z-index: -1; */
+    /* top:50%;
+    left: 50%; */
+    position: absolute;
+    object-fit: contain;
+    overflow: hidden;
+
+    margin: 0 0 0 -600px;
+}
+.top-video-box{
+    width:  1349px;
+    height: 854px;
+    position: absolute;
+    object-fit: contain;
+    overflow: hidden;
+}
+.container-text01{
+    height: 262px;
+    background: #fcfcfc;
+}
+
+.container-text01 ul{
+    display: block;
+    width: 1349px;
+    height: 262px;
+    margin: 0 auto;
+}
+.container-text01 ul li{
+    display: block;
+    float: left;
+    text-align: center;
+    width: 268px;
+    height: 72px;
+    margin: 95px 0 0 0 ;
+}
+
+.container-text02{
+    height: 430px;
+    text-align: center;
+    background-color: #46a1e0;
+}
+.text02-box{
+    height: 135px;
+    margin: 147.5px 0;
+}
+.container-swhite-03{
+    height: 479px;
+    overflow: hidden;
+}
+
+.container-swhite-03 i{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s linear;
+    background: url(${base}/static/images/qiqi/swhite-03.jpg) no-repeat;
+}
+/* .swhite-box i{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s linear;
+} */
+.swhite-03-a{
+    height: 479px;
+    width: 569px;
+    margin: 0 0 0 -300px;
+    overflow: hidden;
+}
+.swhite-03-b{
+    width: 728px;
+    height: 479px;
+    overflow: hidden;
+}
+.swhite-03-c{
+    width: 352px;
+    height: 479px;
+}
+.swhite-03-a i{
+    background-position: left 0;
+    transition: all 2s .2s;
+}
+.swhite-03-a i:hover,.swhite-03-b i:hover,.swhite-03-c i:hover{
+    transition: all 2s .2s;
+    transform: scale(1.3);
+}
+.swhite-03-b i{
+    background-position: center 0;
+    transition: all 2s .2s;
+}
+.swhite-03-c i{
+    background-position:-2004px 6px;
+    transition: all 2s .2s;
+}
+.swhite-box{
+    float: left;
+}
+.container-swhite-phone{
+    height: 995px;
+    background-color: #f3f3f3;
+}
+.swhite-phone{
+    margin: 140px 0 0 100px;
+    width: 520px;
+    height: 855px;
+    background: url(${base}/static/images/qiqi/swhite-phone.png) no-repeat ;
+}
+.swhite-phone-head{
+    position: absolute;
+    width: 490px;
+    height: 388px;
+    background: url(${base}/static/images/qiqi/plhd.jpg) center;
+   background-size: 490px;
+
+    top: 238px;
+    left: 114px;
+}
+.swhite-phone-head a{
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    display: block;
+    width: 491px;
+    height: 290px;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 98px;
+    background-color: rgba(0,0,0,0.8);
+}
+.phone-head-view{
+    position: absolute;
+    z-index: -1;
+    display: block;
+    width: 490px;
+    height: 388px;
+    overflow: hidden;
+    top: 0;
+}
+.phone-head-view iframe{
+    width: 490px;
+    height: 470px;
+}
+.swhite-phone-head a:hover{
+    text-decoration:line-through white;
+}
+.swhite-phone-tail{
+    position: absolute;
+    width: 490px;
+    height: 370px;
+    background: url(${base}/static/images/qiqi/swhite-04-oper.jpg) no-repeat center;
+    background-size:cover;
+    top: 626px;
+    left: 117px;
+}
+.swhite-phone-tail a{
+    display: block;
+    position: absolute;
+}
+.phone-tail-top{
+    top: 143px;
+    left: 37%;
+    width: 127px;
+    height: 64px;
+}
+.phone-tail-bottom{
+    top: 270px;
+    left: 37%;
+    width: 127px;
+    height: 64px;
+}
+.phone-tail-left{
+    top: 175px;
+    left: 30%;
+    width: 64px;
+    height: 127px;
+}
+.phone-tail-right{
+    top: 174px;
+    left:  57%;
+    width: 64px;
+    height: 127px;
+}
+.swhite-text{
+    position: absolute;
+    text-align: left;
+    top: 260px;
+    right: 60px;
+    width: 550px;
+    height: 361px;
+    line-height: 25px;
+  opacity: .8;
+}
+.word-img-a{
+    margin: 50px 104px 0 14px;
+    float: left;
+    display: block;
+    width: 100px;
+    height: 90px;
+    background: url(${base}/static/images/qiqi/swhite-icon.png) no-repeat;
+    background-position: 4px 0;
+}
+.word-img-b{
+    margin: 50px 0 0 0;
+    float: left;
+    display: block;
+    width: 100px;
+    height: 90px;
+    background: url(${base}/static/images/qiqi/swhite-icon.png) no-repeat;
+    background-position: right 0;
+}
+.word-img-a-texta{
+    position: absolute;
+    top: 342px;
+    right: 404px;
+    display: block;
+    height: 25px;
+    width: 140px;
+    float: left;
+}
+.word-img-a-textb{
+    position: absolute;
+    top: 342px;
+    right: 198px;
+    display: block;
+    height: 25px;
+    width: 140px;
+   float: left;
+}
+.container-05-bg{
+    height: 1155px;
+    background: url(${base}/static/images/qiqi/swhite-05-bg.jpg) no-repeat center;
+    text-align: center;
+
+}
+.container-05-bg span{
+    display: block;
+    line-height: 30px;
+    color: #000;
+    opacity: .6;
+}
+.container-05-bg .text02-h,.content-07-bg-text .text02-h{
+    display: block;
+    margin: 150px 0 0 0;
+}
+.container-06-bg{
+    height: 842.1px;
+    background: url(${base}/static/images/qiqi/swhite-06-bg.jpg) no-repeat center;
+    background-size: cover;
+}
+.container-07-bg{
+    height: 2116px;
+    position: relative;
+  
+
+}
+.content-07-bg{
+    height: 939px;
+    background: url(${base}/static/images/qiqi/swhite-07-bg.jpg) no-repeat center top;
+    background-size: cover;
+
+}
+.content-07-bg-text{
+    width: 392px;
+    height: 402px;
+    margin: 168px 0 0 138px;;
+
+    float: left;
+}
+.content-07-bg-text span{
+    opacity: .7;
+    line-height: 30px;
+}
+
+.content-07-phone{
+    position: absolute;
+    z-index: 2;
+    right: 108px;
+    top: 154px;
+    width: 430px;
+    height: 839px;
+    background: url(${base}/static/images/qiqi/swhite-07-phone.png) no-repeat center;
+    background-size: cover;
+}
+
+.container-07-text{
+    position: absolute;
+    bottom: 804px;
+    width: 1240px;
+    height: 334px;
+    text-align: center;
+
+
+}
+.container-07-text .container-05-bg {
+    background: #fff;
+}
+.container-07-img{
+    bottom: 0;
+    display: inline-block;
+    width: 85px;
+    height: 85px;
+   margin: 34px -32px 0 83px;
+    background: url(${base}/static/images/qiqi/swhite-icon-add.png) no-repeat center ;
+}
+.container-07{
+    height: 334px;
+}
+.content-07-text{
+height: 20px;
+text-align: center;
+}
+.container-07-a{
+    background-position: 0 0;
+}
+.container-07-b{
+    background-position: right 0; 
+}
+.container-07-img-text{
+    display: inline-block;
+    width: 114px;
+    height: 20px;
+    margin: 0 6px 0 18px;
+}
+.content-07-video{
+    position: absolute;
+    bottom: 50px;
+    left: 206.5px;
+    width: 936px;
+    height: 535px;
+    margin: 0 auto;
+    background: url(${base}/static/images/qiqi/swhite-7-c.jpg) no-repeat center;
+    background-size: cover;
+}
+.content-07-video-play{
+    width: 731px;
+    height: 419px;
+    margin: 38px 0 0 100px;
+}
+.content-07-video-play-box{
+    z-index: 1;
+    position: absolute;
+    top: 37px;
+    left: 96px;
+    width: 737px;
+    height: 422.94px;
+    overflow: hidden;
+}
+.content-07-video-play-box video{
+    display: block;
+    width: 737px;
+    height: 422.94px;
+    
+}
+.content-07-video-play-dog{
+    display: block;
+    z-index: 2;
+    position: absolute;
+    top: 32px;
+    left: 2px;
+    width: 736px;
+    height: 392px;
+
+    overflow: hidden;
+    background: url(${base}/static/images/qiqi/swhite-07-play-plhd.jpg) no-repeat center center;
+
+}
+.content-07-video-play-start{
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 736px;
+    height: 424px;
+    display: block;
+    background: rgba(0,0,0,0.8) url(../../images/xiaomi/swhite-07-play-btn.png) no-repeat center center;
+}
+.content-07-video-play-start a{
+    display: block;
+    width: 736px;
+    height: 424px;
+}
+.container-08-bg{
+    height: 747.6px;
+    background: url(${base}/static/images/qiqi/swhite-08-bg.jpg) no-repeat center;
+    background-size: cover;
+}
+.container-09-bg{
+    height: 907px;
+    background: url(../../images/xiaomi/swhite-09-bg.jpg) no-repeat center;
+}
+.container-09-bg-text{
+    width: 500px;
+    height: 220px;
+    margin: 268px 0 0 257px;
+    line-height: 30px;
+    opacity: .8;
+}
+.container-10-bg{
+    height: 1065px;
+    background: url(../../images/xiaomi/swhite-10-bg.jpg) no-repeat center;
+}
+.container-10-bg-text-head{
+    height: 176px;
+    position: absolute;
+    top: 120px;
+    text-align: center;
+}
+.container-10-bg-text-head .text02-word,.container-10-bg-text-head .text02-h{
+    color: #000;
+    line-height: 30px;
+    opacity: .8;
+}
+.container-10-bg-texta{
+    position: absolute;
+    top: 510px;
+    left: 600px;
+    text-align: center;
+    display: block;
+    background-color: #34affb;
+    width: 175.58px;
+    margin: 0px 0 30px 0;
+    height: 48px;
+    position: relative;
+
+    height: 48px;
+    border-radius: 30px;
+    list-style: none;
+}
+.container-10-bg-texta2{
+    position: absolute;
+    top: 510px;
+    left: 600px;
+    text-align: center;
+    display: block;
+    background-color: #34affb;
+    width: 240px;
+    margin: 0 0 50px 0;
+    height: 48px;
+    position: relative;
+
+    height: 48px;
+    border-radius: 30px;
+    list-style: none;
+}
+.container-10-bg-texta-anglea1{
+    position: absolute;
+    top: 557px;
+    left: 600px;
+    border:solid 17px;
+    border-bottom-left-radius: 185px;
+    border-color:#34affb rgb(250,250,250) rgb(250,250,250) rgb(250,250,250);
+}
+.container-10-bg-texta-anglea2{
+    position: absolute;
+    top: 683px;
+    left: 600px;
+    border:solid 17px;
+    border-bottom-left-radius: 185px;
+    border-color:#34affb rgb(250,250,250) rgb(250,250,250) rgb(250,250,250);
+}
+
+.container-10-bg-textb1{
+    text-align: center;
+    position: absolute;
+    top: 486px;
+    
+    left: 872px;
+    width: 120px;
+    height: 48px;
+    display: block;
+    background-color: #fff;
+    position: relative;
+    height: 48px;
+    border-radius: 30px;
+    list-style: none;
+
+}
+.container-10-bg-textb2{
+    text-align: center;
+    position: absolute;
+    top: 510px;
+    left:  792px;
+    width: 176.67px;
+    display: block;
+    background-color: #fff;
+    position: relative;
+    padding: 0 20px;
+    height: 48px;
+    border-radius: 30px;
+    list-style: none;
+
+}
+.container-10-bg-texta-angleb1{
+    position: absolute;
+    top: 612px;
+    left: 940px;
+    border:solid 17px;
+    border-bottom-right-radius: 185px;
+    border-color:#fff rgb(250,250,250) rgb(250,250,250) rgb(250,250,250);
+}
+.container-10-bg-texta-angleb2{
+    position: absolute;
+    top: 782px;
+    left: 940px;
+    border:solid 17px;
+    border-bottom-right-radius: 185px;
+    border-color:#fff rgb(250,250,250) rgb(250,250,250) rgb(250,250,250);
+}
+.container-10add{
+    height: 980px;
+    background: url(../../images/xiaomi/swhite-10add.jpg) no-repeat center;
+}
+
+.container-10add-texthead{
+    position: absolute;
+    top: 120px;
+    height: 135px;
+    text-align: center;
+    line-height: 30px;
+    opacity:  .75;
+}
+.container-10add-texta{
+    color: rgba(255,255,255,0.5);
+    background: rgb(97, 81, 69);
+    font-size: 18px;
+    border: 2px solid rgb(97, 81, 69);
+    line-height: 48px;
+
+
+}
+.container-10add-texta-anglea1{
+    color: rgba(255,255,255,0.5);
+    background: url(../../images/xiaomi/TIM20180721162442.png) no-repeat center;
+    border-top-color: rgb(97, 81, 69) ;
+    font-size: 18px;
+    line-height: 48px;
+    
+}
+.container-10add-img{
+    position: absolute;
+    text-align: center;
+    top: 419px;
+    left: 429px;
+    width: 305px;
+    height: 140px;
+    background: url(../../images/xiaomi/swhite-dialog.png) no-repeat center;
+}
+.container-10add-img-text2{
+    opacity: .4;
+}
+.container-dog2{
+    height: 1180px;
+    background-color: #fff;
+}
+.container-dog2-text{
+    top: 336px;
+    text-align: center;
+}
+.container-dog2-text ul{
+    list-style-type: none;
+    text-align: left;
+}
+.container-dog2-text ul li{
+    display: inline-block;
+    color: #1dabfc;
+    margin: 0 auto;
+}
+.container-dog2-text-h{
+    display: block;
+    margin: 0 0 0 136px;
+    
+}
+.container-dog2-text-h1{
+    margin: 0 0 0 314px;
+}
+.container-dog2-text-word{
+    display: block;
+    margin: 0 0 0 90px;
+}
+.container-dog2-text-word1{
+    margin: 0 0 0 306px;
+}
+.container-dog2-img{
+    margin: 70px;
+    height: 558px;
+    background: url(../../images/xiaomi/swhite-dog2.jpg) no-repeat center;
+
+}
+.container-dog2-img-L{
+    display:block;
+    float: left;
+    width: 65.14px;
+    height: 42px;
+    margin:  464px 0 0 -10px;
+}
+.container-dog2-img-R{
+    float: right;
+    display:block;
+    width: 80.97px;
+    height: 42px;
+    margin:  464px -10px 0 0px;
+}
+.container-dog2-img-xian{
+    height: 2px;
+    background: rgba(204,204,204,0.4);
+    
+    width: 1200px;
+    position: absolute;
+    left: 74.5px;
+    bottom: 100px;
+}
+.container-dog2-img-dian{
+    position: absolute;
+    background: rgba(204,204,204,0.4);
+    width: 2px;
+    height: 555px;
+    top: -523px;
+    left: 600px;
+}
+.container-dog2-img-dian i{
+    position: absolute;
+    content: "";
+    left: -12px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: block;
+    bottom: 20px;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    background-color: rgba(197,197,197,0.7);
+}
+.container-dog2-img-dian i::before{
+    /* 在i之前插入插入空的背景颜色为白色还是个圆这样就可以做一个空心 */
+    content: "";
+    width: 18px;
+    height: 18px;
+    margin: 4px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: block;
+}
+
+.container-11add{
+    height: 708px;
+    background: #231f1d;
+    overflow: hidden;
+}
+.container-11add-img{
+    width: 640px;
+    height: 708px;
+    background: url(../../images/xiaomi/swhite-11add.jpg) no-repeat center;
+    background-size: cover;
+    background-position: -604px 0;
+    float: left;
+}
+.container-11add-text{
+    height: 200px;
+    width: 400px;
+    float: left;
+    line-height: 35px;
+    margin: 226px 0px 0 120px;
+}
+.container-11add-text .text02-h{
+    color: #7b726f;;
+}
+.container-11add-text .text02-word{
+    color: #5b5350;
+}
+.container-12img{
+    height: 950px;
+    background-color: #313233;
+    overflow:visible;
+}
+.container-12img-text{
+    position: absolute;
+    text-align: center;
+    height: 75px;
+    top: 120px;
+    line-height: 40px;
+}
+.container-12img-text .text02-h,.container-12img-text .text02-word{
+    color: #c1c1c1;
+}
+.container-12img-img{
+    height: 378px;
+    position: absolute;
+    top: 200px;
+    overflow:visible;
+}
+.img-img{
+    background: url(../../images/xiaomi/swhite-12-icon.png) no-repeat;
+    display: block;
+    width: 301px;
+    height: 301px;
+    float: left;
+    margin:150px 0 0 110px;
+}
+.img-img1{
+background-position: 0 0;
+}
+.img-img2{
+    background-position: -301px 0;
+}
+.img-img3{
+    background-position:-602px 0;
+}
+.img-img3-text{
+    height: 20px;
+    overflow:visible;
+    float: left;
+}
+.img-img3-text span{
+    float: left;
+    display: block;
+    height: 20px;
+    font-size: 18px;
+    color: #c1c1c1;
+    width: 350px;
+    margin-left: 70px;
+    margin-top: 50px;
+    text-align: center;
+}
+.container-12img-tail{
+    position: absolute;
+    bottom: 100px;
+    height: 24px;
+    text-align: center;
+    color: #c1c1c1;
+    opacity: .8;
+    font-size: 16px;
+    
+}
+.container-13bg{
+    height: 740.25px;
+    background: url(../../images/xiaomi/swhite-13-bg.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.footer{
+    position: relative;
+    bottom: 0;
+    float: left;
+    width: 1349px;
+    height: 196px;
+    background: rgb(250, 250, 250);
+}
+.footer-content{
+    width: 613px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 45px 0;
+}
+.footer-content-pic{
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+.footer-content-font{
+    width: 364px;
+    height: 72px;
+    float: left;
+    margin:15px 0 0 35px;
+}

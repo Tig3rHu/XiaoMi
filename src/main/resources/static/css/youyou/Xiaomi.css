@@ -1,0 +1,525 @@
+div{
+    display: block;
+}
+a{
+    text-decoration: none;
+    color:rgb(117, 117, 117);
+}
+img{
+    border:0px;
+}
+p,pre{
+    margin: 1em 0;
+}
+/*.site-header .container {
+    position: relative;
+ }  */
+.container1{
+         width: 1226px;
+         margin-right: auto;
+         margin-left: auto;
+ }
+ ul,li,p,em{
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+ }
+ .site-bn-bar{
+     background-image:url("../image/leftNav/cms_15319985577162_vSYKt.jpg");
+     width: 100%;
+
+     background-repeat: no-repeat;
+     background-position: center 0;
+ }
+ .site-bn-bar .site-bn-bar-link{
+    display:block;
+    width: 100%;
+    height: 120px;
+    text-indent: -9999em;
+
+ }
+/*顶部导航条*/
+ .site-topbar{
+    /* width: 1423px;*/
+     height: 40px;
+     z-index: 30;
+     position: relative;
+     color: #b0b0b0;
+     font-size: 12px;
+     background: #333;
+ }
+ .site-topbar a{
+     color: #b0b0b0;
+ }
+ .site-topbar .sep{
+     margin: 0 .5em;
+     color: #424242;
+ }
+ .topbar-nav{
+     float: left;
+     height: 40px;
+     line-height: 40px;
+     overflow: hidden;
+ }
+ .topbar-cart,.topbar-info{
+     position: relative;
+     float: right;
+     height: 40px;
+     line-height: 40px;
+ }
+.site-topbar .topbar-cart{
+    width: 120px;
+    margin-left:15px;
+}
+.site-topbar .cart-mini{
+    position: relative;
+    z-index: 32;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #b0b0b0;
+    background: #424242;
+}
+.site-topbar .cart-menu{
+    display: none;
+    position: absolute;
+    right:0;
+    top:40px;
+    z-index:31;
+    width: 316px;
+    height: 100px;
+    padding: 15px 0 0;
+    color:#424242;
+    background:#fff;
+    box-shadow: 0px 0px 10px 5px #aaa;
+}
+.site-topbar .cart-menu .loading{
+    margin:15px 20px 20px 5px;
+    text-align: center;
+    font-size: 15px;
+}
+/*导航条*/
+ .site-header{
+    /* width: 1423px;*/
+     height: 100px;
+     position: relative;
+     z-index: 20;
+     
+    /* background: rgb(167, 21, 21);*/
+ }
+ /*导航栏的小米LOGO*/
+ .site-header .header-logo{
+     float: left;
+     width: 62px;
+     margin-top:22px;
+ }
+ .site-header .logo{
+     position: relative;
+     display: block;
+     width: 55px;
+     height: 55px;
+     overflow: hidden;
+     background: #ff6700;
+ }
+ .site-header .logo img{
+    width: 55px;
+     height: 55px;
+ }
+ /*导航栏列表*/
+ .site-header .header-nav{
+     float: left;
+     width: 850px;
+     
+ }
+ .site-header .nav-list{
+    /* position: relative;*/
+     z-index: 10;
+     float: left;
+     width: 820px;
+     height: 88px;
+     margin: 0px;
+     padding: 12px 0 0 30px;
+     list-style-type: none;
+     font-size: 16px;
+ }
+ /*垂直导航栏*/
+ .site-header .nav-category{
+     position: relative;
+     float: left;
+     width: 142px;
+     height: 88px;
+     padding-right: 15px;
+    /* background: rgb(167, 21, 21);*/
+ }
+ .site-header .header-nav .link-category{
+     display: block;
+     padding: 26px 0 36px;
+     text-align: right;
+     color:#333;
+     visibility: hidden;
+ }
+ .site-header .site-category{
+     display: block;
+ }
+ .site-header .site-category{
+   /*  display: none;*/
+     position: absolute;
+     top:88px;
+     left: -92px;
+     z-index: 21;
+     width: 234px;
+     height: 440px;
+     font-size: 14px;
+ }
+ .site-header .site-category .site-category-list{
+     height: 420px;
+     border: 0px;
+     color: #fff;
+     background: #333;
+     /*background: rgba(0, 0, 0, 0.6);*/
+     margin: 0px;
+     padding: 20px 0;
+ }
+ li{
+     display: list-item;
+ }
+ .site-header .site-category .site-category-list .title{
+     color:#fff;
+     position: relative;
+     display: block;
+     padding-left: 30px;
+     height: 42px;
+     line-height: 42px;
+ }
+ .site-header .site-category .site-category-list .title i{
+     position: absolute;
+     top:12px;
+     right: 20px;
+     font-size: 16px;
+     line-height: 16px;
+ } 
+ .site-header .site-category .site-category-list .children-col-4{
+     width: 992px;
+ }
+ .site-header .site-category .site-category-list .children{
+     display: none;/*这里是要隐藏*/
+     position: absolute;
+     left: 234px;
+     top:0;
+     z-index: 24;
+     height: 458px;
+     border: 1px solid #e0e0e0;
+     border-left: 0;
+     background: #fff;
+ }
+ .site-header .site-category .site-category-list .children-col-4 .children-list-col{
+     float: left;
+     width: 248px;
+ }
+ .site-category-list .children-list{
+     height: 458px;
+     margin: 0;
+     padding: 2px 0;
+     list-style-type: none;
+ }
+ .site-category-list .children-list li{
+     position: relative;
+     float: left;
+     width: 265px;
+     height: 76px;
+ }
+ .site-category-list .children-list .link{
+     display:block;
+     padding: 18px 20px;
+     line-height: 40px;
+     color:#333;
+     transform: color .2s;
+ }
+ .site-category-list .children-list .thumb{
+     margin-right: 12px;
+     vertical-align: middle;
+ }
+ .site-category-list .children-list .text{
+     line-height: 40px
+ }
+
+
+/* 横向导航栏*/
+ .site-header .nav-list .nav-item{
+     float: left;
+     height: 88px;
+     /*position: relative;*/
+ }
+ .site-header .nav-item .link{
+     display: block;
+     padding: 26px 10px 38px;
+     color: #333;
+ }
+      /*下拉隐藏列表*/
+ .site-header .nav-item .item-children{
+    /*这里是要设置成隐藏的*/
+     display: none;
+     width: 1502px;
+     position: absolute;
+     left:0px;
+     right: 0px;
+     height:220px;
+     margin: 0 auto;
+     background: #fff;
+     z-index:99999;
+     border-top:1px solid #e0e0e0;
+     box-shadow: 1px 11px 34px -12px #aaa; 
+ }
+ .site-header .nav-item .item-children .container{
+     position: relative;
+     top:0px;
+     left: -62px !important;
+ }
+ .site-header .nav-item .item-children ul{
+     padding: 0px 0px 0px 40px;
+     margin: 0em 0px;
+    
+ }
+
+ .site-header .nav-item .item-children ul li{
+     float: left;
+     padding-right: 0px;    
+    /* display: list-item;
+     text-align: -webkit-match-parent;*/
+ }
+ .site-header .nav-item .item-children ul li div.figure-thumb{
+     margin-top: 33px;
+     padding-right: 24px;
+     padding-left: 12px;
+     border-right:1px solid #e0e0e0; 
+ }
+ .site-header .nav-item .item-children ul li div.title{
+     text-align: center;
+     font-size: 12px;
+     margin-left: -14px;
+ }
+ .site-header .nav-item .item-children ul li p.price{
+    text-align: center;
+    font-size: 12px;
+    color: #ff6700;
+    margin-left: -14px;
+}
+.site-header .nav-item .item-children ul li div.flags{
+    
+    top:0px;
+    position: absolute;
+}
+.site-header .nav-item .item-children ul li div.flag{
+    border:1px solid #ff6700;
+    font-size: 12px;
+    text-align: center;
+    margin: 0 40px;
+    width: 84px;
+    height: 18px;
+    left: 5px;
+    color: #ff6700;
+}
+ /*导航栏搜索框*/
+ .site-header .header-search{
+     float:right;
+     width: 296px;
+     margin-top:25px;
+ }
+ .site-header .search-form{
+     position: relative;
+     width: 296px;
+     height: 50px;
+ }
+ .site-header .search-text{
+     position: absolute;
+     top: 0;
+     right: 51px;
+     z-index: 1;
+     width: 223px;
+     height: 50px;
+     padding: 0 10px;
+     border: 1px solid #e0e0e0;
+     font-size: 14px;
+     line-height: 48px;
+     outline: 0;
+     transition: all .2s;
+ }
+ .site-header .search-btn{
+     position: absolute;
+     right: 0;
+     top: 0;
+     z-index: 2;
+     width: 52px;
+     height: 50px;
+     border:1px solid #e0e0e0;
+     font-size: 24px;
+     line-height: 24px;
+     background: #fff;
+     color: #616161;
+     outline: 0;
+     transition: all .2s;
+ }
+ .site-header .search-hot-words{
+     position: absolute;
+     top:14px;
+     right:62px;
+     z-index:2;
+     text-align: right;
+ }
+ .site-header .search-hot-words a{
+     display: inline-block;
+     margin-left:5px;
+     font-size: 12px;
+     padding: 0 5px;
+     background:#eee;
+     color: #757575;
+     transition: all .2s;
+
+ }
+ form{
+     margin:0;
+     display: block;
+ }
+ .site-header .search-form .keyword-list{
+     position: absolute;
+     left: 22px;
+     top: 50px;
+     z-index: 20;
+     width: 221px;
+     border:1px solid #ff6700;
+     border-top:0;
+     background:#fff;
+ }
+ .site-header .search-form .keyword-list li a{
+     position: relative;
+     display:block;
+     padding:6px 15px;
+     font-size: 11px;
+     color:#424242;
+ }
+ .site-header .search-form .keyword-list li .result{
+     position: absolute;
+     right: 15px;
+     top:6px;
+     columns: #b0b0b0;
+ }
+.hide{
+    display: none;
+}
+
+/*商品导航栏*/
+ .home-hero-container{
+     position: relative;
+    /* width: 1226px;*/
+     height: 1272px;
+     margin-right: auto;
+     margin-left: auto;
+
+ }
+/*幻灯片*/
+.home-hero-slider .ui-wrapper{
+   height: 440;
+   background: #ff6700;
+   background-image:url(../xiaomi/image/轮播图/xmad_15314769640218_exasB.jpg);
+   background-size: 1227px 500px;
+   background-repeat: no-repeat;
+   background-position: center 0;
+}
+.home-hero-sub{
+    margin-top:14px;
+}
+.home-hero-sub .span4{
+    width: 234px;
+    float: left;
+    margin-left: 0px;
+
+    min-height: 1px;
+
+}
+.home-hero-sub .span4 .home-channel-list{
+    height: 164px;
+    margin:0;
+    padding: 3px;
+    list-style-type: none;
+    font-size: 12px;
+    text-align: center;
+    background: #5f5750;
+}
+.home-hero-sub .span4 .home-channel-list li{
+    position: relative;
+    float: left;
+    width: 70px;
+    height: 82;
+    padding: 0 3px;
+}
+.home-hero-sub .span16{
+    width: 992px;
+    float: left;
+    min-height: 1px;
+    right: 0px;
+}
+.home-hero-sub .span16 .home-promo-list li{
+  float: left;
+  width: 316px;
+  height: 170px;
+  transition: box-shadow .2s linear;
+  margin-left: 14.6px;
+}
+
+.home-promo-list img{
+    width: 316px;
+    height: 170px;
+}
+.box-12{
+    width: 100%;
+    
+}
+.box-10{
+    width: 90%;
+}
+.box-9{
+    width:75%;
+}
+.box-6{
+    width:50%;
+}
+.box-3{
+    width:25%;
+    margin: 0 20px 0 0;
+}
+.box-2{
+    width:10%;
+
+}
+.fl{
+   float: left; 
+}
+.containerlxq{
+    width: 1226px;
+    margin: 0 auto
+}
+.good-top-left{
+    display:none !important;
+}
+.container1 .box-12 .box-2{
+    margin-right: 126px;
+}
+.boxflash{
+    width: 16.8%;
+    margin-right: 18.6px;
+    margin-left: 7px;
+    height: 344px;
+    background: #f1eded;
+}
+.timing{
+    position: absolute;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+.timing input{
+    height: 30px;
+    width: 52px;
+    font-size: 20px;
+}

@@ -1,0 +1,541 @@
+@charset "UTF-8";
+body{
+   
+    width: 1349px;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    color: #333;
+}
+.section-items{
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 1349px;
+    float: left;
+
+}
+.container{
+    width: 1349px;
+    height: auto;
+}
+.container-intro{
+    height: 945px;
+}
+.container-intro-content{
+    position: absolute;
+    z-index: 3;
+    top: 110px;
+    height: 300px;
+    text-align: center;
+}
+
+.container-tail-a{
+    display: inline-block;
+    margin: 0 auto;
+    width: 156.08px;
+    height: 30px;
+    text-decoration: none;
+    margin: 13px 0 0 0;
+
+}
+.container-tail-a-img{
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin: -2px 8px 0 0;
+    width: 24px;
+    height: 24px;
+    background: url(../../images/xiaomi/icon_jnbt.png) no-repeat center;
+}
+.container-tail-a span{
+    display: inline-block;
+    width: 122.38px;
+    height: 19px;
+}
+.bg{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 945px;
+    background: url(../../images/xiaomi/summary-intro.jpg) no-repeat center;
+    transition: all 2s ease;
+    transform: scale(2);
+}
+.bg-mask{
+    position: absolute;
+    display: block;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 945px;
+    background-color: rgba(0,0,0,0.5);
+    transition: all 2s;
+}
+.container-size{
+    height: 1480px;
+    background: rgb(245, 245, 245);
+}
+.container-size-content{
+    margin: 148px 0 0 0;
+    height: 450px;
+    text-align: center;
+}
+.size-text{
+    height: 472px;
+}
+.size-img{
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+    height: 128px;
+    overflow: hidden;
+}
+.size-img-i{
+    margin: -2px 410px;
+    display: block;
+    width:  535px;
+    height: 130px;
+    background:url(../../images/xiaomi/summary-size-spec2.png) no-repeat center;
+    background-position: 0 0;
+    overflow: hidden;
+}
+.container-size-img{
+    position: relative;
+    top: 0;
+    height: 960px;
+    background: url(../../images/xiaomi/summary-size.jpg) no-repeat center;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.container-scene-1{
+    height: 800px;
+    background-position: 0 center;
+    overflow: hidden;
+}
+.container-scene-1-img{
+    position: absolute;
+    top: -30px;
+    height: 1200px;
+    background: url(../../images/xiaomi/summary-scene-1.jpg) no-repeat center;
+    overflow: hidden;
+    background-position: center 0;
+    transform: translateY(0);
+    display: inline-block;
+    transition: all 1s linear;
+   
+}
+.container-feature-5{
+    height: 1480px;
+    background:rgb(245, 245, 245);
+}
+
+.container-feature-5-text{
+    margin: 144px 0 25px 0;
+    text-align: center;
+}
+.container-feature-5-img{
+    position: relative;
+    height: 1000px;
+    text-align: center;
+}
+.feature-5-img-1{
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 342px;
+    width: 665px;
+    height: 826px;
+    background: url(../../images/xiaomi/summary-feature-5.jpg) no-repeat center;
+    transition: all 1s ease;
+    opacity:1;
+    /* display:block; */
+    overflow: hidden;
+}
+.feature-5-img-2{
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 521.5px;
+    width: 306px;
+    height: 626px;
+    background: url(../../images/xiaomi/summary-feature-3.png) no-repeat center !important;
+    
+    display: block;
+    transition: all 2s ease;
+    transform: scale(1);
+    background:rgb(245, 245, 245);
+}
+.feature-5-img-3{
+    position: absolute;
+    z-index: 1;
+    align-self:center;
+    left: 61.5px;
+    width: 1226px;
+    height: 930px;
+    background: url(../../images/xiaomi/summary-feature-6.jpg) no-repeat center;
+    /* display: none; */
+    transition: all 6s;
+    opacity: 0;
+}
+
+.container-scene-2{
+    height: 800px;
+    overflow: hidden;
+    background-position: 0 center;
+    background:rgb(245, 245, 245);
+}
+
+.container-scene-2-img{
+    top: -30px;
+    transform: translateY(0);
+    transition: all 1s linear;
+    position: absolute;
+    top: 0;
+    height: 1200px;
+    overflow: hidden;
+    background-position: center 0;
+    background: url(../../images/xiaomi/summary-scene-2.jpg) no-repeat center;
+}
+
+.container-filter{
+    position: relative;
+    top: 0;
+    height: 1280px;
+    text-align: center;
+    overflow: hidden;
+    background:rgb(245, 245, 245);
+    background-position: 0 center;
+}
+.container-filter-1{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 61.5px;
+    width: 1226px;
+    height:960px;
+    margin: 0 auto;
+    background: url(../../images/xiaomi/summary-filter.png) no-repeat center;
+    background-position: center 0;
+    overflow: hidden;
+    float: left;
+}
+.container-filter-2{
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 61.5px;
+    width: 1226px;
+    height: 960px;
+    margin: 0 auto;
+    background: url(../../images/xiaomi/summary-filter-2.png) no-repeat center;
+    background-position: center 0;
+    float: left;
+}
+.container-filter-text{
+    position: absolute;
+    bottom:116px;
+    height: 300px;
+    text-align: center;
+    float: left;
+}
+
+.room{
+    height: 980px;
+    background: url(../../images/xiaomi/summary-room.png) no-repeat;
+    background-position: center 0;
+}
+.room-tip{
+    top:  16px;
+    display: block;
+    padding-right: 62px;
+    text-align: center;
+    position: relative;
+    margin: 38px 0 62px 0;
+
+}
+.room-box{
+    position: relative;
+    margin: 0 auto;
+    width: 1226px;
+    height: 470px;
+
+}
+.room-text-1{
+    display: block;
+    width: 60px;
+    position: absolute;
+    left: 850px;
+    top: 100px;
+    text-align: center;
+}
+.room-text-2{
+    display: block;
+    left: 585px;
+    top: 0;
+    width: 60px;
+    position: absolute;
+    text-align: center;
+
+}
+.room-text-3{
+    display: block;
+    width: 60px;
+    position: absolute;
+    left: 1080px;
+    top: 225px;
+    text-align: center;
+}
+.room-text-4{
+    left: 85px;
+    top: 110px;
+    display: block;
+    width: 60px;
+    position: absolute;
+    text-align: center;
+}
+
+.room-1{
+    position: absolute;
+    width: 497px;
+    height: 317px;
+    top: 134px;
+    left: 439px;
+    border-radius: 160px 100px;
+    z-index: 3;
+    background-repeat: no-repeat;
+    background: url(../../images/xiaomi/summary-room-1.png);
+    transition: all .5s;
+    opacity: 1;
+}
+
+.room-2{
+    position: absolute;
+    background-repeat: no-repeat;
+    transition: all .5s;
+    width: 430px;
+    height: 282px;
+    top: 30px;
+    left: 266px;
+    background: url(../../images/xiaomi/summary-room-2.png);
+    opacity: 0;
+}
+
+.room-3{
+    position: absolute;
+    background-repeat: no-repeat;
+    transition: all .5s;
+    width: 244px;
+    height: 189px;
+    top: 284px;
+
+    left: 898px;
+    background: url(../../images/xiaomi/summary-room-3.png);
+     opacity: 0;
+}
+.room-4{
+    position: absolute;
+    background-repeat: no-repeat;
+    transition: all .5s;
+    width: 329px;
+    height: 233px;
+    top: 136px;
+    left: 72px;
+    z-index: 2;
+    border-radius: 110px 80px;
+    background: url(../../images/xiaomi/summary-room-4.png);
+     opacity: 0;
+}
+.room-tab-active{
+    opacity: 1;
+}
+.room-airimg{
+    display: block;
+    z-index: 4;
+    width: 55px;
+    height: 97px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all .4s;
+    background: url(../../images/xiaomi/summary-room-air.png) no-repeat;
+}
+.room-airimg-hide{
+    visibility:hidden;
+    /* 控制房子里面空气净化器的消失 visible出现*/
+}
+.room-airimg-show{
+    visibility: visible;
+}
+.room-airimg-1{
+    margin-left: -38px;
+    margin-top: -58px;
+}
+
+.room-airimg-2{
+    margin-left: -33px;
+    margin-top: -73px;
+}
+.room-airimg-3{
+    margin-left: -33px;
+    margin-top: -61px;
+}
+.room-airimg-4{
+    margin-left: -33px;
+    margin-top: -64px;
+}
+.room-text-tail{
+    height: 154px;
+    float: left;
+    text-align: center;
+    margin: 148px 0 0 0
+}
+.container-scene-3{
+    overflow: hidden;
+    background-position: 0 center;
+    height: 800px;
+}
+.container-scene-3-img{
+    position: absolute;
+    top: -30px;
+    transform: translateY(0);
+    transition: all 1s linear;
+    overflow: hidden;
+    background-position: center 0;
+    background: url(../../images/xiaomi/summary-scene-3.jpg) no-repeat center;
+    height: 1200px;
+}
+.container-app{
+    height: 1040px;
+    background: url(../../images/xiaomi/summary-app.jpg) no-repeat center;
+}
+.container-app-content{
+    width: 1111px;
+    height: 650px;
+    margin: 186px 119px 0 119px;
+}
+.app-text{
+    width: 436px;
+    height: 650px;
+    margin:0 115px 0 60px;
+    padding: 12px 0 0 0;
+    float: left;
+
+}
+.app-vodeo{
+    width: 364px;
+    height: 649px;
+    float: left;
+}
+.container-lisence{
+    height: 1240px;
+    background: url(../../images/xiaomi/summary-lisence.jpg)no-repeat;
+    background-position:center bottom ;
+    
+}
+.lisence-text{
+    float: left;
+    margin: 135px 0 0 300px;
+
+}
+.lisence-img{
+    position: absolute;
+    top:556px;
+    left: 300px;
+    width: 140px;
+    height: 160px;
+    background: url(../../images/xiaomi/summary-lisence-spec.png);
+    background-position: 0 160px;
+}
+.container-next{
+    height: 340px;
+    background:url(../../images/xiaomi/summary-next.jpg) repeat-x center;
+}
+.next-text{
+    height: 118px;
+    margin: 100px 0 0 0;
+    padding:0 0 0 286px;
+}
+.next-text-a{
+    text-decoration: none;
+}
+.container-buy{
+    height: 440px;
+    background: url(../../images/xiaomi/summary-buy.jpg) no-repeat center;
+}
+.buy-content-text{
+    height: 232px;
+    margin-left: 240px;
+    margin-top: 100px;
+}.buy-text{
+    height: 117px;
+    float: left;
+}
+.buy-a{
+    display: inline-block;
+    background-color: #329cff;
+    border-color: #329cff;
+    color: #fff;
+  margin: 40px 0 0 0;
+    text-decoration: none;
+    text-align: center;
+    height: 58px;
+    line-height: 58px;
+    width: 248px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    transition: all .4s;
+}
+.container-text{
+    height: 309px;
+    text-align: left;
+    background-color: #eee;
+}
+.container-text span{
+    display: block;
+    margin: 0 auto;
+    width: 990px;
+    height: 36px;
+
+}
+.container-text ol{
+    display:block;
+    width: 990px;
+    height: 169px;
+    margin: 0 auto;
+    line-height: 20px;
+}
+.container-text ol{
+    display: block;
+}
+.container-text a{
+    text-decoration: none;
+    color: #329cff;
+}
+.footer{
+    position: relative;
+    bottom: 0;
+    float: left;
+    width: 1349px;
+    height: 196px;
+    background: rgb(250, 250, 250);
+}
+.footer-content{
+    width: 613px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 45px 0;
+}
+.footer-content-pic{
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+.footer-content-font{
+    width: 400px;
+    height: 72px;
+    float: left;
+    margin:15px 0 0 35px;
+}

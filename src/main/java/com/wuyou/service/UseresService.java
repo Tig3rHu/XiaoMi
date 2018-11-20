@@ -1,0 +1,32 @@
+package com.wuyou.service;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.wuyou.entity.Useres;
+import com.wuyou.entity.UseresExample;
+
+public interface UseresService {
+	long countByExample(UseresExample example);
+
+    int deleteByExample(UseresExample example);
+
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(Useres record);
+
+    int insertSelective(Useres record);
+
+    List<Useres> selectByExample(UseresExample example);
+
+    Useres selectByPrimaryKey(Integer id);
+
+    int updateByExampleSelective(@Param("record") Useres record, @Param("example") UseresExample example);
+
+    int updateByExample(@Param("record") Useres record, @Param("example") UseresExample example);
+
+    int updateByPrimaryKeySelective(Useres record);
+
+    int updateByPrimaryKey(Useres record);
+}

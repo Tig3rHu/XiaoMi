@@ -1,0 +1,427 @@
+*{
+    box-sizing: content-box;
+}
+.body{
+    
+    font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    color: #333;
+    background-color: #fff;
+    min-width: 1226px;
+}
+.div{
+    display: block;
+}
+.webfront{
+    
+    font-family: 'F9244e';
+}
+.container{
+    padding-top: 40px;
+    width: 1226px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.text-c{
+    text-align: center;
+}
+.col-fff {
+    color: #fff;
+}
+.tv-banner{
+    width: 100%;
+    height: 1100px;
+    background: url(../images/xiaomitv/index_banner.jpg) no-repeat center center;
+}
+.tv-slider{
+    width: 100%;
+    height: 765px;
+    /* background-color: yellow; */
+}
+.patchwall{
+    width:100%;
+    height: 1200px;
+    background: url(../images/xiaomitv/index_patchwall_bg.jpg) no-repeat center bottom;
+}
+.video-wrap{
+    position: relative;
+    width: 900px;
+    height: 506px;
+    margin-top: 105px;
+    margin-left: 165px;
+}
+.vedio-btn{
+    background-image: url(../images/xiaomitv/index_patchwall_btn.png);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    margin: -50px 0 0 -50px;
+    border: none;
+    border-radius: 50%;
+}
+.tv-live{
+    height: 1460px;
+    width: 100%;
+    background: url(../images/xiaomitv/index_haokan_bg_big.jpg) no-repeat ;
+    background-position: center 407px;
+
+}
+.tv-hd{
+    width: 100%;
+    height: 1200px;
+    background: url(../images/xiaomitv/index_hd_bg.jpg) no-repeat center center;
+}
+.tv-protect{
+    height: 1100px;
+    background: url(../images/xiaomitv/index_languang_bg.jpg) no-repeat center center;
+
+}
+.tv-ram{
+    height: 1100px;
+    background: url(../images/xiaomitv/index_ram_bg.jpg) no-repeat center center;
+
+}
+.tv-game{
+    position: relative;
+    height: 1200px;
+    overflow: hidden;
+    background: url(../images/xiaomitv/index_game_bg1.jpg) no-repeat center center;
+
+}
+.tv-voice{
+    height: 1250px;
+    overflow: hidden;
+    background: url(../images/xiaomitv/index_yinxiao_bg.jpg) no-repeat center center;
+}
+.tv-fix-slider{
+    height: 1400px;
+    overflow: hidden;
+    /* background-color: royalblue; */
+    }
+.fix-slider{
+    width: 100%;
+    height: 800px;
+    margin-top: 200px;
+    /* background-color: darkmagenta; */
+}
+
+.tv-vip{
+    height: 800px;
+    background: url(../images/xiaomitv/index_vip_bg.jpg) no-repeat center center;
+}
+
+.tv-install{
+    height: 800px;
+    background: url(../images/xiaomitv/index_install_bg.jpg) no-repeat center center;
+}
+.tv-foot{
+    height: 1000px;
+    background: url(../images/xiaomitv/index_property_bg.jpg) no-repeat center center;
+}
+
+.tv-banner h2{
+    font-size: 60px;
+    line-height: 80px;
+    font-weight: normal;
+}
+.info{
+    margin: 20px 0px 30px;
+    font-size: 24px;
+}
+.price{
+    font-size: 20px;
+}
+.remark{
+    margin-top: 500px;
+    color: #ccc;
+    font-size: 14px;
+}
+.num{
+    font-style: normal;
+}
+.price-num{
+font-size: 30px;
+font-style: normal;
+font-family: 'Avenir';
+}
+
+.text-title{
+    font-size: 60px;
+    line-height: 80px;
+}
+.text-info{
+    margin-top: 20px;
+    font-size: 24px;
+   
+}
+
+.col-000{
+    color: #000;
+}
+.vip-left{
+    float: left;
+    width: 425px;
+    margin-top: 190px;
+}
+.vip-right{
+    float: right;
+    width: 425px;
+    margin-top: 190px;
+}
+ul{
+    list-style-type: none;
+}
+.tv-hd ul{
+    padding: 0;
+   
+}
+.hd-info{
+    margin-top: 550px;
+}
+
+.info li{
+    float: left;
+    display: block;
+    width: 248px;
+    height: 103px;
+    margin: 3px 25px 20px;
+    font-size: 30px;
+    line-height: 103px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+li.long{
+    width: 550px;
+}
+li.twolines{
+    padding-top: 15px;
+    height: 88px;
+    line-height: 40px;
+}
+.tv-ram ul .li1{
+    display: block;
+   width: 520px;
+   float: left;
+   margin-left: -50px;
+
+
+}
+.tv-ram ul .li2{
+    display: block;
+    float: left;
+    margin-left: -550px;
+    margin-top: 150px;
+   
+
+}
+.tv-ram ul .li3{
+    display: block;
+    float: left;
+    margin-left: -278px;
+    margin-top: 150px;
+   
+
+}
+.line1{
+    text-align: center;
+    line-height: 50px;}
+
+.tv-ram-title{
+    font-size: 50px;
+}
+/* .game-title{
+    padding-left: 716px;
+    font-size: 50px;
+} */
+.tv-game .text{
+    width: 540px;
+
+margin-top: 170px;
+margin: 190px 0 0 700px;
+}
+.tv-game .info{
+    margin: 40px 0 0 700px;
+}
+.tv-game .text-c {
+
+text-align: center;
+}
+.tv-game ul{
+    padding: 0;
+}
+.tv-game .info li{
+    float: left;
+
+display: inline;
+
+height: 88px;
+
+padding-top: 15px;
+
+margin: 0 20px 20px 0;
+
+border: 1px solid #fff;
+
+border-radius: 5px;
+}
+.tv-game .info .li1, .tv-game .info .li2, .tv-game .info .li3 {
+
+width: 148px;
+}
+.tv-game .info .li4, .tv-game .info .li5 {
+
+width: 233px;
+
+}
+.tv-game .text-c {
+
+text-align: center;
+}
+.tv-game .info .line1 {
+
+font-size: 30px;
+
+}
+.tv-game h2, .tv-game p, .tv-game ul {
+
+margin: 0;
+
+}
+.tv-game .info .line1 {
+
+    font-size: 30px;
+
+}
+.tv-game .info .line2 {
+
+font-size: 15px;
+text-align: center;
+line-height: 20px;
+
+}
+.tv-foot{
+ background-color: #fff;    
+}
+.tv-foot .info {
+
+margin: 830px auto 0;
+font-size: 30px;
+}
+.tv-foot ul {
+
+padding: 0;
+
+}
+.tv-foot .info .first {
+
+border-left: none;
+}
+.tv-foot .info li {
+
+float: left;
+padding-left: 4px;
+border-right: 1px solid #e1e1e1;
+border-left: 1px solid #f3f3f3;
+font-size: 25px;
+display: block;
+width: 192px;
+height: 100px;
+margin: 6px 24px;
+font-size: 25x;
+line-height: 45px
+}
+.tv-banner.transi-up{
+    opacity:0;
+ filter:alpha(opacity=0)\9;
+ transform:translate3d(0, 30px, 0);
+}
+/* .is-visible .transi-up {
+ opacity:1;
+ filter:alpha(opacity=100)\9;
+ transition:all 1s;
+ transform:translate3d(0, 0, 0);
+ transition-delay:0
+} */
+.tv-banner.delay-05 {
+ 
+ transition-delay:.5s
+}
+.circle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1334px;
+    height: 459px;
+    background-color: #8175c9;
+    border-radius: 50%;
+    opacity: 0;
+    filter: alpha(opacity=0)\9;
+    -webkit-animation: spread 5s infinite;
+    animation: spread 5s infinite;
+        animation-delay: 0s;
+}
+@keyframes spread{
+0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: .2;
+    filter: alpha(opacity=20)\9;
+}
+100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+    filter: alpha(opacity=0)\9;
+}
+}
+.circle1{
+    animation-delay: 1s;
+}
+.circle2{
+    animation-delay: 2s;
+}
+.circle3{
+    animation-delay: 3s;
+}
+.circle4{
+    animation-delay: 4s;
+}
+.circle-wrap2 {
+    margin: 460px 0 0 170px;
+}
+ .circle-wrap1 {
+    margin: 460px 0 0 -280px;
+ }
+.circle-wrap {
+    position: relative;
+ 
+}
+.delay-05{
+    animation-delay: .5s
+}
+.delay-10{
+    animation-delay: 1s
+}
+.delay-12{
+    animation-delay: 1.2s
+}
+.delay-14{
+    animation-delay: 1.4s
+}
+.delay-16{
+    animation-delay: 1.6s
+}
+.delay-18{
+    animation-delay: 1.8s
+}
+.delay-22{
+    animation-delay: 2.2s
+}
+.delay-20{
+    animation-delay: 2s
+}
+img{
+    display: block;
+    margin: 0 auto;
+}

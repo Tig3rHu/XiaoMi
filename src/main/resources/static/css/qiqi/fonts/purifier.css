@@ -1,0 +1,90 @@
+@charset "UTF-8";
+.container-h-b{
+    color: #553a16;
+    font-size: 60px;
+    line-height: 1;
+    transition: all 1s 1s;
+    
+}
+.container-h-a{
+    font-size: 40px;
+    color: white;
+    line-height: 50px;
+    font-family: 'F2780e';
+    transition: all 1s 1s;
+}
+
+.container-word{
+    opacity: 0;
+    font-size: 28px;
+    color: #553a16;
+    line-height: 42px;
+    transition: all 1s 1s;
+/*
+    从何时开始  经过多久
+*/
+}
+.container-tail{
+    font-size: 32px;
+    color: #553a16;
+    line-height: 1;
+}
+.container-tail-a{
+    font-size: 14px;
+    color: #553a16;
+}
+.size-h{
+    font-size: 40px;
+    font-weight: normal;
+    color: #212121;
+    line-height: 50px;
+    
+}
+.size-word{
+    font-size: 16px;
+    color: #212121;
+    line-height: 26px;
+    font-weight: normal;
+}
+
+.feature-5-a{
+    color: #329cff;
+    font-size: 16px;
+    text-decoration: none;
+}
+.room-text{
+    font-size: 16px;
+    color: #212121;
+    line-height: 24px;
+}
+
+.room-text-tail-h{
+    font-size: 36px;
+    line-height: 1;
+    font-weight: normal;
+    color: #212121;
+}
+.room-text-tail-word{
+    font-size: 16px;
+    color: #212121;
+    line-height: 26px;
+    font-weight: normal;
+}
+.container-text-word{
+    color: #ccc;
+    font-size: 12px;
+}
+.footer-content-font-h{
+    line-height: 44px;
+    font-size: 28px;
+    color: #000;
+    text-align: left;
+}
+.footer-content-font-h-m{
+    color:#ff3333;
+}
+.footer-content-font-tail{
+    line-height: 28px;
+    font-size: 14px;
+    color: #000;
+}

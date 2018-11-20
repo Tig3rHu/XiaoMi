@@ -1,0 +1,344 @@
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.font{
+    font-size: 14px;
+}
+.page-main {
+    padding: 38px 0;
+    background: rgb(245, 245, 245);
+}
+a {
+    color: #757575;
+    text-decoration: none;
+}
+.container {
+    width: 1226px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.buy-succ-box {
+    margin-bottom: 26px;
+    padding: 0 0 28px 0;
+    height: 68px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.buy-succ-box .goods-content {
+    float: left;
+}
+.buy-succ-box .goods-img {
+    float: left;
+    width: 64px;
+    height: 64px;
+}
+.goods-img img {
+    width: 64px;
+    height: 64px;
+}
+.buy-succ-box .goods-info {
+    float: left;
+    margin-left: 20px;
+}
+.buy-succ-box .goods-info h3 {
+    margin: 0;
+    color: #424242;
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: 3px;
+}
+.buy-succ-box .goods-info .name, .buy-succ-box .goods-info .price {
+    margin-right: 15px;
+    font-size: 14px;
+    color: #757575;
+}
+.buy-succ-box .actions {
+    float: right;
+}
+.buy-succ-box .actions .btn-line-gray {
+    background: none;
+}
+
+.buy-succ-box .actions .btn {
+    width: 180px;
+    margin-left: 12px;
+    margin-top: 5px;
+}
+.btn-line-gray {
+    border-color: #b0b0b0;
+    background: #fff;
+    color: #757575 !important;
+}
+.btn {
+    display: inline-block;
+    width: 158px;
+    height: 38px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #b0b0b0;
+    font-size: 14px;
+    line-height: 38px;
+    text-align: center;
+    color: #b0b0b0;
+    cursor: pointer;
+
+}
+
+.buy-succ-box .actions .btn {
+    width: 180px;
+    margin-left: 12px;
+    margin-top: 5px;
+}
+.btn-primary {
+    background: #ff6700;
+    border-color: #ff6700;
+    color: #fff !important;
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.buy-succ-recommend {
+    margin-bottom: 26px;
+}
+
+.xm-recommend-title {
+    position: relative;
+    margin: 0 0 20px 0;
+    height: 40px;
+    font-size: 30px;
+    font-weight: 400;
+    color: #757575;
+    -webkit-font-smoothing: antialiased;
+}
+h2 {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+}
+.xm-recommend-title span {
+    position: static;
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+}
+.xm-recommend-title span {
+    line-height: 40px;
+    text-align: center;
+    display: block;
+    background-color: #f5f5f5;
+}
+
+.xm-carousel-wrapper {
+    height: 320px;
+    overflow: hidden;
+} 
+ul {
+    list-style: none;
+}
+ul{
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+.xm-carousel-col-5-list {
+    width: 2480px;
+    margin-left: 0px;
+    transition: margin-left 0.5s ease;
+}
+
+.xm-recommend ul, .xm-recommend li, .xm-recommend dl, .xm-recommend dt, .xm-recommend dd {
+    padding: 0;
+    margin-top: 0;
+    list-style: none;
+}
+.xm-carousel-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.xm-recommend ul.xm-carousel-list li {
+    margin-right: 14px;
+}
+.xm-recommend ul li {
+    margin-bottom: 14px;
+    height: 300px;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+}
+.xm-recommend ul, .xm-recommend li, .xm-recommend dl, .xm-recommend dt, .xm-recommend dd {
+    padding: 0;
+    margin-top: 0;
+    list-style: none;
+}
+.xm-carousel-col-5-list li {
+    float: left;
+    width: 234px;
+}
+.xm-carousel-list li {
+    float: left;
+    width: 234px;
+    margin-right: 14px;
+}
+user agent stylesheet
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.xm-recommend dl {
+    padding: 0 20px;
+    margin-bottom: 0;
+}
+.xm-recommend dl dt {
+    padding: 40px 0 15px;
+    height: 145px;
+}
+.xm-recommend dl dt img {
+    width: 140px;
+    height: 140px;
+}
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+.xm-recommend .xm-recommend-name a {
+      
+    color: #333;
+}
+.xm-recommend-name a{
+    word-break:keep-all;             /* 不换行 */
+    white-space:nowrap;            /* 不换行 */
+    overflow:hidden;                  /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;
+    display:block;
+    margin-bottom: 10px;
+}
+.ddwidth{
+    width: 100%;
+
+}
+.xm-recommend .xm-recommend-price {
+    margin-bottom: 10px;
+    color: #ff6700;
+}
+.xm-recommend dl dd {
+    margin-left: 0;
+}
+.xm-recommend .xm-recommend-tips {
+    position: relative;
+    color: #757575;
+}
+
+.xm-recommend .xm-recommend-tips .btn {
+    position: absolute;
+    left: 37px;
+    top: 0;
+    width: 120px;
+    display: none;
+}
+
+
+.xm-recommend .xm-recommend-notice {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    opacity: 0;
+    transform: translate3d(0, -10px, 0);
+    transition: all .2s linear;
+}
+.xm-recommend dl dd {
+    margin-left: 0;
+}
+.xm-recommend dl {
+    padding: 0 20px;
+    margin-bottom: 0;
+}
+
+ .btn-line-primary {
+    border-color: #ff6700;
+    background: #fff;
+    color: #ff6700;
+}
+.btn-line-primary:hover{
+    background: #ff6700;
+    color: #fff;
+}
+.btn-small {
+    width: 118px;
+    height: 28px;
+    font-size: 12px;
+    line-height: 28px;
+} 
+.xm-pagers-wrapper {
+    text-align: center;
+}
+.xm-pagers .pager-active {
+    cursor: default;
+}
+.xm-pagers .pager {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    padding: 10px;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+
+
+.xm-pagers .pager-active .dot, .xm-pagers .pager-active:hover .dot {
+    border-color: #ff6700;
+    background-color: #f5f5f5;
+    background-color: transparent;
+}
+.xm-recommend ul li .dot {
+    -webkit-transition: -webkit-box-shadow .2s linear;
+    transition: box-shadow .2s linear;
+}
+.xm-pagers .dot {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #f5f5f5;
+    border-radius: 6px;
+    text-align: left;
+    text-indent: -9999em;
+    overflow: hidden;
+    _zoom: 1;
+    background-color: #b0b0b0;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+.on{
+    
+    width:6px !important;
+    height:6px !important;
+    border:2px solid #ff6700 !important;
+    border-radius:100px !important;
+    background: rgb(245, 245, 245)!important;
+              
+}
+.xm-recommend ul li.pager {
+    background-color: transparent;
+}
+.pager:hover .dot{
+    background: #ff6700;
+}
+.but:hover{
+    background: #ff4800;
+}

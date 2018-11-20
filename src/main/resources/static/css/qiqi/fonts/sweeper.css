@@ -1,0 +1,149 @@
+@charset "UTF-8";
+.roomrobot01-text-h{
+    color: #555c60;
+    font-size: 45px;
+    height: 50px;
+
+}
+.roomrobot01-text-h2{
+    color: #555c60;
+    font-size: 30px;
+   
+    color: #8d8e8f;
+}
+.roomrobot01-text-keyword{
+    color: #8d8e8f;
+    font-size: 16px;
+}
+.roomrobot01-text-money{
+    font-size: 64px;
+    color: #fc4b1e;
+}
+.roomrobot01-text-yuan{
+    font-size: 16px;
+    color: #fc4b1e;
+}
+.roomrobot03-02-text-h{
+ 
+    line-height: 30px;
+
+    font-size: 32px;
+  
+    color: #fc4b1e;
+}
+.roomrobot03-02-text-word{
+    font-size: 16px;
+    color: #fff;
+    line-height: 25px;
+}
+.container-textfirst-h{
+    line-height: 245px;
+    font-size: 36px;
+    color: #fff;
+}
+.container-roomrobot04-text-h{
+    color: #dedede;
+    font-size: 35px;
+
+    line-height: 40px;
+}
+.container-roomrobot04-text-word{
+    font-size: 16px;
+    line-height: 30px;
+    color: #a7a7a7;
+}
+.roomrobot04-text-imgbox-key{
+    font-size: 18px;
+}
+.roomrobot04-text-imgbox-word{
+    opacity: .7;
+    font-size: 16px;
+    color: #dedede;
+}
+.textsecond-text-h{
+    color: #555c60;
+}
+.textsecond-text-h2{
+    color: #555c60;
+    font-size: 24px;
+    line-height: 30px;
+}
+.textsecond-imgtext{
+    color: #fc4b1e;
+    font-size: 16px;
+}
+.container-roomrobot06-text .container-roomrobot04-text-word,.container-roomrobot06-img-box .container-roomrobot04-text-word{
+    opacity: .7;
+}
+.roomrobot07-text .container-roomrobot04-text-h{
+    color: #555c60;
+}
+.roomrobot07-text .container-roomrobot04-text-word{
+    color: #555c60;;
+
+}
+.roomrobot07-text a{
+    color: #fc4b1e;
+    font-size: 16px;
+    text-decoration: none;
+}
+.roomrobot07-tips span{
+    opacity: .7;
+    font-size: 14px;
+    color: #333;
+}
+.roomrobot08-text .container-roomrobot04-text-h{
+    color: #fff;
+}
+.roomrobot08-text .container-roomrobot04-text-word{
+    color: #fff;
+    opacity: .7;
+}
+.roomrobot14-text-tail-h{
+    font-size: 24px;
+    line-height: 30px;
+    color: #555c60;
+}
+.roomrobot14-text-tail-word{
+    color: #565656;
+}
+.roomrobot16-textcontent-h{
+    line-height: 40px;
+    font-size: 32px;
+    color: #fff;
+    display: block;
+    margin: 0px 0 0 78px;
+}
+.roomrobot16-textcontent-word{
+    line-height: 20px;
+    opacity: .4;
+    font-size: 14px;
+    color: #fff;
+    display: block;
+    margin:-18px 0 0 78px
+}
+.roomrobot18-digital{
+    font-size: 36px;
+    color: #fc4b1e;
+}
+.roomrobot18-yuan{
+    color: #fc4b1e;
+    font-size: 16px;
+}
+.small-roomrobot04-text-h{
+    font-size: 26px !important;
+}
+.footer-content-font-h{
+    line-height: 44px;
+    font-size: 28px;
+    color: #000;
+    text-align: left;
+}
+.footer-content-font-h-m{
+    color: rgb(255, 51, 102);
+}
+.footer-content-font-tail{
+    line-height: 28px;
+    font-size: 14px;
+    color: #000;
+}

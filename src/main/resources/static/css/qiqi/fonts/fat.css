@@ -1,0 +1,44 @@
+@charset "UTF-8";
+.items-scale2-text-font{
+    color: #fff;
+    font-size: 24px;
+}
+.items-scale2-03-text-h{
+    color: rgba(255,255,255,0.9);
+    font-size: 26px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+.items-scale2-03-text-word{
+    color: #ccc;
+    font-size: 14px;
+    line-height:24px;
+}
+.items-scale2-06-content-text-h{
+    font-size: 26px;
+    line-height: 1;
+    color: #5c6268;
+}
+.items-scale2-06-content-text-word{
+    font-size: 14px;
+    line-height: 24px;
+    color: rgb(160, 164, 169);
+}
+.items-06-img-word{
+    font-size: 14px;
+    color: #5c6268;
+}
+.footer-content-font-h{
+    line-height: 44px;
+    font-size: 28px;
+    color: #000;
+    text-align: left;
+}
+.footer-content-font-h-m{
+    color: rgb(255, 51, 102);
+}
+.footer-content-font-tail{
+    line-height: 28px;
+    font-size: 14px;
+    color: #000;
+}
